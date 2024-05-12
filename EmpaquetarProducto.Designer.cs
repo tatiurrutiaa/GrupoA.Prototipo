@@ -1,6 +1,6 @@
 ﻿namespace GrupoA.Prototipo
 {
-    partial class EmpaquetadoForms
+    partial class EmpaquetarProducto
     {
         /// <summary>
         /// Required designer variable.
@@ -152,7 +152,7 @@
             botonAtras.Text = "Atrás";
             botonAtras.UseVisualStyleBackColor = true;
             // 
-            // EmpaquetadoForms
+            // EmpaquetarProducto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -171,8 +171,8 @@
             Controls.Add(textBoxMercaderia1);
             Controls.Add(label1);
             Controls.Add(textBoxCódigoOrden1);
-            Name = "EmpaquetadoForms";
-            Text = "Empaquetado";
+            Name = "EmpaquetarProducto";
+            Text = "EmpaquetarProducto";
             ResumeLayout(false);
             PerformLayout();
         }

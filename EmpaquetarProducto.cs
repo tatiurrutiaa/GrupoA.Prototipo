@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GrupoA.Prototipo
 {
-    public partial class EmpaquetadoForms : Form
+    public partial class EmpaquetarProducto : Form
     {
-        public EmpaquetadoForms()
+        public EmpaquetarProducto()
         {
             InitializeComponent();
         }
