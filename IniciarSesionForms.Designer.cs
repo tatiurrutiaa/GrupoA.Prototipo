@@ -59,7 +59,7 @@
             labelUsuario.Size = new Size(47, 15);
             labelUsuario.TabIndex = 2;
             labelUsuario.Text = "Usuario";
-            labelUsuario.Click += this.label1_Click;
+            //labelUsuario.Click += this.label1_Click;
             // 
             // labelContraseña
             // 
