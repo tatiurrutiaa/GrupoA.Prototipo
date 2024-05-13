@@ -34,11 +34,12 @@
             CantidadCol = new ColumnHeader();
             CuitCol = new ColumnHeader();
             TrasnportistaCol = new ColumnHeader();
+            SeleccionarStockLabel = new Label();
             SuspendLayout();
             // 
             // StockList
             // 
-            StockList.Columns.AddRange(new ColumnHeader[] { MercaderiaCol, CodPedidoCol, CantidadCol, CuitCol, TrasnportistaCol });
+            StockList.Columns.AddRange(new ColumnHeader[] { CodPedidoCol, MercaderiaCol, CantidadCol, CuitCol, TrasnportistaCol });
             StockList.GridLines = true;
             StockList.Location = new Point(15, 43);
             StockList.Name = "StockList";
@@ -46,15 +47,35 @@
             StockList.TabIndex = 0;
             StockList.UseCompatibleStateImageBehavior = false;
             // 
+            // MercaderiaCol
+            // 
+            MercaderiaCol.DisplayIndex = 0;
+            // 
+            // CodPedidoCol
+            // 
+            CodPedidoCol.DisplayIndex = 1;
+            // 
+            // SeleccionarStockLabel
+            // 
+            SeleccionarStockLabel.AutoSize = true;
+            SeleccionarStockLabel.Location = new Point(15, 25);
+            SeleccionarStockLabel.Name = "SeleccionarStockLabel";
+            SeleccionarStockLabel.Size = new Size(222, 15);
+            SeleccionarStockLabel.TabIndex = 1;
+            SeleccionarStockLabel.Text = "Seleccionar Mercaderia para empaquetar";
+            SeleccionarStockLabel.Click += label1_Click;
+            // 
             // EmpaquetarForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(734, 450);
+            Controls.Add(SeleccionarStockLabel);
             Controls.Add(StockList);
             Name = "EmpaquetarForm";
             Text = "EmpaquetarForm";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -65,5 +86,6 @@
         private ColumnHeader CantidadCol;
         private ColumnHeader CuitCol;
         private ColumnHeader TrasnportistaCol;
+        private Label SeleccionarStockLabel;
     }
 }
