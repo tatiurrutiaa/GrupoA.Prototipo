@@ -21,5 +21,20 @@ namespace GrupoA.Prototipo.Empaquetado
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PedidosList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EmpaquetarForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
