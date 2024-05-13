@@ -36,5 +36,10 @@ namespace GrupoA.Prototipo.Empaquetado
         {
 
         }
+
+        private void CancelarButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
