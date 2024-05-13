@@ -36,6 +36,7 @@
             CancelarButton = new Button();
             GenerarTicketButton = new Button();
             label1 = new Label();
+            button1 = new Button();
             SuspendLayout();
             // 
             // PedidosList
@@ -107,11 +108,21 @@
             label1.TabIndex = 5;
             label1.Text = "¿Desea mandar este pedido a Empaquetar?";
             // 
+            // button1
+            // 
+            button1.Location = new Point(190, 133);
+            button1.Name = "button1";
+            button1.Size = new Size(32, 19);
+            button1.TabIndex = 6;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // EmpaquetarForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(421, 205);
+            Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(GenerarTicketButton);
             Controls.Add(CancelarButton);
@@ -135,5 +146,6 @@
         private ColumnHeader MercaderiaCol;
         private Button GenerarTicketButton;
         private Label label1;
+        private Button button1;
     }
 }
