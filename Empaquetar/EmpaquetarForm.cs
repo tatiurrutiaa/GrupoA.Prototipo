@@ -12,34 +12,36 @@ namespace GrupoA.Prototipo.Empaquetado
 {
     public partial class EmpaquetarForm : Form
     {
+        EmpaquetarModelo modelo;
         public EmpaquetarForm()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PedidosList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void EmpaquetarForm_Load(object sender, EventArgs e)
         {
+            modelo = new();
+            foreach (var Pedido in modelo.Empaquetar)
+            {
+                var fila = new ListViewItem();
+                fila.Text = Pedido.NroPedido;
+                fila.SubItems.Add(Pedido.Mercaderia);
+                fila.Tag = Pedido;
+                PedidosList.Items.Add(fila);
+            }
 
         }
 
         private void CancelarButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void GenerarTicketButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -30,29 +30,35 @@
         {
             PedidosList = new ListView();
             NroPedidoCol = new ColumnHeader();
+            MercaderiaCol = new ColumnHeader();
             PedidosLabel = new Label();
             ComfirmarButton = new Button();
             CancelarButton = new Button();
-            PedidoCol = new ColumnHeader();
             GenerarTicketButton = new Button();
             label1 = new Label();
             SuspendLayout();
             // 
             // PedidosList
             // 
-            PedidosList.Columns.AddRange(new ColumnHeader[] { NroPedidoCol, PedidoCol });
+            PedidosList.Columns.AddRange(new ColumnHeader[] { NroPedidoCol, MercaderiaCol });
             PedidosList.GridLines = true;
             PedidosList.Location = new Point(15, 27);
+            PedidosList.MultiSelect = false;
             PedidosList.Name = "PedidosList";
             PedidosList.Size = new Size(398, 84);
             PedidosList.TabIndex = 0;
             PedidosList.UseCompatibleStateImageBehavior = false;
             PedidosList.View = View.Details;
-            PedidosList.SelectedIndexChanged += PedidosList_SelectedIndexChanged;
             // 
             // NroPedidoCol
             // 
+            NroPedidoCol.Text = "NroPedido";
             NroPedidoCol.Width = 100;
+            // 
+            // MercaderiaCol
+            // 
+            MercaderiaCol.Text = "Mercaderia";
+            MercaderiaCol.Width = 300;
             // 
             // PedidosLabel
             // 
@@ -62,7 +68,6 @@
             PedidosLabel.Size = new Size(142, 15);
             PedidosLabel.TabIndex = 1;
             PedidosLabel.Text = "Pedidos para empaquetar";
-            PedidosLabel.Click += label1_Click;
             // 
             // ComfirmarButton
             // 
@@ -72,7 +77,6 @@
             ComfirmarButton.TabIndex = 2;
             ComfirmarButton.Text = "Confirmar Orden";
             ComfirmarButton.UseVisualStyleBackColor = true;
-            ComfirmarButton.Click += button1_Click;
             // 
             // CancelarButton
             // 
@@ -84,10 +88,6 @@
             CancelarButton.UseVisualStyleBackColor = true;
             CancelarButton.Click += CancelarButton_Click;
             // 
-            // PedidoCol
-            // 
-            PedidoCol.Width = 300;
-            // 
             // GenerarTicketButton
             // 
             GenerarTicketButton.Location = new Point(253, 137);
@@ -96,6 +96,7 @@
             GenerarTicketButton.TabIndex = 4;
             GenerarTicketButton.Text = "Generar Ticket del Paquete";
             GenerarTicketButton.UseVisualStyleBackColor = true;
+            GenerarTicketButton.Click += GenerarTicketButton_Click;
             // 
             // label1
             // 
@@ -131,7 +132,7 @@
         private Label PedidosLabel;
         private Button ComfirmarButton;
         private Button CancelarButton;
-        private ColumnHeader PedidoCol;
+        private ColumnHeader MercaderiaCol;
         private Button GenerarTicketButton;
         private Label label1;
     }
