@@ -24,9 +24,9 @@ namespace GrupoA.Prototipo
 
         private void botonAtras_Click(object sender, EventArgs e)
         {
-            GrupoA.Prototipo.MenuForms menu = new();
+            GrupoA.Prototipo.VerificarTransportistaForms transportista = new();
             this.Hide();
-            menu.Show();
+            transportista.Show();
         }
     }
 }

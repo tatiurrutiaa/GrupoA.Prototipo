@@ -28,5 +28,12 @@ namespace GrupoA.Prototipo
             this.Hide();
             menu.Show();
         }
+
+        private void botonCrearRemito_Click(object sender, EventArgs e)
+        {
+            GrupoA.Prototipo.RemitoForms remito = new();
+            this.Hide();
+            remito.Show();
+        }
     }
 }
