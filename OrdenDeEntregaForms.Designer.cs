@@ -87,7 +87,7 @@
             // 
             checkedListBox2.FormattingEnabled = true;
             checkedListBox2.Location = new Point(174, 134);
-            checkedListBox2.Margin = new Padding(2, 2, 2, 2);
+            checkedListBox2.Margin = new Padding(2);
             checkedListBox2.Name = "checkedListBox2";
             checkedListBox2.Size = new Size(166, 112);
             checkedListBox2.TabIndex = 24;
@@ -96,7 +96,7 @@
             // 
             checkedListBox1.FormattingEnabled = true;
             checkedListBox1.Location = new Point(6, 134);
-            checkedListBox1.Margin = new Padding(2, 2, 2, 2);
+            checkedListBox1.Margin = new Padding(2);
             checkedListBox1.Name = "checkedListBox1";
             checkedListBox1.Size = new Size(166, 112);
             checkedListBox1.TabIndex = 23;
@@ -287,10 +287,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(569, 467);
+            ClientSize = new Size(370, 354);
             Controls.Add(groupBoxOrdenPreparación);
             Controls.Add(groupBoxCliente);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "OrdenDeEntregaForms";
             Text = "OrdenDeEntrega";
             groupBoxOrdenPreparación.ResumeLayout(false);
