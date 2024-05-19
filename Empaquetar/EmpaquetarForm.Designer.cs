@@ -36,16 +36,18 @@
             CancelarButton = new Button();
             GenerarTicketButton = new Button();
             label1 = new Label();
+            button1 = new Button();
             SuspendLayout();
             // 
             // PedidosList
             // 
             PedidosList.Columns.AddRange(new ColumnHeader[] { NroPedidoCol, MercaderiaCol });
             PedidosList.GridLines = true;
-            PedidosList.Location = new Point(15, 27);
+            PedidosList.Location = new Point(17, 36);
+            PedidosList.Margin = new Padding(3, 4, 3, 4);
             PedidosList.MultiSelect = false;
             PedidosList.Name = "PedidosList";
-            PedidosList.Size = new Size(398, 84);
+            PedidosList.Size = new Size(454, 111);
             PedidosList.TabIndex = 0;
             PedidosList.UseCompatibleStateImageBehavior = false;
             PedidosList.View = View.Details;
@@ -63,26 +65,28 @@
             // PedidosLabel
             // 
             PedidosLabel.AutoSize = true;
-            PedidosLabel.Location = new Point(15, 9);
+            PedidosLabel.Location = new Point(17, 12);
             PedidosLabel.Name = "PedidosLabel";
-            PedidosLabel.Size = new Size(142, 15);
+            PedidosLabel.Size = new Size(180, 20);
             PedidosLabel.TabIndex = 1;
             PedidosLabel.Text = "Pedidos para empaquetar";
             // 
             // ComfirmarButton
             // 
-            ComfirmarButton.Location = new Point(336, 166);
+            ComfirmarButton.Location = new Point(384, 221);
+            ComfirmarButton.Margin = new Padding(3, 4, 3, 4);
             ComfirmarButton.Name = "ComfirmarButton";
-            ComfirmarButton.Size = new Size(77, 23);
+            ComfirmarButton.Size = new Size(88, 31);
             ComfirmarButton.TabIndex = 2;
             ComfirmarButton.Text = "Confirmar Orden";
             ComfirmarButton.UseVisualStyleBackColor = true;
             // 
             // CancelarButton
             // 
-            CancelarButton.Location = new Point(253, 166);
+            CancelarButton.Location = new Point(289, 221);
+            CancelarButton.Margin = new Padding(3, 4, 3, 4);
             CancelarButton.Name = "CancelarButton";
-            CancelarButton.Size = new Size(77, 23);
+            CancelarButton.Size = new Size(88, 31);
             CancelarButton.TabIndex = 3;
             CancelarButton.Text = "Cancelar";
             CancelarButton.UseVisualStyleBackColor = true;
@@ -90,9 +94,10 @@
             // 
             // GenerarTicketButton
             // 
-            GenerarTicketButton.Location = new Point(253, 137);
+            GenerarTicketButton.Location = new Point(289, 183);
+            GenerarTicketButton.Margin = new Padding(3, 4, 3, 4);
             GenerarTicketButton.Name = "GenerarTicketButton";
-            GenerarTicketButton.Size = new Size(160, 23);
+            GenerarTicketButton.Size = new Size(183, 31);
             GenerarTicketButton.TabIndex = 4;
             GenerarTicketButton.Text = "Generar Ticket del Paquete";
             GenerarTicketButton.UseVisualStyleBackColor = true;
@@ -101,23 +106,35 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(15, 170);
+            label1.Location = new Point(17, 227);
             label1.Name = "label1";
-            label1.Size = new Size(232, 15);
+            label1.Size = new Size(299, 20);
             label1.TabIndex = 5;
             label1.Text = "¿Desea mandar este pedido a Empaquetar?";
             // 
+            // button1
+            // 
+            button1.Location = new Point(213, 152);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(88, 31);
+            button1.TabIndex = 6;
+            button1.Text = "Confirmar Orden";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // EmpaquetarForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(421, 205);
+            ClientSize = new Size(514, 334);
+            Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(GenerarTicketButton);
             Controls.Add(CancelarButton);
             Controls.Add(ComfirmarButton);
             Controls.Add(PedidosLabel);
             Controls.Add(PedidosList);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "EmpaquetarForm";
             Text = "EmpaquetarForm";
             Load += EmpaquetarForm_Load;
@@ -135,5 +152,6 @@
         private ColumnHeader MercaderiaCol;
         private Button GenerarTicketButton;
         private Label label1;
+        private Button button1;
     }
 }
