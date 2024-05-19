@@ -18,7 +18,7 @@ namespace GrupoA.Prototipo.Empaquetado
             InitializeComponent();
         }
 
-        
+
 
         private void EmpaquetarForm_Load(object sender, EventArgs e)
         {
@@ -41,7 +41,7 @@ namespace GrupoA.Prototipo.Empaquetado
 
         private void GenerarTicketButton_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
