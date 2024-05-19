@@ -56,6 +56,7 @@
             // 
             textBoxContraseña.Location = new Point(50, 97);
             textBoxContraseña.Name = "textBoxContraseña";
+            textBoxContraseña.PasswordChar = '*';
             textBoxContraseña.Size = new Size(144, 23);
             textBoxContraseña.TabIndex = 2;
             // 
@@ -77,7 +78,7 @@
             label2.TabIndex = 4;
             label2.Text = "Contraseña";
             // 
-            // IniciarSesion
+            // IniciarSesionForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -87,7 +88,7 @@
             Controls.Add(textBoxContraseña);
             Controls.Add(textBoxUsuario);
             Controls.Add(botonIngresar);
-            Name = "IniciarSesion";
+            Name = "IniciarSesionForms";
             Text = "IniciarSesion";
             ResumeLayout(false);
             PerformLayout();

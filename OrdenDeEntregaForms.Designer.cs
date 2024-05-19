@@ -85,10 +85,10 @@
             // checkedListBox2
             // 
             checkedListBox2.FormattingEnabled = true;
-            checkedListBox2.Location = new Point(174, 134);
+            checkedListBox2.Location = new Point(190, 134);
             checkedListBox2.Margin = new Padding(2);
             checkedListBox2.Name = "checkedListBox2";
-            checkedListBox2.Size = new Size(166, 112);
+            checkedListBox2.Size = new Size(176, 112);
             checkedListBox2.TabIndex = 24;
             // 
             // checkedListBox1
@@ -97,7 +97,7 @@
             checkedListBox1.Location = new Point(6, 134);
             checkedListBox1.Margin = new Padding(2);
             checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(166, 112);
+            checkedListBox1.Size = new Size(176, 112);
             checkedListBox1.TabIndex = 23;
             // 
             // textBox2
@@ -128,7 +128,7 @@
             // Cantid
             // 
             Cantid.AutoSize = true;
-            Cantid.Location = new Point(174, 117);
+            Cantid.Location = new Point(188, 117);
             Cantid.Name = "Cantid";
             Cantid.Size = new Size(55, 15);
             Cantid.TabIndex = 13;
@@ -137,7 +137,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(7, 117);
+            label6.Location = new Point(6, 117);
             label6.Name = "label6";
             label6.Size = new Size(66, 15);
             label6.TabIndex = 10;
