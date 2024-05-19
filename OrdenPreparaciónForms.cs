@@ -26,5 +26,12 @@ namespace GrupoA.Prototipo
         {
 
         }
+
+        private void botonAtras_Click(object sender, EventArgs e)
+        {
+            GrupoA.Prototipo.MenuForms menu = new();
+            this.Hide();
+            menu.Show();
+        }
     }
 }

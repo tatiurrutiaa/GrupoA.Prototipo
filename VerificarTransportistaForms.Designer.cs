@@ -32,9 +32,9 @@
             textBoxDNI = new TextBox();
             label1 = new Label();
             groupBoxOrdenEntrega = new GroupBox();
-            checkedListBox1 = new CheckedListBox();
-            botonCrearRemito = new Button();
             botonAtras = new Button();
+            botonCrearRemito = new Button();
+            checkedListBox1 = new CheckedListBox();
             groupBoxOrdenEntrega.SuspendLayout();
             SuspendLayout();
             // 
@@ -76,13 +76,15 @@
             groupBoxOrdenEntrega.Text = "Orden de entrega";
             groupBoxOrdenEntrega.Enter += groupBoxOrdenesAEntregar_Enter;
             // 
-            // checkedListBox1
+            // botonAtras
             // 
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(6, 22);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(237, 220);
-            checkedListBox1.TabIndex = 0;
+            botonAtras.Location = new Point(6, 248);
+            botonAtras.Name = "botonAtras";
+            botonAtras.Size = new Size(75, 23);
+            botonAtras.TabIndex = 2;
+            botonAtras.Text = "Atrás";
+            botonAtras.UseVisualStyleBackColor = true;
+            botonAtras.Click += botonAtras_Click;
             // 
             // botonCrearRemito
             // 
@@ -93,14 +95,13 @@
             botonCrearRemito.Text = "Crear Remito";
             botonCrearRemito.UseVisualStyleBackColor = true;
             // 
-            // botonAtras
+            // checkedListBox1
             // 
-            botonAtras.Location = new Point(6, 248);
-            botonAtras.Name = "botonAtras";
-            botonAtras.Size = new Size(75, 23);
-            botonAtras.TabIndex = 2;
-            botonAtras.Text = "Atrás";
-            botonAtras.UseVisualStyleBackColor = true;
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Location = new Point(6, 22);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.Size = new Size(237, 220);
+            checkedListBox1.TabIndex = 0;
             // 
             // VerificarTransportistaForms
             // 

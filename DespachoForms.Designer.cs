@@ -1,6 +1,6 @@
 ﻿namespace GrupoA.Prototipo
 {
-    partial class Despacho
+    partial class DespachoForms
     {
         /// <summary>
         /// Required designer variable.
@@ -30,36 +30,48 @@
         {
             checkedListBox2 = new CheckedListBox();
             Cantid = new Label();
+            botonAtras = new Button();
             SuspendLayout();
             // 
             // checkedListBox2
             // 
             checkedListBox2.FormattingEnabled = true;
-            checkedListBox2.Location = new Point(12, 34);
+            checkedListBox2.Location = new Point(8, 20);
+            checkedListBox2.Margin = new Padding(2, 2, 2, 2);
             checkedListBox2.Name = "checkedListBox2";
-            checkedListBox2.Size = new Size(235, 200);
+            checkedListBox2.Size = new Size(304, 166);
             checkedListBox2.TabIndex = 26;
             checkedListBox2.SelectedIndexChanged += checkedListBox2_SelectedIndexChanged;
             // 
             // Cantid
             // 
             Cantid.AutoSize = true;
-            Cantid.Location = new Point(12, 6);
-            Cantid.Margin = new Padding(4, 0, 4, 0);
+            Cantid.Location = new Point(8, 4);
             Cantid.Name = "Cantid";
-            Cantid.Size = new Size(271, 25);
+            Cantid.Size = new Size(179, 15);
             Cantid.TabIndex = 25;
             Cantid.Text = "Lista de Pendientes de Despacho";
-            //Cantid.Click += this.Cantid_Click;
             // 
-            // Despacho
+            // botonAtras
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            botonAtras.Location = new Point(8, 191);
+            botonAtras.Name = "botonAtras";
+            botonAtras.Size = new Size(75, 23);
+            botonAtras.TabIndex = 27;
+            botonAtras.Text = "Atrás";
+            botonAtras.UseVisualStyleBackColor = true;
+            botonAtras.Click += botonAtras_Click;
+            // 
+            // DespachoForms
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(323, 223);
+            Controls.Add(botonAtras);
             Controls.Add(checkedListBox2);
             Controls.Add(Cantid);
-            Name = "Despacho";
+            Margin = new Padding(2, 2, 2, 2);
+            Name = "DespachoForms";
             Text = "Despacho";
             ResumeLayout(false);
             PerformLayout();
@@ -69,5 +81,6 @@
 
         private CheckedListBox checkedListBox2;
         private Label Cantid;
+        private Button botonAtras;
     }
 }

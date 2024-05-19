@@ -68,6 +68,7 @@
             botonAtras.TabIndex = 3;
             botonAtras.Text = "Atrás";
             botonAtras.UseVisualStyleBackColor = true;
+            botonAtras.Click += botonAtras_Click;
             // 
             // OrdenSeleccionForms
             // 

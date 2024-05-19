@@ -175,6 +175,7 @@
             botonAtras.TabIndex = 16;
             botonAtras.Text = "Atrás";
             botonAtras.UseVisualStyleBackColor = true;
+            botonAtras.Click += botonAtras_Click;
             // 
             // RetiroStockForms
             // 

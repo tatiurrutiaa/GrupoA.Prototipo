@@ -17,9 +17,53 @@ namespace GrupoA.Prototipo
             InitializeComponent();
         }
 
-        private void MenuForms_Load(object sender, EventArgs e)
+        private void buttonCargarOrdenPreparacion_Click(object sender, EventArgs e)
         {
+            GrupoA.Prototipo.OrdenPreparaciónForms ordenpreparacion = new OrdenPreparaciónForms();
+            this.Hide();
+            ordenpreparacion.Show();
+        }
 
+        private void botonGenerarOrdenSeleccion_Click(object sender, EventArgs e)
+        {
+            GrupoA.Prototipo.OrdenSeleccionForms ordenseleccion = new OrdenSeleccionForms();
+            this.Hide();
+            ordenseleccion.Show();
+        }
+
+        private void botonGenerarOrdenEntrega_Click(object sender, EventArgs e)
+        {
+            GrupoA.Prototipo.OrdenDeEntregaForms ordenentrega = new OrdenDeEntregaForms();
+            this.Hide();
+            ordenentrega.Show();
+        }
+
+        private void botonRetiroStock_Click(object sender, EventArgs e)
+        {
+            GrupoA.Prototipo.RetiroStockForms retirostock = new RetiroStockForms();
+            this.Hide();
+            retirostock.Show();
+        }
+
+        private void botonVerificarTransportista_Click(object sender, EventArgs e)
+        {
+            GrupoA.Prototipo.VerificarTransportistaForms verificartransportista = new VerificarTransportistaForms();
+            this.Hide();
+            verificartransportista.Show();
+        }
+
+        private void botonCrearRemito_Click(object sender, EventArgs e)
+        {
+            GrupoA.Prototipo.RemitoForms remito = new();
+            this.Hide();
+            remito.Show();
+        }
+
+        private void botonSalir_Click(object sender, EventArgs e)
+        {
+            GrupoA.Prototipo.IniciarSesionForms iniciarsesion = new();
+            this.Hide();
+            iniciarsesion.Show();
         }
     }
 }

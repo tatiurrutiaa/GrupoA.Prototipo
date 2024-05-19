@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GrupoA.Prototipo
 {
-    public partial class Despacho : Form
+    public partial class DespachoForms : Form
     {
-        public Despacho()
+        public DespachoForms()
         {
             InitializeComponent();
         }
@@ -20,6 +20,13 @@ namespace GrupoA.Prototipo
         private void checkedListBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void botonAtras_Click(object sender, EventArgs e)
+        {
+            GrupoA.Prototipo.MenuForms menu = new();
+            this.Hide();
+            menu.Show();
         }
     }
 }

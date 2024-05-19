@@ -31,6 +31,7 @@
             textBoxCUITCliente = new TextBox();
             labelCUITCliente = new Label();
             groupBoxCliente = new GroupBox();
+            botonAtras = new Button();
             botonSiguiente = new Button();
             textBoxRazónSocialCliente = new TextBox();
             labelRazonSocial = new Label();
@@ -57,7 +58,6 @@
             label1 = new Label();
             textBoxCódigoOrden = new TextBox();
             label2 = new Label();
-            botonAtras = new Button();
             groupBoxCliente.SuspendLayout();
             groupBoxOrdenPreparación.SuspendLayout();
             SuspendLayout();
@@ -93,6 +93,16 @@
             groupBoxCliente.TabStop = false;
             groupBoxCliente.Text = "Cliente";
             groupBoxCliente.Enter += groupBoxCliente_Enter;
+            // 
+            // botonAtras
+            // 
+            botonAtras.Location = new Point(210, 72);
+            botonAtras.Name = "botonAtras";
+            botonAtras.Size = new Size(75, 23);
+            botonAtras.TabIndex = 24;
+            botonAtras.Text = "Atrás";
+            botonAtras.UseVisualStyleBackColor = true;
+            botonAtras.Click += botonAtras_Click;
             // 
             // botonSiguiente
             // 
@@ -328,15 +338,6 @@
             label2.Size = new Size(98, 15);
             label2.TabIndex = 1;
             label2.Text = "Código de Orden";
-            // 
-            // botonAtras
-            // 
-            botonAtras.Location = new Point(210, 72);
-            botonAtras.Name = "botonAtras";
-            botonAtras.Size = new Size(75, 23);
-            botonAtras.TabIndex = 24;
-            botonAtras.Text = "Atrás";
-            botonAtras.UseVisualStyleBackColor = true;
             // 
             // OrdenPreparaciónForms
             // 

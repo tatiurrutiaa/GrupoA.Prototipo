@@ -1,6 +1,6 @@
 ﻿namespace GrupoA.Prototipo
 {
-    partial class OrdenDeEntrega
+    partial class OrdenDeEntregaForms
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             groupBoxOrdenPreparación = new GroupBox();
+            checkedListBox2 = new CheckedListBox();
+            checkedListBox1 = new CheckedListBox();
             textBox2 = new TextBox();
             label8 = new Label();
             label5 = new Label();
@@ -50,8 +52,6 @@
             labelRazonSocial = new Label();
             textBoxCUITCliente = new TextBox();
             labelCUITCliente = new Label();
-            checkedListBox1 = new CheckedListBox();
-            checkedListBox2 = new CheckedListBox();
             groupBoxOrdenPreparación.SuspendLayout();
             groupBoxCliente.SuspendLayout();
             SuspendLayout();
@@ -75,144 +75,146 @@
             groupBoxOrdenPreparación.Controls.Add(textBoxCódigoOrden);
             groupBoxOrdenPreparación.Controls.Add(label2);
             groupBoxOrdenPreparación.Enabled = false;
-            groupBoxOrdenPreparación.Location = new Point(-4, 2);
-            groupBoxOrdenPreparación.Margin = new Padding(4, 5, 4, 5);
+            groupBoxOrdenPreparación.Location = new Point(-3, 1);
             groupBoxOrdenPreparación.Name = "groupBoxOrdenPreparación";
-            groupBoxOrdenPreparación.Padding = new Padding(4, 5, 4, 5);
-            groupBoxOrdenPreparación.Size = new Size(821, 776);
+            groupBoxOrdenPreparación.Size = new Size(575, 466);
             groupBoxOrdenPreparación.TabIndex = 7;
             groupBoxOrdenPreparación.TabStop = false;
             groupBoxOrdenPreparación.Text = "Orden de Entrega";
             groupBoxOrdenPreparación.Enter += groupBoxOrdenPreparación_Enter;
             // 
+            // checkedListBox2
+            // 
+            checkedListBox2.FormattingEnabled = true;
+            checkedListBox2.Location = new Point(174, 134);
+            checkedListBox2.Margin = new Padding(2, 2, 2, 2);
+            checkedListBox2.Name = "checkedListBox2";
+            checkedListBox2.Size = new Size(166, 112);
+            checkedListBox2.TabIndex = 24;
+            // 
+            // checkedListBox1
+            // 
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Location = new Point(6, 134);
+            checkedListBox1.Margin = new Padding(2, 2, 2, 2);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.Size = new Size(166, 112);
+            checkedListBox1.TabIndex = 23;
+            // 
             // textBox2
             // 
-            textBox2.Location = new Point(9, 500);
-            textBox2.Margin = new Padding(4, 5, 4, 5);
+            textBox2.Location = new Point(6, 300);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(250, 31);
+            textBox2.Size = new Size(176, 23);
             textBox2.TabIndex = 21;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(10, 472);
-            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Location = new Point(7, 283);
             label8.Name = "label8";
-            label8.Size = new Size(43, 25);
+            label8.Size = new Size(27, 15);
             label8.TabIndex = 22;
             label8.Text = "DNI";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(10, 434);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Location = new Point(7, 260);
             label5.Name = "label5";
-            label5.Size = new Size(193, 25);
+            label5.Size = new Size(125, 15);
             label5.TabIndex = 20;
             label5.Text = "Datos del transportista";
             // 
             // Cantid
             // 
             Cantid.AutoSize = true;
-            Cantid.Location = new Point(249, 195);
-            Cantid.Margin = new Padding(4, 0, 4, 0);
+            Cantid.Location = new Point(174, 117);
             Cantid.Name = "Cantid";
-            Cantid.Size = new Size(83, 25);
+            Cantid.Size = new Size(55, 15);
             Cantid.TabIndex = 13;
             Cantid.Text = "Cantidad";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(10, 195);
-            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Location = new Point(7, 117);
             label6.Name = "label6";
-            label6.Size = new Size(99, 25);
+            label6.Size = new Size(66, 15);
             label6.TabIndex = 10;
             label6.Text = "Mercadería";
             // 
             // textBoxFechaEntrega
             // 
-            textBoxFechaEntrega.Location = new Point(269, 145);
-            textBoxFechaEntrega.Margin = new Padding(4, 5, 4, 5);
+            textBoxFechaEntrega.Location = new Point(188, 87);
             textBoxFechaEntrega.Name = "textBoxFechaEntrega";
-            textBoxFechaEntrega.Size = new Size(250, 31);
+            textBoxFechaEntrega.Size = new Size(176, 23);
             textBoxFechaEntrega.TabIndex = 8;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(270, 117);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(189, 70);
             label4.Name = "label4";
-            label4.Size = new Size(147, 25);
+            label4.Size = new Size(97, 15);
             label4.TabIndex = 9;
             label4.Text = "Fecha de entrega";
             // 
             // comboBoxDepósito
             // 
             comboBoxDepósito.FormattingEnabled = true;
-            comboBoxDepósito.Location = new Point(9, 145);
-            comboBoxDepósito.Margin = new Padding(4, 5, 4, 5);
+            comboBoxDepósito.Location = new Point(6, 87);
             comboBoxDepósito.Name = "comboBoxDepósito";
-            comboBoxDepósito.Size = new Size(250, 33);
+            comboBoxDepósito.Size = new Size(176, 23);
             comboBoxDepósito.TabIndex = 7;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(10, 117);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(7, 70);
             label3.Name = "label3";
-            label3.Size = new Size(85, 25);
+            label3.Size = new Size(54, 15);
             label3.TabIndex = 6;
             label3.Text = "Depósito";
             // 
             // botonAceptar
             // 
-            botonAceptar.Location = new Point(413, 500);
-            botonAceptar.Margin = new Padding(4, 5, 4, 5);
+            botonAceptar.Location = new Point(289, 300);
             botonAceptar.Name = "botonAceptar";
-            botonAceptar.Size = new Size(107, 38);
+            botonAceptar.Size = new Size(75, 23);
             botonAceptar.TabIndex = 4;
             botonAceptar.Text = "Aceptar";
             botonAceptar.UseVisualStyleBackColor = true;
             // 
             // textBoxFechaOrden
             // 
-            textBoxFechaOrden.Location = new Point(269, 72);
-            textBoxFechaOrden.Margin = new Padding(4, 5, 4, 5);
+            textBoxFechaOrden.Location = new Point(188, 43);
             textBoxFechaOrden.Name = "textBoxFechaOrden";
-            textBoxFechaOrden.Size = new Size(250, 31);
+            textBoxFechaOrden.Size = new Size(176, 23);
             textBoxFechaOrden.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(270, 44);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(189, 26);
             label1.Name = "label1";
-            label1.Size = new Size(57, 25);
+            label1.Size = new Size(38, 15);
             label1.TabIndex = 3;
             label1.Text = "Fecha";
             // 
             // textBoxCódigoOrden
             // 
-            textBoxCódigoOrden.Location = new Point(9, 72);
-            textBoxCódigoOrden.Margin = new Padding(4, 5, 4, 5);
+            textBoxCódigoOrden.Location = new Point(6, 43);
             textBoxCódigoOrden.Name = "textBoxCódigoOrden";
-            textBoxCódigoOrden.Size = new Size(250, 31);
+            textBoxCódigoOrden.Size = new Size(176, 23);
             textBoxCódigoOrden.TabIndex = 0;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(10, 44);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(7, 26);
             label2.Name = "label2";
-            label2.Size = new Size(151, 25);
+            label2.Size = new Size(98, 15);
             label2.TabIndex = 1;
             label2.Text = "Código de Orden";
             // 
@@ -224,95 +226,72 @@
             groupBoxCliente.Controls.Add(labelRazonSocial);
             groupBoxCliente.Controls.Add(textBoxCUITCliente);
             groupBoxCliente.Controls.Add(labelCUITCliente);
-            groupBoxCliente.Location = new Point(130, -152);
-            groupBoxCliente.Margin = new Padding(4, 5, 4, 5);
+            groupBoxCliente.Location = new Point(91, -91);
             groupBoxCliente.Name = "groupBoxCliente";
-            groupBoxCliente.Padding = new Padding(4, 5, 4, 5);
-            groupBoxCliente.Size = new Size(540, 173);
+            groupBoxCliente.Size = new Size(378, 104);
             groupBoxCliente.TabIndex = 6;
             groupBoxCliente.TabStop = false;
             groupBoxCliente.Text = "Cliente";
             // 
             // botonAtras
             // 
-            botonAtras.Location = new Point(300, 120);
-            botonAtras.Margin = new Padding(4, 5, 4, 5);
+            botonAtras.Location = new Point(210, 72);
             botonAtras.Name = "botonAtras";
-            botonAtras.Size = new Size(107, 38);
+            botonAtras.Size = new Size(75, 23);
             botonAtras.TabIndex = 24;
             botonAtras.Text = "Atrás";
             botonAtras.UseVisualStyleBackColor = true;
             // 
             // botonSiguiente
             // 
-            botonSiguiente.Location = new Point(413, 120);
-            botonSiguiente.Margin = new Padding(4, 5, 4, 5);
+            botonSiguiente.Location = new Point(289, 72);
             botonSiguiente.Name = "botonSiguiente";
-            botonSiguiente.Size = new Size(107, 38);
+            botonSiguiente.Size = new Size(75, 23);
             botonSiguiente.TabIndex = 4;
             botonSiguiente.Text = "Siguiente";
             botonSiguiente.UseVisualStyleBackColor = true;
             // 
             // textBoxRazónSocialCliente
             // 
-            textBoxRazónSocialCliente.Location = new Point(277, 72);
-            textBoxRazónSocialCliente.Margin = new Padding(4, 5, 4, 5);
+            textBoxRazónSocialCliente.Location = new Point(194, 43);
             textBoxRazónSocialCliente.Name = "textBoxRazónSocialCliente";
-            textBoxRazónSocialCliente.Size = new Size(250, 31);
+            textBoxRazónSocialCliente.Size = new Size(176, 23);
             textBoxRazónSocialCliente.TabIndex = 2;
             // 
             // labelRazonSocial
             // 
             labelRazonSocial.AutoSize = true;
-            labelRazonSocial.Location = new Point(270, 44);
-            labelRazonSocial.Margin = new Padding(4, 0, 4, 0);
+            labelRazonSocial.Location = new Point(189, 26);
             labelRazonSocial.Name = "labelRazonSocial";
-            labelRazonSocial.Size = new Size(112, 25);
+            labelRazonSocial.Size = new Size(73, 15);
             labelRazonSocial.TabIndex = 3;
             labelRazonSocial.Text = "Razón Social";
             // 
             // textBoxCUITCliente
             // 
-            textBoxCUITCliente.Location = new Point(9, 72);
-            textBoxCUITCliente.Margin = new Padding(4, 5, 4, 5);
+            textBoxCUITCliente.Location = new Point(6, 43);
             textBoxCUITCliente.Name = "textBoxCUITCliente";
-            textBoxCUITCliente.Size = new Size(250, 31);
+            textBoxCUITCliente.Size = new Size(176, 23);
             textBoxCUITCliente.TabIndex = 0;
             // 
             // labelCUITCliente
             // 
             labelCUITCliente.AutoSize = true;
-            labelCUITCliente.Location = new Point(10, 44);
-            labelCUITCliente.Margin = new Padding(4, 0, 4, 0);
+            labelCUITCliente.Location = new Point(7, 26);
             labelCUITCliente.Name = "labelCUITCliente";
-            labelCUITCliente.Size = new Size(49, 25);
+            labelCUITCliente.Size = new Size(32, 15);
             labelCUITCliente.TabIndex = 1;
             labelCUITCliente.Text = "CUIT";
             // 
-            // checkedListBox1
+            // OrdenDeEntregaForms
             // 
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(8, 223);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(235, 200);
-            checkedListBox1.TabIndex = 23;
-            // 
-            // checkedListBox2
-            // 
-            checkedListBox2.FormattingEnabled = true;
-            checkedListBox2.Location = new Point(249, 223);
-            checkedListBox2.Name = "checkedListBox2";
-            checkedListBox2.Size = new Size(235, 200);
-            checkedListBox2.TabIndex = 24;
-            // 
-            // OrdenDeEntrega
-            // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(813, 779);
+            ClientSize = new Size(569, 467);
             Controls.Add(groupBoxOrdenPreparación);
             Controls.Add(groupBoxCliente);
-            Name = "OrdenDeEntrega";
+            Margin = new Padding(2, 2, 2, 2);
+            Name = "OrdenDeEntregaForms";
             Text = "OrdenDeEntrega";
             groupBoxOrdenPreparación.ResumeLayout(false);
             groupBoxOrdenPreparación.PerformLayout();

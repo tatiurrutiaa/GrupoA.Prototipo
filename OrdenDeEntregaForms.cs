@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GrupoA.Prototipo
 {
-    public partial class OrdenDeEntrega : Form
+    public partial class OrdenDeEntregaForms : Form
     {
-        public OrdenDeEntrega()
+        public OrdenDeEntregaForms()
         {
             InitializeComponent();
         }

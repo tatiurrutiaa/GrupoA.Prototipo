@@ -48,12 +48,12 @@
             textBoxNúmeroRemito = new TextBox();
             label7 = new Label();
             groupBoxCliente = new GroupBox();
+            textBox1 = new TextBox();
+            label1 = new Label();
             textBoxRazónSocialCliente = new TextBox();
             labelRazonSocial = new Label();
             textBoxCUITCliente = new TextBox();
             labelCUITCliente = new Label();
-            textBox1 = new TextBox();
-            label1 = new Label();
             botonAtras = new Button();
             groupBoxCliente.SuspendLayout();
             SuspendLayout();
@@ -225,6 +225,22 @@
             groupBoxCliente.TabStop = false;
             groupBoxCliente.Text = "Cliente";
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(6, 90);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(352, 23);
+            textBox1.TabIndex = 46;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(6, 72);
+            label1.Name = "label1";
+            label1.Size = new Size(57, 15);
+            label1.TabIndex = 47;
+            label1.Text = "Dirección";
+            // 
             // textBoxRazónSocialCliente
             // 
             textBoxRazónSocialCliente.Location = new Point(182, 43);
@@ -257,22 +273,6 @@
             labelCUITCliente.TabIndex = 1;
             labelCUITCliente.Text = "CUIT";
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(6, 90);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(352, 23);
-            textBox1.TabIndex = 46;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(6, 72);
-            label1.Name = "label1";
-            label1.Size = new Size(57, 15);
-            label1.TabIndex = 47;
-            label1.Text = "Dirección";
-            // 
             // botonAtras
             // 
             botonAtras.Location = new Point(311, 376);
@@ -281,6 +281,7 @@
             botonAtras.TabIndex = 46;
             botonAtras.Text = "Atrás";
             botonAtras.UseVisualStyleBackColor = true;
+            botonAtras.Click += botonAtras_Click;
             // 
             // RemitoForms
             // 
