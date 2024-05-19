@@ -74,9 +74,9 @@
             groupBoxOrdenPreparación.Controls.Add(label1);
             groupBoxOrdenPreparación.Controls.Add(textBoxCódigoOrden);
             groupBoxOrdenPreparación.Controls.Add(label2);
-            groupBoxOrdenPreparación.Location = new Point(-3, 1);
+            groupBoxOrdenPreparación.Location = new Point(11, 122);
             groupBoxOrdenPreparación.Name = "groupBoxOrdenPreparación";
-            groupBoxOrdenPreparación.Size = new Size(575, 466);
+            groupBoxOrdenPreparación.Size = new Size(379, 343);
             groupBoxOrdenPreparación.TabIndex = 7;
             groupBoxOrdenPreparación.TabStop = false;
             groupBoxOrdenPreparación.Text = "Orden de Entrega";
@@ -225,7 +225,7 @@
             groupBoxCliente.Controls.Add(labelRazonSocial);
             groupBoxCliente.Controls.Add(textBoxCUITCliente);
             groupBoxCliente.Controls.Add(labelCUITCliente);
-            groupBoxCliente.Location = new Point(91, -91);
+            groupBoxCliente.Location = new Point(12, 12);
             groupBoxCliente.Name = "groupBoxCliente";
             groupBoxCliente.Size = new Size(378, 104);
             groupBoxCliente.TabIndex = 6;
@@ -286,7 +286,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(370, 354);
+            ClientSize = new Size(405, 482);
             Controls.Add(groupBoxOrdenPreparación);
             Controls.Add(groupBoxCliente);
             Margin = new Padding(2);
