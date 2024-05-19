@@ -54,8 +54,8 @@
             // 
             // NroPedidoCol
             // 
-            NroPedidoCol.Text = "NroPedido";
-            NroPedidoCol.Width = 100;
+            NroPedidoCol.Text = "Codigo de Orden";
+            NroPedidoCol.Width = 150;
             // 
             // MercaderiaCol
             // 
