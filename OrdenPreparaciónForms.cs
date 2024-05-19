@@ -33,5 +33,10 @@ namespace GrupoA.Prototipo
             this.Hide();
             menu.Show();
         }
+
+        private void OrdenPreparaciónForms_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

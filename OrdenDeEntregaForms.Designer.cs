@@ -74,7 +74,6 @@
             groupBoxOrdenPreparación.Controls.Add(label1);
             groupBoxOrdenPreparación.Controls.Add(textBoxCódigoOrden);
             groupBoxOrdenPreparación.Controls.Add(label2);
-            groupBoxOrdenPreparación.Enabled = false;
             groupBoxOrdenPreparación.Location = new Point(-3, 1);
             groupBoxOrdenPreparación.Name = "groupBoxOrdenPreparación";
             groupBoxOrdenPreparación.Size = new Size(575, 466);

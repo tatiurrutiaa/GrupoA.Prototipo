@@ -348,6 +348,7 @@
             Controls.Add(groupBoxCliente);
             Name = "OrdenPreparaciónForms";
             Text = "Orden de Preparación";
+            Load += OrdenPreparaciónForms_Load;
             groupBoxCliente.ResumeLayout(false);
             groupBoxCliente.PerformLayout();
             groupBoxOrdenPreparación.ResumeLayout(false);
