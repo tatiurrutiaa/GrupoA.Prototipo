@@ -45,7 +45,7 @@
             PedidosList.Location = new Point(15, 27);
             PedidosList.MultiSelect = false;
             PedidosList.Name = "PedidosList";
-            PedidosList.Size = new Size(398, 84);
+            PedidosList.Size = new Size(440, 154);
             PedidosList.TabIndex = 0;
             PedidosList.UseCompatibleStateImageBehavior = false;
             PedidosList.View = View.Details;
@@ -71,7 +71,7 @@
             // 
             // ComfirmarButton
             // 
-            ComfirmarButton.Location = new Point(336, 166);
+            ComfirmarButton.Location = new Point(336, 216);
             ComfirmarButton.Name = "ComfirmarButton";
             ComfirmarButton.Size = new Size(77, 23);
             ComfirmarButton.TabIndex = 2;
@@ -80,7 +80,7 @@
             // 
             // CancelarButton
             // 
-            CancelarButton.Location = new Point(253, 166);
+            CancelarButton.Location = new Point(253, 216);
             CancelarButton.Name = "CancelarButton";
             CancelarButton.Size = new Size(77, 23);
             CancelarButton.TabIndex = 3;
@@ -90,7 +90,7 @@
             // 
             // GenerarTicketButton
             // 
-            GenerarTicketButton.Location = new Point(253, 137);
+            GenerarTicketButton.Location = new Point(253, 187);
             GenerarTicketButton.Name = "GenerarTicketButton";
             GenerarTicketButton.Size = new Size(160, 23);
             GenerarTicketButton.TabIndex = 4;
@@ -101,7 +101,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(15, 170);
+            label1.Location = new Point(15, 216);
             label1.Name = "label1";
             label1.Size = new Size(232, 15);
             label1.TabIndex = 5;
@@ -111,7 +111,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(450, 250);
+            ClientSize = new Size(467, 250);
             Controls.Add(label1);
             Controls.Add(GenerarTicketButton);
             Controls.Add(CancelarButton);
