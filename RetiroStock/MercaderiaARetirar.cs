@@ -6,4 +6,4 @@
         public int Cantidad { get; set; }
         public string Mercaderia { get; set; }
     }
-}
+} 
