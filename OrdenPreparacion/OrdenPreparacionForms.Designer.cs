@@ -1,6 +1,6 @@
 ﻿namespace GrupoA.Prototipo
 {
-    partial class OrdenPreparaciónForms
+    partial class OrdenPreparacionForms
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,7 @@
             groupBoxCliente = new GroupBox();
             botonAtras = new Button();
             botonSiguiente = new Button();
-            textBoxRazónSocialCliente = new TextBox();
+            textBoxRazonSocialCliente = new TextBox();
             labelRazonSocial = new Label();
             groupBoxOrdenPreparación = new GroupBox();
             textBox2 = new TextBox();
@@ -82,7 +82,7 @@
             // 
             groupBoxCliente.Controls.Add(botonAtras);
             groupBoxCliente.Controls.Add(botonSiguiente);
-            groupBoxCliente.Controls.Add(textBoxRazónSocialCliente);
+            groupBoxCliente.Controls.Add(textBoxRazonSocialCliente);
             groupBoxCliente.Controls.Add(labelRazonSocial);
             groupBoxCliente.Controls.Add(textBoxCUITCliente);
             groupBoxCliente.Controls.Add(labelCUITCliente);
@@ -113,12 +113,13 @@
             botonSiguiente.Text = "Siguiente";
             botonSiguiente.UseVisualStyleBackColor = true;
             // 
-            // textBoxRazónSocialCliente
+            // textBoxRazonSocialCliente
             // 
-            textBoxRazónSocialCliente.Location = new Point(194, 43);
-            textBoxRazónSocialCliente.Name = "textBoxRazónSocialCliente";
-            textBoxRazónSocialCliente.Size = new Size(176, 23);
-            textBoxRazónSocialCliente.TabIndex = 2;
+            textBoxRazonSocialCliente.Enabled = false;
+            textBoxRazonSocialCliente.Location = new Point(194, 43);
+            textBoxRazonSocialCliente.Name = "textBoxRazonSocialCliente";
+            textBoxRazonSocialCliente.Size = new Size(176, 23);
+            textBoxRazonSocialCliente.TabIndex = 2;
             // 
             // labelRazonSocial
             // 
@@ -339,14 +340,14 @@
             label2.TabIndex = 1;
             label2.Text = "Código de Orden";
             // 
-            // OrdenPreparaciónForms
+            // OrdenPreparacionForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(396, 472);
             Controls.Add(groupBoxOrdenPreparación);
             Controls.Add(groupBoxCliente);
-            Name = "OrdenPreparaciónForms";
+            Name = "OrdenPreparacionForms";
             Text = "Orden de Preparación";
             Load += OrdenPreparaciónForms_Load;
             groupBoxCliente.ResumeLayout(false);
@@ -361,7 +362,7 @@
         private TextBox textBoxCUITCliente;
         private Label labelCUITCliente;
         private GroupBox groupBoxCliente;
-        private TextBox textBoxRazónSocialCliente;
+        private TextBox textBoxRazonSocialCliente;
         private Label labelRazonSocial;
         private Button botonSiguiente;
         private GroupBox groupBoxOrdenPreparación;

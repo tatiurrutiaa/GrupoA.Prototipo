@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GrupoA.Prototipo.Empaquetado;
+using GrupoA.Prototipo.OrdenPreparacion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +12,10 @@ using System.Windows.Forms;
 
 namespace GrupoA.Prototipo
 {
-    public partial class OrdenPreparaciónForms : Form
+    public partial class OrdenPreparacionForms : Form
     {
-        public OrdenPreparaciónForms()
+        OrdenPreparacionModel modelo;
+        public OrdenPreparacionForms()
         {
             InitializeComponent();
         }
@@ -36,7 +39,22 @@ namespace GrupoA.Prototipo
 
         private void OrdenPreparaciónForms_Load(object sender, EventArgs e)
         {
+            modelo = new();
+        }
 
+        private void botonSiguiente_Click(object sender, EventArgs e)
+        {
+            string cuit = this.textBoxCUITCliente.Text;
+            var cliente = modelo.BuscarCliente(cuit);
+
+            if (cliente == null)
+            {
+                MessageBox.Show("Cliente no encontrado");
+                return;
+            }
+
+            this.textBoxRazonSocialCliente.Text = cliente.RazonSocial;
+            // oculto o deshabilito la busqueda... etc. 
         }
     }
 }
