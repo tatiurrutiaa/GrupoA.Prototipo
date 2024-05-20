@@ -20,10 +20,12 @@
             {
                 return "Por favor, complete el campo Contraseña.";
             }
+
             if (UsuarioIngreso != "admin" & Contraseña != "admin")
             {
                 return "El usuario y/o contraseña son incorrectos.";
             }
+
             return null;
         }
     }

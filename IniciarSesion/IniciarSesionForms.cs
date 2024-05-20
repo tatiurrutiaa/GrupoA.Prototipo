@@ -15,10 +15,16 @@ namespace GrupoA.Prototipo
 {
     public partial class IniciarSesionForms : Form
     {
-        private readonly IniciarSesionModel modelo = new();
+        IniciarSesionModel modelo;
+
         public IniciarSesionForms()
         {
             InitializeComponent();
+        }
+
+        private void IniciarSesionForms_Load(object sender, EventArgs e)
+        {
+            modelo = new();
         }
 
         private void botonIngresar_Click(object sender, EventArgs e)
@@ -41,6 +47,6 @@ namespace GrupoA.Prototipo
             }
 
         }
-    }
 
+    }
 }
