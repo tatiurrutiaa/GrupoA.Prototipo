@@ -1,5 +1,4 @@
-﻿
-namespace GrupoA.Prototipo
+﻿namespace GrupoA.Prototipo.IniciarSesion
 {
     internal class Usuario
     {
@@ -21,9 +20,9 @@ namespace GrupoA.Prototipo
             {
                 return "Por favor, complete el campo Contraseña.";
             }
-            if ((UsuarioIngreso != "admin") & (Contraseña != "admin"))
-            { 
-            return "El usuario y/o contraseña son incorrectos.";
+            if (UsuarioIngreso != "admin" & Contraseña != "admin")
+            {
+                return "El usuario y/o contraseña son incorrectos.";
             }
             return null;
         }

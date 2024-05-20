@@ -240,6 +240,7 @@
             botonAtras.TabIndex = 24;
             botonAtras.Text = "Atrás";
             botonAtras.UseVisualStyleBackColor = true;
+            botonAtras.Click += botonAtras_Click;
             // 
             // botonSiguiente
             // 
