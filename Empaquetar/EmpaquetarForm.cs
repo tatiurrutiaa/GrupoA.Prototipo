@@ -12,7 +12,7 @@ namespace GrupoA.Prototipo.Empaquetado
 {
     public partial class EmpaquetarForm : Form
     {
-        EmpaquetarModelo modelo;
+        EmpaquetarModel modelo;
         public EmpaquetarForm()
         {
             InitializeComponent();

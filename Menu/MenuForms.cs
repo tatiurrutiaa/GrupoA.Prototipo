@@ -19,7 +19,7 @@ namespace GrupoA.Prototipo
 
         private void buttonCargarOrdenPreparacion_Click(object sender, EventArgs e)
         {
-            GrupoA.Prototipo.OrdenPreparaciónForms ordenpreparacion = new OrdenPreparaciónForms();
+            GrupoA.Prototipo.OrdenPreparacionForms ordenpreparacion = new OrdenPreparacionForms();
             this.Hide();
             ordenpreparacion.Show();
         }

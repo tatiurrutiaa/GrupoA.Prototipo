@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace GrupoA.Prototipo
 {
-    public partial class OrdenPreparaciónForms : Form
+    public partial class VerificarTransportistaForms : Form
     {
-        public OrdenPreparaciónForms()
+        public VerificarTransportistaForms()
         {
             InitializeComponent();
         }
 
-        private void groupBoxCliente_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void groupBoxOrdenesAEntregar_Enter(object sender, EventArgs e)
         {
 
         }
@@ -34,9 +29,11 @@ namespace GrupoA.Prototipo
             menu.Show();
         }
 
-        private void OrdenPreparaciónForms_Load(object sender, EventArgs e)
+        private void botonCrearRemito_Click(object sender, EventArgs e)
         {
-
+            GrupoA.Prototipo.RemitoForms remito = new();
+            this.Hide();
+            remito.Show();
         }
     }
 }

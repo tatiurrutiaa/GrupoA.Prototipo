@@ -10,18 +10,23 @@ using System.Windows.Forms;
 
 namespace GrupoA.Prototipo
 {
-    public partial class RetiroStockForms : Form
+    public partial class RemitoForms : Form
     {
-        public RetiroStockForms()
+        public RemitoForms()
         {
             InitializeComponent();
         }
 
+        private void RemitoForms_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void botonAtras_Click(object sender, EventArgs e)
         {
-            GrupoA.Prototipo.MenuForms menu = new();
+            GrupoA.Prototipo.VerificarTransportistaForms transportista = new();
             this.Hide();
-            menu.Show();
+            transportista.Show();
         }
     }
 }

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace GrupoA.Prototipo.Empaquetado
 {
-    internal class EmpaquetarModelo
+    internal class EmpaquetarModel
     {
         public List<Pedido> Empaquetar {  get; set; }
 
-        public EmpaquetarModelo()
+        public EmpaquetarModel()
         {
             Empaquetar = new List<Pedido>();
             new Pedido { NroPedido = "Ref", Mercaderia = "zapatos" };
