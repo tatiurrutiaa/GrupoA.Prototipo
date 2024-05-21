@@ -30,6 +30,11 @@ namespace GrupoA.Prototipo
         private void CargarMercaderiaEnListBox()
         {
             var listaPosiciones = modelo.MercaderiaARetirar();
+            if (listaPosiciones == null)
+            {
+                return;
+            }
+
             foreach (var pos in listaPosiciones)
             {
                 listBoxRetiroStock.Items.Add($"Posición: {pos.Posicion}, Cantidad: {pos.Cantidad}, Mercadería: {pos.Mercaderia}");
@@ -46,9 +51,6 @@ namespace GrupoA.Prototipo
         private void botonRetirarStock_Click(object sender, EventArgs e)
         {
             modelo.ActualizarStockYOrden();
-            MessageBox.Show("La mercadería se descontó del almacén con éxito." +
-            Environment.NewLine +
-            "Por favor, entregar la mercadería al area de preparación.");
             listBoxRetiroStock.Items.Clear();
             CargarMercaderiaEnListBox();
         }
