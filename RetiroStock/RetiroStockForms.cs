@@ -29,24 +29,11 @@ namespace GrupoA.Prototipo
 
         private void CargarMercaderiaEnListBox()
         {
-            try
+            var listaPosiciones = modelo.MercaderiaARetirar();
+            foreach (var pos in listaPosiciones)
             {
-                var listaPosiciones = modelo.ObtenerListaParaOrdenSeleccion();
-                foreach (var pos in listaPosiciones)
-                {
-                    listBoxRetiroStock.Items.Add($"Posición: {pos.Posicion}, Cantidad: {pos.Cantidad}, Mercadería: {pos.Mercaderia}");
-                }
+                listBoxRetiroStock.Items.Add($"Posición: {pos.Posicion}, Cantidad: {pos.Cantidad}, Mercadería: {pos.Mercaderia}");
             }
-            catch (InvalidOperationException ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            /*foreach (var mercaderiaARetirar in modelo.MercaderiaARetirar)
-            {
-                listBoxRetiroStock.Items.Add($"Posición: {mercaderiaARetirar.Posicion}," +
-                                             $"Cantidad: {mercaderiaARetirar.Cantidad}," +
-                                             $"Mercadería: {mercaderiaARetirar.Mercaderia}");
-            }*/
         }
 
         private void botonAtras_Click(object sender, EventArgs e)
@@ -59,16 +46,9 @@ namespace GrupoA.Prototipo
         private void botonDescontarStock_Click(object sender, EventArgs e)
         {
             listBoxRetiroStock.Items.Clear();
-            try
-            {
-                modelo.DescontarStockYActualizarOrden();
-                MessageBox.Show("Stock descontado y orden actualizada.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CargarMercaderiaEnListBox();
-            }
-            catch (InvalidOperationException ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            modelo.DescontarStockYActualizarOrden();
+            MessageBox.Show("Se descontó el stock exitosamente.");
+            CargarMercaderiaEnListBox();
         }
     }
 }
