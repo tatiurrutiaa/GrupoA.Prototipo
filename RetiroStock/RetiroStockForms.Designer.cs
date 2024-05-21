@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            botonDescontarStock = new Button();
+            botonRetirarStock = new Button();
             botonAtras = new Button();
             listBoxRetiroStock = new ListBox();
             label1 = new Label();
             SuspendLayout();
             // 
-            // botonDescontarStock
+            // botonRetirarStock
             // 
-            botonDescontarStock.Location = new Point(284, 224);
-            botonDescontarStock.Name = "botonDescontarStock";
-            botonDescontarStock.Size = new Size(130, 23);
-            botonDescontarStock.TabIndex = 15;
-            botonDescontarStock.Text = "Descontar Stock";
-            botonDescontarStock.UseVisualStyleBackColor = true;
-            botonDescontarStock.Click += botonDescontarStock_Click;
+            botonRetirarStock.Location = new Point(284, 224);
+            botonRetirarStock.Name = "botonRetirarStock";
+            botonRetirarStock.Size = new Size(130, 23);
+            botonRetirarStock.TabIndex = 15;
+            botonRetirarStock.Text = "Retirar Stock";
+            botonRetirarStock.UseVisualStyleBackColor = true;
+            botonRetirarStock.Click += botonRetirarStock_Click;
             // 
             // botonAtras
             // 
@@ -80,7 +80,7 @@
             Controls.Add(label1);
             Controls.Add(listBoxRetiroStock);
             Controls.Add(botonAtras);
-            Controls.Add(botonDescontarStock);
+            Controls.Add(botonRetirarStock);
             Name = "RetiroStockForms";
             Text = "Retiro de stock";
             Load += RetiroStockForms_Load;
@@ -89,7 +89,7 @@
         }
 
         #endregion
-        private Button botonDescontarStock;
+        private Button botonRetirarStock;
         private Button botonAtras;
         private ListBox listBoxRetiroStock;
         private Label label1;

@@ -43,11 +43,13 @@ namespace GrupoA.Prototipo
             menu.Show();
         }
 
-        private void botonDescontarStock_Click(object sender, EventArgs e)
+        private void botonRetirarStock_Click(object sender, EventArgs e)
         {
+            modelo.ActualizarStockYOrden();
+            MessageBox.Show("La mercadería se descontó del almacén con éxito." +
+            Environment.NewLine +
+            "Por favor, entregar la mercadería al area de preparación.");
             listBoxRetiroStock.Items.Clear();
-            modelo.DescontarStockYActualizarOrden();
-            MessageBox.Show("Se descontó el stock exitosamente.");
             CargarMercaderiaEnListBox();
         }
     }
