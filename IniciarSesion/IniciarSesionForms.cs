@@ -33,7 +33,7 @@ namespace GrupoA.Prototipo
             usuario.UsuarioIngreso = this.textBoxUsuario.Text;
             usuario.Contraseña = this.textBoxContraseña.Text;
 
-            string error = modelo.Validar(usuario);
+            string error = modelo.ValidarUsuario(usuario.UsuarioIngreso, usuario.Contraseña);
             if (error == null)
             {
                 MessageBox.Show("¡Bienvenido!");
