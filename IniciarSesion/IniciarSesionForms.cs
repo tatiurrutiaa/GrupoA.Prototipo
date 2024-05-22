@@ -1,5 +1,4 @@
-﻿using GrupoA.Prototipo.Empaquetado;
-using GrupoA.Prototipo.IniciarSesion;
+﻿using GrupoA.Prototipo.IniciarSesion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
