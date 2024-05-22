@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace GrupoA.Prototipo.Empaquetar
 {
-    internal class Orden
+    public class Orden
     {
+        public string Nombre { get; set; }
+        public List<string> Items { get; set; }
+
+        public Orden(string nombre, List<string> items)
+        {
+            Nombre = nombre;
+            Items = items;
+        }
+
+        public override string ToString()
+        {
+            return Nombre;
+        }
     }
 }
