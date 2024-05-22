@@ -31,6 +31,7 @@
             PedidosLabel = new Label();
             ComfirmarButton = new Button();
             EmpaquetarListbox = new ListBox();
+            AtrasButton = new Button();
             SuspendLayout();
             // 
             // PedidosLabel
@@ -60,11 +61,22 @@
             EmpaquetarListbox.Size = new Size(430, 154);
             EmpaquetarListbox.TabIndex = 3;
             // 
+            // AtrasButton
+            // 
+            AtrasButton.Location = new Point(284, 199);
+            AtrasButton.Name = "AtrasButton";
+            AtrasButton.Size = new Size(75, 23);
+            AtrasButton.TabIndex = 4;
+            AtrasButton.Text = "Atras";
+            AtrasButton.UseVisualStyleBackColor = true;
+            AtrasButton.Click += button1_Click;
+            // 
             // EmpaquetarForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(467, 250);
+            Controls.Add(AtrasButton);
             Controls.Add(EmpaquetarListbox);
             Controls.Add(ComfirmarButton);
             Controls.Add(PedidosLabel);
@@ -79,5 +91,6 @@
         private Label PedidosLabel;
         private Button ComfirmarButton;
         private ListBox EmpaquetarListbox;
+        private Button AtrasButton;
     }
 }

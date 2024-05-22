@@ -105,6 +105,7 @@
             groupBoxAlmacen.TabIndex = 4;
             groupBoxAlmacen.TabStop = false;
             groupBoxAlmacen.Text = "Almacén";
+            groupBoxAlmacen.Enter += groupBoxAlmacen_Enter;
             // 
             // botonRetiroStock
             // 
@@ -180,6 +181,7 @@
             Controls.Add(groupBoxAreaPreparacion);
             Name = "MenuForms";
             Text = "MenuForms";
+            Load += MenuForms_Load;
             groupBoxAreaPreparacion.ResumeLayout(false);
             groupBoxAlmacen.ResumeLayout(false);
             groupBoxDespacho.ResumeLayout(false);

@@ -25,11 +25,7 @@ namespace GrupoA.Prototipo.Empaquetado
             modelo = new();
             foreach (var Pedido in modelo.Empaquetar)
             {
-                var fila = new ListViewItem();
-                fila.Text = Pedido.NroPedido;
-                fila.SubItems.Add(Pedido.Mercaderia);
-                fila.Tag = Pedido;
-                PedidosList.Items.Add(fila);
+                
             }
 
         }
@@ -42,6 +38,15 @@ namespace GrupoA.Prototipo.Empaquetado
         private void GenerarTicketButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MenuForms menuForms = new MenuForms();
+            // Mostrar el formulario de destino
+            menuForms.Show();
+            // Ocultar el formulario actual (opcional)
+            this.Hide();
         }
     }
 }

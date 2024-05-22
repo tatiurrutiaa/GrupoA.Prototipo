@@ -65,5 +65,15 @@ namespace GrupoA.Prototipo
             this.Hide();
             iniciarsesion.Show();
         }
+
+        private void MenuForms_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBoxAlmacen_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
