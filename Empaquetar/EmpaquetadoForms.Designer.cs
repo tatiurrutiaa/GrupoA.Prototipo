@@ -50,15 +50,15 @@
             EmpaquetarButton.Text = "Empaquetar";
             EmpaquetarButton.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // EmpaquetadoForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(289, 183);
             Controls.Add(EmpaquetarButton);
             Controls.Add(EmpaquetarlistBox);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "EmpaquetadoForms";
+            Text = "Empaquetar";
             ResumeLayout(false);
         }
 
