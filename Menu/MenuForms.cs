@@ -41,12 +41,26 @@ namespace GrupoA.Prototipo
             this.Hide();
             retirostock.Show();
         }
+        private void EmpaquetarButton_Click(object sender, EventArgs e)
+        {
+            EmpaquetadoForms empaquetadoForm = new EmpaquetadoForms();
+            this.Hide();
+            // Mostrar la ventana
+            empaquetadoForm.Show();
+        }
 
         private void botonVerificarTransportista_Click(object sender, EventArgs e)
         {
             GrupoA.Prototipo.VerificarTransportistaForms verificartransportista = new VerificarTransportistaForms();
             this.Hide();
             verificartransportista.Show();
+        }
+
+        private void botonDespachoSintranportista_Click(object sender, EventArgs e)
+        {
+            GrupoA.Prototipo.Salida.Salida salida = new();
+            this.Hide();
+            salida.Show();
         }
 
         private void botonCrearRemito_Click(object sender, EventArgs e)
@@ -61,21 +75,6 @@ namespace GrupoA.Prototipo
             GrupoA.Prototipo.IniciarSesionForms iniciarsesion = new();
             this.Hide();
             iniciarsesion.Show();
-        }
-
-        private void botonDespachoSintranportista_Click(object sender, EventArgs e)
-        {
-            GrupoA.Prototipo.Salida.Salida salida = new();
-            this.Hide();
-            salida.Show();
-        }
-
-        private void EmpaquetarButton_Click(object sender, EventArgs e)
-        {
-            EmpaquetadoForms empaquetadoForm = new EmpaquetadoForms();
-
-            // Mostrar la ventana
-            empaquetadoForm.Show();
         }
     }
 }
