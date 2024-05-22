@@ -28,37 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            PedidosList = new ListView();
-            NroPedidoCol = new ColumnHeader();
-            MercaderiaCol = new ColumnHeader();
             PedidosLabel = new Label();
             ComfirmarButton = new Button();
-            CancelarButton = new Button();
-            GenerarTicketButton = new Button();
-            label1 = new Label();
+            EmpaquetarListbox = new ListBox();
             SuspendLayout();
-            // 
-            // PedidosList
-            // 
-            PedidosList.Columns.AddRange(new ColumnHeader[] { NroPedidoCol, MercaderiaCol });
-            PedidosList.GridLines = true;
-            PedidosList.Location = new Point(15, 27);
-            PedidosList.MultiSelect = false;
-            PedidosList.Name = "PedidosList";
-            PedidosList.Size = new Size(440, 154);
-            PedidosList.TabIndex = 0;
-            PedidosList.UseCompatibleStateImageBehavior = false;
-            PedidosList.View = View.Details;
-            // 
-            // NroPedidoCol
-            // 
-            NroPedidoCol.Text = "Codigo de Orden";
-            NroPedidoCol.Width = 150;
-            // 
-            // MercaderiaCol
-            // 
-            MercaderiaCol.Text = "Mercaderia";
-            MercaderiaCol.Width = 300;
             // 
             // PedidosLabel
             // 
@@ -71,53 +44,30 @@
             // 
             // ComfirmarButton
             // 
-            ComfirmarButton.Location = new Point(336, 216);
+            ComfirmarButton.Location = new Point(365, 199);
             ComfirmarButton.Name = "ComfirmarButton";
             ComfirmarButton.Size = new Size(77, 23);
             ComfirmarButton.TabIndex = 2;
             ComfirmarButton.Text = "Confirmar Orden";
             ComfirmarButton.UseVisualStyleBackColor = true;
             // 
-            // CancelarButton
+            // EmpaquetarListbox
             // 
-            CancelarButton.Location = new Point(253, 216);
-            CancelarButton.Name = "CancelarButton";
-            CancelarButton.Size = new Size(77, 23);
-            CancelarButton.TabIndex = 3;
-            CancelarButton.Text = "Cancelar";
-            CancelarButton.UseVisualStyleBackColor = true;
-            CancelarButton.Click += CancelarButton_Click;
-            // 
-            // GenerarTicketButton
-            // 
-            GenerarTicketButton.Location = new Point(253, 187);
-            GenerarTicketButton.Name = "GenerarTicketButton";
-            GenerarTicketButton.Size = new Size(160, 23);
-            GenerarTicketButton.TabIndex = 4;
-            GenerarTicketButton.Text = "Generar Ticket del Paquete";
-            GenerarTicketButton.UseVisualStyleBackColor = true;
-            GenerarTicketButton.Click += GenerarTicketButton_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(15, 216);
-            label1.Name = "label1";
-            label1.Size = new Size(232, 15);
-            label1.TabIndex = 5;
-            label1.Text = "¿Desea mandar este pedido a Empaquetar?";
+            EmpaquetarListbox.FormattingEnabled = true;
+            EmpaquetarListbox.ItemHeight = 15;
+            EmpaquetarListbox.Location = new Point(14, 28);
+            EmpaquetarListbox.Name = "EmpaquetarListbox";
+            EmpaquetarListbox.Size = new Size(430, 154);
+            EmpaquetarListbox.TabIndex = 3;
             // 
             // EmpaquetarForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(467, 250);
-            Controls.Add(label1);
-            Controls.Add(GenerarTicketButton);
-            Controls.Add(CancelarButton);
+            Controls.Add(EmpaquetarListbox);
             Controls.Add(ComfirmarButton);
             Controls.Add(PedidosLabel);
-            Controls.Add(PedidosList);
             Name = "EmpaquetarForm";
             Text = "EmpaquetarForm";
             Load += EmpaquetarForm_Load;
@@ -126,14 +76,8 @@
         }
 
         #endregion
-
-        private ListView PedidosList;
-        private ColumnHeader NroPedidoCol;
         private Label PedidosLabel;
         private Button ComfirmarButton;
-        private Button CancelarButton;
-        private ColumnHeader MercaderiaCol;
-        private Button GenerarTicketButton;
-        private Label label1;
+        private ListBox EmpaquetarListbox;
     }
 }
