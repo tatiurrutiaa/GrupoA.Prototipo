@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrupoA.Prototipo.RetiroStock;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,15 +9,35 @@ namespace GrupoA.Prototipo.IniciarSesion
 {
     internal class IniciarSesionModel
     {
-        internal string Validar(Usuario usuario)
+        public List<Usuario> Usuario = new()
         {
-            string error = usuario.Validar();
-            if (error != null)
+            new() {UsuarioIngreso = "admin", Contraseña = "admin"},
+            new() {UsuarioIngreso = "gestiondepositos", Contraseña = "gestiondepositos"},
+            new() {UsuarioIngreso = "preparacion", Contraseña = "preparacion"},
+            new() {UsuarioIngreso = "almacen", Contraseña = "almacen"},
+            new() {UsuarioIngreso = "despacho", Contraseña = "despacho"}
+        };
+
+        public string ValidarUsuario(string usuarioIngreso, string contraseña)
+        {
+            if (string.IsNullOrEmpty(usuarioIngreso))
             {
-                return error;
+                return "Por favor, complete el campo Usuario";
             }
-            //otras validaciones
-            return null;
+
+            if (string.IsNullOrEmpty(contraseña))
+            {
+                return "Por favor, complete el campo Contraseña.";
+            }
+
+            foreach (var usuario in Usuario)
+            {
+                if (usuario.UsuarioIngreso == usuarioIngreso && usuario.Contraseña == contraseña)
+                {
+                    return null;
+                }
+            }
+            return "Acceso denegado. Usuario o contraseña incorrectos.";
         }
     }
 }

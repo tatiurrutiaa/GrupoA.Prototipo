@@ -27,5 +27,10 @@ namespace GrupoA.Prototipo
             this.Hide();
             menu.Show();
         }
+
+        private void textBoxCantidad1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

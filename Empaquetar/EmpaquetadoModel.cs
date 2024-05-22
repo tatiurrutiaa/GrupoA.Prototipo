@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrupoA.Prototipo.Empaquetar
 {
-    internal class Pedido
+    internal class EmpaquetadoModel
     {
-        public string NroPedido { get; set; }
-        public string Mercaderia { get; set; }  
     }
 }

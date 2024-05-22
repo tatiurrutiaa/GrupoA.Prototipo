@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrupoA.Prototipo.Empaquetar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -64,6 +65,21 @@ namespace GrupoA.Prototipo
             GrupoA.Prototipo.IniciarSesionForms iniciarsesion = new();
             this.Hide();
             iniciarsesion.Show();
+        }
+
+        private void botonDespachoSintranportista_Click(object sender, EventArgs e)
+        {
+            GrupoA.Prototipo.Salida.Salida salida = new();
+            this.Hide();
+            salida.Show();
+        }
+
+        private void EmpaquetarButton_Click(object sender, EventArgs e)
+        {
+            EmpaquetadoForms empaquetadoForm = new EmpaquetadoForms();
+
+            // Mostrar la ventana
+            empaquetadoForm.Show();
         }
     }
 }
