@@ -7,5 +7,6 @@
         public int Cantidad { get; internal set; }
         public string Mercaderia { get; internal set; }
         public string Estado { get; internal set; }
+        public int? DNITransportista { get; internal set; }
     }
 }

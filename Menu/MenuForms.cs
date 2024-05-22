@@ -65,5 +65,12 @@ namespace GrupoA.Prototipo
             this.Hide();
             iniciarsesion.Show();
         }
+
+        private void botonDespachoSintranportista_Click(object sender, EventArgs e)
+        {
+            GrupoA.Prototipo.Salida.Salida salida = new();
+            this.Hide();
+            salida.Show();
+        }
     }
 }

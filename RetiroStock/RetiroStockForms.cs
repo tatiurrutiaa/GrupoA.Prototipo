@@ -30,6 +30,7 @@ namespace GrupoA.Prototipo
         private void CargarMercaderiaEnListBox()
         {
             var listaPosiciones = modelo.MercaderiaARetirar();
+
             if (listaPosiciones == null)
             {
                 return;

@@ -40,6 +40,7 @@
             botonVerificarTransportista = new Button();
             groupBoxGestiónDepósitos = new GroupBox();
             botonSalir = new Button();
+            botonDespachoSintranportista = new Button();
             groupBoxAreaPreparacion.SuspendLayout();
             groupBoxAlmacen.SuspendLayout();
             groupBoxDespacho.SuspendLayout();
@@ -118,18 +119,19 @@
             // 
             // groupBoxDespacho
             // 
+            groupBoxDespacho.Controls.Add(botonDespachoSintranportista);
             groupBoxDespacho.Controls.Add(botonCrearRemito);
             groupBoxDespacho.Controls.Add(botonVerificarTransportista);
             groupBoxDespacho.Location = new Point(26, 289);
             groupBoxDespacho.Name = "groupBoxDespacho";
-            groupBoxDespacho.Size = new Size(189, 89);
+            groupBoxDespacho.Size = new Size(189, 120);
             groupBoxDespacho.TabIndex = 5;
             groupBoxDespacho.TabStop = false;
             groupBoxDespacho.Text = "Despacho";
             // 
             // botonCrearRemito
             // 
-            botonCrearRemito.Location = new Point(6, 54);
+            botonCrearRemito.Location = new Point(7, 86);
             botonCrearRemito.Name = "botonCrearRemito";
             botonCrearRemito.Size = new Size(173, 26);
             botonCrearRemito.TabIndex = 5;
@@ -159,7 +161,7 @@
             // 
             // botonSalir
             // 
-            botonSalir.Location = new Point(27, 394);
+            botonSalir.Location = new Point(32, 425);
             botonSalir.Name = "botonSalir";
             botonSalir.Size = new Size(173, 26);
             botonSalir.TabIndex = 6;
@@ -167,11 +169,21 @@
             botonSalir.UseVisualStyleBackColor = true;
             botonSalir.Click += botonSalir_Click;
             // 
+            // botonDespachoSintranportista
+            // 
+            botonDespachoSintranportista.Location = new Point(7, 54);
+            botonDespachoSintranportista.Name = "botonDespachoSintranportista";
+            botonDespachoSintranportista.Size = new Size(173, 26);
+            botonDespachoSintranportista.TabIndex = 6;
+            botonDespachoSintranportista.Text = "Despacho Sin Trasportista";
+            botonDespachoSintranportista.UseVisualStyleBackColor = true;
+            botonDespachoSintranportista.Click += botonDespachoSintranportista_Click;
+            // 
             // MenuForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(235, 435);
+            ClientSize = new Size(239, 469);
             Controls.Add(botonSalir);
             Controls.Add(groupBoxGestiónDepósitos);
             Controls.Add(groupBoxDespacho);
@@ -202,5 +214,6 @@
         private Button botonVerificarTransportista;
         private GroupBox groupBoxGestiónDepósitos;
         private Button botonSalir;
+        private Button botonDespachoSintranportista;
     }
 }
