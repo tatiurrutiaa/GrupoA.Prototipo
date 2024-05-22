@@ -25,12 +25,8 @@ namespace GrupoA.Prototipo
             ordenpreparacion.Show();
         }
 
-        private void botonGenerarOrdenSeleccion_Click(object sender, EventArgs e)
-        {
-            GrupoA.Prototipo.OrdenSeleccionForms ordenseleccion = new OrdenSeleccionForms();
-            this.Hide();
-            ordenseleccion.Show();
-        }
+        //private void botonGenerarOrdenSeleccion_Click(object sender, EventArgs e)
+       
 
         private void botonGenerarOrdenEntrega_Click(object sender, EventArgs e)
         {
