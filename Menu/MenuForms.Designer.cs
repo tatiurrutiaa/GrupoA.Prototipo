@@ -36,11 +36,12 @@
             groupBoxAlmacen = new GroupBox();
             botonRetiroStock = new Button();
             groupBoxDespacho = new GroupBox();
+            botonDespachoSintranportista = new Button();
             botonCrearRemito = new Button();
             botonVerificarTransportista = new Button();
             groupBoxGestiónDepósitos = new GroupBox();
             botonSalir = new Button();
-            botonDespachoSintranportista = new Button();
+            EmpaquetarButton = new Button();
             groupBoxAreaPreparacion.SuspendLayout();
             groupBoxAlmacen.SuspendLayout();
             groupBoxDespacho.SuspendLayout();
@@ -49,11 +50,12 @@
             // 
             // groupBoxAreaPreparacion
             // 
+            groupBoxAreaPreparacion.Controls.Add(EmpaquetarButton);
             groupBoxAreaPreparacion.Controls.Add(botonGenerarOrdenEntrega);
             groupBoxAreaPreparacion.Controls.Add(botonGenerarOrdenSeleccion);
             groupBoxAreaPreparacion.Location = new Point(27, 110);
             groupBoxAreaPreparacion.Name = "groupBoxAreaPreparacion";
-            groupBoxAreaPreparacion.Size = new Size(188, 89);
+            groupBoxAreaPreparacion.Size = new Size(188, 123);
             groupBoxAreaPreparacion.TabIndex = 0;
             groupBoxAreaPreparacion.TabStop = false;
             groupBoxAreaPreparacion.Text = "Área de Preparación";
@@ -100,13 +102,12 @@
             // groupBoxAlmacen
             // 
             groupBoxAlmacen.Controls.Add(botonRetiroStock);
-            groupBoxAlmacen.Location = new Point(27, 214);
+            groupBoxAlmacen.Location = new Point(27, 239);
             groupBoxAlmacen.Name = "groupBoxAlmacen";
-            groupBoxAlmacen.Size = new Size(189, 58);
+            groupBoxAlmacen.Size = new Size(188, 58);
             groupBoxAlmacen.TabIndex = 4;
             groupBoxAlmacen.TabStop = false;
             groupBoxAlmacen.Text = "Almacén";
-            //groupBoxAlmacen.Enter += groupBoxAlmacen_Enter;
             // 
             // botonRetiroStock
             // 
@@ -123,12 +124,22 @@
             groupBoxDespacho.Controls.Add(botonDespachoSintranportista);
             groupBoxDespacho.Controls.Add(botonCrearRemito);
             groupBoxDespacho.Controls.Add(botonVerificarTransportista);
-            groupBoxDespacho.Location = new Point(26, 289);
+            groupBoxDespacho.Location = new Point(27, 303);
             groupBoxDespacho.Name = "groupBoxDespacho";
             groupBoxDespacho.Size = new Size(189, 120);
             groupBoxDespacho.TabIndex = 5;
             groupBoxDespacho.TabStop = false;
             groupBoxDespacho.Text = "Despacho";
+            // 
+            // botonDespachoSintranportista
+            // 
+            botonDespachoSintranportista.Location = new Point(7, 54);
+            botonDespachoSintranportista.Name = "botonDespachoSintranportista";
+            botonDespachoSintranportista.Size = new Size(173, 26);
+            botonDespachoSintranportista.TabIndex = 6;
+            botonDespachoSintranportista.Text = "Despacho Sin Trasportista";
+            botonDespachoSintranportista.UseVisualStyleBackColor = true;
+            botonDespachoSintranportista.Click += botonDespachoSintranportista_Click;
             // 
             // botonCrearRemito
             // 
@@ -162,7 +173,7 @@
             // 
             // botonSalir
             // 
-            botonSalir.Location = new Point(32, 425);
+            botonSalir.Location = new Point(33, 440);
             botonSalir.Name = "botonSalir";
             botonSalir.Size = new Size(173, 26);
             botonSalir.TabIndex = 6;
@@ -170,21 +181,20 @@
             botonSalir.UseVisualStyleBackColor = true;
             botonSalir.Click += botonSalir_Click;
             // 
-            // botonDespachoSintranportista
+            // EmpaquetarButton
             // 
-            botonDespachoSintranportista.Location = new Point(7, 54);
-            botonDespachoSintranportista.Name = "botonDespachoSintranportista";
-            botonDespachoSintranportista.Size = new Size(173, 26);
-            botonDespachoSintranportista.TabIndex = 6;
-            botonDespachoSintranportista.Text = "Despacho Sin Trasportista";
-            botonDespachoSintranportista.UseVisualStyleBackColor = true;
-            botonDespachoSintranportista.Click += botonDespachoSintranportista_Click;
+            EmpaquetarButton.Location = new Point(5, 86);
+            EmpaquetarButton.Name = "EmpaquetarButton";
+            EmpaquetarButton.Size = new Size(173, 26);
+            EmpaquetarButton.TabIndex = 4;
+            EmpaquetarButton.Text = "Empaquetar";
+            EmpaquetarButton.UseVisualStyleBackColor = true;
             // 
             // MenuForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(239, 469);
+            ClientSize = new Size(239, 438);
             Controls.Add(botonSalir);
             Controls.Add(groupBoxGestiónDepósitos);
             Controls.Add(groupBoxDespacho);
@@ -193,7 +203,6 @@
             Controls.Add(groupBoxAreaPreparacion);
             Name = "MenuForms";
             Text = "MenuForms";
-            //Load += MenuForms_Load;
             groupBoxAreaPreparacion.ResumeLayout(false);
             groupBoxAlmacen.ResumeLayout(false);
             groupBoxDespacho.ResumeLayout(false);
@@ -217,5 +226,6 @@
         private GroupBox groupBoxGestiónDepósitos;
         private Button botonSalir;
         private Button botonDespachoSintranportista;
+        private Button EmpaquetarButton;
     }
 }
