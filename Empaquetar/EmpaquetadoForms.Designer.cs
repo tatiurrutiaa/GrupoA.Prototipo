@@ -30,6 +30,7 @@
         {
             EmpaquetarlistBox = new ListBox();
             EmpaquetarButton = new Button();
+            AtrasButton = new Button();
             SuspendLayout();
             // 
             // EmpaquetarlistBox
@@ -38,27 +39,39 @@
             EmpaquetarlistBox.ItemHeight = 15;
             EmpaquetarlistBox.Location = new Point(12, 30);
             EmpaquetarlistBox.Name = "EmpaquetarlistBox";
-            EmpaquetarlistBox.Size = new Size(247, 94);
+            EmpaquetarlistBox.Size = new Size(265, 94);
             EmpaquetarlistBox.TabIndex = 0;
             // 
             // EmpaquetarButton
             // 
-            EmpaquetarButton.Location = new Point(172, 133);
+            EmpaquetarButton.Location = new Point(192, 132);
             EmpaquetarButton.Name = "EmpaquetarButton";
             EmpaquetarButton.Size = new Size(85, 25);
             EmpaquetarButton.TabIndex = 1;
             EmpaquetarButton.Text = "Empaquetar";
             EmpaquetarButton.UseVisualStyleBackColor = true;
             // 
+            // AtrasButton
+            // 
+            AtrasButton.Location = new Point(121, 132);
+            AtrasButton.Name = "AtrasButton";
+            AtrasButton.Size = new Size(65, 25);
+            AtrasButton.TabIndex = 2;
+            AtrasButton.Text = "Atras";
+            AtrasButton.UseVisualStyleBackColor = true;
+            AtrasButton.Click += AtrasButton_Click;
+            // 
             // EmpaquetadoForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(289, 183);
+            Controls.Add(AtrasButton);
             Controls.Add(EmpaquetarButton);
             Controls.Add(EmpaquetarlistBox);
             Name = "EmpaquetadoForms";
             Text = "Empaquetar";
+            Load += EmpaquetadoForms_Load;
             ResumeLayout(false);
         }
 
@@ -66,5 +79,6 @@
 
         private ListBox EmpaquetarlistBox;
         private Button EmpaquetarButton;
+        private Button AtrasButton;
     }
 }

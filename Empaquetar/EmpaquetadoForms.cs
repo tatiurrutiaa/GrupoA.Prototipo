@@ -44,6 +44,19 @@ namespace GrupoA.Prototipo.Empaquetar
             }
         }
 
+        private void EmpaquetadoForms_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AtrasButton_Click(object sender, EventArgs e)
+        {
+            
+            GrupoA.Prototipo.MenuForms menu = new();
+            this.Hide();
+            menu.Show();
+            
+        }
     }
 
 }
