@@ -189,6 +189,7 @@
             EmpaquetarButton.TabIndex = 4;
             EmpaquetarButton.Text = "Empaquetar";
             EmpaquetarButton.UseVisualStyleBackColor = true;
+            EmpaquetarButton.Click += EmpaquetarButton_Click;
             // 
             // MenuForms
             // 
