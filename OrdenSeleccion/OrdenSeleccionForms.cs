@@ -14,7 +14,7 @@ namespace GrupoA.Prototipo
     public partial class OrdenSeleccionForms : Form
    {
         private List<Orden> ordenes;
-        public OrdenSeleccionForms()
+        public OrdenSeleccionForm()
         {
             InitializeComponent();
             CargarOrdenes();

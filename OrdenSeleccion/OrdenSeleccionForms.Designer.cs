@@ -93,3 +93,50 @@
         private Button botonAtras;
     }
 }
+
+// FormularioPrincipal.Designer.cs
+partial class OrdenSeleccionForms
+{
+    private System.ComponentModel.IContainer components = null;
+    private System.Windows.Forms.ListBox lstOrdenes;
+    private System.Windows.Forms.Button btnGenerarOrdenSeleccion;
+
+    private void InitializeComponent()
+    {
+        this.lstOrdenes = new System.Windows.Forms.ListBox();
+        this.btnGenerarOrdenSeleccion = new System.Windows.Forms.Button();
+        this.SuspendLayout();
+
+        // lstOrdenes
+
+        this.lstOrdenes.FormattingEnabled = true;
+        this.lstOrdenes.Location = new System.Drawing.Point(12, 12);
+        this.lstOrdenes.Name = "lstOrdenes";
+        this.lstOrdenes.Size = new System.Drawing.Size(260, 199);
+        this.lstOrdenes.TabIndex = 0;
+
+        // btnGenerarOrdenSeleccion
+
+        this.btnGenerarOrdenSeleccion.Location = new System.Drawing.Point(12, 217);
+        this.btnGenerarOrdenSeleccion.Name = "btnGenerarOrdenSeleccion";
+        this.btnGenerarOrdenSeleccion.Size = new System.Drawing.Size(260, 32);
+        this.btnGenerarOrdenSeleccion.TabIndex = 1;
+        this.btnGenerarOrdenSeleccion.Text = "Generar Orden de Selección";
+        this.btnGenerarOrdenSeleccion.UseVisualStyleBackColor = true;
+        this.btnGenerarOrdenSeleccion.Click += new System.EventHandler(this.btnGenerarOrdenSeleccion_Click);
+    }
+}    
+     
+// OrdenSeleccionForm
+         
+        /* this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        this.ClientSize = new System.Drawing.Size(284, 261);
+        this.Controls.Add(this.btnGenerarOrdenSeleccion);
+        this.Controls.Add(this.lstOrdenes);
+        this.Name = "FormularioPrincipal";
+        this.Text = "Generar Orden de Selección";
+        this.ResumeLayout(false); /*
+
+    }
+}
