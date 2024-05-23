@@ -59,6 +59,8 @@
             textBoxContraseña.PasswordChar = '*';
             textBoxContraseña.Size = new Size(144, 23);
             textBoxContraseña.TabIndex = 2;
+            textBoxContraseña.TextChanged += textBoxContraseña_TextChanged;
+            textBoxContraseña.KeyPress += textBoxContraseña_KeyPress;
             // 
             // label1
             // 

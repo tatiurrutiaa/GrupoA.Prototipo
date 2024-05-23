@@ -58,16 +58,16 @@ namespace GrupoA.Prototipo
 
         private void botonDespachoSintranportista_Click(object sender, EventArgs e)
         {
-            GrupoA.Prototipo.Salida.Salida salida = new();
+            /*GrupoA.Prototipo.Salida.Salida salida = new();
             this.Hide();
-            salida.Show();
+            salida.Show();*/
         }
 
         private void botonCrearRemito_Click(object sender, EventArgs e)
         {
-            GrupoA.Prototipo.RemitoForms remito = new();
+            /*GrupoA.Prototipo.RemitoForms remito = new();
             this.Hide();
-            remito.Show();
+            remito.Show();*/
         }
 
         private void botonSalir_Click(object sender, EventArgs e)

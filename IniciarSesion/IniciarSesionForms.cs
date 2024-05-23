@@ -28,11 +28,30 @@ namespace GrupoA.Prototipo
 
         private void botonIngresar_Click(object sender, EventArgs e)
         {
+            Ingresar();
+        }
+
+        private void textBoxContraseña_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                Ingresar();
+            }
+        }
+
+        private void Ingresar()
+        {
             var usuario = new Usuario();
             usuario.UsuarioIngreso = this.textBoxUsuario.Text;
             usuario.Contraseña = this.textBoxContraseña.Text;
 
             string error = modelo.ValidarUsuario(usuario.UsuarioIngreso, usuario.Contraseña);
+
             if (error == null)
             {
                 MessageBox.Show("¡Bienvenido!");
@@ -46,6 +65,5 @@ namespace GrupoA.Prototipo
             }
 
         }
-
     }
 }
