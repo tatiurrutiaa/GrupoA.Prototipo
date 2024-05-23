@@ -12,35 +12,47 @@ namespace GrupoA.Prototipo.Empaquetar
 {
     public partial class EmpaquetadoForms : Form
     {
+        private List<EmpaquetadoModel.Orden> ordenes;
+        private int indiceOrdenActual = 0;
+
         public EmpaquetadoForms()
         {
             InitializeComponent();
-
-            // Crear órdenes de ejemplo
-            var orden1 = new Orden("Orden 1", new List<string> { "Item A", "Item B", "Item C" });
-            var orden2 = new Orden("Orden 2", new List<string> { "Item D", "Item E" });
-            var orden3 = new Orden("Orden 3", new List<string> { "Item F", "Item G", "Item H" });
-
-            // Agregar órdenes al ListBox
-            EmpaquetarlistBox.Items.Add(orden1);
-            EmpaquetarlistBox.Items.Add(orden2);
-            EmpaquetarlistBox.Items.Add(orden3);
-
-            // Configurar el evento Click del botón
-            EmpaquetarButton.Click += EmpaquetarButton_Click;
+            ordenes = EmpaquetadoModel.DatosTemporales.ObtenerOrdenes(); // Obtener las órdenes desde la fuente de datos temporal
+            MostrarOrdenActual();
         }
-        private void EmpaquetarButton_Click(object sender, EventArgs e)
+
+        private void MostrarOrdenActual()
         {
-            if (EmpaquetarlistBox.SelectedItem != null)
+            if (indiceOrdenActual < ordenes.Count)
             {
-                Orden selectedOrder = (Orden)EmpaquetarlistBox.SelectedItem;
-                string items = string.Join(", ", selectedOrder.Items);
-                MessageBox.Show($"La orden '{selectedOrder.Nombre}' con los items [{items}] se va a empaquetar.");
-                EmpaquetarlistBox.Items.Remove(selectedOrder);
+                EmpaquetadoModel.Orden ordenActual = ordenes[indiceOrdenActual];
+                NroOrdenLabel.Text = $"Nro de Orden: {ordenActual.Numero}";
+
+                // Limpiar y llenar el ListBox con los productos de la orden actual
+                EmpaquetarlistBox.Items.Clear();
+                foreach (var producto in ordenActual.Productos)
+                {
+                    EmpaquetarlistBox.Items.Add(producto);
+                }
             }
             else
             {
-                MessageBox.Show("Por favor, selecciona una orden de la lista.");
+                MessageBox.Show("No hay más órdenes para empaquetar.");
+                NroOrdenLabel.Text = "No hay más órdenes";
+                EmpaquetarlistBox.Items.Clear();
+                EmpaquetarButton.Enabled = false; // Desactivar el botón de empaquetar
+            }
+        }
+
+        private void EmpaquetarButton_Click(object sender, EventArgs e)
+        {
+            if (indiceOrdenActual < ordenes.Count)
+            {
+                EmpaquetadoModel.Orden ordenActual = ordenes[indiceOrdenActual];
+                MessageBox.Show($"La orden {ordenActual.Numero} ha sido empaquetada.");
+                indiceOrdenActual++;
+                MostrarOrdenActual();
             }
         }
 
