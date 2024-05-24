@@ -51,7 +51,7 @@ internal class RetiroStockModelo
         new() {NroOrdenSelec = 200, NroOrdenPrep = 41, Estado = "en seleccion"},
         new() {NroOrdenSelec = 200, NroOrdenPrep = 42, Estado = "en seleccion"},
         new() {NroOrdenSelec = 202, NroOrdenPrep = 43, Estado = "en seleccion"},
-        new() {NroOrdenSelec = 202, NroOrdenPrep = 44, Estado = "en seleccion"}
+        new() {NroOrdenSelec = 202, NroOrdenPrep = 44, Estado = "seleccionada"}
     };
 
     public List<int> OrdenesSelecPendientes()

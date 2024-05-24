@@ -25,7 +25,9 @@ namespace GrupoA.Prototipo
         private void RetiroStockForms_Load(object sender, EventArgs e)
         {
             modelo = new();
+
             CargarOrdenesSeleccion();
+
             listBoxRetiroStock.DataSource = null;
         }
 
@@ -42,19 +44,35 @@ namespace GrupoA.Prototipo
             {
                 comboBoxOrdenSelec.Items.Add(orden);
             }
+
+            if (comboBoxOrdenSelec.Items.Count == 0)
+            {
+                MessageBox.Show("No hay Ordenes de Selección pendientes para retirar."
+                    + Environment.NewLine
+                    + "Por favor, intente nuevamente en unos minutos");
+                return;
+            }
         }
 
         private void botonBuscar_Click(object sender, EventArgs e)
         {
-            groupBoxOrdenSelec.Enabled = false;
-            groupBoxRetirarMercaderia.Enabled = true;
-            var orden = new OrdenesSeleccion();
+            if (comboBoxOrdenSelec.Items.Count == 0)
+            {
+                MessageBox.Show("No hay Ordenes de Selección pendientes para retirar."
+                    + Environment.NewLine
+                    + "Por favor, intente nuevamente en unos minutos");
+                return;
+            }
 
             if (comboBoxOrdenSelec.SelectedIndex == -1)
             {
                 MessageBox.Show("Por favor, seleccione una Orden de Selección.");
                 return;
             }
+
+            groupBoxOrdenSelec.Enabled = false;
+            groupBoxRetirarMercaderia.Enabled = true;
+            var orden = new OrdenesSeleccion();
 
             orden.NroOrdenSelec = (int)comboBoxOrdenSelec.SelectedItem;
 

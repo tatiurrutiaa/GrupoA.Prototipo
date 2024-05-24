@@ -26,7 +26,7 @@ namespace GrupoA.Prototipo
         }
 
         //private void botonGenerarOrdenSeleccion_Click(object sender, EventArgs e)
-       
+
 
         private void botonGenerarOrdenEntrega_Click(object sender, EventArgs e)
         {
@@ -41,12 +41,20 @@ namespace GrupoA.Prototipo
             this.Hide();
             retirostock.Show();
         }
+
         private void EmpaquetarButton_Click(object sender, EventArgs e)
         {
             EmpaquetadoForms empaquetadoForm = new EmpaquetadoForms();
             this.Hide();
             // Mostrar la ventana
             empaquetadoForm.Show();
+        }
+
+        private void botonOrdenEntrega_Click(object sender, EventArgs e)
+        {
+            GrupoA.Prototipo.OrdenDeEntregaForms ordenentrega = new();
+            this.Hide();
+            ordenentrega.Show();
         }
 
         private void botonVerificarTransportista_Click(object sender, EventArgs e)
@@ -61,13 +69,6 @@ namespace GrupoA.Prototipo
             /*GrupoA.Prototipo.Salida.Salida salida = new();
             this.Hide();
             salida.Show();*/
-        }
-
-        private void botonCrearRemito_Click(object sender, EventArgs e)
-        {
-            /*GrupoA.Prototipo.RemitoForms remito = new();
-            this.Hide();
-            remito.Show();*/
         }
 
         private void botonSalir_Click(object sender, EventArgs e)
