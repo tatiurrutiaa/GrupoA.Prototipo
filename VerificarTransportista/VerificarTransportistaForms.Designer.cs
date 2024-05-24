@@ -94,7 +94,7 @@
             botonCrearRemito.TabIndex = 1;
             botonCrearRemito.Text = "Crear Remito";
             botonCrearRemito.UseVisualStyleBackColor = true;
-            botonCrearRemito.Click += botonCrearRemito_Click;
+            //botonCrearRemito.Click += botonCrearRemito_Click;
             // 
             // checkedListBox1
             // 

@@ -2,15 +2,15 @@
 {
     partial class EmpaquetadoForms
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.ListView EmpaquetarListView;
+        private System.Windows.Forms.ColumnHeader columnHeaderID;
+        private System.Windows.Forms.ColumnHeader columnHeaderNombre;
+        private System.Windows.Forms.ColumnHeader columnHeaderCantidad;
+        private System.Windows.Forms.Button EmpaquetarButton;
+        private System.Windows.Forms.Button AtrasButton;
+        private System.Windows.Forms.Label NroOrdenLabel;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,32 +20,45 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            EmpaquetarlistBox = new ListBox();
+            EmpaquetarListView = new ListView();
+            columnHeaderID = new ColumnHeader();
+            columnHeaderNombre = new ColumnHeader();
+            columnHeaderCantidad = new ColumnHeader();
             EmpaquetarButton = new Button();
             AtrasButton = new Button();
             NroOrdenLabel = new Label();
             SuspendLayout();
             // 
-            // EmpaquetarlistBox
+            // EmpaquetarListView
             // 
-            EmpaquetarlistBox.FormattingEnabled = true;
-            EmpaquetarlistBox.ItemHeight = 15;
-            EmpaquetarlistBox.Location = new Point(12, 33);
-            EmpaquetarlistBox.Name = "EmpaquetarlistBox";
-            EmpaquetarlistBox.Size = new Size(467, 94);
-            EmpaquetarlistBox.TabIndex = 0;
+            EmpaquetarListView.Columns.AddRange(new ColumnHeader[] { columnHeaderID, columnHeaderNombre, columnHeaderCantidad });
+            EmpaquetarListView.Location = new Point(12, 33);
+            EmpaquetarListView.Name = "EmpaquetarListView";
+            EmpaquetarListView.Size = new Size(395, 207);
+            EmpaquetarListView.TabIndex = 0;
+            EmpaquetarListView.UseCompatibleStateImageBehavior = false;
+            EmpaquetarListView.View = View.Details;
+            // 
+            // columnHeaderID
+            // 
+            columnHeaderID.Text = "ID";
+            columnHeaderID.Width = 70;
+            // 
+            // columnHeaderNombre
+            // 
+            columnHeaderNombre.Text = "Producto";
+            columnHeaderNombre.Width = 220;
+            // 
+            // columnHeaderCantidad
+            // 
+            columnHeaderCantidad.Text = "Cantidad";
+            columnHeaderCantidad.Width = 100;
             // 
             // EmpaquetarButton
             // 
-            EmpaquetarButton.Location = new Point(379, 133);
+            EmpaquetarButton.Location = new Point(307, 246);
             EmpaquetarButton.Name = "EmpaquetarButton";
             EmpaquetarButton.Size = new Size(100, 25);
             EmpaquetarButton.TabIndex = 1;
@@ -55,7 +68,7 @@
             // 
             // AtrasButton
             // 
-            AtrasButton.Location = new Point(379, 225);
+            AtrasButton.Location = new Point(307, 312);
             AtrasButton.Name = "AtrasButton";
             AtrasButton.Size = new Size(100, 25);
             AtrasButton.TabIndex = 2;
@@ -68,31 +81,23 @@
             NroOrdenLabel.AutoSize = true;
             NroOrdenLabel.Location = new Point(12, 15);
             NroOrdenLabel.Name = "NroOrdenLabel";
-            NroOrdenLabel.Size = new Size(85, 15);
+            NroOrdenLabel.Size = new Size(82, 15);
             NroOrdenLabel.TabIndex = 3;
-            NroOrdenLabel.Text = "Nro de Orden: ";
+            NroOrdenLabel.Text = "Nro de Orden:";
             // 
             // EmpaquetadoForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(491, 262);
+            ClientSize = new Size(419, 349);
             Controls.Add(NroOrdenLabel);
             Controls.Add(AtrasButton);
             Controls.Add(EmpaquetarButton);
-            Controls.Add(EmpaquetarlistBox);
+            Controls.Add(EmpaquetarListView);
             Name = "EmpaquetadoForms";
             Text = "Empaquetar";
-            Load += EmpaquetadoForms_Load;
             ResumeLayout(false);
             PerformLayout();
         }
-
-        #endregion
-
-        private ListBox EmpaquetarlistBox;
-        private Button EmpaquetarButton;
-        private Button AtrasButton;
-        private Label NroOrdenLabel;
     }
 }
