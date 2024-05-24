@@ -31,11 +31,6 @@ namespace GrupoA.Prototipo
             Ingresar();
         }
 
-        private void textBoxContraseña_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBoxContraseña_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))

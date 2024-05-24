@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace GrupoA.Prototipo.RetiroStock;
 
 internal class RetiroStockModelo
-{ 
+{
     public List<Stock> stock = new()
     {
         new() {CuitCliente = "27-41672496-8", Posicion = "12-43-2", Cantidad = 500, Mercaderia = "bolsas de cemento", Estado = "comprometido" },
@@ -44,131 +44,111 @@ internal class RetiroStockModelo
         new() {NroOrdenSelec = 200, NroOrdenPrep = 34, Estado = "en seleccion"},
         new() {NroOrdenSelec = 200, NroOrdenPrep = 35, Estado = "en seleccion"},
         new() {NroOrdenSelec = 200, NroOrdenPrep = 36, Estado = "en seleccion"},
-        new() {NroOrdenSelec = 201, NroOrdenPrep = 37, Estado = "en seleccion"},
+        new() {NroOrdenSelec = 201, NroOrdenPrep = 37, Estado = "seleccionada"},
         new() {NroOrdenSelec = 200, NroOrdenPrep = 38, Estado = "en seleccion"},
         new() {NroOrdenSelec = 201, NroOrdenPrep = 39, Estado = "seleccionada"},
         new() {NroOrdenSelec = 201, NroOrdenPrep = 40, Estado = "seleccionada"},
-        new() {NroOrdenSelec = 200, NroOrdenPrep = 41, Estado = "seleccionada"},
+        new() {NroOrdenSelec = 200, NroOrdenPrep = 41, Estado = "en seleccion"},
         new() {NroOrdenSelec = 200, NroOrdenPrep = 42, Estado = "en seleccion"},
         new() {NroOrdenSelec = 202, NroOrdenPrep = 43, Estado = "en seleccion"},
-        new() {NroOrdenSelec = 202, NroOrdenPrep = 44, Estado = "en seleccion"} 
-    }; 
+        new() {NroOrdenSelec = 202, NroOrdenPrep = 44, Estado = "en seleccion"}
+    };
 
-    public List<(string Posicion, int Cantidad, string Mercaderia)> MercaderiaARetirar()
+    public List<int> OrdenesSelecPendientes()
     {
-        // Buscar la orden de seleccion más vieja (la menor) en estado "en seleccion"
-        var menorOrdenSeleccion = ordenesSeleccion
+        return ordenesSeleccion
             .Where(o => o.Estado == "en seleccion")
-            .OrderBy(o => o.NroOrdenSelec)
-            .FirstOrDefault();
-
-        if (menorOrdenSeleccion == null)
-        {
-            MessageBox.Show("No hay Ordenes de selección pendientes." + Environment.NewLine
-                + "Por favor, intente nuevamente en unos minutos.");
-            return null;
-        }
-        else
-        {
-            // Buscar las ordenes de preparacion asociadas a la orden de selección
-            var ordenesPrepAsociadas = ordenesPreparacion
-                .Where(o => ordenesSeleccion
-                .Any(os => os.NroOrdenSelec == menorOrdenSeleccion.NroOrdenSelec
-                && os.NroOrdenPrep == o.NroOrdenPrep))
-                .ToList();
-
-            // Unificar la cantidad y mercaderia de todas las ordenes de preparación en la orden de selección
-            var mercaderiaAgrupada = ordenesPrepAsociadas
-                .GroupBy(o => new { o.CuitCliente, o.Mercaderia })
-                .Select(g => new
-                {
-                    g.Key.CuitCliente,
-                    g.Key.Mercaderia,
-                    CantidadTotal = g.Sum(o => o.Cantidad)
-                })
-                .ToList();
-
-            // Buscar la posicion de donde retirar la mercadería por CUIT cliente y mercadería en estado comprometida
-            var resultado = new List<(string Posicion, int Cantidad, string Mercaderia)>();
-
-            foreach (var item in mercaderiaAgrupada)
-            {
-                var cantidadRequerida = item.CantidadTotal;
-                var posiciones = stock
-                    .Where(s => s.CuitCliente == item.CuitCliente && s.Mercaderia == item.Mercaderia
-                    && s.Estado == "comprometido")
-                    .OrderBy(s => s.Posicion)
-                    .ToList();
-
-                //Buscar posiciones hasta alcanzar la cantidad requerida
-                foreach (var pos in posiciones)
-                {
-                    if (cantidadRequerida <= 0)
-                    {
-                        break;
-                    }
-
-                    // Buscar cuanto retirar de mercadería por cada posición
-                    var cantidadARetirar = Math.Min(pos.Cantidad, cantidadRequerida);
-                    resultado.Add((pos.Posicion, cantidadARetirar, item.Mercaderia));
-                    cantidadRequerida -= cantidadARetirar;
-                }
-            }
-            return resultado;
-        }
+            .Select(o => o.NroOrdenSelec)
+            .Distinct()
+            .ToList();
     }
 
-    public void ActualizarStockYOrden()
+    public List<(string Posicion, int Cantidad, string Mercaderia)> MercaderiaARetirar(int nroOrden)
     {
-        // Buscar la menor orden seleccion en estado "en seleccion"
-        var menorOrdenSeleccion = ordenesSeleccion
-            .Where(o => o.Estado == "en seleccion")
-            .OrderBy(o => o.NroOrdenSelec)
-            .FirstOrDefault();
+        // Buscar las ordenes de preparacion asociadas a la orden de selección
+        var ordenesPrepAsociadas = ordenesPreparacion
+            .Where(o => ordenesSeleccion
+            .Any(os => os.NroOrdenSelec == nroOrden
+            && os.NroOrdenPrep == o.NroOrdenPrep))
+            .ToList();
 
-        if (menorOrdenSeleccion == null)
-        {
-            return;
-        }
-        else
-        {
-            // Obtener la lista de posiciones, cantidades y mercaderías
-            var listaParaOrden = MercaderiaARetirar();
-
-            // "Descontar" stock: 
-            foreach (var item in listaParaOrden)
+        // Unificar la cantidad y mercaderia de todas las ordenes de preparación en la orden de selección
+        var mercaderiaAgrupada = ordenesPrepAsociadas
+            .GroupBy(o => new { o.CuitCliente, o.Mercaderia })
+            .Select(g => new
             {
-                //cuando retiramos todo el stock de una posición
-                var stockItem = stock.First(s => s.Posicion == item.Posicion && s.Mercaderia == item.Mercaderia);
-                if (stockItem.Cantidad == item.Cantidad)
-                {
-                    stockItem.Estado = "retirado"; //cambia estado de la posición a retirado
-                    stockItem.Posicion = string.Empty; // Vaciar la posición
-                }
-                else //cuando el retiro es parcial
-                {
-                    //descuenta la mercadería retirada de la posición
-                    int cantidadRetirada = item.Cantidad;
-                    stockItem.Cantidad -= cantidadRetirada;
+                g.Key.CuitCliente,
+                g.Key.Mercaderia,
+                CantidadTotal = g.Sum(o => o.Cantidad)
+            })
+            .ToList();
 
-                    // Crea una nueva fila para el stock retirado, sin posición y en estado "retirado"
-                    var stockRetirado = new Stock
-                    {
-                        CuitCliente = stockItem.CuitCliente,
-                        Posicion = string.Empty, // Vaciar la posición
-                        Cantidad = cantidadRetirada,
-                        Mercaderia = stockItem.Mercaderia,
-                        Estado = "retirado"
-                    };
+        // Buscar la posicion de donde retirar la mercadería por CUIT cliente y mercadería en estado comprometida
+        var resultado = new List<(string Posicion, int Cantidad, string Mercaderia)>();
 
-                    stock.Add(stockRetirado);
+        foreach (var item in mercaderiaAgrupada)
+        {
+            var cantidadRequerida = item.CantidadTotal;
+            var posiciones = stock
+                .Where(s => s.CuitCliente == item.CuitCliente && s.Mercaderia == item.Mercaderia
+                && s.Estado == "comprometido")
+                .OrderBy(s => s.Posicion)
+                .ToList();
+
+            //Buscar posiciones hasta alcanzar la cantidad requerida
+            foreach (var pos in posiciones)
+            {
+                if (cantidadRequerida <= 0)
+                {
+                    break;
                 }
+
+                // Buscar cuanto retirar de mercadería por cada posición
+                var cantidadARetirar = Math.Min(pos.Cantidad, cantidadRequerida);
+                resultado.Add((pos.Posicion, cantidadARetirar, item.Mercaderia));
+                cantidadRequerida -= cantidadARetirar;
+            }
+        }
+        return resultado;
+    }
+    public void ActualizarStockYOrden(int nroOrden)
+    {
+        // Obtener la lista de posiciones, cantidades y mercaderías
+        var listaParaOrden = MercaderiaARetirar(nroOrden);
+
+        // "Descontar" stock: 
+        foreach (var item in listaParaOrden)
+        {
+            //cuando retiramos todo el stock de una posición
+            var stockItem = stock.First(s => s.Posicion == item.Posicion && s.Mercaderia == item.Mercaderia);
+            if (stockItem.Cantidad == item.Cantidad)
+            {
+                stockItem.Estado = "retirado"; //cambia estado de la posición a retirado
+                stockItem.Posicion = string.Empty; // Vaciar la posición
+            }
+            else //cuando el retiro es parcial
+            {
+                //descuenta la mercadería retirada de la posición
+                int cantidadRetirada = item.Cantidad;
+                stockItem.Cantidad -= cantidadRetirada;
+
+                // Crea una nueva fila para el stock retirado, sin posición y en estado "retirado"
+                var stockRetirado = new Stock
+                {
+                    CuitCliente = stockItem.CuitCliente,
+                    Posicion = string.Empty, // Vaciar la posición
+                    Cantidad = cantidadRetirada,
+                    Mercaderia = stockItem.Mercaderia,
+                    Estado = "retirado"
+                };
+
+                stock.Add(stockRetirado);
             }
 
             // Actualizar el estado de la orden de seleccion a "seleccionada"
             var ordenesSeleccionadas = ordenesSeleccion
-                .Where(o => o.NroOrdenSelec == menorOrdenSeleccion.NroOrdenSelec)
-                .ToList();
+            .Where(o => o.NroOrdenSelec == nroOrden)
+            .ToList();
 
             foreach (var orden in ordenesSeleccionadas)
             {
@@ -178,7 +158,7 @@ internal class RetiroStockModelo
             // Actualizar el estado de las ordenes de preparación a "seleccionada"
             var ordenesPrepAsociadas = ordenesPreparacion
                 .Where(o => ordenesSeleccion
-                .Any(os => os.NroOrdenSelec == menorOrdenSeleccion.NroOrdenSelec
+                .Any(os => os.NroOrdenSelec == nroOrden
                 && os.NroOrdenPrep == o.NroOrdenPrep))
                 .ToList();
 
@@ -191,6 +171,7 @@ internal class RetiroStockModelo
             MessageBox.Show("La mercadería se descontó del almacén con éxito." +
             Environment.NewLine +
             "Por favor, entregar la mercadería al area de preparación.");
+            return;
         }
     }
 }
