@@ -32,9 +32,9 @@
             label1 = new Label();
             botonConfirmar = new Button();
             botonAtras = new Button();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
+            labelDNI = new Label();
+            textBoxDNI = new TextBox();
+            buttonDNI = new Button();
             SuspendLayout();
             // 
             // ListBoxOrdenesPrep
@@ -73,40 +73,40 @@
             botonAtras.UseVisualStyleBackColor = true;
             botonAtras.Click += botonAtras_Click;
             // 
-            // label2
+            // labelDNI
             // 
-            label2.AutoSize = true;
-            label2.FlatStyle = FlatStyle.System;
-            label2.Location = new Point(17, 12);
-            label2.Name = "label2";
-            label2.Size = new Size(168, 15);
-            label2.TabIndex = 4;
-            label2.Text = "Ingrese el DNI del transportista";
+            labelDNI.AutoSize = true;
+            labelDNI.FlatStyle = FlatStyle.System;
+            labelDNI.Location = new Point(17, 12);
+            labelDNI.Name = "labelDNI";
+            labelDNI.Size = new Size(168, 15);
+            labelDNI.TabIndex = 4;
+            labelDNI.Text = "Ingrese el DNI del transportista";
             // 
-            // textBox1
+            // textBoxDNI
             // 
-            textBox1.Location = new Point(16, 36);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(169, 23);
-            textBox1.TabIndex = 5;
+            textBoxDNI.Location = new Point(16, 36);
+            textBoxDNI.Name = "textBoxDNI";
+            textBoxDNI.Size = new Size(169, 23);
+            textBoxDNI.TabIndex = 5;
             // 
-            // button1
+            // buttonDNI
             // 
-            button1.Location = new Point(217, 36);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 6;
-            button1.Text = "Aplicar DNI";
-            button1.UseVisualStyleBackColor = true;
+            buttonDNI.Location = new Point(217, 36);
+            buttonDNI.Name = "buttonDNI";
+            buttonDNI.Size = new Size(75, 23);
+            buttonDNI.TabIndex = 6;
+            buttonDNI.Text = "Aplicar DNI";
+            buttonDNI.UseVisualStyleBackColor = true;
             // 
             // Salida
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(305, 398);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
-            Controls.Add(label2);
+            Controls.Add(buttonDNI);
+            Controls.Add(textBoxDNI);
+            Controls.Add(labelDNI);
             Controls.Add(botonAtras);
             Controls.Add(botonConfirmar);
             Controls.Add(label1);
@@ -124,8 +124,8 @@
         private Label label1;
         private Button botonConfirmar;
         private Button botonAtras;
-        private Label label2;
-        private TextBox textBox1;
-        private Button button1;
+        private Label labelDNI;
+        private TextBox textBoxDNI;
+        private Button buttonDNI;
     }
 }
