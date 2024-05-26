@@ -35,6 +35,7 @@
             labelDNI = new Label();
             textBoxDNI = new TextBox();
             buttonDNI = new Button();
+            labelAvisoDNI = new Label();
             SuspendLayout();
             // 
             // ListBoxOrdenesPrep
@@ -56,7 +57,7 @@
             // 
             // botonConfirmar
             // 
-            botonConfirmar.Location = new Point(217, 365);
+            botonConfirmar.Location = new Point(217, 380);
             botonConfirmar.Name = "botonConfirmar";
             botonConfirmar.Size = new Size(75, 23);
             botonConfirmar.TabIndex = 2;
@@ -65,7 +66,7 @@
             // 
             // botonAtras
             // 
-            botonAtras.Location = new Point(12, 365);
+            botonAtras.Location = new Point(12, 380);
             botonAtras.Name = "botonAtras";
             botonAtras.Size = new Size(75, 23);
             botonAtras.TabIndex = 3;
@@ -89,6 +90,7 @@
             textBoxDNI.Name = "textBoxDNI";
             textBoxDNI.Size = new Size(169, 23);
             textBoxDNI.TabIndex = 5;
+            textBoxDNI.KeyPress += textBoxDNI_KeyPress;
             // 
             // buttonDNI
             // 
@@ -98,12 +100,22 @@
             buttonDNI.TabIndex = 6;
             buttonDNI.Text = "Aplicar DNI";
             buttonDNI.UseVisualStyleBackColor = true;
+            buttonDNI.Click += buttonDNI_Click;
+            // 
+            // labelAvisoDNI
+            // 
+            labelAvisoDNI.AutoSize = true;
+            labelAvisoDNI.Location = new Point(17, 362);
+            labelAvisoDNI.Name = "labelAvisoDNI";
+            labelAvisoDNI.Size = new Size(0, 15);
+            labelAvisoDNI.TabIndex = 7;
             // 
             // Salida
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(305, 398);
+            ClientSize = new Size(305, 415);
+            Controls.Add(labelAvisoDNI);
             Controls.Add(buttonDNI);
             Controls.Add(textBoxDNI);
             Controls.Add(labelDNI);
@@ -127,5 +139,6 @@
         private Label labelDNI;
         private TextBox textBoxDNI;
         private Button buttonDNI;
+        private Label labelAvisoDNI;
     }
 }
