@@ -14,7 +14,6 @@ namespace GrupoA.Prototipo.Salida
     public partial class Salida : Form
     {
         SalidaModel modelo;
-        private string transportistaDNI;
         public Salida()
         {
             InitializeComponent();
@@ -53,11 +52,8 @@ namespace GrupoA.Prototipo.Salida
             // If textBoxDNI is enabled, lock it and update button text to "Editar DNI"
             if (textBoxDNI.Enabled)
             {
-                transportistaDNI = textBoxDNI.Text;
-                string displayText = "Transportista con DNI " + transportistaDNI;
-                labelAvisoDNI.Text = displayText;
 
-                if (transportistaDNI.Length < 7 || transportistaDNI.Length > 9)
+                if (textBoxDNI.Text.Length < 7 || textBoxDNI.Text.Length > 9)
                 {
                     MessageBox.Show("El DNI debe contener entre 7 y 9 caracteres.");
                     return;
@@ -70,12 +66,21 @@ namespace GrupoA.Prototipo.Salida
             else
             {
                 textBoxDNI.Enabled = true;
-                buttonDNI.Text = "Confirmar DNI"; // Change button text
+                buttonDNI.Text = "Aplicar DNI"; // Change button text
             }
         }
         private void textBoxDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            
+            if (textBoxDNI.Text.Length > 8)
+            {
+                // If the length exceeds 8, truncate the text to 8 characters
+                textBoxDNI.Text = textBoxDNI.Text.Substring(0, 8);
+
+                // Move the cursor to the end of the text
+                textBoxDNI.SelectionStart = textBoxDNI.Text.Length;
+            }
         }
 
         private void botonConfirmar_Click(object sender, EventArgs e)
@@ -119,7 +124,7 @@ namespace GrupoA.Prototipo.Salida
             }
 
             // Display the checked values
-            MessageBox.Show("Checked Items:\n" + sb.ToString());
+            MessageBox.Show("Se generará el remito, para las siguientes ordenes, con el DNI del transportista n°" + textBoxDNI.Text + "\n\n" + sb.ToString());
         }
     }
 }

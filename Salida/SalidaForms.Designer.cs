@@ -35,7 +35,6 @@
             labelDNI = new Label();
             textBoxDNI = new TextBox();
             buttonDNI = new Button();
-            labelAvisoDNI = new Label();
             SuspendLayout();
             // 
             // ListBoxOrdenesPrep
@@ -61,7 +60,7 @@
             botonConfirmar.Name = "botonConfirmar";
             botonConfirmar.Size = new Size(75, 23);
             botonConfirmar.TabIndex = 2;
-            botonConfirmar.Text = "Confirmar";
+            botonConfirmar.Text = "Generar remito";
             botonConfirmar.UseVisualStyleBackColor = true;
             botonConfirmar.Click += botonConfirmar_Click;
             // 
@@ -103,20 +102,11 @@
             buttonDNI.UseVisualStyleBackColor = true;
             buttonDNI.Click += buttonDNI_Click;
             // 
-            // labelAvisoDNI
-            // 
-            labelAvisoDNI.AutoSize = true;
-            labelAvisoDNI.Location = new Point(17, 362);
-            labelAvisoDNI.Name = "labelAvisoDNI";
-            labelAvisoDNI.Size = new Size(0, 15);
-            labelAvisoDNI.TabIndex = 7;
-            // 
             // Salida
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(305, 415);
-            Controls.Add(labelAvisoDNI);
             Controls.Add(buttonDNI);
             Controls.Add(textBoxDNI);
             Controls.Add(labelDNI);
@@ -140,6 +130,5 @@
         private Label labelDNI;
         private TextBox textBoxDNI;
         private Button buttonDNI;
-        private Label labelAvisoDNI;
     }
 }
