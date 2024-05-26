@@ -50,9 +50,28 @@ namespace GrupoA.Prototipo.Salida
 
         private void buttonDNI_Click(object sender, EventArgs e)
         {
-            transportistaDNI = textBoxDNI.Text;
-            string displayText = "Transportista con DNI " + transportistaDNI;
-            labelAvisoDNI.Text = displayText;
+            // If textBoxDNI is enabled, lock it and update button text to "Editar DNI"
+            if (textBoxDNI.Enabled)
+            {
+                transportistaDNI = textBoxDNI.Text;
+                string displayText = "Transportista con DNI " + transportistaDNI;
+                labelAvisoDNI.Text = displayText;
+
+                if (transportistaDNI.Length < 7 || transportistaDNI.Length > 9)
+                {
+                    MessageBox.Show("El DNI debe contener entre 7 y 9 caracteres.");
+                    return;
+                }
+
+                textBoxDNI.Enabled = false;
+                buttonDNI.Text = "Editar DNI"; // Change button text
+            }
+            // If textBoxDNI is disabled, unlock it and update button text to "Confirmar DNI"
+            else
+            {
+                textBoxDNI.Enabled = true;
+                buttonDNI.Text = "Confirmar DNI"; // Change button text
+            }
         }
         private void textBoxDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -61,6 +80,19 @@ namespace GrupoA.Prototipo.Salida
 
         private void botonConfirmar_Click(object sender, EventArgs e)
         {
+            // Check if textBoxDNI is not locked but there is text
+            if (textBoxDNI.Enabled && textBoxDNI.Text.Length > 0)
+            {
+                MessageBox.Show("Por favor valide el DNI.");
+                return;
+            }
+
+            // Check if textBoxDNI is not locked and there is no text
+            if (textBoxDNI.Enabled && textBoxDNI.Text.Length == 0)
+            {
+                MessageBox.Show("Por favor ingrese y valide el DNI.");
+                return;
+            }
             // Check if there are any items selected in the ListBoxOrdenesPrep
             if (ListBoxOrdenesPrep.CheckedItems.Count == 0)
             {
