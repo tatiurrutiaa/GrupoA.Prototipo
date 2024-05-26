@@ -63,6 +63,7 @@
             botonConfirmar.TabIndex = 2;
             botonConfirmar.Text = "Confirmar";
             botonConfirmar.UseVisualStyleBackColor = true;
+            botonConfirmar.Click += botonConfirmar_Click;
             // 
             // botonAtras
             // 
