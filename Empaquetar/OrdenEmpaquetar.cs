@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace GrupoA.Prototipo.Empaquetar
 {
-    public class Orden
+    public class OrdenEmpaquetar
     {
         public int Numero { get; set; }
         public List<Producto> Productos { get; set; }
 
-        public Orden()
+        public OrdenEmpaquetar()
         {
             Productos = new List<Producto>();
         }

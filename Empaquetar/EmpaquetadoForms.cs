@@ -13,7 +13,7 @@ namespace GrupoA.Prototipo.Empaquetar
 {
     public partial class EmpaquetadoForms : Form
     {
-        private List<Orden> ordenes;
+        private List<OrdenEmpaquetar> ordenes;
         private int ordenActual = 0;
 
         public EmpaquetadoForms()

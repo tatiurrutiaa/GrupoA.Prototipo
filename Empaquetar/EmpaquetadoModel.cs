@@ -11,10 +11,10 @@ namespace GrupoA.Prototipo.Empaquetar
 
         public static class DatosTemporales
         {
-            public static List<Orden> ObtenerOrdenes()
+            public static List<OrdenEmpaquetar> ObtenerOrdenes()
             {
                 // Aquí creas las órdenes y sus productos
-                var ordenes = new List<Orden>();
+                var ordenes = new List<OrdenEmpaquetar>();
 
 
                 // Orden 1
@@ -23,7 +23,7 @@ namespace GrupoA.Prototipo.Empaquetar
                     new Producto { IdProducto = "AA11", NombreProducto = "Bolsas de cemento", CantidadProducto = 5 },
                     new Producto { IdProducto = "BB22", NombreProducto = "Ladrillos", CantidadProducto = 100 }
                 };
-                ordenes.Add(new Orden { Numero = 1, Productos = productosOrden1 });
+                ordenes.Add(new OrdenEmpaquetar { Numero = 1, Productos = productosOrden1 });
 
                 // Orden 2
                 var productosOrden2 = new List<Producto>
@@ -32,7 +32,7 @@ namespace GrupoA.Prototipo.Empaquetar
                     new Producto { IdProducto = "EE55", NombreProducto = "Martillos", CantidadProducto = 10 },
                     new Producto { IdProducto = "FF66", NombreProducto = "Serruchos", CantidadProducto = 15 }
                 };
-                ordenes.Add(new Orden { Numero = 2, Productos = productosOrden2 });
+                ordenes.Add(new OrdenEmpaquetar { Numero = 2, Productos = productosOrden2 });
 
                 // Orden 3
                 var productosOrden3 = new List<Producto>
@@ -42,7 +42,7 @@ namespace GrupoA.Prototipo.Empaquetar
                     new Producto { IdProducto = "HH88", NombreProducto = "Rodillos de pintura", CantidadProducto = 25 },
                     new Producto { IdProducto = "II99", NombreProducto = "Brochas", CantidadProducto = 30 }
                 };
-                ordenes.Add(new Orden { Numero = 3, Productos = productosOrden3 });
+                ordenes.Add(new OrdenEmpaquetar { Numero = 3, Productos = productosOrden3 });
 
                 // Orden 4
                 var productosOrden4 = new List<Producto>
@@ -54,7 +54,7 @@ namespace GrupoA.Prototipo.Empaquetar
                     new Producto { IdProducto = "EE55", NombreProducto = "Martillos", CantidadProducto = 5 },
                     new Producto { IdProducto = "FF66", NombreProducto = "Serruchos", CantidadProducto = 10 }
                 };
-                ordenes.Add(new Orden { Numero = 4, Productos = productosOrden4 });
+                ordenes.Add(new OrdenEmpaquetar { Numero = 4, Productos = productosOrden4 });
 
                 // Orden 5
                 var productosOrden5 = new List<Producto>
@@ -63,7 +63,7 @@ namespace GrupoA.Prototipo.Empaquetar
                     new Producto { IdProducto = "NN44", NombreProducto = "Interruptores", CantidadProducto = 20 },
                     new Producto { IdProducto = "OO55", NombreProducto = "Enchufes", CantidadProducto = 30 }
                 };
-                ordenes.Add(new Orden { Numero = 5, Productos = productosOrden5 });
+                ordenes.Add(new OrdenEmpaquetar { Numero = 5, Productos = productosOrden5 });
 
 
                 return ordenes;
