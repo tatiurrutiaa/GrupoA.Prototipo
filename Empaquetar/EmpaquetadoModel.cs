@@ -65,6 +65,22 @@ namespace GrupoA.Prototipo.Empaquetar
                 };
                 ordenes.Add(new OrdenEmpaquetar { Numero = 5, Productos = productosOrden5 });
 
+                //Orden 6
+                var produtosOrden6 = new List<Producto>
+                {
+                    new Producto { IdProducto = "OO55", NombreProducto = "Enchufes", CantidadProducto = 30 },
+                    new Producto { IdProducto = "MM33", NombreProducto = "Cables eléctricos", CantidadProducto = 100 },
+                    new Producto { IdProducto = "A123", NombreProducto = "Cable USB", CantidadProducto = 50 },
+                    new Producto { IdProducto = "B456", NombreProducto = "Adaptador HDMI", CantidadProducto = 20 },
+                    new Producto { IdProducto = "C789", NombreProducto = "Cargador Inalámbrico", CantidadProducto = 15 },
+                    new Producto { IdProducto = "D012", NombreProducto = "Teclado Mecánico", CantidadProducto = 10 },
+                    new Producto { IdProducto = "E345", NombreProducto = "Mouse Inalámbrico", CantidadProducto = 25 },
+                    new Producto { IdProducto = "F678", NombreProducto = "Monitor LED", CantidadProducto = 5 },
+                    new Producto { IdProducto = "G901", NombreProducto = "Impresora Láser", CantidadProducto = 8 },
+                    new Producto { IdProducto = "H234", NombreProducto = "Altavoces Bluetooth", CantidadProducto = 18 },
+                    new Producto { IdProducto = "I567", NombreProducto = "Auriculares", CantidadProducto = 22 }
+                };
+                ordenes.Add(new OrdenEmpaquetar { Numero = 6, Productos = produtosOrden6 });
 
                 return ordenes;
             }
