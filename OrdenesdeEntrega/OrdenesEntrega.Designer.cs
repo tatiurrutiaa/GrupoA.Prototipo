@@ -31,7 +31,7 @@
             groupBoxOrdendeEntrega.Controls.Add(botonGenerarOrdenDeEntrega);
             groupBoxOrdendeEntrega.Location = new Point(12, 14);
             groupBoxOrdendeEntrega.Name = "groupBoxOrdendeEntrega";
-            groupBoxOrdendeEntrega.Size = new Size(496, 471);
+            groupBoxOrdendeEntrega.Size = new Size(496, 521);
             groupBoxOrdendeEntrega.TabIndex = 23;
             groupBoxOrdendeEntrega.TabStop = false;
             groupBoxOrdendeEntrega.Text = "Ordenes Preparadas";
