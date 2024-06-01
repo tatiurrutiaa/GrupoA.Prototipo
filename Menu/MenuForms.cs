@@ -30,7 +30,7 @@ namespace GrupoA.Prototipo
 
         private void botonGenerarOrdenEntrega_Click(object sender, EventArgs e)
         {
-            GrupoA.Prototipo.OrdenDeEntregaForms ordenentrega = new OrdenDeEntregaForms();
+            GrupoA.Prototipo.OrdenesEntrega ordenentrega = new OrdenesEntrega();
             this.Hide();
             ordenentrega.Show();
         }
@@ -52,7 +52,7 @@ namespace GrupoA.Prototipo
 
         private void botonOrdenEntrega_Click(object sender, EventArgs e)
         {
-            GrupoA.Prototipo.OrdenDeEntregaForms ordenentrega = new();
+            GrupoA.Prototipo.OrdenesEntrega ordenentrega = new();
             this.Hide();
             ordenentrega.Show();
         }
