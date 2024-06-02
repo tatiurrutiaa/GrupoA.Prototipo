@@ -166,5 +166,10 @@ namespace GrupoA.Prototipo.Salida
             // Enable or disable the button based on the conditions
             botonConfirmar.Enabled = isDniDisabled && isItemSelected;
         }
+
+        private void Salida_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

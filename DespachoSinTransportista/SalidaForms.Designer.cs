@@ -123,6 +123,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Salida";
             Text = "SalidaForms";
+            FormClosed += Salida_FormClosed;
             Load += Salida_Load;
             ResumeLayout(false);
             PerformLayout();
