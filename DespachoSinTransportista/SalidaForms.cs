@@ -60,12 +60,15 @@ namespace GrupoA.Prototipo.Salida
                 }
 
                 textBoxDNI.Enabled = false;
+                ListBoxOrdenesPrep.Enabled = true;
+
                 buttonDNI.Text = "Editar DNI"; // Change button text
             }
             // If textBoxDNI is disabled, unlock it and update button text to "Confirmar DNI"
             else
             {
                 textBoxDNI.Enabled = true;
+                ListBoxOrdenesPrep.Enabled = false;
                 buttonDNI.Text = "Aplicar DNI"; // Change button text
             }
         }

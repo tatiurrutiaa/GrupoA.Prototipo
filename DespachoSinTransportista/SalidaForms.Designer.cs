@@ -39,26 +39,29 @@
             // 
             // ListBoxOrdenesPrep
             // 
+            ListBoxOrdenesPrep.Enabled = false;
             ListBoxOrdenesPrep.FormattingEnabled = true;
-            ListBoxOrdenesPrep.Location = new Point(12, 85);
+            ListBoxOrdenesPrep.Location = new Point(14, 113);
+            ListBoxOrdenesPrep.Margin = new Padding(3, 4, 3, 4);
             ListBoxOrdenesPrep.Name = "ListBoxOrdenesPrep";
-            ListBoxOrdenesPrep.Size = new Size(282, 274);
+            ListBoxOrdenesPrep.Size = new Size(322, 356);
             ListBoxOrdenesPrep.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 67);
+            label1.Location = new Point(14, 89);
             label1.Name = "label1";
-            label1.Size = new Size(280, 15);
+            label1.Size = new Size(356, 20);
             label1.TabIndex = 1;
             label1.Text = "Seleccionar las ordenes de preparación a despachar:";
             // 
             // botonConfirmar
             // 
-            botonConfirmar.Location = new Point(217, 380);
+            botonConfirmar.Location = new Point(248, 507);
+            botonConfirmar.Margin = new Padding(3, 4, 3, 4);
             botonConfirmar.Name = "botonConfirmar";
-            botonConfirmar.Size = new Size(75, 23);
+            botonConfirmar.Size = new Size(86, 31);
             botonConfirmar.TabIndex = 2;
             botonConfirmar.Text = "Generar remito";
             botonConfirmar.UseVisualStyleBackColor = true;
@@ -66,9 +69,10 @@
             // 
             // botonAtras
             // 
-            botonAtras.Location = new Point(12, 380);
+            botonAtras.Location = new Point(14, 507);
+            botonAtras.Margin = new Padding(3, 4, 3, 4);
             botonAtras.Name = "botonAtras";
-            botonAtras.Size = new Size(75, 23);
+            botonAtras.Size = new Size(86, 31);
             botonAtras.TabIndex = 3;
             botonAtras.Text = "Atrás";
             botonAtras.UseVisualStyleBackColor = true;
@@ -78,25 +82,27 @@
             // 
             labelDNI.AutoSize = true;
             labelDNI.FlatStyle = FlatStyle.System;
-            labelDNI.Location = new Point(17, 12);
+            labelDNI.Location = new Point(19, 16);
             labelDNI.Name = "labelDNI";
-            labelDNI.Size = new Size(168, 15);
+            labelDNI.Size = new Size(215, 20);
             labelDNI.TabIndex = 4;
             labelDNI.Text = "Ingrese el DNI del transportista";
             // 
             // textBoxDNI
             // 
-            textBoxDNI.Location = new Point(16, 36);
+            textBoxDNI.Location = new Point(18, 48);
+            textBoxDNI.Margin = new Padding(3, 4, 3, 4);
             textBoxDNI.Name = "textBoxDNI";
-            textBoxDNI.Size = new Size(169, 23);
+            textBoxDNI.Size = new Size(193, 27);
             textBoxDNI.TabIndex = 5;
             textBoxDNI.KeyPress += textBoxDNI_KeyPress;
             // 
             // buttonDNI
             // 
-            buttonDNI.Location = new Point(217, 36);
+            buttonDNI.Location = new Point(248, 48);
+            buttonDNI.Margin = new Padding(3, 4, 3, 4);
             buttonDNI.Name = "buttonDNI";
-            buttonDNI.Size = new Size(75, 23);
+            buttonDNI.Size = new Size(86, 31);
             buttonDNI.TabIndex = 6;
             buttonDNI.Text = "Aplicar DNI";
             buttonDNI.UseVisualStyleBackColor = true;
@@ -104,9 +110,9 @@
             // 
             // Salida
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(305, 415);
+            ClientSize = new Size(349, 553);
             Controls.Add(buttonDNI);
             Controls.Add(textBoxDNI);
             Controls.Add(labelDNI);
@@ -114,6 +120,7 @@
             Controls.Add(botonConfirmar);
             Controls.Add(label1);
             Controls.Add(ListBoxOrdenesPrep);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Salida";
             Text = "SalidaForms";
             Load += Salida_Load;
