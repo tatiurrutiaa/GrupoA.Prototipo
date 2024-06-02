@@ -29,12 +29,14 @@
             EmpaquetarButton = new Button();
             AtrasButton = new Button();
             NroOrdenLabel = new Label();
+            anteriorButton = new Button();
+            SiguienteButton = new Button();
             SuspendLayout();
             // 
             // EmpaquetarListView
             // 
             EmpaquetarListView.Columns.AddRange(new ColumnHeader[] { columnHeaderID, columnHeaderNombre, columnHeaderCantidad });
-            EmpaquetarListView.Location = new Point(12, 33);
+            EmpaquetarListView.Location = new Point(12, 56);
             EmpaquetarListView.Name = "EmpaquetarListView";
             EmpaquetarListView.Size = new Size(395, 207);
             EmpaquetarListView.TabIndex = 0;
@@ -58,7 +60,7 @@
             // 
             // EmpaquetarButton
             // 
-            EmpaquetarButton.Location = new Point(307, 246);
+            EmpaquetarButton.Location = new Point(307, 281);
             EmpaquetarButton.Name = "EmpaquetarButton";
             EmpaquetarButton.Size = new Size(100, 25);
             EmpaquetarButton.TabIndex = 1;
@@ -85,19 +87,45 @@
             NroOrdenLabel.TabIndex = 3;
             NroOrdenLabel.Text = "Nro de Orden:";
             // 
+            // anteriorButton
+            // 
+            anteriorButton.Location = new Point(277, 10);
+            anteriorButton.Name = "anteriorButton";
+            anteriorButton.Size = new Size(60, 25);
+            anteriorButton.TabIndex = 4;
+            anteriorButton.Text = "Anterior";
+            anteriorButton.UseVisualStyleBackColor = true;
+            anteriorButton.Click += anteriorButton_Click;
+            // 
+            // SiguienteButton
+            // 
+            SiguienteButton.Location = new Point(343, 10);
+            SiguienteButton.Name = "SiguienteButton";
+            SiguienteButton.Size = new Size(64, 25);
+            SiguienteButton.TabIndex = 5;
+            SiguienteButton.Text = "Siguiente";
+            SiguienteButton.UseVisualStyleBackColor = true;
+            SiguienteButton.Click += SiguienteButton_Click;
+            // 
             // EmpaquetadoForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(419, 349);
+            Controls.Add(SiguienteButton);
+            Controls.Add(anteriorButton);
             Controls.Add(NroOrdenLabel);
             Controls.Add(AtrasButton);
             Controls.Add(EmpaquetarButton);
             Controls.Add(EmpaquetarListView);
             Name = "EmpaquetadoForms";
             Text = "Empaquetar";
+            Load += EmpaquetadoForms_Load;
             ResumeLayout(false);
             PerformLayout();
         }
+
+        private Button anteriorButton;
+        private Button SiguienteButton;
     }
 }

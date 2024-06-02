@@ -21,11 +21,12 @@ namespace GrupoA.Prototipo.Empaquetar
             InitializeComponent();
             ordenes = DatosTemporales.ObtenerOrdenes();
             MostrarOrden();
+            ActualizarBotones();
         }
 
         private void MostrarOrden()
         {
-            if (ordenActual < ordenes.Count)
+            if (ordenActual < ordenes.Count && ordenActual >= 0)
             {
                 var orden = ordenes[ordenActual];
                 NroOrdenLabel.Text = $"Orden #{orden.Numero}";
@@ -37,11 +38,13 @@ namespace GrupoA.Prototipo.Empaquetar
                     item.SubItems.Add(producto.CantidadProducto.ToString());
                     EmpaquetarListView.Items.Add(item);
                 }
+                EmpaquetarButton.Enabled = true; // Asegurarse de que el botón está habilitado cuando hay una orden para mostrar
             }
             else
             {
-                MessageBox.Show("No hay más órdenes para empaquetar.");
-                EmpaquetarButton.Enabled = false;
+                NroOrdenLabel.Text = "No hay más órdenes para empaquetar.";
+                EmpaquetarListView.Items.Clear();
+                EmpaquetarButton.Enabled = false; // Deshabilitar el botón solo cuando no hay más órdenes
             }
         }
 
@@ -52,8 +55,13 @@ namespace GrupoA.Prototipo.Empaquetar
                 var orden = ordenes[ordenActual];
                 string productos = string.Join("\n", orden.Productos.Select(p => p.ToString()));
                 MessageBox.Show($"Orden #{orden.Numero} empaquetada con productos:\n{productos}");
-                ordenActual++;
+                ordenes.RemoveAt(ordenActual);
+                if (ordenActual >= ordenes.Count)
+                {
+                    ordenActual = ordenes.Count - 1;
+                }
                 MostrarOrden();
+                ActualizarBotones();
             }
         }
 
@@ -62,6 +70,37 @@ namespace GrupoA.Prototipo.Empaquetar
             GrupoA.Prototipo.MenuForms menu = new();
             this.Hide();
             menu.Show();
+        }
+
+        private void anteriorButton_Click(object sender, EventArgs e)
+        {
+            if (ordenActual > 0)
+            {
+                ordenActual--;
+                MostrarOrden();
+                ActualizarBotones();
+            }
+        }
+
+        private void SiguienteButton_Click(object sender, EventArgs e)
+        {
+            if (ordenActual < ordenes.Count - 1)
+            {
+                ordenActual++;
+                MostrarOrden();
+                ActualizarBotones();
+            }
+        }
+        private void ActualizarBotones()
+        {
+            anteriorButton.Enabled = ordenActual > 0 && ordenes.Count > 0;
+            SiguienteButton.Enabled = ordenActual < ordenes.Count - 1;
+            EmpaquetarButton.Enabled = ordenes.Count > 0;
+        }
+
+        private void EmpaquetadoForms_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
