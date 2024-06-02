@@ -77,5 +77,10 @@ namespace GrupoA.Prototipo
             this.Hide();
             iniciarsesion.Show();
         }
+        private void MenuForms_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
+
 }

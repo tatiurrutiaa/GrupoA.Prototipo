@@ -191,6 +191,7 @@
             Controls.Add(groupBoxAreaPreparacion);
             Name = "MenuForms";
             Text = "MenuForms";
+            FormClosed += MenuForms_FormClosed; 
             groupBoxAreaPreparacion.ResumeLayout(false);
             groupBoxAlmacen.ResumeLayout(false);
             groupBoxDespacho.ResumeLayout(false);
