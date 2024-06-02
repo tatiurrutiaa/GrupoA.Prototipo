@@ -96,6 +96,8 @@ namespace GrupoA.Prototipo.Salida
 
         private void botonConfirmar_Click(object sender, EventArgs e)
         {
+            // Code not being used since commit 7973765. Conditions will never be met due to button being disabled beforehand
+            /*
             // Check if textBoxDNI is not locked but there is text
             if (textBoxDNI.Enabled && textBoxDNI.Text.Length > 0)
             {
@@ -115,7 +117,7 @@ namespace GrupoA.Prototipo.Salida
                 MessageBox.Show("No se seleccionó ninguna orden.");
                 return;
             }
-
+            */
             // Display the checked values
             DisplayCheckedValues();
         }
