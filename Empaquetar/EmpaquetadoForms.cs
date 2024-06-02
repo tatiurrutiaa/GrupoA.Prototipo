@@ -55,6 +55,7 @@ namespace GrupoA.Prototipo.Empaquetar
                 MessageBox.Show($"Orden #{orden.Numero} empaquetada con productos:\n{productos}");
                 ordenActual++;
                 MostrarOrden();
+                ActualizarBotones();
             }
         }
 
@@ -88,6 +89,11 @@ namespace GrupoA.Prototipo.Empaquetar
         {
             anteriorButton.Enabled = ordenActual > 0;
             SiguienteButton.Enabled = ordenActual < ordenes.Count - 1;
+        }
+
+        private void EmpaquetadoForms_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
