@@ -36,7 +36,7 @@
             // EmpaquetarListView
             // 
             EmpaquetarListView.Columns.AddRange(new ColumnHeader[] { columnHeaderID, columnHeaderNombre, columnHeaderCantidad });
-            EmpaquetarListView.Location = new Point(12, 33);
+            EmpaquetarListView.Location = new Point(12, 56);
             EmpaquetarListView.Name = "EmpaquetarListView";
             EmpaquetarListView.Size = new Size(395, 207);
             EmpaquetarListView.TabIndex = 0;
@@ -60,7 +60,7 @@
             // 
             // EmpaquetarButton
             // 
-            EmpaquetarButton.Location = new Point(307, 246);
+            EmpaquetarButton.Location = new Point(307, 281);
             EmpaquetarButton.Name = "EmpaquetarButton";
             EmpaquetarButton.Size = new Size(100, 25);
             EmpaquetarButton.TabIndex = 1;
@@ -89,7 +89,7 @@
             // 
             // anteriorButton
             // 
-            anteriorButton.Location = new Point(171, 246);
+            anteriorButton.Location = new Point(277, 10);
             anteriorButton.Name = "anteriorButton";
             anteriorButton.Size = new Size(60, 25);
             anteriorButton.TabIndex = 4;
@@ -99,7 +99,7 @@
             // 
             // SiguienteButton
             // 
-            SiguienteButton.Location = new Point(237, 246);
+            SiguienteButton.Location = new Point(343, 10);
             SiguienteButton.Name = "SiguienteButton";
             SiguienteButton.Size = new Size(64, 25);
             SiguienteButton.TabIndex = 5;
