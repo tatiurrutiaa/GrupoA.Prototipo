@@ -21,6 +21,7 @@ namespace GrupoA.Prototipo.Empaquetar
             InitializeComponent();
             ordenes = DatosTemporales.ObtenerOrdenes();
             MostrarOrden();
+            ActualizarBotones();
         }
 
         private void MostrarOrden()
@@ -62,6 +63,31 @@ namespace GrupoA.Prototipo.Empaquetar
             GrupoA.Prototipo.MenuForms menu = new();
             this.Hide();
             menu.Show();
+        }
+
+        private void anteriorButton_Click(object sender, EventArgs e)
+        {
+            if (ordenActual > 0)
+            {
+                ordenActual--;
+                MostrarOrden();
+                ActualizarBotones();
+            }
+        }
+
+        private void SiguienteButton_Click(object sender, EventArgs e)
+        {
+            if (ordenActual < ordenes.Count - 1)
+            {
+                ordenActual++;
+                MostrarOrden();
+                ActualizarBotones();
+            }
+        }
+        private void ActualizarBotones()
+        {
+            anteriorButton.Enabled = ordenActual > 0;
+            SiguienteButton.Enabled = ordenActual < ordenes.Count - 1;
         }
     }
 }

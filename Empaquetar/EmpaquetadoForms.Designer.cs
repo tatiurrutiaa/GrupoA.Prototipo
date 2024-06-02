@@ -29,6 +29,8 @@
             EmpaquetarButton = new Button();
             AtrasButton = new Button();
             NroOrdenLabel = new Label();
+            anteriorButton = new Button();
+            SiguienteButton = new Button();
             SuspendLayout();
             // 
             // EmpaquetarListView
@@ -85,11 +87,33 @@
             NroOrdenLabel.TabIndex = 3;
             NroOrdenLabel.Text = "Nro de Orden:";
             // 
+            // anteriorButton
+            // 
+            anteriorButton.Location = new Point(171, 246);
+            anteriorButton.Name = "anteriorButton";
+            anteriorButton.Size = new Size(60, 25);
+            anteriorButton.TabIndex = 4;
+            anteriorButton.Text = "Anterior";
+            anteriorButton.UseVisualStyleBackColor = true;
+            anteriorButton.Click += anteriorButton_Click;
+            // 
+            // SiguienteButton
+            // 
+            SiguienteButton.Location = new Point(237, 246);
+            SiguienteButton.Name = "SiguienteButton";
+            SiguienteButton.Size = new Size(64, 25);
+            SiguienteButton.TabIndex = 5;
+            SiguienteButton.Text = "Siguiente";
+            SiguienteButton.UseVisualStyleBackColor = true;
+            SiguienteButton.Click += SiguienteButton_Click;
+            // 
             // EmpaquetadoForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(419, 349);
+            Controls.Add(SiguienteButton);
+            Controls.Add(anteriorButton);
             Controls.Add(NroOrdenLabel);
             Controls.Add(AtrasButton);
             Controls.Add(EmpaquetarButton);
@@ -99,5 +123,8 @@
             ResumeLayout(false);
             PerformLayout();
         }
+
+        private Button anteriorButton;
+        private Button SiguienteButton;
     }
 }
