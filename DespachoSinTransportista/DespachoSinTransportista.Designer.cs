@@ -1,6 +1,6 @@
 ﻿namespace GrupoA.Prototipo.Salida
 {
-    partial class Salida
+    partial class DespachoSinTransportistaForms
     {
         /// <summary>
         /// Required designer variable.
@@ -108,7 +108,7 @@
             buttonDNI.UseVisualStyleBackColor = true;
             buttonDNI.Click += buttonDNI_Click;
             // 
-            // Salida
+            // DespachoSinTransportistaForms
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -121,8 +121,8 @@
             Controls.Add(label1);
             Controls.Add(ListBoxOrdenesPrep);
             Margin = new Padding(3, 4, 3, 4);
-            Name = "Salida";
-            Text = "SalidaForms";
+            Name = "DespachoSinTransportistaForms";
+            Text = "Despacho sin transportista";
             FormClosed += Salida_FormClosed;
             Load += Salida_Load;
             ResumeLayout(false);

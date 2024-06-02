@@ -11,10 +11,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GrupoA.Prototipo.Salida
 {
-    public partial class Salida : Form
+    public partial class DespachoSinTransportistaForms : Form
     {
         SalidaModel modelo;
-        public Salida()
+        public DespachoSinTransportistaForms()
         {
             InitializeComponent();
             // Initialize components and add event handlers

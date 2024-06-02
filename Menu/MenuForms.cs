@@ -66,7 +66,7 @@ namespace GrupoA.Prototipo
 
         private void botonDespachoSintranportista_Click(object sender, EventArgs e)
         {
-            GrupoA.Prototipo.Salida.Salida salida = new();
+            GrupoA.Prototipo.Salida.DespachoSinTransportistaForms salida = new();
             this.Hide();
             salida.Show();
         }
