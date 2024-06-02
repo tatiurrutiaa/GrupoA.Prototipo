@@ -30,7 +30,7 @@ namespace GrupoA.Prototipo.Salida
             var ordenes = ordenesPreparacion.Where(o => o.Estado == "preparada"
             && o.DNITransportista == null).ToList();
 
-            if (ordenes == null)
+            /*if (ordenes == null)
             {
                 MessageBox.Show("No hay ordenes de preparación para despachar." +
                     "Por favor, intente nuevamente en unos minutos.");
@@ -39,7 +39,8 @@ namespace GrupoA.Prototipo.Salida
             else
             {
                 return ordenes;
-            }
+            }*/
+            return ordenes;
         }
     }
 }
