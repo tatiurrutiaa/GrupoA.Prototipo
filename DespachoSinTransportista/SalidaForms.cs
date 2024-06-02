@@ -17,12 +17,17 @@ namespace GrupoA.Prototipo.Salida
         public Salida()
         {
             InitializeComponent();
+            // Initialize components and add event handlers
+            textBoxDNI.EnabledChanged += new EventHandler(ControlStateChanged);
+            ListBoxOrdenesPrep.ItemCheck += new ItemCheckEventHandler(ListBoxOrdenesPrep_ItemCheck);
         }
 
         private void Salida_Load(object sender, EventArgs e)
         {
             modelo = new();
             CargarListbox();
+            // Call the method initially to set the button state correctly on form load
+            UpdateButtonState();
         }
 
         private void CargarListbox()
@@ -52,7 +57,6 @@ namespace GrupoA.Prototipo.Salida
             // If textBoxDNI is enabled, lock it and update button text to "Editar DNI"
             if (textBoxDNI.Enabled)
             {
-
                 if (textBoxDNI.Text.Length < 7 || textBoxDNI.Text.Length > 9)
                 {
                     MessageBox.Show("El DNI debe contener entre 7 y 9 caracteres.");
@@ -71,11 +75,15 @@ namespace GrupoA.Prototipo.Salida
                 ListBoxOrdenesPrep.Enabled = false;
                 buttonDNI.Text = "Aplicar DNI"; // Change button text
             }
+
+            // Update the button state
+            UpdateButtonState();
         }
+
         private void textBoxDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-            
+
             if (textBoxDNI.Text.Length > 8)
             {
                 // If the length exceeds 8, truncate the text to 8 characters
@@ -111,6 +119,7 @@ namespace GrupoA.Prototipo.Salida
             // Display the checked values
             DisplayCheckedValues();
         }
+
         private void DisplayCheckedValues()
         {
             StringBuilder sb = new StringBuilder();
@@ -128,6 +137,32 @@ namespace GrupoA.Prototipo.Salida
 
             // Display the checked values
             MessageBox.Show("Se generará el remito, para las siguientes ordenes, con el DNI del transportista n°" + textBoxDNI.Text + "\n\n" + sb.ToString());
+        }
+
+        private void ControlStateChanged(object sender, EventArgs e)
+        {
+            // Update the button state whenever relevant control states change
+            UpdateButtonState();
+        }
+
+        private void ListBoxOrdenesPrep_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            // Handle the item check state change before it's applied
+            this.BeginInvoke((MethodInvoker)delegate
+            {
+                UpdateButtonState();
+            });
+        }
+
+        private void UpdateButtonState()
+        {
+            // Check if the dni TextBox is not enabled
+            bool isDniDisabled = !textBoxDNI.Enabled;
+            // Check if at least one item is selected in the ListBoxOrdenesPrep
+            bool isItemSelected = ListBoxOrdenesPrep.CheckedItems.Count > 0;
+
+            // Enable or disable the button based on the conditions
+            botonConfirmar.Enabled = isDniDisabled && isItemSelected;
         }
     }
 }
