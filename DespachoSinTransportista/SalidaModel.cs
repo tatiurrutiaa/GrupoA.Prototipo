@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GrupoA.Prototipo.Salida
+namespace GrupoA.Prototipo.DespachoSinTransportista
 {
     internal class SalidaModel
     {

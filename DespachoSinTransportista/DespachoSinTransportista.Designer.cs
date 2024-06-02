@@ -1,4 +1,4 @@
-﻿namespace GrupoA.Prototipo.Salida
+﻿namespace GrupoA.Prototipo.DespachoSinTransportista
 {
     partial class DespachoSinTransportistaForms
     {
