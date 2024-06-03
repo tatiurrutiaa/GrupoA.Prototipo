@@ -9,11 +9,11 @@ namespace GrupoA.Prototipo.Empaquetar
     public class OrdenEmpaquetar
     {
         public int Numero { get; set; }
-        public List<Producto> Productos { get; set; }
+        public List<Mercaderia> Productos { get; set; }
 
         public OrdenEmpaquetar()
         {
-            Productos = new List<Producto>();
+            Productos = new List<Mercaderia>();
         }
 
         public override string ToString()

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace GrupoA.Prototipo.Empaquetar
 {
-    public class Producto
+    public class Mercaderia
     {
             public string IdProducto { get; set; }
             public string NombreProducto { get; set; }
             public int CantidadProducto { get; set; }
 
-            public Producto()
+            public Mercaderia()
             {
                 IdProducto = string.Empty;
                 NombreProducto = string.Empty;
