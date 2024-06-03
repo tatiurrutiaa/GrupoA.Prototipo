@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBoxAreaPreparacion = new GroupBox();
+            botonOrdenEntrega = new Button();
             botonOrdenSeleccion = new Button();
             EmpaquetarButton = new Button();
             buttonCargarOrdenPreparacion = new Button();
@@ -37,10 +38,9 @@
             botonRetiroStock = new Button();
             groupBoxDespacho = new GroupBox();
             botonDespachoSintranportista = new Button();
-            botonVerificarTransportista = new Button();
+            botonDespachoConTransportista = new Button();
             groupBoxGestiónDepósitos = new GroupBox();
             botonSalir = new Button();
-            botonOrdenEntrega = new Button();
             groupBoxAreaPreparacion.SuspendLayout();
             groupBoxAlmacen.SuspendLayout();
             groupBoxDespacho.SuspendLayout();
@@ -58,6 +58,16 @@
             groupBoxAreaPreparacion.TabIndex = 0;
             groupBoxAreaPreparacion.TabStop = false;
             groupBoxAreaPreparacion.Text = "Área de Preparación";
+            // 
+            // botonOrdenEntrega
+            // 
+            botonOrdenEntrega.Location = new Point(7, 86);
+            botonOrdenEntrega.Name = "botonOrdenEntrega";
+            botonOrdenEntrega.Size = new Size(173, 26);
+            botonOrdenEntrega.TabIndex = 6;
+            botonOrdenEntrega.Text = "Generar Orden de Entrega";
+            botonOrdenEntrega.UseVisualStyleBackColor = true;
+            botonOrdenEntrega.Click += botonOrdenEntrega_Click;
             // 
             // botonOrdenSeleccion
             // 
@@ -120,7 +130,7 @@
             // groupBoxDespacho
             // 
             groupBoxDespacho.Controls.Add(botonDespachoSintranportista);
-            groupBoxDespacho.Controls.Add(botonVerificarTransportista);
+            groupBoxDespacho.Controls.Add(botonDespachoConTransportista);
             groupBoxDespacho.Location = new Point(27, 330);
             groupBoxDespacho.Name = "groupBoxDespacho";
             groupBoxDespacho.Size = new Size(189, 90);
@@ -138,15 +148,15 @@
             botonDespachoSintranportista.UseVisualStyleBackColor = true;
             botonDespachoSintranportista.Click += botonDespachoSintranportista_Click;
             // 
-            // botonVerificarTransportista
+            // botonDespachoConTransportista
             // 
-            botonVerificarTransportista.Location = new Point(6, 22);
-            botonVerificarTransportista.Name = "botonVerificarTransportista";
-            botonVerificarTransportista.Size = new Size(173, 26);
-            botonVerificarTransportista.TabIndex = 4;
-            botonVerificarTransportista.Text = "Verificar Transportista";
-            botonVerificarTransportista.UseVisualStyleBackColor = true;
-            botonVerificarTransportista.Click += botonVerificarTransportista_Click;
+            botonDespachoConTransportista.Location = new Point(6, 22);
+            botonDespachoConTransportista.Name = "botonDespachoConTransportista";
+            botonDespachoConTransportista.Size = new Size(173, 26);
+            botonDespachoConTransportista.TabIndex = 4;
+            botonDespachoConTransportista.Text = "Despacho Con Transportista";
+            botonDespachoConTransportista.UseVisualStyleBackColor = true;
+            botonDespachoConTransportista.Click += botonDespachoConTransportista_Click;
             // 
             // groupBoxGestiónDepósitos
             // 
@@ -168,16 +178,6 @@
             botonSalir.UseVisualStyleBackColor = true;
             botonSalir.Click += botonSalir_Click;
             // 
-            // botonOrdenEntrega
-            // 
-            botonOrdenEntrega.Location = new Point(7, 86);
-            botonOrdenEntrega.Name = "botonOrdenEntrega";
-            botonOrdenEntrega.Size = new Size(173, 26);
-            botonOrdenEntrega.TabIndex = 6;
-            botonOrdenEntrega.Text = "Generar Orden de Entrega";
-            botonOrdenEntrega.UseVisualStyleBackColor = true;
-            botonOrdenEntrega.Click += botonOrdenEntrega_Click;
-            // 
             // MenuForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -191,7 +191,7 @@
             Controls.Add(groupBoxAreaPreparacion);
             Name = "MenuForms";
             Text = "MenuForms";
-            FormClosed += MenuForms_FormClosed; 
+            FormClosed += MenuForms_FormClosed;
             groupBoxAreaPreparacion.ResumeLayout(false);
             groupBoxAlmacen.ResumeLayout(false);
             groupBoxDespacho.ResumeLayout(false);
@@ -208,7 +208,7 @@
         private GroupBox groupBoxAlmacen;
         private Button botonRetiroStock;
         private GroupBox groupBoxDespacho;
-        private Button botonVerificarTransportista;
+        private Button botonDespachoConTransportista;
         private GroupBox groupBoxGestiónDepósitos;
         private Button botonSalir;
         private Button botonDespachoSintranportista;

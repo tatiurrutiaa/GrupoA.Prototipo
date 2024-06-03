@@ -57,11 +57,11 @@ namespace GrupoA.Prototipo
             ordenentrega.Show();
         }
 
-        private void botonVerificarTransportista_Click(object sender, EventArgs e)
+        private void botonDespachoConTransportista_Click(object sender, EventArgs e)
         {
-            GrupoA.Prototipo.VerificarTransportistaForms verificartransportista = new VerificarTransportistaForms();
+            GrupoA.Prototipo.DespachoConTransportista.DespachoConTransportistaForms salida = new();
             this.Hide();
-            verificartransportista.Show();
+            salida.Show();
         }
 
         private void botonDespachoSintranportista_Click(object sender, EventArgs e)
