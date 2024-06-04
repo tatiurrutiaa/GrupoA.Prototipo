@@ -40,9 +40,9 @@
             // 
             // buttonDNI
             // 
-            buttonDNI.Location = new Point(215, 27);
+            buttonDNI.Location = new Point(215, 34);
             buttonDNI.Name = "buttonDNI";
-            buttonDNI.Size = new Size(92, 34);
+            buttonDNI.Size = new Size(98, 23);
             buttonDNI.TabIndex = 0;
             buttonDNI.Text = "Aplicar DNI";
             buttonDNI.UseVisualStyleBackColor = true;
@@ -80,11 +80,11 @@
             // 
             // buttonAtras
             // 
-            buttonAtras.Location = new Point(6, 287);
+            buttonAtras.Location = new Point(6, 288);
             buttonAtras.Name = "buttonAtras";
-            buttonAtras.Size = new Size(75, 23);
+            buttonAtras.Size = new Size(112, 23);
             buttonAtras.TabIndex = 2;
-            buttonAtras.Text = "Atrás";
+            buttonAtras.Text = "Volver al Menu";
             buttonAtras.UseVisualStyleBackColor = true;
             buttonAtras.Click += buttonAtras_Click;
             // 
