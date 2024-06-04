@@ -9,26 +9,35 @@ namespace GrupoA.Prototipo.DespachoConTransportista
 {
     internal class DespachoConTransportistaModel
     {
-        public List<OrdenesPreparacion> ordenesPreparacion = new()
+        public List<OrdenesPreparacion> ordenesPreparacion { get; set;}
+
+        public DespachoConTransportistaModel()
         {
-        new() {NroOrdenPrep = 15, CuitCliente = "27-41672496-8", DNITransportista = 41672496,  Estado = "preparada"},
-        new() {NroOrdenPrep = 16, CuitCliente = "27-41672496-8", DNITransportista = null, Estado = "preparada"},
-        new() {NroOrdenPrep = 17, CuitCliente = "27-41672496-8", DNITransportista = null, Estado = "preparada"},
-        new() {NroOrdenPrep = 18, CuitCliente = "27-41672496-8", DNITransportista = null, Estado = "preparada"},
-        new() {NroOrdenPrep = 19, CuitCliente = "27-41672496-8", DNITransportista = null, Estado = "ingresada"},
-        new() {NroOrdenPrep = 20, CuitCliente = "30-22465788-7", DNITransportista = null, Estado = "preparada"},
-        new() {NroOrdenPrep = 21, CuitCliente = "30-22465788-7", DNITransportista = null, Estado = "preparada"},
-        new() {NroOrdenPrep = 22, CuitCliente = "34-56564433-5", DNITransportista = null, Estado = "preparada"},
-        new() {NroOrdenPrep = 23, CuitCliente = "30-23456789-1", DNITransportista = null, Estado = "preparada"},
-        new() {NroOrdenPrep = 24, CuitCliente = "30-23456789-1", DNITransportista = null, Estado = "preparada"},
-        new() {NroOrdenPrep = 25, CuitCliente = "30-23456789-1", DNITransportista = null, Estado = "preparada"}
-        };
+            ordenesPreparacion = new List<OrdenesPreparacion>
+            {
+                new() { NroOrdenPrep = 15, CuitCliente = "27-41672496-8", DNITransportista = 41672496, Estado = "preparada" },
+                new() { NroOrdenPrep = 16, CuitCliente = "27-41672496-8", DNITransportista = 46546462, Estado = "preparada" },
+                new() { NroOrdenPrep = 17, CuitCliente = "27-41672496-8", DNITransportista = 16234853, Estado = "preparada" },
+                new() { NroOrdenPrep = 18, CuitCliente = "27-41672496-8", DNITransportista = null, Estado = "preparada" },
+                new() { NroOrdenPrep = 19, CuitCliente = "27-41672496-8", DNITransportista = 16280699, Estado = "ingresada" },
+                new() { NroOrdenPrep = 20, CuitCliente = "30-22465788-7", DNITransportista = 20568962, Estado = "preparada" },
+                new() { NroOrdenPrep = 21, CuitCliente = "30-22465788-7", DNITransportista = null, Estado = "preparada" },
+                new() { NroOrdenPrep = 22, CuitCliente = "34-56564433-5", DNITransportista = 35101021, Estado = "preparada" },
+                new() { NroOrdenPrep = 23, CuitCliente = "30-23456789-1", DNITransportista = null, Estado = "preparada" },
+                new() { NroOrdenPrep = 24, CuitCliente = "30-23456789-1", DNITransportista = 40504002, Estado = "preparada" },
+                new() { NroOrdenPrep = 25, CuitCliente = "30-23456789-1", DNITransportista = 37568798, Estado = "preparada" }
+            };
+        }
 
         public List<OrdenesPreparacion> MercaderiaARetirar()
         {
-            var ordenes = ordenesPreparacion.Where(o => o.Estado == "preparada"
-            && o.DNITransportista == null).ToList();
+            return ordenesPreparacion.Where(orden => orden.Estado == "preparada" && orden.DNITransportista.HasValue).ToList();
+        }
 
+        public List<OrdenesPreparacion> ObtenerOrdenesPorDNI(int dniTransportista)
+        {
+            return ordenesPreparacion.Where(orden => orden.Estado == "preparada" && orden.DNITransportista == dniTransportista).ToList();
+        
             /*if (ordenes == null)
             {
                 MessageBox.Show("No hay ordenes de preparación para despachar." +
@@ -39,7 +48,6 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             {
                 return ordenes;
             }*/
-            return ordenes;
         }
     }
 }

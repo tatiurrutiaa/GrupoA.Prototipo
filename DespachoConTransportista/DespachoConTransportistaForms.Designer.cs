@@ -61,9 +61,9 @@
             labelDNI.AutoSize = true;
             labelDNI.Location = new Point(12, 16);
             labelDNI.Name = "labelDNI";
-            labelDNI.Size = new Size(168, 15);
+            labelDNI.Size = new Size(251, 15);
             labelDNI.TabIndex = 2;
-            labelDNI.Text = "Ingrese el DNI del transportista";
+            labelDNI.Text = "Ingrese el DNI del transportista (solo números)";
             // 
             // groupBoxOrdenEntrega
             // 

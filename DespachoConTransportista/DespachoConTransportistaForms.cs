@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrupoA.Prototipo.RetiroStock;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +14,11 @@ namespace GrupoA.Prototipo.DespachoConTransportista
 {
     public partial class DespachoConTransportistaForms : Form
     {
-        DespachoConTransportistaModel modelo;
+        private DespachoConTransportistaModel modelo;
         public DespachoConTransportistaForms()
         {
             InitializeComponent();
+            modelo = new DespachoConTransportistaModel();
             textBoxDNI.EnabledChanged += new EventHandler(ControlStateChanged);
             ListBoxOrdenesPrep.ItemCheck += new ItemCheckEventHandler(ListBoxOrdenesPrep_ItemCheck);
         }
@@ -26,19 +28,25 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             CargarListbox();
             UpdateButtonState();
         }
-        private void CargarListbox()
+        private void ActualizarListbox(List<OrdenesPreparacion> ordenes)
         {
-            var lista = modelo.MercaderiaARetirar();
-            if (lista == null)
-            {
-                MessageBox.Show("No hay ordenes de preparación para despachar." +
-                    "Por favor, intente nuevamente en unos minutos.");
-                return;
-            }
-            foreach (var orden in lista)
+            ListBoxOrdenesPrep.Items.Clear();
+            foreach (var orden in ordenes)
             {
                 ListBoxOrdenesPrep.Items.Add($"Orden {orden.NroOrdenPrep}");
             }
+        }
+
+        private void CargarListbox()
+        {
+            var lista = modelo.MercaderiaARetirar();
+            if (lista == null || !lista.Any())
+            {
+                MessageBox.Show("No hay órdenes de preparación para despachar. Por favor, intente nuevamente en unos minutos.");
+                return;
+            }
+
+            ActualizarListbox(lista);
         }
 
         private void buttonAtras_Click(object sender, EventArgs e)
@@ -50,31 +58,56 @@ namespace GrupoA.Prototipo.DespachoConTransportista
 
         private void buttonDNI_Click(object sender, EventArgs e)
         {
-            // If textBoxDNI is enabled, lock it and update button text to "Editar DNI"
+            // Si textBoxDNI está habilitado, lo bloquea y actualiza el texto del botón a "Editar DNI"
             if (textBoxDNI.Enabled)
             {
-                if (textBoxDNI.Text.Length < 7 || textBoxDNI.Text.Length > 9)
+                string dniText = textBoxDNI.Text.Trim();
+
+                // Validar que el DNI no esté vacío
+                if (string.IsNullOrWhiteSpace(dniText))
+                {
+                    MessageBox.Show("El DNI no puede estar vacío.");
+                    return;
+                }
+
+                // Validar que el DNI tenga entre 7 y 9 caracteres
+                if (dniText.Length < 7 || dniText.Length > 9)
                 {
                     MessageBox.Show("El DNI debe contener entre 7 y 9 caracteres.");
+                    return;
+                }
+
+                // Validar que el DNI contenga solo números
+                if (!int.TryParse(dniText, out int dni))
+                {
+                    MessageBox.Show("El DNI debe contener solo números.");
                     return;
                 }
 
                 textBoxDNI.Enabled = false;
                 ListBoxOrdenesPrep.Enabled = true;
 
-                buttonDNI.Text = "Editar DNI"; // Change button text
+                buttonDNI.Text = "Editar DNI"; // Cambiar el texto del botón
+
+                // Filtrar las órdenes de preparación por el DNI ingresado y actualizar la ListBox
+                var ordenesFiltradas = modelo.ObtenerOrdenesPorDNI(dni);
+                ActualizarListbox(ordenesFiltradas);
             }
-            // If textBoxDNI is disabled, unlock it and update button text to "Confirmar DNI"
             else
             {
                 textBoxDNI.Enabled = true;
                 ListBoxOrdenesPrep.Enabled = false;
-                buttonDNI.Text = "Aplicar DNI"; // Change button text
+                buttonDNI.Text = "Aplicar DNI"; // Cambiar el texto del botón
+
+
+                // Restaurar la lista completa de órdenes de preparación si se está editando el DNI
+                CargarListbox();
             }
 
-            // Update the button state
+            // Actualizar el estado del botón
             UpdateButtonState();
         }
+
         private void textBoxDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
@@ -116,13 +149,13 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             MessageBox.Show("Se generará el remito, para las siguientes ordenes, con el DNI del transportista n°" + textBoxDNI.Text + "\n\n" + sb.ToString());
         }
 
-        private void ControlStateChanged(object sender, EventArgs e)
+        private void ControlStateChanged(object? sender, EventArgs e)
         {
             // Update the button state whenever relevant control states change
             UpdateButtonState();
         }
 
-        private void ListBoxOrdenesPrep_ItemCheck(object sender, ItemCheckEventArgs e)
+        private void ListBoxOrdenesPrep_ItemCheck(object? sender, ItemCheckEventArgs e)
         {
             // Handle the item check state change before it's applied
             this.BeginInvoke((MethodInvoker)delegate
@@ -151,5 +184,6 @@ namespace GrupoA.Prototipo.DespachoConTransportista
         {
 
         }
+
     }
 }
