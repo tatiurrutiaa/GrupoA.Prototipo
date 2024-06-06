@@ -30,9 +30,9 @@
             groupBoxOrdendeEntrega.Controls.Add(listBoxOrdenesPrep);
             groupBoxOrdendeEntrega.Controls.Add(botonGenerarOrdenDeEntrega);
             groupBoxOrdendeEntrega.Location = new Point(8, 8);
-            groupBoxOrdendeEntrega.Margin = new Padding(2, 2, 2, 2);
+            groupBoxOrdendeEntrega.Margin = new Padding(2);
             groupBoxOrdendeEntrega.Name = "groupBoxOrdendeEntrega";
-            groupBoxOrdendeEntrega.Padding = new Padding(2, 2, 2, 2);
+            groupBoxOrdendeEntrega.Padding = new Padding(2);
             groupBoxOrdendeEntrega.Size = new Size(347, 313);
             groupBoxOrdendeEntrega.TabIndex = 23;
             groupBoxOrdendeEntrega.TabStop = false;
@@ -41,7 +41,7 @@
             // botonAtras
             // 
             botonAtras.Location = new Point(1, 233);
-            botonAtras.Margin = new Padding(2, 2, 2, 2);
+            botonAtras.Margin = new Padding(2);
             botonAtras.Name = "botonAtras";
             botonAtras.Size = new Size(90, 23);
             botonAtras.TabIndex = 24;
@@ -52,7 +52,7 @@
             // botonMenu
             // 
             botonMenu.Location = new Point(1, 273);
-            botonMenu.Margin = new Padding(2, 2, 2, 2);
+            botonMenu.Margin = new Padding(2);
             botonMenu.Name = "botonMenu";
             botonMenu.Size = new Size(99, 23);
             botonMenu.TabIndex = 22;
@@ -65,7 +65,7 @@
             listBoxOrdenesPrep.FormattingEnabled = true;
             listBoxOrdenesPrep.ItemHeight = 15;
             listBoxOrdenesPrep.Location = new Point(1, 20);
-            listBoxOrdenesPrep.Margin = new Padding(2, 2, 2, 2);
+            listBoxOrdenesPrep.Margin = new Padding(2);
             listBoxOrdenesPrep.Name = "listBoxOrdenesPrep";
             listBoxOrdenesPrep.Size = new Size(323, 199);
             listBoxOrdenesPrep.TabIndex = 17;
@@ -73,7 +73,7 @@
             // botonGenerarOrdenDeEntrega
             // 
             botonGenerarOrdenDeEntrega.Location = new Point(96, 233);
-            botonGenerarOrdenDeEntrega.Margin = new Padding(2, 2, 2, 2);
+            botonGenerarOrdenDeEntrega.Margin = new Padding(2);
             botonGenerarOrdenDeEntrega.Name = "botonGenerarOrdenDeEntrega";
             botonGenerarOrdenDeEntrega.Size = new Size(220, 23);
             botonGenerarOrdenDeEntrega.TabIndex = 15;
@@ -87,9 +87,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(391, 331);
             Controls.Add(groupBoxOrdendeEntrega);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "OrdenesEntrega";
             Text = "Orden de Entrega";
+            FormClosed += OrdenesEntrega_FormClosed;
             groupBoxOrdendeEntrega.ResumeLayout(false);
             ResumeLayout(false);
         }

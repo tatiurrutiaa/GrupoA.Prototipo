@@ -60,5 +60,11 @@ namespace GrupoA.Prototipo
             }
 
         }
+
+        // Cierra el proceso al cerrar la aplicación
+        private void IniciarSesionForms_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

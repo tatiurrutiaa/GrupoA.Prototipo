@@ -33,9 +33,9 @@
             listBoxRetiroStock = new ListBox();
             comboBoxOrdenSelec = new ComboBox();
             groupBoxRetirarMercaderia = new GroupBox();
+            botonAtras = new Button();
             botonBuscar = new Button();
             groupBoxOrdenSelec = new GroupBox();
-            botonAtras = new Button();
             groupBoxRetirarMercaderia.SuspendLayout();
             groupBoxOrdenSelec.SuspendLayout();
             SuspendLayout();
@@ -90,6 +90,16 @@
             groupBoxRetirarMercaderia.TabStop = false;
             groupBoxRetirarMercaderia.Text = "Mercadería a Retirar";
             // 
+            // botonAtras
+            // 
+            botonAtras.Location = new Point(6, 274);
+            botonAtras.Name = "botonAtras";
+            botonAtras.Size = new Size(75, 23);
+            botonAtras.TabIndex = 24;
+            botonAtras.Text = "Atras";
+            botonAtras.UseVisualStyleBackColor = true;
+            botonAtras.Click += botonAtras_Click;
+            // 
             // botonBuscar
             // 
             botonBuscar.Location = new Point(206, 21);
@@ -111,16 +121,6 @@
             groupBoxOrdenSelec.TabStop = false;
             groupBoxOrdenSelec.Text = "Orden de Selección";
             // 
-            // botonAtras
-            // 
-            botonAtras.Location = new Point(6, 274);
-            botonAtras.Name = "botonAtras";
-            botonAtras.Size = new Size(75, 23);
-            botonAtras.TabIndex = 24;
-            botonAtras.Text = "Atras";
-            botonAtras.UseVisualStyleBackColor = true;
-            botonAtras.Click += botonAtras_Click;
-            // 
             // RetiroStockForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -131,6 +131,7 @@
             Controls.Add(botonMenu);
             Name = "RetiroStockForms";
             Text = "Retiro de stock";
+            FormClosed += RetiroStockForms_FormClosed;
             Load += RetiroStockForms_Load;
             groupBoxRetirarMercaderia.ResumeLayout(false);
             groupBoxOrdenSelec.ResumeLayout(false);

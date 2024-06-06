@@ -164,7 +164,6 @@
             botonEditarCliente.TabIndex = 26;
             botonEditarCliente.Text = "Editar Cliente";
             botonEditarCliente.UseVisualStyleBackColor = true;
-            //botonEditarCliente.Click += botonEditarCliente_Click;
             // 
             // botonEliminar
             // 
@@ -323,6 +322,7 @@
             Controls.Add(groupBoxCliente);
             Name = "OrdenPreparacionForms";
             Text = "Orden de Preparación";
+            FormClosed += OrdenPreparacionForms_FormClosed;
             Load += OrdenPreparaciónForms_Load;
             groupBoxCliente.ResumeLayout(false);
             groupBoxCliente.PerformLayout();

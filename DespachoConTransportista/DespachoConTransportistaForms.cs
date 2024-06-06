@@ -185,5 +185,10 @@ namespace GrupoA.Prototipo.DespachoConTransportista
 
         }
 
+        // Cierra el proceso al cerrar la aplicación
+        private void DespachoConTransportistaForms_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

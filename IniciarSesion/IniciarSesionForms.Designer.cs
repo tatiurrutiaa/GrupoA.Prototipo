@@ -91,6 +91,7 @@
             Controls.Add(botonIngresar);
             Name = "IniciarSesionForms";
             Text = "IniciarSesion";
+            FormClosed += IniciarSesionForms_FormClosed;
             Load += IniciarSesionForms_Load;
             ResumeLayout(false);
             PerformLayout();

@@ -120,6 +120,7 @@
             Controls.Add(EmpaquetarListView);
             Name = "EmpaquetadoForms";
             Text = "Empaquetar";
+            FormClosed += EmpaquetadoForms_FormClosed;
             Load += EmpaquetadoForms_Load;
             ResumeLayout(false);
             PerformLayout();

@@ -118,6 +118,7 @@
             Controls.Add(buttonDNI);
             Name = "DespachoConTransportistaForms";
             Text = "Despacho Con Transportista";
+            FormClosed += DespachoConTransportistaForms_FormClosed;
             Load += DespachoConTransportistaForms_Load;
             groupBoxOrdenEntrega.ResumeLayout(false);
             ResumeLayout(false);

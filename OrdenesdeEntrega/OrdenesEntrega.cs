@@ -47,5 +47,11 @@ namespace GrupoA.Prototipo
             this.Hide();
             menu.Show();
         }
+
+        // Cierra el proceso al cerrar la aplicación
+        private void OrdenesEntrega_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }
