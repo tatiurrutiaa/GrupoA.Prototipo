@@ -13,7 +13,7 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
 {
     public partial class DespachoSinTransportistaForms : Form
     {
-        SalidaModel modelo;
+        DespachoSinTransportistaModel modelo;
         public DespachoSinTransportistaForms()
         {
             InitializeComponent();

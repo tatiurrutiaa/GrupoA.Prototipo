@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace GrupoA.Prototipo.DespachoSinTransportista
 {
-    internal class SalidaModel
+    internal class DespachoSinTransportistaModel
     {
         public List<OrdenesPreparacion> ordenesPreparacion = new()
         {
