@@ -118,7 +118,7 @@
             Name = "DespachoSinTransportistaForms";
             Text = "Despacho sin transportista";
             FormClosed += Salida_FormClosed;
-            Load += Salida_Load;
+            Load += DespachoSinTransportistaForms_Load;
             ResumeLayout(false);
             PerformLayout();
         }

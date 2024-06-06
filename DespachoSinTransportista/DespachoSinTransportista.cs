@@ -22,7 +22,7 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
             ListBoxOrdenesPrep.ItemCheck += new ItemCheckEventHandler(ListBoxOrdenesPrep_ItemCheck);
         }
 
-        private void Salida_Load(object sender, EventArgs e)
+        private void DespachoSinTransportistaForms_Load(object sender, EventArgs e)
         {
             modelo = new();
             CargarListbox();
