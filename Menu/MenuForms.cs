@@ -1,4 +1,5 @@
 ﻿using GrupoA.Prototipo.Empaquetar;
+using GrupoA.Prototipo.EmpaquetarMercaderia;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -80,6 +81,20 @@ namespace GrupoA.Prototipo
         private void MenuForms_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+
+        private void MenuForms_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EmpaquetarMButton_Click(object sender, EventArgs e)
+        {
+            EmpaquetarMercaderiaForms empaquetarForm = new EmpaquetarMercaderiaForms();
+
+            // Mostrar el formulario EmpaquetarMercaderiaForms
+            empaquetarForm.Show();
         }
     }
 

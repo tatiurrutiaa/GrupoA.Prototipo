@@ -41,6 +41,7 @@
             botonDespachoConTransportista = new Button();
             groupBoxGestiónDepósitos = new GroupBox();
             botonSalir = new Button();
+            EmpaquetarMButton = new Button();
             groupBoxAreaPreparacion.SuspendLayout();
             groupBoxAlmacen.SuspendLayout();
             groupBoxDespacho.SuspendLayout();
@@ -49,12 +50,13 @@
             // 
             // groupBoxAreaPreparacion
             // 
+            groupBoxAreaPreparacion.Controls.Add(EmpaquetarMButton);
             groupBoxAreaPreparacion.Controls.Add(botonOrdenEntrega);
             groupBoxAreaPreparacion.Controls.Add(botonOrdenSeleccion);
             groupBoxAreaPreparacion.Controls.Add(EmpaquetarButton);
             groupBoxAreaPreparacion.Location = new Point(27, 110);
             groupBoxAreaPreparacion.Name = "groupBoxAreaPreparacion";
-            groupBoxAreaPreparacion.Size = new Size(188, 123);
+            groupBoxAreaPreparacion.Size = new Size(188, 148);
             groupBoxAreaPreparacion.TabIndex = 0;
             groupBoxAreaPreparacion.TabStop = false;
             groupBoxAreaPreparacion.Text = "Área de Preparación";
@@ -178,6 +180,16 @@
             botonSalir.UseVisualStyleBackColor = true;
             botonSalir.Click += botonSalir_Click;
             // 
+            // EmpaquetarMButton
+            // 
+            EmpaquetarMButton.Location = new Point(47, 115);
+            EmpaquetarMButton.Name = "EmpaquetarMButton";
+            EmpaquetarMButton.Size = new Size(63, 27);
+            EmpaquetarMButton.TabIndex = 7;
+            EmpaquetarMButton.Text = "Empa";
+            EmpaquetarMButton.UseVisualStyleBackColor = true;
+            EmpaquetarMButton.Click += EmpaquetarMButton_Click;
+            // 
             // MenuForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -192,6 +204,7 @@
             Name = "MenuForms";
             Text = "MenuForms";
             FormClosed += MenuForms_FormClosed;
+            Load += MenuForms_Load;
             groupBoxAreaPreparacion.ResumeLayout(false);
             groupBoxAlmacen.ResumeLayout(false);
             groupBoxDespacho.ResumeLayout(false);
@@ -215,5 +228,6 @@
         private Button EmpaquetarButton;
         private Button botonOrdenSeleccion;
         private Button botonOrdenEntrega;
+        private Button EmpaquetarMButton;
     }
 }
