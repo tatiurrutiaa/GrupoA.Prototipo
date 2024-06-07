@@ -70,12 +70,31 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
         {
             if (numeroOrdenActual > 0)
             {
-                modelo.CambiarEstadoOrden(numeroOrdenActual, "Preparadas");
-                MessageBox.Show("Orden empaquetada exitosamente.", "Empaquetar Mercaderías", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Obtener la fecha y hora actual
+                DateTime fechaHoraActual = DateTime.Now;
+
+                // Cambiar el estado de la orden actual a "preparada"
+                modelo.CambiarEstadoOrden(numeroOrdenActual, "preparada");
+
+                // Mensaje a mostrar en el MessageBox
+                string mensaje = $"Orden empaquetada exitosamente.\n\nFecha y hora: {fechaHoraActual}\nEstado de la orden: preparada";
+
+                // Mostrar el MessageBox con el mensaje y los detalles
+                MessageBox.Show(mensaje, "Empaquetar Mercaderías", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Deshabilitar el botón de empaquetado
                 empaquetarButton.Enabled = false;
+
+                // Actualizar la lista de órdenes en el ComboBox
                 CargarOrdenesComboBox();
+
+                // Limpiar el ListView de mercaderías
                 empaquetarmercaderiaListview.Items.Clear();
+
+                // Restaurar el texto del Label de número de orden
                 nroordenLabel.Text = "Nro de orden: ";
+
+                // Reiniciar el número de orden actual a 0
                 numeroOrdenActual = 0;
             }
         }

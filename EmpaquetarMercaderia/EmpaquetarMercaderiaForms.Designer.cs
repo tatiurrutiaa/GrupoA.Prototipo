@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmpaquetarMercaderiaForms));
             empaquetarmercaderiaListview = new ListView();
             idproductoColumn = new ColumnHeader();
             nombreproductoColumn = new ColumnHeader();
@@ -67,7 +68,7 @@
             // nroordenLabel
             // 
             nroordenLabel.AutoSize = true;
-            nroordenLabel.Location = new Point(12, 26);
+            nroordenLabel.Location = new Point(12, 22);
             nroordenLabel.Name = "nroordenLabel";
             nroordenLabel.Size = new Size(85, 15);
             nroordenLabel.TabIndex = 1;
@@ -96,9 +97,9 @@
             // buscarCombobox
             // 
             buscarCombobox.FormattingEnabled = true;
-            buscarCombobox.Location = new Point(103, 18);
+            buscarCombobox.Location = new Point(92, 18);
             buscarCombobox.Name = "buscarCombobox";
-            buscarCombobox.Size = new Size(136, 23);
+            buscarCombobox.Size = new Size(156, 23);
             buscarCombobox.TabIndex = 18;
             // 
             // buscarButton
@@ -122,6 +123,7 @@
             Controls.Add(empaquetarButton);
             Controls.Add(nroordenLabel);
             Controls.Add(empaquetarmercaderiaListview);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EmpaquetarMercaderiaForms";
             Text = "EmpaquetarMercaderiaForms";
             ResumeLayout(false);
