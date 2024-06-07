@@ -43,13 +43,6 @@ namespace GrupoA.Prototipo
             retirostock.Show();
         }
 
-        private void EmpaquetarButton_Click(object sender, EventArgs e)
-        {
-            EmpaquetadoForms empaquetadoForm = new EmpaquetadoForms();
-            this.Hide();
-            // Mostrar la ventana
-            empaquetadoForm.Show();
-        }
 
         private void botonOrdenEntrega_Click(object sender, EventArgs e)
         {

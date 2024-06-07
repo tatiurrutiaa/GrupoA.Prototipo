@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             groupBoxAreaPreparacion = new GroupBox();
+            EmpaquetarMButton = new Button();
             botonOrdenEntrega = new Button();
             botonOrdenSeleccion = new Button();
-            EmpaquetarButton = new Button();
             buttonCargarOrdenPreparacion = new Button();
             label1 = new Label();
             groupBoxAlmacen = new GroupBox();
@@ -41,7 +41,6 @@
             botonDespachoConTransportista = new Button();
             groupBoxGestiónDepósitos = new GroupBox();
             botonSalir = new Button();
-            EmpaquetarMButton = new Button();
             groupBoxAreaPreparacion.SuspendLayout();
             groupBoxAlmacen.SuspendLayout();
             groupBoxDespacho.SuspendLayout();
@@ -53,13 +52,22 @@
             groupBoxAreaPreparacion.Controls.Add(EmpaquetarMButton);
             groupBoxAreaPreparacion.Controls.Add(botonOrdenEntrega);
             groupBoxAreaPreparacion.Controls.Add(botonOrdenSeleccion);
-            groupBoxAreaPreparacion.Controls.Add(EmpaquetarButton);
-            groupBoxAreaPreparacion.Location = new Point(27, 110);
+            groupBoxAreaPreparacion.Location = new Point(27, 108);
             groupBoxAreaPreparacion.Name = "groupBoxAreaPreparacion";
-            groupBoxAreaPreparacion.Size = new Size(188, 148);
+            groupBoxAreaPreparacion.Size = new Size(188, 122);
             groupBoxAreaPreparacion.TabIndex = 0;
             groupBoxAreaPreparacion.TabStop = false;
             groupBoxAreaPreparacion.Text = "Área de Preparación";
+            // 
+            // EmpaquetarMButton
+            // 
+            EmpaquetarMButton.Location = new Point(7, 53);
+            EmpaquetarMButton.Name = "EmpaquetarMButton";
+            EmpaquetarMButton.Size = new Size(171, 27);
+            EmpaquetarMButton.TabIndex = 7;
+            EmpaquetarMButton.Text = "Empaquetar";
+            EmpaquetarMButton.UseVisualStyleBackColor = true;
+            EmpaquetarMButton.Click += EmpaquetarMButton_Click;
             // 
             // botonOrdenEntrega
             // 
@@ -79,16 +87,6 @@
             botonOrdenSeleccion.TabIndex = 5;
             botonOrdenSeleccion.Text = "Generar Orden de Selección";
             botonOrdenSeleccion.UseVisualStyleBackColor = true;
-            // 
-            // EmpaquetarButton
-            // 
-            EmpaquetarButton.Location = new Point(7, 54);
-            EmpaquetarButton.Name = "EmpaquetarButton";
-            EmpaquetarButton.Size = new Size(173, 26);
-            EmpaquetarButton.TabIndex = 4;
-            EmpaquetarButton.Text = "Empaquetar";
-            EmpaquetarButton.UseVisualStyleBackColor = true;
-            EmpaquetarButton.Click += EmpaquetarButton_Click;
             // 
             // buttonCargarOrdenPreparacion
             // 
@@ -180,16 +178,6 @@
             botonSalir.UseVisualStyleBackColor = true;
             botonSalir.Click += botonSalir_Click;
             // 
-            // EmpaquetarMButton
-            // 
-            EmpaquetarMButton.Location = new Point(47, 115);
-            EmpaquetarMButton.Name = "EmpaquetarMButton";
-            EmpaquetarMButton.Size = new Size(63, 27);
-            EmpaquetarMButton.TabIndex = 7;
-            EmpaquetarMButton.Text = "Empa";
-            EmpaquetarMButton.UseVisualStyleBackColor = true;
-            EmpaquetarMButton.Click += EmpaquetarMButton_Click;
-            // 
             // MenuForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -225,7 +213,6 @@
         private GroupBox groupBoxGestiónDepósitos;
         private Button botonSalir;
         private Button botonDespachoSintranportista;
-        private Button EmpaquetarButton;
         private Button botonOrdenSeleccion;
         private Button botonOrdenEntrega;
         private Button EmpaquetarMButton;
