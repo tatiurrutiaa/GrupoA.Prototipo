@@ -48,7 +48,6 @@
             empaquetarmercaderiaListview.TabIndex = 0;
             empaquetarmercaderiaListview.UseCompatibleStateImageBehavior = false;
             empaquetarmercaderiaListview.View = View.Details;
-            //empaquetarmercaderiaListview.SelectedIndexChanged += empaquetarmercaderiaListview_SelectedIndexChanged;
             // 
             // idproductoColumn
             // 
@@ -73,7 +72,6 @@
             nroordenLabel.Size = new Size(85, 15);
             nroordenLabel.TabIndex = 1;
             nroordenLabel.Text = "Nro de Orden: ";
-            //nroordenLabel.Click += nroordenLabel_Click;
             // 
             // empaquetarButton
             // 
@@ -93,7 +91,7 @@
             botonMenu.TabIndex = 17;
             botonMenu.Text = "Volver al Menu";
             botonMenu.UseVisualStyleBackColor = true;
-            //botonMenu.Click += botonMenu_Click;
+            botonMenu.Click += botonMenu_Click;
             // 
             // buscarCombobox
             // 
@@ -126,7 +124,6 @@
             Controls.Add(empaquetarmercaderiaListview);
             Name = "EmpaquetarMercaderiaForms";
             Text = "EmpaquetarMercaderiaForms";
-            //Load += EmpaquetarMercaderiaForms_Load;
             ResumeLayout(false);
             PerformLayout();
         }

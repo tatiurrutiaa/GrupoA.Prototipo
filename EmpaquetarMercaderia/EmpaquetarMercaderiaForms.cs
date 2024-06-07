@@ -79,6 +79,20 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                 numeroOrdenActual = 0;
             }
         }
+        // Cierra el proceso al cerrar la aplicación
+        private void EmpaquetarMercaderiaForms_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void botonMenu_Click(object sender, EventArgs e)
+        {
+            MenuForms menuForm = new MenuForms();
+            // Mostrar el formulario MenuForms
+            menuForm.Show();
+            // Cerrar el formulario actual EmpaquetarMercaderiaForms
+            this.Close();
+        }
     }
 
 
