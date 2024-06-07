@@ -30,8 +30,11 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
             var modelo = new EmpaquetarMercaderiaModel();
             var ordenesConMercaderias = modelo.ObtenerOrdenesConMercaderias();
 
-            // Ordenar las órdenes de menor a mayor
-            var ordenesOrdenadas = ordenesConMercaderias.OrderBy(orden => orden.NroOrdenPrep);
+            // Filtrar las órdenes en estado "Seleccionadas"
+            var ordenesSeleccionadas = ordenesConMercaderias.Where(orden => orden.Estado == "Seleccionadas");
+
+            // Ordenar las órdenes filtradas de menor a mayor
+            var ordenesOrdenadas = ordenesSeleccionadas.OrderBy(orden => orden.NroOrdenPrep);
 
             // Obtener la primera orden en la lista ordenada
             var ordenActual = ordenesOrdenadas.FirstOrDefault(orden => orden.NroOrdenPrep > numeroOrdenActual);
@@ -42,7 +45,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                 empaquetarmercaderiaListview.Items.Clear();
 
                 // Filtrar las mercaderías asociadas al número de orden actual
-                var mercaderiasOrdenActual = ordenesConMercaderias
+                var mercaderiasOrdenActual = ordenesSeleccionadas
                     .Where(orden => orden.NroOrdenPrep == ordenActual.NroOrdenPrep);
 
                 // Agregar las mercaderías al ListView
@@ -50,10 +53,10 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                 {
                     var item = new ListViewItem(new[]
                     {
-                mercaderia.IdProducto,
-                mercaderia.Mercaderia,
-                mercaderia.Cantidad.ToString()
-            });
+                        mercaderia.IdProducto,
+                        mercaderia.Mercaderia,
+                        mercaderia.Cantidad.ToString()
+                    });
 
                     empaquetarmercaderiaListview.Items.Add(item);
                 }
@@ -66,11 +69,16 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
             }
             else
             {
-                // No hay órdenes disponibles, limpiar el ListView y el Label
+                // No hay órdenes disponibles, mostrar un MessageBox indicando que no hay órdenes para empaquetar
+                MessageBox.Show("No hay órdenes disponibles para empaquetar.", "Empaquetar Mercaderías", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Limpiar el ListView y el Label
                 empaquetarmercaderiaListview.Items.Clear();
-                nroordenLabel.Text = string.Empty;
+                nroordenLabel.Text ="Nro de orden:" + string.Empty;
             }
         }
+
+
         private void EmpaquetarMercaderias()
         {
             // Cambiar el estado de las mercaderías asociadas al número de orden actual a "Preparado"
