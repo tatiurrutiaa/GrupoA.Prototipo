@@ -1,4 +1,6 @@
 ﻿
+using GrupoA.Prototipo.EmpaquetarMercaderia;
+
 namespace GrupoA.Prototipo.RetiroStock
 {
     public class OrdenesPreparacion
@@ -9,6 +11,7 @@ namespace GrupoA.Prototipo.RetiroStock
         public string Mercaderia { get; internal set; }
         public string Estado { get; internal set; }
         public int? DNITransportista { get; internal set; }
+        public List<MercaderiasDetalle> Mercaderias { get; set; } = new List<MercaderiasDetalle>();
 
         internal static IEnumerable<object> Where(Func<object, bool> value)
         {
