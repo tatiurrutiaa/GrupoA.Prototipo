@@ -3,6 +3,10 @@
     partial class OrdenesEntrega
     {
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.GroupBox groupBoxOrdendeEntrega;
+        private System.Windows.Forms.CheckedListBox ListBoxOrdenesPrep;
+        private System.Windows.Forms.Button botonMenu;
+        private System.Windows.Forms.Button botonGenerarOrdenDeEntrega;
 
         protected override void Dispose(bool disposing)
         {
@@ -15,90 +19,67 @@
 
         private void InitializeComponent()
         {
-            groupBoxOrdendeEntrega = new GroupBox();
-            botonAtras = new Button();
-            botonMenu = new Button();
-            listBoxOrdenesPrep = new ListBox();
-            botonGenerarOrdenDeEntrega = new Button();
-            groupBoxOrdendeEntrega.SuspendLayout();
-            SuspendLayout();
+            this.groupBoxOrdendeEntrega = new System.Windows.Forms.GroupBox();
+            this.ListBoxOrdenesPrep = new System.Windows.Forms.CheckedListBox();
+            this.botonMenu = new System.Windows.Forms.Button();
+            this.botonGenerarOrdenDeEntrega = new System.Windows.Forms.Button();
+            this.groupBoxOrdendeEntrega.SuspendLayout();
+            this.SuspendLayout();
             // 
             // groupBoxOrdendeEntrega
             // 
-            groupBoxOrdendeEntrega.Controls.Add(botonAtras);
-            groupBoxOrdendeEntrega.Controls.Add(botonMenu);
-            groupBoxOrdendeEntrega.Controls.Add(listBoxOrdenesPrep);
-            groupBoxOrdendeEntrega.Controls.Add(botonGenerarOrdenDeEntrega);
-            groupBoxOrdendeEntrega.Location = new Point(8, 8);
-            groupBoxOrdendeEntrega.Margin = new Padding(2);
-            groupBoxOrdendeEntrega.Name = "groupBoxOrdendeEntrega";
-            groupBoxOrdendeEntrega.Padding = new Padding(2);
-            groupBoxOrdendeEntrega.Size = new Size(347, 313);
-            groupBoxOrdendeEntrega.TabIndex = 23;
-            groupBoxOrdendeEntrega.TabStop = false;
-            groupBoxOrdendeEntrega.Text = "Ordenes Preparadas";
+            this.groupBoxOrdendeEntrega.Controls.Add(this.ListBoxOrdenesPrep);
+            this.groupBoxOrdendeEntrega.Controls.Add(this.botonMenu);
+            this.groupBoxOrdendeEntrega.Controls.Add(this.botonGenerarOrdenDeEntrega);
+            this.groupBoxOrdendeEntrega.Location = new System.Drawing.Point(11, 13);
+            this.groupBoxOrdendeEntrega.Name = "groupBoxOrdendeEntrega";
+            this.groupBoxOrdendeEntrega.Size = new System.Drawing.Size(496, 522);
+            this.groupBoxOrdendeEntrega.TabIndex = 23;
+            this.groupBoxOrdendeEntrega.TabStop = false;
+            this.groupBoxOrdendeEntrega.Text = "Ordenes Preparadas";
             // 
-            // botonAtras
+            // ListBoxOrdenesPrep
             // 
-            botonAtras.Location = new Point(1, 233);
-            botonAtras.Margin = new Padding(2);
-            botonAtras.Name = "botonAtras";
-            botonAtras.Size = new Size(90, 23);
-            botonAtras.TabIndex = 24;
-            botonAtras.Text = "Atrás";
-            botonAtras.UseVisualStyleBackColor = true;
-            botonAtras.Click += BotonAtras_Click;
+            this.ListBoxOrdenesPrep.FormattingEnabled = true;
+            this.ListBoxOrdenesPrep.Location = new System.Drawing.Point(2, 32);
+            this.ListBoxOrdenesPrep.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ListBoxOrdenesPrep.Name = "ListBoxOrdenesPrep";
+            this.ListBoxOrdenesPrep.Size = new System.Drawing.Size(411, 340);
+            this.ListBoxOrdenesPrep.TabIndex = 23;
+            this.ListBoxOrdenesPrep.SelectedIndexChanged += new System.EventHandler(this.ListBoxOrdenesPrep_SelectedIndexChanged);
             // 
             // botonMenu
             // 
-            botonMenu.Location = new Point(1, 273);
-            botonMenu.Margin = new Padding(2);
-            botonMenu.Name = "botonMenu";
-            botonMenu.Size = new Size(99, 23);
-            botonMenu.TabIndex = 22;
-            botonMenu.Text = "Volver al Menu";
-            botonMenu.UseVisualStyleBackColor = true;
-            botonMenu.Click += BotonMenu_Click;
-            // 
-            // listBoxOrdenesPrep
-            // 
-            listBoxOrdenesPrep.FormattingEnabled = true;
-            listBoxOrdenesPrep.ItemHeight = 15;
-            listBoxOrdenesPrep.Location = new Point(1, 20);
-            listBoxOrdenesPrep.Margin = new Padding(2);
-            listBoxOrdenesPrep.Name = "listBoxOrdenesPrep";
-            listBoxOrdenesPrep.Size = new Size(323, 199);
-            listBoxOrdenesPrep.TabIndex = 17;
+            this.botonMenu.Location = new System.Drawing.Point(0, 388);
+            this.botonMenu.Name = "botonMenu";
+            this.botonMenu.Size = new System.Drawing.Size(141, 38);
+            this.botonMenu.TabIndex = 22;
+            this.botonMenu.Text = "Volver al Menu";
+            this.botonMenu.UseVisualStyleBackColor = true;
+            this.botonMenu.Click += new System.EventHandler(this.BotonMenu_Click);
             // 
             // botonGenerarOrdenDeEntrega
             // 
-            botonGenerarOrdenDeEntrega.Location = new Point(96, 233);
-            botonGenerarOrdenDeEntrega.Margin = new Padding(2);
-            botonGenerarOrdenDeEntrega.Name = "botonGenerarOrdenDeEntrega";
-            botonGenerarOrdenDeEntrega.Size = new Size(220, 23);
-            botonGenerarOrdenDeEntrega.TabIndex = 15;
-            botonGenerarOrdenDeEntrega.Text = "Generar Orden de Entrega";
-            botonGenerarOrdenDeEntrega.UseVisualStyleBackColor = true;
-            botonGenerarOrdenDeEntrega.Click += BotonGenerarOrdenDeEntrega_Click;
+            this.botonGenerarOrdenDeEntrega.Location = new System.Drawing.Point(147, 388);
+            this.botonGenerarOrdenDeEntrega.Name = "botonGenerarOrdenDeEntrega";
+            this.botonGenerarOrdenDeEntrega.Size = new System.Drawing.Size(266, 38);
+            this.botonGenerarOrdenDeEntrega.TabIndex = 15;
+            this.botonGenerarOrdenDeEntrega.Text = "Generar Orden de Entrega";
+            this.botonGenerarOrdenDeEntrega.UseVisualStyleBackColor = true;
+            this.botonGenerarOrdenDeEntrega.Click += new System.EventHandler(this.BotonGenerarOrdenDeEntrega_Click);
             // 
             // OrdenesEntrega
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(391, 331);
-            Controls.Add(groupBoxOrdendeEntrega);
-            Margin = new Padding(2);
-            Name = "OrdenesEntrega";
-            Text = "Orden de Entrega";
-            FormClosed += OrdenesEntrega_FormClosed;
-            groupBoxOrdendeEntrega.ResumeLayout(false);
-            ResumeLayout(false);
-        }
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(472, 552);
+            this.Controls.Add(this.groupBoxOrdendeEntrega);
+            this.Name = "OrdenesEntrega";
+            this.Text = "Orden de Entrega";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OrdenesEntrega_FormClosed);
+            this.groupBoxOrdendeEntrega.ResumeLayout(false);
+            this.ResumeLayout(false);
 
-        private System.Windows.Forms.GroupBox groupBoxOrdendeEntrega;
-        private System.Windows.Forms.Button botonAtras;
-        private System.Windows.Forms.ListBox listBoxOrdenesPrep;
-        private System.Windows.Forms.Button botonGenerarOrdenDeEntrega;
-        private System.Windows.Forms.Button botonMenu;
+        }
     }
 }
