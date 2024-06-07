@@ -62,7 +62,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                 }
 
                 // Mostrar el número de orden actual en el Label
-                nroordenLabel.Text = ordenActual.NroOrdenPrep.ToString();
+                nroordenLabel.Text = "Nro de orden: " + ordenActual.NroOrdenPrep.ToString();
 
                 // Actualizar el número de orden actual
                 numeroOrdenActual = ordenActual.NroOrdenPrep;
