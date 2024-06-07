@@ -14,39 +14,40 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
 {
     public partial class EmpaquetarMercaderiaForms : Form
     {
+        private EmpaquetarMercaderiaModel modelo; // Debes tener una instancia de tu modelo
+
         public EmpaquetarMercaderiaForms()
         {
             InitializeComponent();
+            modelo = new EmpaquetarMercaderiaModel(); // Inicializar el modelo
         }
-      
+
         private void EmpaquetarMercaderiaForms_Load(object sender, EventArgs e)
         {
-            MostrarMercaderias();
+            CargarComboBoxOrdenes();
         }
-        private int numeroOrdenActual = 0;
 
-        private void MostrarMercaderias()
+        private void CargarComboBoxOrdenes()
         {
-            var modelo = new EmpaquetarMercaderiaModel();
-            var ordenesConMercaderias = modelo.ObtenerOrdenesConMercaderias();
-
-            // Filtrar las órdenes en estado "Seleccionadas"
-            var ordenesSeleccionadas = ordenesConMercaderias.Where(orden => orden.Estado == "Seleccionadas");
-
-            // Ordenar las órdenes filtradas de menor a mayor
-            var ordenesOrdenadas = ordenesSeleccionadas.OrderBy(orden => orden.NroOrdenPrep);
-
-            // Obtener la primera orden en la lista ordenada
-            var ordenActual = ordenesOrdenadas.FirstOrDefault(orden => orden.NroOrdenPrep > numeroOrdenActual);
-
-            if (ordenActual != null)
+            buscarCombobox.Items.Clear(); // Limpiar ComboBox
+            foreach (var orden in modelo.ObtenerOrdenesConMercaderias().Where(o => o.Estado == "Seleccionadas"))
             {
-                // Limpiar el ListView
-                empaquetarmercaderiaListview.Items.Clear();
+                buscarCombobox.Items.Add(orden.NroOrdenPrep); // Agregar NroOrdenPrep al ComboBox
+            }
+        }
 
-                // Filtrar las mercaderías asociadas al número de orden actual
-                var mercaderiasOrdenActual = ordenesSeleccionadas
-                    .Where(orden => orden.NroOrdenPrep == ordenActual.NroOrdenPrep);
+        private void buscarButton_Click(object sender, EventArgs e)
+        {
+            if (buscarCombobox.SelectedItem != null)
+            {
+                int nroOrdenSeleccionado = Convert.ToInt32(buscarCombobox.SelectedItem);
+
+                // Filtrar las mercaderías asociadas al NroOrdenPrep seleccionado
+                var mercaderiasOrdenActual = modelo.ObtenerOrdenesConMercaderias()
+                    .Where(orden => orden.NroOrdenPrep == nroOrdenSeleccionado);
+
+                // Limpiar el ListView antes de agregar nuevos elementos
+                empaquetarmercaderiaListview.Items.Clear();
 
                 // Agregar las mercaderías al ListView
                 foreach (var mercaderia in mercaderiasOrdenActual)
@@ -60,77 +61,74 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
 
                     empaquetarmercaderiaListview.Items.Add(item);
                 }
-
-                // Mostrar el número de orden actual en el Label
-                nroordenLabel.Text = "Nro de orden: " + ordenActual.NroOrdenPrep.ToString();
-
-                // Actualizar el número de orden actual
-                numeroOrdenActual = ordenActual.NroOrdenPrep;
             }
             else
             {
-                // No hay órdenes disponibles, mostrar un MessageBox indicando que no hay órdenes para empaquetar
-                MessageBox.Show("No hay órdenes disponibles para empaquetar.", "Empaquetar Mercaderías", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Limpiar el ListView y el Label
-                empaquetarmercaderiaListview.Items.Clear();
-                nroordenLabel.Text ="Nro de orden:" + string.Empty;
+                MessageBox.Show("Seleccione un NroOrdenPrep para buscar.", "Buscar Mercaderías", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-
-        private void EmpaquetarMercaderias()
-        {
-            // Cambiar el estado de las mercaderías asociadas al número de orden actual a "Preparado"
-            var modelo = new EmpaquetarMercaderiaModel();
-            var ordenesConMercaderias = modelo.ObtenerOrdenesConMercaderias();
-
-            // Obtener las mercaderías asociadas al número de orden actual
-            var mercaderiasOrdenActual = ordenesConMercaderias.Where(orden => orden.NroOrdenPrep == numeroOrdenActual).ToList();
-
-            foreach (var orden in mercaderiasOrdenActual)
-            {
-                orden.Estado = "Preparado";
-            }
-
-            // Mostrar un MessageBox con los productos y su nuevo estado
-            var mensaje = "Productos Empaquetados:\n\n";
-            foreach (var mercaderia in mercaderiasOrdenActual)
-            {
-                mensaje += $"{mercaderia.Mercaderia} - Estado: {mercaderia.Estado}\n";
-            }
-
-            MessageBox.Show(mensaje, "Empaquetar Mercaderías", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // Mostrar las mercaderías asociadas al siguiente número de orden
-            MostrarMercaderias();
-        }
-
-
-        private void empaquetarButton_Click(object sender, EventArgs e)
-        {
-            EmpaquetarMercaderias();
         }
 
         private void botonMenu_Click(object sender, EventArgs e)
         {
-            GrupoA.Prototipo.MenuForms menu = new();
+            MenuForms menu = new MenuForms(); // Crear instancia del formulario de menú
             this.Hide();
             menu.Show();
         }
 
-
-        
-
         private void empaquetarmercaderiaListview_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            // Este evento se puede utilizar para manejar la selección de elementos en el ListView si es necesario
         }
 
         private void nroordenLabel_Click(object sender, EventArgs e)
         {
-
+            // Este evento se puede utilizar para manejar clics en el Label si es necesario
         }
-    }
+        private void empaquetarButton_Click(object sender, EventArgs e)
+        {
+            if (buscarCombobox.SelectedItem != null)
+            {
+                int nroOrdenSeleccionado = Convert.ToInt32(buscarCombobox.SelectedItem);
 
+                // Obtener las órdenes seleccionadas asociadas al NroOrdenPrep seleccionado
+                var ordenesSeleccionadas = modelo.ObtenerOrdenesConMercaderias()
+                    .Where(orden => orden.NroOrdenPrep == nroOrdenSeleccionado && orden.Estado == "Seleccionadas");
+
+                if (ordenesSeleccionadas.Any())
+                {
+                    // Cambiar el estado de las órdenes seleccionadas a "Preparadas"
+                    foreach (var orden in ordenesSeleccionadas)
+                    {
+                        orden.Estado = "Preparadas";
+                    }
+
+                    // Mostrar un MessageBox con las mercaderías empaquetadas
+                    var mensaje = "Productos Empaquetados:\n\n";
+                    foreach (var mercaderia in ordenesSeleccionadas)
+                    {
+                        mensaje += $"{mercaderia.Mercaderia} - Estado: {mercaderia.Estado}\n";
+                    }
+
+                    MessageBox.Show(mensaje, "Empaquetar Mercaderías", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Quitar la orden empaquetada del ComboBox
+                    buscarCombobox.Items.Remove(nroOrdenSeleccionado);
+                    buscarCombobox.SelectedItem = null; // Desseleccionar el ítem del ComboBox
+
+                    // Actualizar el ListView
+                    buscarButton_Click(sender, e); // Ejecutar la búsqueda nuevamente para actualizar el ListView
+                }
+                else
+                {
+                    MessageBox.Show("No hay órdenes seleccionadas para empaquetar.", "Empaquetar Mercaderías", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un NroOrdenPrep para empaquetar.", "Empaquetar Mercaderías", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+
+    }
 }

@@ -35,6 +35,8 @@
             nroordenLabel = new Label();
             empaquetarButton = new Button();
             botonMenu = new Button();
+            buscarCombobox = new ComboBox();
+            buscarButton = new Button();
             SuspendLayout();
             // 
             // empaquetarmercaderiaListview
@@ -93,11 +95,31 @@
             botonMenu.UseVisualStyleBackColor = true;
             botonMenu.Click += botonMenu_Click;
             // 
+            // buscarCombobox
+            // 
+            buscarCombobox.FormattingEnabled = true;
+            buscarCombobox.Location = new Point(103, 18);
+            buscarCombobox.Name = "buscarCombobox";
+            buscarCombobox.Size = new Size(136, 23);
+            buscarCombobox.TabIndex = 18;
+            // 
+            // buscarButton
+            // 
+            buscarButton.Location = new Point(254, 18);
+            buscarButton.Name = "buscarButton";
+            buscarButton.Size = new Size(75, 23);
+            buscarButton.TabIndex = 19;
+            buscarButton.Text = "Buscar";
+            buscarButton.UseVisualStyleBackColor = true;
+            buscarButton.Click += buscarButton_Click;
+            // 
             // EmpaquetarMercaderiaForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(344, 382);
+            Controls.Add(buscarButton);
+            Controls.Add(buscarCombobox);
             Controls.Add(botonMenu);
             Controls.Add(empaquetarButton);
             Controls.Add(nroordenLabel);
@@ -118,5 +140,7 @@
         private ColumnHeader CantidadColumn;
         private Button empaquetarButton;
         private Button botonMenu;
+        private ComboBox buscarCombobox;
+        private Button buscarButton;
     }
 }
