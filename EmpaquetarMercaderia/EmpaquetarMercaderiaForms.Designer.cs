@@ -43,6 +43,8 @@
             // empaquetarmercaderiaListview
             // 
             empaquetarmercaderiaListview.Columns.AddRange(new ColumnHeader[] { idproductoColumn, nombreproductoColumn, CantidadColumn });
+            empaquetarmercaderiaListview.ForeColor = SystemColors.WindowText;
+            empaquetarmercaderiaListview.GridLines = true;
             empaquetarmercaderiaListview.Location = new Point(12, 56);
             empaquetarmercaderiaListview.Name = "empaquetarmercaderiaListview";
             empaquetarmercaderiaListview.Size = new Size(320, 256);

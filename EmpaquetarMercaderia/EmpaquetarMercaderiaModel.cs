@@ -22,9 +22,16 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     Estado = "Seleccionadas",
                     Mercaderias = new List<MercaderiasDetalle>
                     {
-                    new MercaderiasDetalle { IdProducto = "A001", Mercaderia = "bolsas de cemento", CantidadProducto = 700 },
-                    new MercaderiasDetalle { IdProducto = "A002", Mercaderia = "ladrillos", CantidadProducto = 500 },
-                    new MercaderiasDetalle { IdProducto = "A003", Mercaderia = "cemento cola", CantidadProducto = 300 }
+                        new MercaderiasDetalle { IdProducto = "A001", Mercaderia = "bolsas de cemento", CantidadProducto = 700 },
+                        new MercaderiasDetalle { IdProducto = "A002", Mercaderia = "ladrillos", CantidadProducto = 500 },
+                        new MercaderiasDetalle { IdProducto = "A003", Mercaderia = "cemento cola", CantidadProducto = 300 },
+                        new MercaderiasDetalle { IdProducto = "A004", Mercaderia = "bolsas de arena", CantidadProducto = 1000 },
+                        new MercaderiasDetalle { IdProducto = "A005", Mercaderia = "bolsas de cal", CantidadProducto = 800 },
+                        new MercaderiasDetalle { IdProducto = "A006", Mercaderia = "vigas de madera", CantidadProducto = 200 },
+                        new MercaderiasDetalle { IdProducto = "A007", Mercaderia = "tejas", CantidadProducto = 400 },
+                        new MercaderiasDetalle { IdProducto = "A008", Mercaderia = "cable eléctrico", CantidadProducto = 600 },
+                        new MercaderiasDetalle { IdProducto = "A009", Mercaderia = "tubos de PVC", CantidadProducto = 300 }
+
                     }
                 },
                 new OrdenesPreparacion
@@ -34,7 +41,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     Estado = "Seleccionaas",
                     Mercaderias = new List<MercaderiasDetalle>
                     {
-                    new MercaderiasDetalle { IdProducto = "A005", Mercaderia = "láminas de metal", CantidadProducto = 500 }
+                        new MercaderiasDetalle { IdProducto = "A005", Mercaderia = "láminas de metal", CantidadProducto = 500 }
                     }
                 },
                 new OrdenesPreparacion
@@ -44,7 +51,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     Estado = "Seleccionadas",
                     Mercaderias = new List<MercaderiasDetalle>
                     {
-                    new MercaderiasDetalle { IdProducto = "A011", Mercaderia = "pantalones", CantidadProducto = 300 }
+                        new MercaderiasDetalle { IdProducto = "A011", Mercaderia = "pantalones", CantidadProducto = 300 }
                     }
                 },
                 new OrdenesPreparacion
@@ -123,6 +130,14 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
             {
                 orden.Estado = nuevoEstado;
             }
+        }
+        public string ObtenerCuitCliente(int nroOrden)
+        {
+            // Buscar la orden correspondiente al número de orden proporcionado
+            var orden = OrdenesPreparacion.FirstOrDefault(o => o.NroOrdenPrep == nroOrden);
+
+            // Si se encontró la orden, devolver el CUIT del cliente; de lo contrario, devolver una cadena vacía
+            return orden != null ? orden.CuitCliente : "";
         }
     }
 

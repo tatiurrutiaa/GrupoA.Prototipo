@@ -65,7 +65,6 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                 numeroOrdenActual = orden.NroOrdenPrep;
             }
         }
-
         private void empaquetarButton_Click(object sender, EventArgs e)
         {
             if (numeroOrdenActual > 0)
@@ -76,8 +75,11 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                 // Cambiar el estado de la orden actual a "preparada"
                 modelo.CambiarEstadoOrden(numeroOrdenActual, "preparada");
 
+                // Obtener el CUIT del cliente para la orden actual
+                string cuitCliente = modelo.ObtenerCuitCliente(numeroOrdenActual);
+
                 // Mensaje a mostrar en el MessageBox
-                string mensaje = $"Orden empaquetada exitosamente.\n\nFecha y hora: {fechaHoraActual}\nEstado de la orden: preparada";
+                string mensaje = $"El número de orden {numeroOrdenActual} fue empaquetado.\nFecha y hora: {fechaHoraActual}\nCUIT del cliente: {cuitCliente}\nEstado: preparada";
 
                 // Mostrar el MessageBox con el mensaje y los detalles
                 MessageBox.Show(mensaje, "Empaquetar Mercaderías", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -98,6 +100,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                 numeroOrdenActual = 0;
             }
         }
+
         // Cierra el proceso al cerrar la aplicación
         private void EmpaquetarMercaderiaForms_FormClosed(object sender, FormClosedEventArgs e)
         {
