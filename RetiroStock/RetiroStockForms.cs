@@ -1,5 +1,4 @@
-﻿using GrupoA.Prototipo.Empaquetar;
-using GrupoA.Prototipo.IniciarSesion;
+﻿using GrupoA.Prototipo.IniciarSesion;
 using GrupoA.Prototipo.RetiroStock;
 using System;
 using System.Collections.Generic;
