@@ -71,10 +71,7 @@ namespace GrupoA.Prototipo
             this.Hide();
             iniciarsesion.Show();
         }
-        private void MenuForms_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            System.Windows.Forms.Application.Exit();
-        }
+        
 
 
         private void MenuForms_Load(object sender, EventArgs e)
@@ -85,9 +82,13 @@ namespace GrupoA.Prototipo
         private void EmpaquetarMButton_Click(object sender, EventArgs e)
         {
             EmpaquetarMercaderiaForms empaquetarForm = new EmpaquetarMercaderiaForms();
-
+            this.Hide();
             // Mostrar el formulario EmpaquetarMercaderiaForms
             empaquetarForm.Show();
+        }
+        private void MenuForms_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 
