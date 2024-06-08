@@ -198,5 +198,10 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            CargarListbox();
+        }
     }
 }

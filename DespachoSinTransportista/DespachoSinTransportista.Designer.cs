@@ -35,6 +35,7 @@
             labelDNI = new Label();
             textBoxDNI = new TextBox();
             buttonDNI = new Button();
+            refreshButton = new Button();
             SuspendLayout();
             // 
             // ListBoxOrdenesPrep
@@ -103,11 +104,22 @@
             buttonDNI.UseVisualStyleBackColor = true;
             buttonDNI.Click += buttonDNI_Click;
             // 
+            // refreshButton
+            // 
+            refreshButton.Location = new Point(12, 347);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(97, 23);
+            refreshButton.TabIndex = 7;
+            refreshButton.Text = "Actualizar";
+            refreshButton.UseVisualStyleBackColor = true;
+            refreshButton.Click += refreshButton_Click;
+            // 
             // DespachoSinTransportistaForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(305, 415);
+            Controls.Add(refreshButton);
             Controls.Add(buttonDNI);
             Controls.Add(textBoxDNI);
             Controls.Add(labelDNI);
@@ -132,5 +144,6 @@
         private Label labelDNI;
         private TextBox textBoxDNI;
         private Button buttonDNI;
+        private Button refreshButton;
     }
 }
