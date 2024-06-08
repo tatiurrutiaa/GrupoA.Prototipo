@@ -122,6 +122,12 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             }
         }
 
+        private void textBoxDNI_TextChanged(object sender, EventArgs e)
+        {
+            // Remove any non-digit characters from the text (This will make impossible to paste non numeric characters)
+            textBoxDNI.Text = new string(textBoxDNI.Text.Where(char.IsDigit).ToArray());
+        }
+
         private void ButtonCrearRemito_Click(object sender, EventArgs e)
         {
             /*GrupoA.Prototipo.RemitoForms remito = new();

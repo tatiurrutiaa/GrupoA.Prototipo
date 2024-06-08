@@ -56,6 +56,7 @@
             textBoxDNI.Size = new Size(197, 23);
             textBoxDNI.TabIndex = 1;
             textBoxDNI.KeyPress += textBoxDNI_KeyPress;
+            textBoxDNI.TextChanged += textBoxDNI_TextChanged;
             // 
             // labelDNI
             // 
