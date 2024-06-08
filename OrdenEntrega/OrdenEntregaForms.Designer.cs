@@ -21,8 +21,8 @@
         {
             groupBoxOrdendeEntrega = new GroupBox();
             ListBoxOrdenesPrep = new CheckedListBox();
-            botonMenu = new Button();
             botonGenerarOrdenDeEntrega = new Button();
+            botonMenu = new Button();
             groupBoxOrdendeEntrega.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,6 +48,18 @@
             ListBoxOrdenesPrep.TabIndex = 23;
             ListBoxOrdenesPrep.SelectedIndexChanged += ListBoxOrdenesPrep_SelectedIndexChanged;
             // 
+            // botonGenerarOrdenDeEntrega
+            // 
+            botonGenerarOrdenDeEntrega.Enabled = false;
+            botonGenerarOrdenDeEntrega.Location = new Point(5, 285);
+            botonGenerarOrdenDeEntrega.Margin = new Padding(2);
+            botonGenerarOrdenDeEntrega.Name = "botonGenerarOrdenDeEntrega";
+            botonGenerarOrdenDeEntrega.Size = new Size(231, 23);
+            botonGenerarOrdenDeEntrega.TabIndex = 15;
+            botonGenerarOrdenDeEntrega.Text = "Generar Orden de Entrega";
+            botonGenerarOrdenDeEntrega.UseVisualStyleBackColor = true;
+            botonGenerarOrdenDeEntrega.Click += BotonGenerarOrdenDeEntrega_Click;
+            // 
             // botonMenu
             // 
             botonMenu.Location = new Point(13, 324);
@@ -58,17 +70,6 @@
             botonMenu.Text = "Volver al Menu";
             botonMenu.UseVisualStyleBackColor = true;
             botonMenu.Click += BotonMenu_Click;
-            // 
-            // botonGenerarOrdenDeEntrega
-            // 
-            botonGenerarOrdenDeEntrega.Location = new Point(5, 285);
-            botonGenerarOrdenDeEntrega.Margin = new Padding(2);
-            botonGenerarOrdenDeEntrega.Name = "botonGenerarOrdenDeEntrega";
-            botonGenerarOrdenDeEntrega.Size = new Size(231, 23);
-            botonGenerarOrdenDeEntrega.TabIndex = 15;
-            botonGenerarOrdenDeEntrega.Text = "Generar Orden de Entrega";
-            botonGenerarOrdenDeEntrega.UseVisualStyleBackColor = true;
-            botonGenerarOrdenDeEntrega.Click += BotonGenerarOrdenDeEntrega_Click;
             // 
             // OrdenEntregaForms
             // 

@@ -13,6 +13,7 @@ namespace GrupoA.Prototipo
             InitializeComponent();
             _model = new();
             _model.AgregarOrdenesAlListBox(ListBoxOrdenesPrep);
+            ListBoxOrdenesPrep.ItemCheck += new ItemCheckEventHandler(ListBoxOrdenesPrep_ItemCheck);
         }
 
         private void BotonGenerarOrdenDeEntrega_Click(object sender, EventArgs e)
@@ -33,6 +34,25 @@ namespace GrupoA.Prototipo
         {
             // Manejar el evento si es necesario
         }
+
+        // Código para habilitar el botón de generar orden de entrega unicamente cuando hay algún item seleccionado
+        private void ListBoxOrdenesPrep_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            // Handle the item check state change before it's applied
+            this.BeginInvoke((MethodInvoker)delegate
+            {
+                UpdateButtonState();
+            });
+        }
+        private void UpdateButtonState()
+        {
+            // Check if at least one item is selected in the ListBoxOrdenesPrep
+            bool isItemSelected = ListBoxOrdenesPrep.CheckedItems.Count > 0;
+
+            // Enable or disable the button based on the conditions
+            botonGenerarOrdenDeEntrega.Enabled = isItemSelected;
+        }
+        //
 
         private void OrdenesEntrega_FormClosed(object sender, FormClosedEventArgs e)
         {
