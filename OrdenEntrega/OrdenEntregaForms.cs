@@ -24,6 +24,8 @@ namespace GrupoA.Prototipo
         {
             MenuForms menu = new MenuForms();
             this.Hide();
+            menu.StartPosition = FormStartPosition.Manual;
+            menu.Location = this.Location;
             menu.Show();
         }
 

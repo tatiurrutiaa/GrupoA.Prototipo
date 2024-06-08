@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GrupoA.Prototipo.EmpaquetarMercaderia
 {
@@ -111,6 +112,8 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
         {
             MenuForms menuForm = new MenuForms();
             // Mostrar el formulario MenuForms
+            menuForm.StartPosition = FormStartPosition.Manual;
+            menuForm.Location = this.Location;
             menuForm.Show();
             // Cerrar el formulario actual EmpaquetarMercaderiaForms
             this.Close();

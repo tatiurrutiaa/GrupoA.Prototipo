@@ -56,6 +56,8 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
         {
             GrupoA.Prototipo.MenuForms menu = new();
             this.Hide();
+            menu.StartPosition = FormStartPosition.Manual;
+            menu.Location = this.Location;
             menu.Show();
         }
 
