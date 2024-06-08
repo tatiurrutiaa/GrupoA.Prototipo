@@ -32,13 +32,20 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
 
         private void CargarListbox()
         {
+            // Retrieve the list of orders
             var lista = modelo.MercaderiaARetirar();
-            if (lista == null)
+
+            // Clear the ListBox before adding new items
+            ListBoxOrdenesPrep.Items.Clear();
+
+            // Check if the list is null or empty and show a message if it is
+            if (lista == null || !lista.Any())
             {
-                MessageBox.Show("No hay ordenes de preparación para despachar." +
-                    "Por favor, intente nuevamente en unos minutos.");
+                MessageBox.Show("No hay ordenes de preparación para despachar. Por favor, intente nuevamente en unos minutos.");
                 return;
             }
+
+            // Iterate through the list and add each order to the ListBox
             foreach (var orden in lista)
             {
                 ListBoxOrdenesPrep.Items.Add($"Orden {orden.NroOrdenPrep}");
@@ -134,11 +141,31 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
                 {
                     // Append the checked item to the StringBuilder
                     sb.AppendLine(ListBoxOrdenesPrep.Items[i].ToString());
+
+                    // Get the order number from the item string (assuming it's in the format "Orden {NroOrdenPrep}")
+                    string itemText = ListBoxOrdenesPrep.Items[i].ToString();
+                    int orderNumber = int.Parse(itemText.Replace("Orden ", ""));
+
+                    // Update the Estado of the corresponding order
+                    UpdateOrderEstado(orderNumber, "despachada");
                 }
             }
 
             // Display the checked values
             MessageBox.Show("Se generará el remito, para las siguientes ordenes, con el DNI del transportista n°" + textBoxDNI.Text + "\n\n" + sb.ToString());
+
+            // Refresh the ListBox to show updated states
+            CargarListbox();
+        }
+
+        // Method to update the Estado of an order
+        private void UpdateOrderEstado(int nroOrdenPrep, string newEstado)
+        {
+            var order = modelo.ordenesPreparacion.FirstOrDefault(o => o.NroOrdenPrep == nroOrdenPrep);
+            if (order != null)
+            {
+                order.Estado = newEstado;
+            }
         }
 
         private void ControlStateChanged(object sender, EventArgs e)
