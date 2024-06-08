@@ -4,14 +4,14 @@ using GrupoA.Prototipo.OrdenesdeEntrega;
 
 namespace GrupoA.Prototipo
 {
-    public partial class OrdenesEntrega : Form
+    public partial class OrdenEntregaForms : Form
     {
-        private OrdendeEntregaModel _model;
+        private OrdenEntregaModel _model;
 
-        public OrdenesEntrega()
+        public OrdenEntregaForms()
         {
             InitializeComponent();
-            _model = new OrdendeEntregaModel();
+            _model = new();
             _model.AgregarOrdenesAlListBox(ListBoxOrdenesPrep);
         }
 
