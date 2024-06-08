@@ -52,6 +52,8 @@ namespace GrupoA.Prototipo
                 MessageBox.Show("¡Bienvenido!");
                 GrupoA.Prototipo.MenuForms menu = new();
                 this.Hide();
+                menu.StartPosition = FormStartPosition.Manual;
+                menu.Location = this.Location;
                 menu.Show();
             }
             else
