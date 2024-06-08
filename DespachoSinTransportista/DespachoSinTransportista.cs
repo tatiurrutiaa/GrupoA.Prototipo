@@ -101,6 +101,12 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
             }
         }
 
+        private void textBoxDNI_TextChanged(object sender, EventArgs e)
+        {
+            // Remove any non-digit characters from the text (This will make impossible to paste non numeric characters)
+            textBoxDNI.Text = new string(textBoxDNI.Text.Where(char.IsDigit).ToArray());
+        }
+
         private void botonConfirmar_Click(object sender, EventArgs e)
         {
             // Code not being used since commit 7973765. Conditions will never be met due to button being disabled beforehand

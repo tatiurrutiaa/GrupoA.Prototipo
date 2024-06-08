@@ -93,6 +93,7 @@
             textBoxDNI.Size = new Size(169, 23);
             textBoxDNI.TabIndex = 5;
             textBoxDNI.KeyPress += textBoxDNI_KeyPress;
+            textBoxDNI.TextChanged += textBoxDNI_TextChanged;
             // 
             // buttonDNI
             // 
