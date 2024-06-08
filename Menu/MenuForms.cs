@@ -1,5 +1,6 @@
 ﻿//using GrupoA.Prototipo.Empaquetar;
 using GrupoA.Prototipo.EmpaquetarMercaderia;
+using GrupoA.Prototipo.OrdenEntrega;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,8 @@ namespace GrupoA.Prototipo
         {
             GrupoA.Prototipo.OrdenPreparacionForms ordenpreparacion = new OrdenPreparacionForms();
             this.Hide();
+            ordenpreparacion.StartPosition = FormStartPosition.Manual;
+            ordenpreparacion.Location = this.Location;
             ordenpreparacion.Show();
         }
 
@@ -33,6 +36,8 @@ namespace GrupoA.Prototipo
         {
             GrupoA.Prototipo.OrdenEntregaForms ordenentrega = new OrdenEntregaForms();
             this.Hide();
+            ordenentrega.StartPosition = FormStartPosition.Manual;
+            ordenentrega.Location = this.Location;
             ordenentrega.Show();
         }
 
@@ -40,6 +45,8 @@ namespace GrupoA.Prototipo
         {
             GrupoA.Prototipo.RetiroStockForms retirostock = new RetiroStockForms();
             this.Hide();
+            retirostock.StartPosition = FormStartPosition.Manual;
+            retirostock.Location = this.Location;
             retirostock.Show();
         }
 
@@ -48,6 +55,8 @@ namespace GrupoA.Prototipo
         {
             GrupoA.Prototipo.OrdenEntregaForms ordenentrega = new();
             this.Hide();
+            ordenentrega.StartPosition = FormStartPosition.Manual;
+            ordenentrega.Location = this.Location;
             ordenentrega.Show();
         }
 
@@ -55,20 +64,28 @@ namespace GrupoA.Prototipo
         {
             GrupoA.Prototipo.DespachoConTransportista.DespachoConTransportistaForms despachocontransportista = new();
             this.Hide();
+            despachocontransportista.StartPosition = FormStartPosition.Manual;
+            despachocontransportista.Location = this.Location;
             despachocontransportista.Show();
         }
 
         private void botonDespachoSintranportista_Click(object sender, EventArgs e)
         {
             GrupoA.Prototipo.DespachoSinTransportista.DespachoSinTransportistaForms despachosintransportista = new();
+
             this.Hide();
+            despachosintransportista.StartPosition = FormStartPosition.Manual;
+            despachosintransportista.Location = this.Location;
             despachosintransportista.Show();
+            
         }
 
         private void botonSalir_Click(object sender, EventArgs e)
         {
             GrupoA.Prototipo.IniciarSesionForms iniciarsesion = new();
             this.Hide();
+            iniciarsesion.StartPosition = FormStartPosition.Manual;
+            iniciarsesion.Location = this.Location;
             iniciarsesion.Show();
         }
         
@@ -83,6 +100,8 @@ namespace GrupoA.Prototipo
         {
             EmpaquetarMercaderiaForms empaquetarForm = new EmpaquetarMercaderiaForms();
             this.Hide();
+            empaquetarForm.StartPosition = FormStartPosition.Manual;
+            empaquetarForm.Location = this.Location;
             // Mostrar el formulario EmpaquetarMercaderiaForms
             empaquetarForm.Show();
         }
