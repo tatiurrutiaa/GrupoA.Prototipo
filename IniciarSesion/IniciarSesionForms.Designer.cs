@@ -90,7 +90,7 @@
             Controls.Add(textBoxUsuario);
             Controls.Add(botonIngresar);
             Name = "IniciarSesionForms";
-            Text = "IniciarSesion";
+            Text = "Iniciar sesión";
             FormClosed += IniciarSesionForms_FormClosed;
             Load += IniciarSesionForms_Load;
             ResumeLayout(false);

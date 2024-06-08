@@ -190,7 +190,7 @@
             Controls.Add(label1);
             Controls.Add(groupBoxAreaPreparacion);
             Name = "MenuForms";
-            Text = "MenuForms";
+            Text = "Menu";
             FormClosed += MenuForms_FormClosed;
             Load += MenuForms_Load;
             groupBoxAreaPreparacion.ResumeLayout(false);
