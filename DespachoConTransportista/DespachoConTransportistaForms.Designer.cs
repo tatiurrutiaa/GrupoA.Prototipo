@@ -35,6 +35,7 @@
             buttonAtras = new Button();
             buttonCrearRemito = new Button();
             ListBoxOrdenesPrep = new CheckedListBox();
+            refreshButton = new Button();
             groupBoxOrdenEntrega.SuspendLayout();
             SuspendLayout();
             // 
@@ -67,12 +68,13 @@
             // 
             // groupBoxOrdenEntrega
             // 
+            groupBoxOrdenEntrega.Controls.Add(refreshButton);
             groupBoxOrdenEntrega.Controls.Add(buttonAtras);
             groupBoxOrdenEntrega.Controls.Add(buttonCrearRemito);
             groupBoxOrdenEntrega.Controls.Add(ListBoxOrdenesPrep);
             groupBoxOrdenEntrega.Location = new Point(12, 67);
             groupBoxOrdenEntrega.Name = "groupBoxOrdenEntrega";
-            groupBoxOrdenEntrega.Size = new Size(301, 317);
+            groupBoxOrdenEntrega.Size = new Size(301, 341);
             groupBoxOrdenEntrega.TabIndex = 3;
             groupBoxOrdenEntrega.TabStop = false;
             groupBoxOrdenEntrega.Text = "Seleccionar las ordenes de preparación a despachar:";
@@ -80,7 +82,7 @@
             // 
             // buttonAtras
             // 
-            buttonAtras.Location = new Point(6, 288);
+            buttonAtras.Location = new Point(6, 312);
             buttonAtras.Name = "buttonAtras";
             buttonAtras.Size = new Size(112, 23);
             buttonAtras.TabIndex = 2;
@@ -90,7 +92,7 @@
             // 
             // buttonCrearRemito
             // 
-            buttonCrearRemito.Location = new Point(183, 288);
+            buttonCrearRemito.Location = new Point(183, 312);
             buttonCrearRemito.Name = "buttonCrearRemito";
             buttonCrearRemito.Size = new Size(112, 23);
             buttonCrearRemito.TabIndex = 1;
@@ -107,11 +109,21 @@
             ListBoxOrdenesPrep.Size = new Size(289, 256);
             ListBoxOrdenesPrep.TabIndex = 0;
             // 
+            // refreshButton
+            // 
+            refreshButton.Location = new Point(6, 283);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(97, 23);
+            refreshButton.TabIndex = 8;
+            refreshButton.Text = "Actualizar";
+            refreshButton.UseVisualStyleBackColor = true;
+            refreshButton.Click += refreshButton_Click;
+            // 
             // DespachoConTransportistaForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(325, 396);
+            ClientSize = new Size(325, 420);
             Controls.Add(groupBoxOrdenEntrega);
             Controls.Add(labelDNI);
             Controls.Add(textBoxDNI);
@@ -134,5 +146,6 @@
         private CheckedListBox ListBoxOrdenesPrep;
         private Button buttonAtras;
         private Button buttonCrearRemito;
+        private Button refreshButton;
     }
 }

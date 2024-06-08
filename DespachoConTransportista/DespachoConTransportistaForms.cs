@@ -190,5 +190,26 @@ namespace GrupoA.Prototipo.DespachoConTransportista
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            if (textBoxDNI.Enabled)
+            {
+                CargarListbox();
+            }
+            else
+            {
+                // Filter and update the list by the DNI in textBoxDNI
+                if (int.TryParse(textBoxDNI.Text.Trim(), out int dni))
+                {
+                    var ordenesFiltradas = modelo.ObtenerOrdenesPorDNI(dni);
+                    ActualizarListbox(ordenesFiltradas);
+                }
+                else
+                {
+                    MessageBox.Show("El DNI ingresado no es válido.");
+                }
+            }
+        }
     }
 }
