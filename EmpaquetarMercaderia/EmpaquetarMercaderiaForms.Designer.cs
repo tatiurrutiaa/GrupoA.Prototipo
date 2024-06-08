@@ -127,7 +127,7 @@
             Controls.Add(empaquetarmercaderiaListview);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EmpaquetarMercaderiaForms";
-            Text = "EmpaquetarMercaderiaForms";
+            Text = "Empaquetar mercadería";
             ResumeLayout(false);
             PerformLayout();
         }
