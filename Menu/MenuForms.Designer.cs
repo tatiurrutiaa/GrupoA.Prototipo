@@ -87,6 +87,7 @@
             botonOrdenSeleccion.TabIndex = 5;
             botonOrdenSeleccion.Text = "Generar Orden de Selección";
             botonOrdenSeleccion.UseVisualStyleBackColor = true;
+            botonOrdenSeleccion.Click += botonOrdenSeleccion_Click;
             // 
             // buttonCargarOrdenPreparacion
             // 

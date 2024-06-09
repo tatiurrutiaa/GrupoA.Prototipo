@@ -78,9 +78,9 @@
             // 
             // empaquetarButton
             // 
-            empaquetarButton.Location = new Point(220, 318);
+            empaquetarButton.Location = new Point(12, 318);
             empaquetarButton.Name = "empaquetarButton";
-            empaquetarButton.Size = new Size(109, 26);
+            empaquetarButton.Size = new Size(317, 26);
             empaquetarButton.TabIndex = 2;
             empaquetarButton.Text = "Empaquetar";
             empaquetarButton.UseVisualStyleBackColor = true;
@@ -88,7 +88,7 @@
             // 
             // botonMenu
             // 
-            botonMenu.Location = new Point(220, 350);
+            botonMenu.Location = new Point(12, 350);
             botonMenu.Name = "botonMenu";
             botonMenu.Size = new Size(109, 26);
             botonMenu.TabIndex = 17;

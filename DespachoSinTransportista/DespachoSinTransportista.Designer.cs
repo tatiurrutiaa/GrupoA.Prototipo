@@ -58,9 +58,9 @@
             // 
             // botonConfirmar
             // 
-            botonConfirmar.Location = new Point(195, 380);
+            botonConfirmar.Location = new Point(115, 347);
             botonConfirmar.Name = "botonConfirmar";
-            botonConfirmar.Size = new Size(97, 23);
+            botonConfirmar.Size = new Size(179, 23);
             botonConfirmar.TabIndex = 2;
             botonConfirmar.Text = "Generar remito";
             botonConfirmar.UseVisualStyleBackColor = true;
@@ -92,8 +92,8 @@
             textBoxDNI.Name = "textBoxDNI";
             textBoxDNI.Size = new Size(169, 23);
             textBoxDNI.TabIndex = 5;
-            textBoxDNI.KeyPress += textBoxDNI_KeyPress;
             textBoxDNI.TextChanged += textBoxDNI_TextChanged;
+            textBoxDNI.KeyPress += textBoxDNI_KeyPress;
             // 
             // buttonDNI
             // 

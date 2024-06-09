@@ -1,39 +1,42 @@
-﻿using System;
+﻿using GrupoA.Prototipo.OrdenesdeEntrega;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using GrupoA.Prototipo.OrdenesdeEntrega;
 
-namespace GrupoA.Prototipo
+namespace GrupoA.Prototipo.OrdenSeleccion
 {
-    public partial class OrdenEntregaForms : Form
+    public partial class OrdenSeleccionForm : Form
     {
-        private OrdenEntregaModel _model;
+        private OrdenSeleccionModel modelo;
 
-        public OrdenEntregaForms()
+        public OrdenSeleccionForm()
         {
             InitializeComponent();
-            _model = new();
-            _model.AgregarOrdenesAlListBox(ListBoxOrdenesPrep);
+            modelo = new();
+            modelo.AgregarOrdenesAlListBox(ListBoxOrdenesPrep);
             ListBoxOrdenesPrep.ItemCheck += new ItemCheckEventHandler(ListBoxOrdenesPrep_ItemCheck);
         }
 
-        private void BotonGenerarOrdenDeEntrega_Click(object sender, EventArgs e)
+        private void botonGenerarOrdenSeleccion_Click(object sender, EventArgs e)
         {
-            _model.GenerarOrdenDeEntrega(ListBoxOrdenesPrep);
+            modelo.GenerarOrdenDeSeleccion(ListBoxOrdenesPrep);
+            ListBoxOrdenesPrep.ItemCheck += new ItemCheckEventHandler(ListBoxOrdenesPrep_ItemCheck);
             UpdateButtonState();
         }
 
-        private void BotonMenu_Click(object sender, EventArgs e)
+        private void botonMenu_Click(object sender, EventArgs e)
         {
             MenuForms menu = new MenuForms();
             this.Hide();
             menu.StartPosition = FormStartPosition.Manual;
             menu.Location = this.Location;
             menu.Show();
-        }
-
-        private void ListBoxOrdenesPrep_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Manejar el evento si es necesario
         }
 
         // Código para habilitar el botón de generar orden de entrega unicamente cuando hay algún item seleccionado
@@ -51,9 +54,8 @@ namespace GrupoA.Prototipo
             bool isItemSelected = ListBoxOrdenesPrep.CheckedItems.Count > 0;
 
             // Enable or disable the button based on the conditions
-            botonGenerarOrdenDeEntrega.Enabled = isItemSelected;
+            botonGenerarOrdenSeleccion.Enabled = isItemSelected;
         }
-        //
 
         private void OrdenesEntrega_FormClosed(object sender, FormClosedEventArgs e)
         {

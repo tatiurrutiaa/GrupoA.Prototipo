@@ -32,10 +32,10 @@
             textBoxDNI = new TextBox();
             labelDNI = new Label();
             groupBoxOrdenEntrega = new GroupBox();
+            refreshButton = new Button();
             buttonAtras = new Button();
             buttonCrearRemito = new Button();
             ListBoxOrdenesPrep = new CheckedListBox();
-            refreshButton = new Button();
             groupBoxOrdenEntrega.SuspendLayout();
             SuspendLayout();
             // 
@@ -55,13 +55,13 @@
             textBoxDNI.Name = "textBoxDNI";
             textBoxDNI.Size = new Size(197, 23);
             textBoxDNI.TabIndex = 1;
-            textBoxDNI.KeyPress += textBoxDNI_KeyPress;
             textBoxDNI.TextChanged += textBoxDNI_TextChanged;
+            textBoxDNI.KeyPress += textBoxDNI_KeyPress;
             // 
             // labelDNI
             // 
             labelDNI.AutoSize = true;
-            labelDNI.Location = new Point(12, 16);
+            labelDNI.Location = new Point(12, 9);
             labelDNI.Name = "labelDNI";
             labelDNI.Size = new Size(251, 15);
             labelDNI.TabIndex = 2;
@@ -70,20 +70,29 @@
             // groupBoxOrdenEntrega
             // 
             groupBoxOrdenEntrega.Controls.Add(refreshButton);
-            groupBoxOrdenEntrega.Controls.Add(buttonAtras);
             groupBoxOrdenEntrega.Controls.Add(buttonCrearRemito);
             groupBoxOrdenEntrega.Controls.Add(ListBoxOrdenesPrep);
             groupBoxOrdenEntrega.Location = new Point(12, 67);
             groupBoxOrdenEntrega.Name = "groupBoxOrdenEntrega";
-            groupBoxOrdenEntrega.Size = new Size(301, 341);
+            groupBoxOrdenEntrega.Size = new Size(301, 312);
             groupBoxOrdenEntrega.TabIndex = 3;
             groupBoxOrdenEntrega.TabStop = false;
             groupBoxOrdenEntrega.Text = "Seleccionar las ordenes de preparación a despachar:";
             groupBoxOrdenEntrega.Enter += groupBoxOrdenEntrega_Enter;
             // 
+            // refreshButton
+            // 
+            refreshButton.Location = new Point(6, 283);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(112, 23);
+            refreshButton.TabIndex = 8;
+            refreshButton.Text = "Actualizar";
+            refreshButton.UseVisualStyleBackColor = true;
+            refreshButton.Click += refreshButton_Click;
+            // 
             // buttonAtras
             // 
-            buttonAtras.Location = new Point(6, 312);
+            buttonAtras.Location = new Point(18, 385);
             buttonAtras.Name = "buttonAtras";
             buttonAtras.Size = new Size(112, 23);
             buttonAtras.TabIndex = 2;
@@ -93,11 +102,11 @@
             // 
             // buttonCrearRemito
             // 
-            buttonCrearRemito.Location = new Point(183, 312);
+            buttonCrearRemito.Location = new Point(124, 284);
             buttonCrearRemito.Name = "buttonCrearRemito";
-            buttonCrearRemito.Size = new Size(112, 23);
+            buttonCrearRemito.Size = new Size(171, 23);
             buttonCrearRemito.TabIndex = 1;
-            buttonCrearRemito.Text = "Crear Remito";
+            buttonCrearRemito.Text = "Generar Remito";
             buttonCrearRemito.UseVisualStyleBackColor = true;
             buttonCrearRemito.Click += ButtonCrearRemito_Click;
             // 
@@ -110,22 +119,13 @@
             ListBoxOrdenesPrep.Size = new Size(289, 256);
             ListBoxOrdenesPrep.TabIndex = 0;
             // 
-            // refreshButton
-            // 
-            refreshButton.Location = new Point(6, 283);
-            refreshButton.Name = "refreshButton";
-            refreshButton.Size = new Size(97, 23);
-            refreshButton.TabIndex = 8;
-            refreshButton.Text = "Actualizar";
-            refreshButton.UseVisualStyleBackColor = true;
-            refreshButton.Click += refreshButton_Click;
-            // 
             // DespachoConTransportistaForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(325, 420);
             Controls.Add(groupBoxOrdenEntrega);
+            Controls.Add(buttonAtras);
             Controls.Add(labelDNI);
             Controls.Add(textBoxDNI);
             Controls.Add(buttonDNI);

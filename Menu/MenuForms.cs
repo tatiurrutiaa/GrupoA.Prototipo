@@ -1,6 +1,7 @@
 ﻿//using GrupoA.Prototipo.Empaquetar;
 using GrupoA.Prototipo.EmpaquetarMercaderia;
 using GrupoA.Prototipo.OrdenEntrega;
+using GrupoA.Prototipo.OrdenSeleccion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +30,14 @@ namespace GrupoA.Prototipo
             ordenpreparacion.Show();
         }
 
-        //private void botonGenerarOrdenSeleccion_Click(object sender, EventArgs e)
+        private void botonOrdenSeleccion_Click(object sender, EventArgs e)
+        {
+            OrdenSeleccionForm ordenseleccion = new OrdenSeleccionForm();
+            this.Hide();
+            ordenseleccion.StartPosition = FormStartPosition.Manual;
+            ordenseleccion.Location = this.Location;
+            ordenseleccion.Show();
+        }
 
 
         private void botonGenerarOrdenEntrega_Click(object sender, EventArgs e)
@@ -77,7 +85,7 @@ namespace GrupoA.Prototipo
             despachosintransportista.StartPosition = FormStartPosition.Manual;
             despachosintransportista.Location = this.Location;
             despachosintransportista.Show();
-            
+
         }
 
         private void botonSalir_Click(object sender, EventArgs e)
@@ -88,7 +96,7 @@ namespace GrupoA.Prototipo
             iniciarsesion.Location = this.Location;
             iniciarsesion.Show();
         }
-        
+
 
 
         private void MenuForms_Load(object sender, EventArgs e)
@@ -109,6 +117,7 @@ namespace GrupoA.Prototipo
         {
             System.Windows.Forms.Application.Exit();
         }
+
     }
 
 }
