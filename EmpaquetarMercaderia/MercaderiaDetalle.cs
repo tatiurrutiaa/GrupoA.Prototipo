@@ -8,7 +8,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
 {
     public class MercaderiasDetalle
     { 
-        public string IdProducto { get; set; }
+        public int IdProducto { get; set; }
         public string Mercaderia { get; set; }
         public int CantidadProducto { get; set; }
     }
