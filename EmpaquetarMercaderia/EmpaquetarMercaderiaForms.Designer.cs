@@ -128,6 +128,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EmpaquetarMercaderiaForms";
             Text = "Empaquetar mercadería";
+            Load += EmpaquetarMercaderiaForms_Load;
             ResumeLayout(false);
             PerformLayout();
         }

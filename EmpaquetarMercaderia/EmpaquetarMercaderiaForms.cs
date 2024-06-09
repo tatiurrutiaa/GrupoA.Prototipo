@@ -56,16 +56,17 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                 {
                     var item = new ListViewItem(new[]
                     {
-                        mercaderia.IdProducto,
+                        mercaderia.IdProducto.ToString(), // Convertir int a string para mostrar
                         mercaderia.Mercaderia,
                         mercaderia.CantidadProducto.ToString()
-                    });
+            });
                     empaquetarmercaderiaListview.Items.Add(item);
                 }
                 nroordenLabel.Text = "Nro de orden: " + orden.NroOrdenPrep.ToString();
                 numeroOrdenActual = orden.NroOrdenPrep;
             }
         }
+
         private void empaquetarButton_Click(object sender, EventArgs e)
         {
             if (numeroOrdenActual > 0)
@@ -117,6 +118,11 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
             menuForm.Show();
             // Cerrar el formulario actual EmpaquetarMercaderiaForms
             this.Close();
+        }
+
+        private void EmpaquetarMercaderiaForms_Load(object sender, EventArgs e)
+        {
+
         }
     }
 
