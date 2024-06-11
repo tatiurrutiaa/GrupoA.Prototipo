@@ -140,11 +140,4 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
             return orden != null ? orden.CuitCliente : "";
         }
     }
-
-
-
-
-
-
-
 }

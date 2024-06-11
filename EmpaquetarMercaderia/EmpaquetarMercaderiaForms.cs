@@ -16,33 +16,44 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
     public partial class EmpaquetarMercaderiaForms : Form
     {
         private EmpaquetarMercaderiaModel modelo;
-        private int numeroOrdenActual;
+        private int numeroOrdenActual = 34; // Inicializar con el número de la primera orden
 
         public EmpaquetarMercaderiaForms()
         {
             InitializeComponent();
             modelo = new EmpaquetarMercaderiaModel();
-            empaquetarButton.Enabled = false;
-            CargarOrdenesComboBox();
+
+            // Mostrar la primera orden al abrir el formulario
+            MostrarMercaderias(numeroOrdenActual);
+
+            // Verificar si hay una orden seleccionada al inicio y habilitar el botón "Empaquetar" en consecuencia
+            VerificarOrdenSeleccionada();
         }
 
-        private void CargarOrdenesComboBox()
+        private void empaquetarButton_Click(object sender, EventArgs e)
         {
-            buscarCombobox.Items.Clear();
-            var ordenesSeleccionadas = modelo.ObtenerOrdenesSeleccionadas();
-            foreach (var orden in ordenesSeleccionadas)
+            if (numeroOrdenActual > 0)
             {
-                buscarCombobox.Items.Add(orden.NroOrdenPrep);
-            }
-        }
+                // Empaquetar la orden actual
+                DateTime fechaHoraActual = DateTime.Now;
+                modelo.CambiarEstadoOrden(numeroOrdenActual, "preparada");
+                string cuitCliente = modelo.ObtenerCuitCliente(numeroOrdenActual);
+                string mensaje = $"El número de orden {numeroOrdenActual} fue empaquetado.\nFecha y hora: {fechaHoraActual}\nCUIT del cliente: {cuitCliente}\nEstado: preparada";
+                MessageBox.Show(mensaje, "Empaquetar Mercaderías", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        private void buscarButton_Click(object sender, EventArgs e)
-        {
-            if (buscarCombobox.SelectedItem != null)
-            {
-                int nroOrdenSeleccionada = (int)buscarCombobox.SelectedItem;
-                MostrarMercaderias(nroOrdenSeleccionada);
-                empaquetarButton.Enabled = true;
+                // Encontrar la siguiente orden disponible y mostrarla
+                var ordenesDisponibles = modelo.ObtenerOrdenesSeleccionadas();
+                var siguienteOrden = ordenesDisponibles.FirstOrDefault(o => o.NroOrdenPrep > numeroOrdenActual);
+                if (siguienteOrden != null)
+                {
+                    numeroOrdenActual = siguienteOrden.NroOrdenPrep;
+                    MostrarMercaderias(numeroOrdenActual);
+                }
+                else
+                {
+                    // No hay más órdenes disponibles, deshabilitar el botón de empaquetado
+                    empaquetarButton.Enabled = false;
+                }
             }
         }
 
@@ -56,78 +67,40 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                 {
                     var item = new ListViewItem(new[]
                     {
-                        mercaderia.IdProducto.ToString(), // Convertir int a string para mostrar
-                        mercaderia.Mercaderia,
-                        mercaderia.CantidadProducto.ToString()
-            });
+                    mercaderia.IdProducto.ToString(),
+                    mercaderia.Mercaderia,
+                    mercaderia.CantidadProducto.ToString()
+                });
                     empaquetarmercaderiaListview.Items.Add(item);
                 }
                 nroordenLabel.Text = "Nro de orden: " + orden.NroOrdenPrep.ToString();
                 numeroOrdenActual = orden.NroOrdenPrep;
+
+                // Verificar si hay una orden seleccionada y habilitar/deshabilitar el botón "Empaquetar" en consecuencia
+                VerificarOrdenSeleccionada();
             }
         }
 
-        private void empaquetarButton_Click(object sender, EventArgs e)
+        private void VerificarOrdenSeleccionada()
         {
-            if (numeroOrdenActual > 0)
-            {
-                // Obtener la fecha y hora actual
-                DateTime fechaHoraActual = DateTime.Now;
-
-                // Cambiar el estado de la orden actual a "preparada"
-                modelo.CambiarEstadoOrden(numeroOrdenActual, "preparada");
-
-                // Obtener el CUIT del cliente para la orden actual
-                string cuitCliente = modelo.ObtenerCuitCliente(numeroOrdenActual);
-
-                // Mensaje a mostrar en el MessageBox
-                string mensaje = $"El número de orden {numeroOrdenActual} fue empaquetado.\nFecha y hora: {fechaHoraActual}\nCUIT del cliente: {cuitCliente}\nEstado: preparada";
-
-                // Mostrar el MessageBox con el mensaje y los detalles
-                MessageBox.Show(mensaje, "Empaquetar Mercaderías", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Deshabilitar el botón de empaquetado
-                empaquetarButton.Enabled = false;
-
-                // Actualizar la lista de órdenes en el ComboBox
-                CargarOrdenesComboBox();
-
-                // Limpiar el ListView de mercaderías
-                empaquetarmercaderiaListview.Items.Clear();
-
-                // Restaurar el texto del Label de número de orden
-                nroordenLabel.Text = "Nro de orden: ";
-
-                // Reiniciar el número de orden actual a 0
-                numeroOrdenActual = 0;
-            }
+            var ordenesDisponibles = modelo.ObtenerOrdenesSeleccionadas();
+            var ordenSeleccionada = ordenesDisponibles.FirstOrDefault(o => o.NroOrdenPrep == numeroOrdenActual);
+            empaquetarButton.Enabled = ordenSeleccionada != null;
         }
 
-        // Cierra el proceso al cerrar la aplicación
         private void EmpaquetarMercaderiaForms_FormClosed(object sender, FormClosedEventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            Application.Exit();
         }
 
         private void botonMenu_Click(object sender, EventArgs e)
         {
             MenuForms menuForm = new MenuForms();
-            // Mostrar el formulario MenuForms
             menuForm.StartPosition = FormStartPosition.Manual;
             menuForm.Location = this.Location;
             menuForm.Show();
-            // Cerrar el formulario actual EmpaquetarMercaderiaForms
             this.Close();
         }
-
-        private void EmpaquetarMercaderiaForms_Load(object sender, EventArgs e)
-        {
-
-        }
     }
-
-
-
-
 
 }
