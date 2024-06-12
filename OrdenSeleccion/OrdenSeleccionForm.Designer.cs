@@ -89,6 +89,7 @@
             Controls.Add(botonMenu);
             Name = "OrdenSeleccionForm";
             Text = "Orden de Selección";
+            FormClosed += OrdenSeleccionForm_FormClosed;
             groupBoxOrdendeEntrega.ResumeLayout(false);
             ResumeLayout(false);
         }

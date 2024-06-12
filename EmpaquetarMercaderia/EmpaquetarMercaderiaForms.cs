@@ -101,6 +101,11 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
             menuForm.Show();
             this.Close();
         }
+
+        private void EmpaquetarMercaderiaForms_FormClosed_1(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 
 }
