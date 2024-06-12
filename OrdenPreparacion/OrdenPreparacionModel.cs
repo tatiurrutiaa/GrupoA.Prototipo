@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GrupoA.Prototipo.EmpaquetarMercaderia;
+using GrupoA.Prototipo.RetiroStock;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +22,26 @@ internal class OrdenPreparacionModel
         new() { Cuit = "27-12345678-0", RazonSocial = "Empresa I" }
     };
 
+    public List<Deposito> Depositos = new()
+    {
+        new Deposito { NumDeposito = 1 , NombreDeposito = "Almacén Central"},
+        new Deposito { NumDeposito = 2 , NombreDeposito = "Depósito Norte"},
+        new Deposito { NumDeposito = 3 , NombreDeposito = "Centro de Distribución Sur"},
+
+    };
+
+    /*public List<MercaderiasDetalle> Mercaderias = new (){
+         new MercaderiasDetalle { IdProducto = "A001", Mercaderia = "bolsas de cemento", CantidadProducto = 700,   NumDeposito = 1},
+         new MercaderiasDetalle { IdProducto = "A002", Mercaderia = "ladrillos",         CantidadProducto = 500,   NumDeposito = 1},
+         new MercaderiasDetalle { IdProducto = "A003", Mercaderia = "cemento cola",      CantidadProducto = 300,   NumDeposito = 1},
+         new MercaderiasDetalle { IdProducto = "A004", Mercaderia = "bolsas de arena",   CantidadProducto = 1000,  NumDeposito = 2},
+         new MercaderiasDetalle { IdProducto = "A005", Mercaderia = "bolsas de cal",     CantidadProducto = 800,   NumDeposito = 2},
+         new MercaderiasDetalle { IdProducto = "A006", Mercaderia = "vigas de madera",   CantidadProducto = 200,   NumDeposito = 3},
+         new MercaderiasDetalle { IdProducto = "A007", Mercaderia = "tejas",             CantidadProducto = 400,   NumDeposito = 3 },
+         new MercaderiasDetalle { IdProducto = "A008", Mercaderia = "cable eléctrico",   CantidadProducto = 600,   NumDeposito = 3 },
+         new MercaderiasDetalle { IdProducto = "A009", Mercaderia = "tubos de PVC",      CantidadProducto = 300,   NumDeposito = 3 }
+    };*/
+
     public Cliente BuscarCliente(string cuit)
     {
         foreach(Cliente cliente in Clientes)
@@ -33,3 +55,19 @@ internal class OrdenPreparacionModel
     }
 }
 
+public class Deposito
+{
+    public int NumDeposito { get; set; }
+    public string NombreDeposito { get; set; }
+}
+
+/*private void CargarDepositosEnComboBox()
+{
+    comboBoxDepositos.Items.Clear();
+
+    // Agregar los nombres de los depósitos al ComboBox
+    foreach (var deposito in depositos)
+    {
+        comboBoxDepositos.Items.Add(deposito);
+    }
+}*/

@@ -36,18 +36,20 @@
             labelRazonSocial = new Label();
             botonMenu = new Button();
             groupBoxOrdenPreparación = new GroupBox();
+            label7 = new Label();
+            ListaMercaderiaEnOrdenPreparacion = new ListBox();
+            label4 = new Label();
+            BotonElegirDeposito = new Button();
             botonEditarCliente = new Button();
             botonEliminar = new Button();
             botonAgregar = new Button();
-            listBox1 = new ListBox();
+            ListaMercaderiaDeposito = new ListBox();
             textBoxDNI = new TextBox();
             label8 = new Label();
             label5 = new Label();
             textBoxCantidad = new TextBox();
             Cantid = new Label();
-            comboBoxMercaderia = new ComboBox();
-            label6 = new Label();
-            comboBoxDepósito = new ComboBox();
+            comboBoxDeposito = new ComboBox();
             label3 = new Label();
             botonCrearOrden = new Button();
             textBoxFechaOrden = new TextBox();
@@ -130,18 +132,20 @@
             // 
             // groupBoxOrdenPreparación
             // 
+            groupBoxOrdenPreparación.Controls.Add(label7);
+            groupBoxOrdenPreparación.Controls.Add(ListaMercaderiaEnOrdenPreparacion);
+            groupBoxOrdenPreparación.Controls.Add(label4);
+            groupBoxOrdenPreparación.Controls.Add(BotonElegirDeposito);
             groupBoxOrdenPreparación.Controls.Add(botonEditarCliente);
             groupBoxOrdenPreparación.Controls.Add(botonEliminar);
             groupBoxOrdenPreparación.Controls.Add(botonAgregar);
-            groupBoxOrdenPreparación.Controls.Add(listBox1);
+            groupBoxOrdenPreparación.Controls.Add(ListaMercaderiaDeposito);
             groupBoxOrdenPreparación.Controls.Add(textBoxDNI);
             groupBoxOrdenPreparación.Controls.Add(label8);
             groupBoxOrdenPreparación.Controls.Add(label5);
             groupBoxOrdenPreparación.Controls.Add(textBoxCantidad);
             groupBoxOrdenPreparación.Controls.Add(Cantid);
-            groupBoxOrdenPreparación.Controls.Add(comboBoxMercaderia);
-            groupBoxOrdenPreparación.Controls.Add(label6);
-            groupBoxOrdenPreparación.Controls.Add(comboBoxDepósito);
+            groupBoxOrdenPreparación.Controls.Add(comboBoxDeposito);
             groupBoxOrdenPreparación.Controls.Add(label3);
             groupBoxOrdenPreparación.Controls.Add(botonCrearOrden);
             groupBoxOrdenPreparación.Controls.Add(textBoxFechaOrden);
@@ -151,50 +155,89 @@
             groupBoxOrdenPreparación.Enabled = false;
             groupBoxOrdenPreparación.Location = new Point(12, 130);
             groupBoxOrdenPreparación.Name = "groupBoxOrdenPreparación";
-            groupBoxOrdenPreparación.Size = new Size(378, 486);
+            groupBoxOrdenPreparación.Size = new Size(577, 486);
             groupBoxOrdenPreparación.TabIndex = 5;
             groupBoxOrdenPreparación.TabStop = false;
             groupBoxOrdenPreparación.Text = "Orden de preparación";
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(6, 239);
+            label7.Name = "label7";
+            label7.Size = new Size(150, 15);
+            label7.TabIndex = 30;
+            label7.Text = "Mercaderías seleccionadas:";
+            // 
+            // ListaMercaderiaEnOrdenPreparacion
+            // 
+            ListaMercaderiaEnOrdenPreparacion.FormattingEnabled = true;
+            ListaMercaderiaEnOrdenPreparacion.ItemHeight = 15;
+            ListaMercaderiaEnOrdenPreparacion.Location = new Point(6, 258);
+            ListaMercaderiaEnOrdenPreparacion.Name = "ListaMercaderiaEnOrdenPreparacion";
+            ListaMercaderiaEnOrdenPreparacion.Size = new Size(364, 94);
+            ListaMercaderiaEnOrdenPreparacion.TabIndex = 29;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(6, 94);
+            label4.Name = "label4";
+            label4.Size = new Size(265, 15);
+            label4.TabIndex = 28;
+            label4.Text = "Mercadería disponible en Depósito seleccionado:";
+            // 
+            // BotonElegirDeposito
+            // 
+            BotonElegirDeposito.Location = new Point(483, 72);
+            BotonElegirDeposito.Name = "BotonElegirDeposito";
+            BotonElegirDeposito.Size = new Size(83, 23);
+            BotonElegirDeposito.TabIndex = 27;
+            BotonElegirDeposito.Text = "Seleccionar";
+            BotonElegirDeposito.UseVisualStyleBackColor = true;
+            BotonElegirDeposito.Click += BotonElegirDeposito_Click;
+            // 
             // botonEditarCliente
             // 
-            botonEditarCliente.Location = new Point(6, 455);
+            botonEditarCliente.Location = new Point(11, 425);
             botonEditarCliente.Name = "botonEditarCliente";
-            botonEditarCliente.Size = new Size(106, 23);
+            botonEditarCliente.Size = new Size(106, 35);
             botonEditarCliente.TabIndex = 26;
             botonEditarCliente.Text = "Editar Cliente";
             botonEditarCliente.UseVisualStyleBackColor = true;
             // 
             // botonEliminar
             // 
-            botonEliminar.Location = new Point(6, 163);
+            botonEliminar.Location = new Point(378, 284);
             botonEliminar.Name = "botonEliminar";
-            botonEliminar.Size = new Size(75, 23);
+            botonEliminar.Size = new Size(188, 29);
             botonEliminar.TabIndex = 25;
-            botonEliminar.Text = "Eliminar";
+            botonEliminar.Text = "Eliminar de Orden";
             botonEliminar.UseVisualStyleBackColor = true;
+            botonEliminar.Click += botonEliminar_Click;
             // 
             // botonAgregar
             // 
-            botonAgregar.Location = new Point(287, 163);
+            botonAgregar.Location = new Point(378, 168);
             botonAgregar.Name = "botonAgregar";
-            botonAgregar.Size = new Size(83, 23);
+            botonAgregar.Size = new Size(188, 30);
             botonAgregar.TabIndex = 24;
-            botonAgregar.Text = "Agregar";
+            botonAgregar.Text = "Agregar a Orden";
             botonAgregar.UseVisualStyleBackColor = true;
+            botonAgregar.Click += botonAgregar_Click;
             // 
-            // listBox1
+            // ListaMercaderiaDeposito
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(6, 198);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(364, 154);
-            listBox1.TabIndex = 23;
+            ListaMercaderiaDeposito.FormattingEnabled = true;
+            ListaMercaderiaDeposito.ItemHeight = 15;
+            ListaMercaderiaDeposito.Location = new Point(6, 112);
+            ListaMercaderiaDeposito.Name = "ListaMercaderiaDeposito";
+            ListaMercaderiaDeposito.Size = new Size(364, 124);
+            ListaMercaderiaDeposito.TabIndex = 23;
             // 
             // textBoxDNI
             // 
-            textBoxDNI.Location = new Point(6, 396);
+            textBoxDNI.Location = new Point(50, 393);
             textBoxDNI.Name = "textBoxDNI";
             textBoxDNI.Size = new Size(176, 23);
             textBoxDNI.TabIndex = 21;
@@ -203,7 +246,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(6, 378);
+            label8.Location = new Point(11, 396);
             label8.Name = "label8";
             label8.Size = new Size(27, 15);
             label8.TabIndex = 22;
@@ -212,7 +255,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(6, 355);
+            label5.Location = new Point(11, 370);
             label5.Name = "label5";
             label5.Size = new Size(125, 15);
             label5.TabIndex = 20;
@@ -220,60 +263,45 @@
             // 
             // textBoxCantidad
             // 
-            textBoxCantidad.Location = new Point(287, 134);
+            textBoxCantidad.Location = new Point(378, 130);
             textBoxCantidad.Name = "textBoxCantidad";
             textBoxCantidad.Size = new Size(83, 23);
             textBoxCantidad.TabIndex = 12;
+            textBoxCantidad.TextChanged += textBoxCantidad_TextChanged;
             textBoxCantidad.KeyPress += textBoxCantidad_KeyPress;
             // 
             // Cantid
             // 
             Cantid.AutoSize = true;
-            Cantid.Location = new Point(287, 113);
+            Cantid.Location = new Point(378, 112);
             Cantid.Name = "Cantid";
-            Cantid.Size = new Size(55, 15);
+            Cantid.Size = new Size(97, 15);
             Cantid.TabIndex = 13;
-            Cantid.Text = "Cantidad";
+            Cantid.Text = "Ingrese cantidad:";
             // 
-            // comboBoxMercaderia
+            // comboBoxDeposito
             // 
-            comboBoxMercaderia.FormattingEnabled = true;
-            comboBoxMercaderia.Location = new Point(6, 134);
-            comboBoxMercaderia.Name = "comboBoxMercaderia";
-            comboBoxMercaderia.Size = new Size(275, 23);
-            comboBoxMercaderia.TabIndex = 11;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(6, 116);
-            label6.Name = "label6";
-            label6.Size = new Size(66, 15);
-            label6.TabIndex = 10;
-            label6.Text = "Mercadería";
-            // 
-            // comboBoxDepósito
-            // 
-            comboBoxDepósito.FormattingEnabled = true;
-            comboBoxDepósito.Location = new Point(6, 87);
-            comboBoxDepósito.Name = "comboBoxDepósito";
-            comboBoxDepósito.Size = new Size(176, 23);
-            comboBoxDepósito.TabIndex = 7;
+            comboBoxDeposito.FormattingEnabled = true;
+            comboBoxDeposito.Items.AddRange(new object[] { "1", "2" });
+            comboBoxDeposito.Location = new Point(376, 43);
+            comboBoxDeposito.Name = "comboBoxDeposito";
+            comboBoxDeposito.Size = new Size(190, 23);
+            comboBoxDeposito.TabIndex = 7;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(6, 69);
+            label3.Location = new Point(378, 25);
             label3.Name = "label3";
-            label3.Size = new Size(54, 15);
+            label3.Size = new Size(98, 15);
             label3.TabIndex = 6;
-            label3.Text = "Depósito";
+            label3.Text = "Elija un Depósito:";
             // 
             // botonCrearOrden
             // 
-            botonCrearOrden.Location = new Point(6, 426);
+            botonCrearOrden.Location = new Point(207, 425);
             botonCrearOrden.Name = "botonCrearOrden";
-            botonCrearOrden.Size = new Size(364, 23);
+            botonCrearOrden.Size = new Size(364, 35);
             botonCrearOrden.TabIndex = 4;
             botonCrearOrden.Text = "Crear Orden";
             botonCrearOrden.UseVisualStyleBackColor = true;
@@ -316,7 +344,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(398, 655);
+            ClientSize = new Size(611, 655);
             Controls.Add(botonMenu);
             Controls.Add(groupBoxOrdenPreparación);
             Controls.Add(groupBoxCliente);
@@ -340,7 +368,7 @@
         private Label labelRazonSocial;
         private Button botonSiguiente;
         private GroupBox groupBoxOrdenPreparación;
-        private ComboBox comboBoxDepósito;
+        private ComboBox comboBoxDeposito;
         private Label label3;
         private Button botonCrearOrden;
         private TextBox textBoxFechaOrden;
@@ -349,15 +377,17 @@
         private Label label2;
         private TextBox textBoxCantidad;
         private Label Cantid;
-        private ComboBox comboBoxMercaderia;
-        private Label label6;
         private TextBox textBoxDNI;
         private Label label8;
         private Label label5;
         private Button botonMenu;
         private Button botonEliminar;
         private Button botonAgregar;
-        private ListBox listBox1;
+        private ListBox ListaMercaderiaDeposito;
         private Button botonEditarCliente;
+        private Button BotonElegirDeposito;
+        private Label label4;
+        private Label label7;
+        private ListBox ListaMercaderiaEnOrdenPreparacion;
     }
 }

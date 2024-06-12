@@ -1,4 +1,7 @@
-﻿using GrupoA.Prototipo.OrdenPreparacion;
+﻿using GrupoA.Prototipo.EmpaquetarMercaderia;
+using GrupoA.Prototipo.OrdenPreparacion;
+using GrupoA.Prototipo.RetiroStock;
+using System.Windows.Forms;
 
 namespace GrupoA.Prototipo
 {
@@ -8,6 +11,7 @@ namespace GrupoA.Prototipo
         public OrdenPreparacionForms()
         {
             InitializeComponent();
+            CargarDepositosComboBox();
         }
 
         private void OrdenPreparaciónForms_Load(object sender, EventArgs e)
@@ -20,6 +24,7 @@ namespace GrupoA.Prototipo
 
         }
 
+        #region Carga de CUIT
         private void textBoxCUITCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir solo dígitos y guiones
@@ -80,6 +85,44 @@ namespace GrupoA.Prototipo
             //cargar depositos y mercadería
         }
 
+        #endregion
+
+        #region Listas  
+
+        public List<MercaderiasDetalle> Mercaderias = new(){
+         new MercaderiasDetalle { IdProducto = "A001", Mercaderia = "bolsas de cemento", CantidadProducto = 700,   NombreDeposito = "Almacén Central"},
+         new MercaderiasDetalle { IdProducto = "A002", Mercaderia = "ladrillos",         CantidadProducto = 500,   NombreDeposito = "Almacén Central"},
+         new MercaderiasDetalle { IdProducto = "A003", Mercaderia = "cemento cola",      CantidadProducto = 300,   NombreDeposito = "Almacén Central"},
+         new MercaderiasDetalle { IdProducto = "A004", Mercaderia = "bolsas de arena",   CantidadProducto = 1000,  NombreDeposito = "Depósito Norte"},
+         new MercaderiasDetalle { IdProducto = "A005", Mercaderia = "bolsas de cal",     CantidadProducto = 800,   NombreDeposito = "Depósito Norte"},
+         new MercaderiasDetalle { IdProducto = "A006", Mercaderia = "vigas de madera",   CantidadProducto = 200,   NombreDeposito = "Depósito Norte"},
+         new MercaderiasDetalle { IdProducto = "A007", Mercaderia = "tejas",             CantidadProducto = 400,   NombreDeposito = "Centro de Distribución Sur"},
+         new MercaderiasDetalle { IdProducto = "A008", Mercaderia = "cable eléctrico",   CantidadProducto = 600,   NombreDeposito = "Centro de Distribución Sur"},
+         new MercaderiasDetalle { IdProducto = "A009", Mercaderia = "tubos de PVC",      CantidadProducto = 300,   NombreDeposito = "Centro de Distribución Sur"}
+    };
+        public List<Deposito> Depositos = new()
+    {
+        new Deposito { NumDeposito = 1 , NombreDeposito = "Almacén Central"},
+        new Deposito { NumDeposito = 2 , NombreDeposito = "Depósito Norte"},
+        new Deposito { NumDeposito = 3 , NombreDeposito = "Centro de Distribución Sur"},
+
+    };
+
+        #endregion
+
+        #region Muestra Depositos
+        private void CargarDepositosComboBox()
+        {
+            comboBoxDeposito.Items.Clear();
+            foreach (var deposito in Depositos)
+            {
+                comboBoxDeposito.Items.Add(deposito.NombreDeposito);// + "-" + deposito.NombreDeposito);
+            }
+        }
+
+        #endregion
+
+        #region Validaciones Cantidad
         private void textBoxCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir ingresar solo números
@@ -88,6 +131,14 @@ namespace GrupoA.Prototipo
                 e.Handled = true;
             }
         }
+
+        private void textBoxCantidad_TextChanged(object sender, EventArgs e)
+        {
+            string cantidadPreparacion = textBoxCantidad.Text;
+
+        }
+
+        #endregion
 
         private void textBoxDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -116,6 +167,63 @@ namespace GrupoA.Prototipo
         private void OrdenPreparacionForms_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void BotonElegirDeposito_Click(object sender, EventArgs e)
+        {
+            string depositoSeleccionado = comboBoxDeposito.Text;
+            var deposito = Depositos.FirstOrDefault(d => d.NombreDeposito.Equals(depositoSeleccionado, StringComparison.OrdinalIgnoreCase));
+
+            if (depositoSeleccionado == null)
+            {
+                MessageBox.Show("Seleccione uno de los depósitos.");
+                return;
+            }
+            else
+            {
+                //comboBoxMercaderiaSeleccionada.Items.Clear();
+                ListaMercaderiaDeposito.Items.Clear();
+                var mercaderiasDelDeposito = Mercaderias.Where(m => m.NombreDeposito == depositoSeleccionado).ToList();
+
+                foreach (var mercaderia in mercaderiasDelDeposito)
+                {
+                    //comboBoxMercaderiaSeleccionada.Items.Add(mercaderia.Mercaderia);
+                    ListaMercaderiaDeposito.Items.Add("Unidades: " + mercaderia.CantidadProducto + " - Descripción: " + mercaderia.Mercaderia);
+                }
+
+            }
+        }
+
+        private void botonAgregar_Click(object sender, EventArgs e)
+        {
+            string mercaderiaSeleccionada = ListaMercaderiaDeposito.ToString();
+            string cantidadPreparacion = textBoxCantidad.Text;
+
+            if ((string.IsNullOrEmpty(cantidadPreparacion)) || string.IsNullOrEmpty(mercaderiaSeleccionada))
+            {
+                MessageBox.Show("Ingrese Mercadería y cantidad.");
+            }
+            else
+            {
+                mercaderiaSeleccionada = ListaMercaderiaDeposito.SelectedItem.ToString();
+                if (int.Parse(cantidadPreparacion) >= 200)
+                {
+                    MessageBox.Show("Cantidad Insuficiente.");
+                }
+                else
+                {
+                    //actualizar mercaderia a estado Comprometido
+                    ListaMercaderiaEnOrdenPreparacion.Items.Add(mercaderiaSeleccionada + " - " + cantidadPreparacion);
+                    textBoxCantidad.Clear();
+                }
+            }
+        }
+
+        private void botonEliminar_Click(object sender, EventArgs e)
+        {
+            ListaMercaderiaEnOrdenPreparacion.Items.Remove(ListaMercaderiaEnOrdenPreparacion.SelectedItem);
+            ListaMercaderiaEnOrdenPreparacion.Refresh();
+            textBoxCantidad.Clear();
         }
     }
 }
