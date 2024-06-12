@@ -90,23 +90,23 @@ namespace GrupoA.Prototipo
         #region Listas  
 
         public List<MercaderiasDetalle> Mercaderias = new(){
-         new MercaderiasDetalle { IdProducto = "A001", Mercaderia = "bolsas de cemento", CantidadProducto = 700,   NombreDeposito = "Almacén Central"},
-         new MercaderiasDetalle { IdProducto = "A002", Mercaderia = "ladrillos",         CantidadProducto = 500,   NombreDeposito = "Almacén Central"},
-         new MercaderiasDetalle { IdProducto = "A003", Mercaderia = "cemento cola",      CantidadProducto = 300,   NombreDeposito = "Almacén Central"},
-         new MercaderiasDetalle { IdProducto = "A004", Mercaderia = "bolsas de arena",   CantidadProducto = 1000,  NombreDeposito = "Depósito Norte"},
-         new MercaderiasDetalle { IdProducto = "A005", Mercaderia = "bolsas de cal",     CantidadProducto = 800,   NombreDeposito = "Depósito Norte"},
-         new MercaderiasDetalle { IdProducto = "A006", Mercaderia = "vigas de madera",   CantidadProducto = 200,   NombreDeposito = "Depósito Norte"},
-         new MercaderiasDetalle { IdProducto = "A007", Mercaderia = "tejas",             CantidadProducto = 400,   NombreDeposito = "Centro de Distribución Sur"},
-         new MercaderiasDetalle { IdProducto = "A008", Mercaderia = "cable eléctrico",   CantidadProducto = 600,   NombreDeposito = "Centro de Distribución Sur"},
-         new MercaderiasDetalle { IdProducto = "A009", Mercaderia = "tubos de PVC",      CantidadProducto = 300,   NombreDeposito = "Centro de Distribución Sur"}
+         new MercaderiasDetalle { IdProducto = 1 , Mercaderia = "bolsas de cemento", CantidadProducto = 700,   NombreDeposito = "Almacén Central"},
+         new MercaderiasDetalle { IdProducto = 2 , Mercaderia = "ladrillos",         CantidadProducto = 500,   NombreDeposito = "Almacén Central"},
+         new MercaderiasDetalle { IdProducto = 3 , Mercaderia = "cemento cola",      CantidadProducto = 300,   NombreDeposito = "Almacén Central"},
+         new MercaderiasDetalle { IdProducto = 5 , Mercaderia = "bolsas de arena",   CantidadProducto = 1000,  NombreDeposito = "Depósito Norte"},
+         new MercaderiasDetalle { IdProducto = 6 , Mercaderia = "bolsas de cal",     CantidadProducto = 800,   NombreDeposito = "Depósito Norte"},
+         new MercaderiasDetalle { IdProducto = 7 , Mercaderia = "vigas de madera",   CantidadProducto = 200,   NombreDeposito = "Depósito Norte"},
+         new MercaderiasDetalle { IdProducto = 8 , Mercaderia = "tejas",             CantidadProducto = 400,   NombreDeposito = "Centro de Distribución Sur"},
+         new MercaderiasDetalle { IdProducto = 9 , Mercaderia = "cable eléctrico",   CantidadProducto = 600,   NombreDeposito = "Centro de Distribución Sur"},
+         new MercaderiasDetalle { IdProducto = 10 , Mercaderia = "tubos de PVC",      CantidadProducto = 300,   NombreDeposito = "Centro de Distribución Sur"}
     };
         public List<Deposito> Depositos = new()
-    {
-        new Deposito { NumDeposito = 1 , NombreDeposito = "Almacén Central"},
-        new Deposito { NumDeposito = 2 , NombreDeposito = "Depósito Norte"},
-        new Deposito { NumDeposito = 3 , NombreDeposito = "Centro de Distribución Sur"},
+        {
+            new Deposito { NumDeposito = 1 , NombreDeposito = "Almacén Central"},
+            new Deposito { NumDeposito = 2 , NombreDeposito = "Depósito Norte"},
+            new Deposito { NumDeposito = 3 , NombreDeposito = "Centro de Distribución Sur"},
 
-    };
+        };
 
         #endregion
 
