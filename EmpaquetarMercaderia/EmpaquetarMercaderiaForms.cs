@@ -96,10 +96,10 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
         private void botonMenu_Click(object sender, EventArgs e)
         {
             MenuForms menuForm = new MenuForms();
+            this.Hide();
             menuForm.StartPosition = FormStartPosition.Manual;
             menuForm.Location = this.Location;
             menuForm.Show();
-            this.Close();
         }
 
         private void EmpaquetarMercaderiaForms_FormClosed_1(object sender, FormClosedEventArgs e)
