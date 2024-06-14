@@ -11,41 +11,62 @@ namespace GrupoA.Prototipo.OrdenSeleccion
     {
         public List<OrdenesPreparacion> ordenesPreparacion = new()
         {
-            new OrdenesPreparacion { NroOrdenPrep = 15, Estado = "pendiente" },
-            new OrdenesPreparacion { NroOrdenPrep = 16, Estado = "pendiente" },
-            new OrdenesPreparacion { NroOrdenPrep = 17, Estado = "pendiente" },
-            new OrdenesPreparacion { NroOrdenPrep = 18, Estado = "pendiente" },
-            new OrdenesPreparacion { NroOrdenPrep = 19, Estado = "pendiente" },
-            new OrdenesPreparacion { NroOrdenPrep = 20, Estado = "pendiente" },
-            new OrdenesPreparacion { NroOrdenPrep = 21, Estado = "pendiente" },
-            new OrdenesPreparacion { NroOrdenPrep = 22, Estado = "pendiente" },
-            new OrdenesPreparacion { NroOrdenPrep = 23, Estado = "preparada" },
-            new OrdenesPreparacion { NroOrdenPrep = 24, Estado = "preparada" },
-            new OrdenesPreparacion { NroOrdenPrep = 25, Estado = "en despacho" }
+            new OrdenesPreparacion { NroOrdenPrep = 15, CuitCliente = "27-41672496-8", Estado = "pendiente" },
+            new OrdenesPreparacion { NroOrdenPrep = 16, CuitCliente = "27-41672496-8", Estado = "pendiente" },
+            new OrdenesPreparacion { NroOrdenPrep = 17, CuitCliente = "27-41672496-8", Estado = "pendiente" },
+            new OrdenesPreparacion { NroOrdenPrep = 18, CuitCliente = "27-41672496-8", Estado = "pendiente" },
+            new OrdenesPreparacion { NroOrdenPrep = 19, CuitCliente = "30-22465788-7", Estado = "pendiente" },
+            new OrdenesPreparacion { NroOrdenPrep = 20, CuitCliente = "30-22465788-7", Estado = "pendiente" },
+            new OrdenesPreparacion { NroOrdenPrep = 21, CuitCliente = "34-56564433-5", Estado = "pendiente" },
+            new OrdenesPreparacion { NroOrdenPrep = 22, CuitCliente = "34-56564433-5", Estado = "pendiente" },
+            new OrdenesPreparacion { NroOrdenPrep = 23, CuitCliente = "30-23456789-1", Estado = "pendiente" },
+            new OrdenesPreparacion { NroOrdenPrep = 24, CuitCliente = "30-23456789-1", Estado = "pendiente" },
+            new OrdenesPreparacion { NroOrdenPrep = 25, CuitCliente = "30-23456789-1", Estado = "en despacho" }
+        };
+
+        public List<Contrato> CriticidadPorCliente = new()
+        {
+            new Contrato { CuitCliente = "27-41672496-8", Criticidad = "alta"},
+            new Contrato { CuitCliente = "30-22465788-7", Criticidad = "media"},
+            new Contrato { CuitCliente = "34-56564433-5", Criticidad = "baja"},
+            new Contrato { CuitCliente = "30-23456789-1", Criticidad = "alta"},
         };
 
         private List<OrdenesSeleccion> ordenesSeleccion = new();
 
         public List<OrdenesPreparacion> OrdenesPendientes()
         {
+            var criticidadPrioridad = new Dictionary<string, int>
+            {
+                { "alta", 1 },
+                { "media", 2 },
+                { "baja", 3 }
+            };
+
+            var criticidadDict = CriticidadPorCliente.ToDictionary(c => c.CuitCliente, c => c.Criticidad);
+
             return ordenesPreparacion
                 .Where(o => o.Estado == "pendiente")
+                .OrderBy(o => criticidadPrioridad[criticidadDict[o.CuitCliente]])
                 .ToList();
         }
 
         public void AgregarOrdenesAlListBox(CheckedListBox listBox)
         {
             listBox.Items.Clear();
+            var criticidadDict = CriticidadPorCliente.ToDictionary(c => c.CuitCliente, c => c.Criticidad);
+
             foreach (var orden in OrdenesPendientes())
             {
-                listBox.Items.Add($"Orden {orden.NroOrdenPrep}");
+                var criticidad = criticidadDict[orden.CuitCliente];
+                listBox.Items.Add($"Orden {orden.NroOrdenPrep} - Prioridad: {criticidad}");
             }
 
             if (listBox.Items.Count == 0)
             {
-                MessageBox.Show("No hay ordenes de preparación pendientes para seleccionar." +
+                MessageBox.Show("No hay órdenes de preparación pendientes para seleccionar." +
                     Environment.NewLine +
-                    $"Por favor, intente nuevamente en unos minutos.");
+                    "Por favor, intente nuevamente en unos minutos.");
             }
         }
 
