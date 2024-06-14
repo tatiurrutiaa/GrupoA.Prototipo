@@ -27,8 +27,8 @@ namespace GrupoA.Prototipo.OrdenSeleccion
         public List<Contrato> CriticidadPorCliente = new()
         {
             new Contrato { CuitCliente = "27-41672496-8", Criticidad = "alta"},
-            new Contrato { CuitCliente = "30-22465788-7", Criticidad = "media"},
-            new Contrato { CuitCliente = "34-56564433-5", Criticidad = "baja"},
+            new Contrato { CuitCliente = "30-22465788-7", Criticidad = "baja"},
+            new Contrato { CuitCliente = "34-56564433-5", Criticidad = "media"},
             new Contrato { CuitCliente = "30-23456789-1", Criticidad = "alta"},
         };
 
@@ -98,7 +98,7 @@ namespace GrupoA.Prototipo.OrdenSeleccion
                         .FirstOrDefault(o => o.NroOrdenPrep == ordenNum);
                     if (orden != null)
                     {
-                        orden.Estado = "En despacho";
+                        orden.Estado = "en seleccion";
                         detalleOrden.Add(orden);
                     }
                 }
@@ -111,7 +111,8 @@ namespace GrupoA.Prototipo.OrdenSeleccion
                 OrdenesSeleccion nuevaOrdenEntrega = new()
                 {
                     NroOrdenSelec = nuevoNroOrdenEntrega,
-                    DetalleOrdenSeleccion = detalleOrden
+                    DetalleOrdenSeleccion = detalleOrden,
+                    Estado = "en seleccion"
                 };
                 ordenesSeleccion.Add(nuevaOrdenEntrega);
 
