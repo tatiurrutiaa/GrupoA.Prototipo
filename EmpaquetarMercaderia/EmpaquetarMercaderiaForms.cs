@@ -35,10 +35,9 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
             if (numeroOrdenActual > 0)
             {
                 // Empaquetar la orden actual
-                DateTime fechaHoraActual = DateTime.Now;
                 modelo.CambiarEstadoOrden(numeroOrdenActual, "preparada");
-                string cuitCliente = modelo.ObtenerCuitCliente(numeroOrdenActual);
-                string mensaje = $"El número de orden {numeroOrdenActual} fue empaquetado.\nFecha y hora: {fechaHoraActual}\nCUIT del cliente: {cuitCliente}\nEstado: preparada";
+                //string cuitCliente = modelo.ObtenerCuitCliente(numeroOrdenActual);
+                string mensaje = $"El número de orden {numeroOrdenActual} fue empaquetado correctamente."; //\nCUIT del cliente: {cuitCliente}";
                 MessageBox.Show(mensaje, "Empaquetar Mercaderías", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Encontrar la siguiente orden disponible y mostrarla
@@ -53,6 +52,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                 {
                     // No hay más órdenes disponibles, deshabilitar el botón de empaquetado
                     empaquetarmercaderiaListview.Items.Clear();
+                    nroordenLabel.Text = "Nro de orden: ";
                     empaquetarButton.Enabled = false;
                     MessageBox.Show("No hay ordenes pendientes para empaquetar. \n" +
                         "Por favor, intente nuevamente en unos minutos.");
