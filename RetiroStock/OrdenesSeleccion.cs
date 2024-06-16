@@ -3,8 +3,7 @@
     public class OrdenesSeleccion
     {
         public int NroOrdenSelec { get; internal set; }
-        public int NroOrdenPrep { get; internal set; }
-        public List<OrdenesPreparacion> DetalleOrdenSeleccion { get; set; }
+        public List<int> NroOrdenesPreparacion { get; set; }
         public string Estado { get; internal set; }
     }
 }

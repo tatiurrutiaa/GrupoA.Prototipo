@@ -12,7 +12,7 @@ internal class RetiroStockModelo
 {
     public List<Stock> stock = new()
     {
-        new() {CuitCliente = "27-41672496-8", Posicion = "12-43-2", Cantidad = 500, CodProducto = 1, Estado = "comprometido" },
+        new() {CuitCliente = "27-41672496-8", Posicion = "12-43-2", Cantidad = 800, CodProducto = 1, Estado = "comprometido" },
         new() {CuitCliente = "27-41672496-8", Posicion = "12-43-3", Cantidad = 500, CodProducto = 1, Estado = "comprometido" },
         new() {CuitCliente = "27-41672496-8", Posicion = "12-43-4", Cantidad = 500, CodProducto = 1, Estado = "comprometido" },
         new() {CuitCliente = "27-41672496-8", Posicion = "03-28-7", Cantidad = 400, CodProducto = 2, Estado = "comprometido" },
@@ -38,6 +38,15 @@ internal class RetiroStockModelo
         new OrdenesPreparacion
         {
             NroOrdenPrep = 35, CuitCliente = "27-41672496-8", Estado = "en seleccion",
+            Mercaderias = new List<MercaderiasDetalle>
+            {
+                new MercaderiasDetalle { CodProducto = 1, CantidadProducto = 300 },
+                new MercaderiasDetalle { CodProducto = 2, CantidadProducto = 50 }
+            }
+        },
+        new OrdenesPreparacion
+        {
+            NroOrdenPrep = 36, CuitCliente = "27-41672496-8", Estado = "en seleccion",
             Mercaderias = new List<MercaderiasDetalle>
             {
                 new MercaderiasDetalle { CodProducto = 1, CantidadProducto = 300 },
@@ -110,19 +119,32 @@ internal class RetiroStockModelo
         }
     };
 
-    public List<OrdenesSeleccion> ordenesSeleccion = new()
+    List<OrdenesSeleccion> ordenesSeleccion = new()
     {
-        new() {NroOrdenSelec = 200, NroOrdenPrep = 34, Estado = "en seleccion"},
-        new() {NroOrdenSelec = 200, NroOrdenPrep = 35, Estado = "en seleccion"},
-        new() {NroOrdenSelec = 200, NroOrdenPrep = 36, Estado = "en seleccion"},
-        new() {NroOrdenSelec = 201, NroOrdenPrep = 37, Estado = "seleccionada"},
-        new() {NroOrdenSelec = 200, NroOrdenPrep = 38, Estado = "en seleccion"},
-        new() {NroOrdenSelec = 201, NroOrdenPrep = 39, Estado = "seleccionada"},
-        new() {NroOrdenSelec = 201, NroOrdenPrep = 40, Estado = "seleccionada"},
-        new() {NroOrdenSelec = 200, NroOrdenPrep = 41, Estado = "en seleccion"},
-        new() {NroOrdenSelec = 200, NroOrdenPrep = 42, Estado = "en seleccion"},
-        new() {NroOrdenSelec = 202, NroOrdenPrep = 43, Estado = "en seleccion"},
-        new() {NroOrdenSelec = 202, NroOrdenPrep = 44, Estado = "seleccionada"}
+            new()
+            {
+                NroOrdenSelec = 200,
+                NroOrdenesPreparacion = new List<int> { 34, 35, 36 },
+                Estado = "en seleccion"
+            },
+            new()
+            {
+                NroOrdenSelec = 201,
+                NroOrdenesPreparacion = new List<int> { 37, 38, 39 },
+                Estado = "en seleccion"
+            },
+            new()
+            {
+                NroOrdenSelec = 202,
+                NroOrdenesPreparacion = new List<int> { 40, 41, 42 },
+                Estado = "en seleccion"
+            },
+            new()
+            {
+                NroOrdenSelec = 203,
+                NroOrdenesPreparacion = new List<int> { 43, 44 },
+                Estado = "en seleccion"
+            }
     };
 
     public List<Mercaderia> mercaderia = new()
@@ -148,9 +170,14 @@ internal class RetiroStockModelo
 
     public List<(string Posicion, int Cantidad, int CodProducto, string DescProducto)> MercaderiaARetirar(int nroOrden)
     {
-        var ordenesPrepAsociadas = ordenesPreparacion
-            .Where(o => ordenesSeleccion
-                .Any(os => os.NroOrdenSelec == nroOrden && os.NroOrdenPrep == o.NroOrdenPrep))
+        var ordenesPrepAsociadas = ordenesSeleccion
+            .Where(os => os.NroOrdenSelec == nroOrden)
+            .SelectMany(os => os.NroOrdenesPreparacion)
+            .Join(
+                ordenesPreparacion,
+                nroOrdenPrep => nroOrdenPrep,
+                op => op.NroOrdenPrep,
+                (nroOrdenPrep, op) => op)
             .ToList();
 
         var mercaderiaAgrupada = ordenesPrepAsociadas
@@ -171,8 +198,8 @@ internal class RetiroStockModelo
             var cantidadRequerida = item.CantidadTotal;
             var posiciones = stock
                 .Where(s => s.CuitCliente == item.CuitCliente
-                && s.CodProducto == item.CodProducto
-                && s.Estado == "comprometido")
+                            && s.CodProducto == item.CodProducto
+                            && s.Estado == "comprometido")
                 .OrderBy(s => s.Posicion)
                 .ToList();
 
@@ -231,9 +258,14 @@ internal class RetiroStockModelo
                 orden.Estado = "seleccionada";
             }
 
-            var ordenesPrepAsociadas = ordenesPreparacion
-                .Where(o => ordenesSeleccion
-                    .Any(os => os.NroOrdenSelec == nroOrden && os.NroOrdenPrep == o.NroOrdenPrep))
+            var ordenesPrepAsociadas = ordenesSeleccion
+                .Where(os => os.NroOrdenSelec == nroOrden)
+                .SelectMany(os => os.NroOrdenesPreparacion)
+                .Join(
+                    ordenesPreparacion,
+                    nroOrdenPrep => nroOrdenPrep,
+                    op => op.NroOrdenPrep,
+                    (nroOrdenPrep, op) => op)
                 .ToList();
 
             foreach (var orden in ordenesPrepAsociadas)

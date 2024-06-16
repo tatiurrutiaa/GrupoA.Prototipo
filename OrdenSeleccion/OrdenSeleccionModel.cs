@@ -89,7 +89,7 @@ namespace GrupoA.Prototipo.OrdenSeleccion
             if (listBox.CheckedItems.Count > 0)
             {
                 var selectedOrders = listBox.CheckedItems.Cast<string>();
-                List<OrdenesPreparacion> detalleOrden = new List<OrdenesPreparacion>();
+                List<int> detalleOrden = new List<int>();
 
                 foreach (var item in selectedOrders)
                 {
@@ -99,7 +99,7 @@ namespace GrupoA.Prototipo.OrdenSeleccion
                     if (orden != null)
                     {
                         orden.Estado = "en seleccion";
-                        detalleOrden.Add(orden);
+                        detalleOrden.Add(ordenNum);
                     }
                 }
 
@@ -111,7 +111,7 @@ namespace GrupoA.Prototipo.OrdenSeleccion
                 OrdenesSeleccion nuevaOrdenEntrega = new()
                 {
                     NroOrdenSelec = nuevoNroOrdenEntrega,
-                    DetalleOrdenSeleccion = detalleOrden,
+                    NroOrdenesPreparacion = detalleOrden,
                     Estado = "en seleccion"
                 };
                 ordenesSeleccion.Add(nuevaOrdenEntrega);

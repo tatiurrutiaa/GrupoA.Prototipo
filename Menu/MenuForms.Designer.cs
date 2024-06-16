@@ -65,7 +65,7 @@
             EmpaquetarMButton.Name = "EmpaquetarMButton";
             EmpaquetarMButton.Size = new Size(171, 27);
             EmpaquetarMButton.TabIndex = 7;
-            EmpaquetarMButton.Text = "Empaquetar";
+            EmpaquetarMButton.Text = "Empaquetar Ordenes";
             EmpaquetarMButton.UseVisualStyleBackColor = true;
             EmpaquetarMButton.Click += EmpaquetarMButton_Click;
             // 
