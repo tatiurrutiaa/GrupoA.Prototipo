@@ -75,7 +75,7 @@ namespace GrupoA.Prototipo.OrdenesdeEntrega
                     var orden = OrdenesPreparadas().FirstOrDefault(o => o.NroOrdenPrep == ordenNum);
                     if (orden != null)
                     {
-                        orden.Estado = "En despacho";
+                        orden.Estado = "en despacho";
                         detalleOrden.Add(ordenNum);
                     }
                 }

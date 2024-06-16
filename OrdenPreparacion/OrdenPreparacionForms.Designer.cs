@@ -238,6 +238,7 @@
             // textBoxDNI
             // 
             textBoxDNI.Location = new Point(50, 393);
+            textBoxDNI.MaxLength = 8;
             textBoxDNI.Name = "textBoxDNI";
             textBoxDNI.Size = new Size(176, 23);
             textBoxDNI.TabIndex = 21;

@@ -20,7 +20,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     NroOrdenPrep = 34,
                     CuitCliente = "27-41672496-8",
                     Estado = "Seleccionadas",
-                    Mercaderias = new List<MercaderiasDetalle>
+                    mercaderiaDetalle = new List<MercaderiasDetalle>
                     {
                         new MercaderiasDetalle { CodProducto = 1, CantidadProducto = 700 },
                         new MercaderiasDetalle { CodProducto = 2, CantidadProducto = 500 },
@@ -37,7 +37,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     NroOrdenPrep = 35,
                     CuitCliente = "30-87654321-9",
                     Estado = "Seleccionadas",
-                    Mercaderias = new List<MercaderiasDetalle>
+                    mercaderiaDetalle = new List<MercaderiasDetalle>
                     {
                         new MercaderiasDetalle { CodProducto = 1, CantidadProducto = 500 }
                     }
@@ -47,7 +47,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     NroOrdenPrep = 36,
                     CuitCliente = "30-87654321-9",
                     Estado = "Seleccionadas",
-                    Mercaderias = new List<MercaderiasDetalle>
+                    mercaderiaDetalle = new List<MercaderiasDetalle>
                     {
                         new MercaderiasDetalle { CodProducto = 1, CantidadProducto = 300 }
                     }
@@ -57,7 +57,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     NroOrdenPrep = 37,
                     CuitCliente = "30-12345678-9",
                     Estado = "Seleccionadas",
-                    Mercaderias = new List<MercaderiasDetalle>
+                    mercaderiaDetalle = new List<MercaderiasDetalle>
                     {
                         new MercaderiasDetalle { CodProducto = 1, CantidadProducto = 200 },
                         new MercaderiasDetalle { CodProducto = 2, CantidadProducto = 150 },
@@ -69,7 +69,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     NroOrdenPrep = 38,
                     CuitCliente = "30-87654321-0",
                     Estado = "Seleccionadas",
-                    Mercaderias = new List<MercaderiasDetalle>
+                    mercaderiaDetalle = new List<MercaderiasDetalle>
                     {
                         new MercaderiasDetalle { CodProducto = 1, CantidadProducto = 50 },
                         new MercaderiasDetalle { CodProducto = 2, CantidadProducto = 30 },
@@ -81,7 +81,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     NroOrdenPrep = 39,
                     CuitCliente = "30-11223344-5",
                     Estado = "Seleccionadas",
-                    Mercaderias = new List<MercaderiasDetalle>
+                    mercaderiaDetalle = new List<MercaderiasDetalle>
                     {
                         new MercaderiasDetalle { CodProducto = 1, CantidadProducto = 20 },
                         new MercaderiasDetalle { CodProducto = 2, CantidadProducto = 10 },
@@ -93,7 +93,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     NroOrdenPrep = 40,
                     CuitCliente = "30-55667788-9",
                     Estado = "Seleccionadas",
-                    Mercaderias = new List<MercaderiasDetalle>
+                    mercaderiaDetalle = new List<MercaderiasDetalle>
                     {
                         new MercaderiasDetalle { CodProducto = 1, CantidadProducto = 200 },
                         new MercaderiasDetalle { CodProducto = 2, CantidadProducto = 150 },
@@ -105,7 +105,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     NroOrdenPrep = 41,
                     CuitCliente = "30-99887766-5",
                     Estado = "Seleccionadas",
-                    Mercaderias = new List<MercaderiasDetalle>
+                    mercaderiaDetalle = new List<MercaderiasDetalle>
                     {
                         new MercaderiasDetalle { CodProducto = 1, CantidadProducto = 100 },
                         new MercaderiasDetalle { CodProducto = 2, CantidadProducto = 80 },
@@ -133,7 +133,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
 
             foreach (var orden in ordenesSeleccionadas)
             {
-                foreach (var mercaderiaDetalle in orden.Mercaderias)
+                foreach (var mercaderiaDetalle in orden.mercaderiaDetalle)
                 {
                     var descProducto = mercaderia.FirstOrDefault(m => m.CodProducto
                     == mercaderiaDetalle.CodProducto)?.DescProducto;

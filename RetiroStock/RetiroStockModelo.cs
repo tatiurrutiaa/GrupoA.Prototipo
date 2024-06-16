@@ -30,7 +30,7 @@ internal class RetiroStockModelo
         new OrdenPreparacion
         {
             NroOrdenPrep = 34, CuitCliente = "27-41672496-8", Estado = "en seleccion",
-            Mercaderias = new List<MercaderiasDetalle>
+            mercaderiaDetalle = new List<MercaderiasDetalle>
             {
                 new MercaderiasDetalle { CodProducto = 1, CantidadProducto = 700 }
             }
@@ -38,7 +38,7 @@ internal class RetiroStockModelo
         new OrdenPreparacion
         {
             NroOrdenPrep = 35, CuitCliente = "27-41672496-8", Estado = "en seleccion",
-            Mercaderias = new List<MercaderiasDetalle>
+            mercaderiaDetalle = new List<MercaderiasDetalle>
             {
                 new MercaderiasDetalle { CodProducto = 1, CantidadProducto = 300 },
                 new MercaderiasDetalle { CodProducto = 2, CantidadProducto = 50 }
@@ -47,7 +47,7 @@ internal class RetiroStockModelo
         new OrdenPreparacion
         {
             NroOrdenPrep = 36, CuitCliente = "27-41672496-8", Estado = "en seleccion",
-            Mercaderias = new List<MercaderiasDetalle>
+            mercaderiaDetalle = new List<MercaderiasDetalle>
             {
                 new MercaderiasDetalle { CodProducto = 1, CantidadProducto = 300 },
                 new MercaderiasDetalle { CodProducto = 2, CantidadProducto = 50 }
@@ -56,7 +56,7 @@ internal class RetiroStockModelo
         new OrdenPreparacion
         {
             NroOrdenPrep = 37, CuitCliente = "27-41672496-8", Estado = "en seleccion",
-            Mercaderias = new List<MercaderiasDetalle>
+            mercaderiaDetalle = new List<MercaderiasDetalle>
             {
                 new MercaderiasDetalle { CodProducto = 2, CantidadProducto = 200 }
             }
@@ -64,7 +64,7 @@ internal class RetiroStockModelo
         new OrdenPreparacion
         {
             NroOrdenPrep = 38, CuitCliente = "27-41672496-8", Estado = "en seleccion",
-            Mercaderias = new List<MercaderiasDetalle>
+            mercaderiaDetalle = new List<MercaderiasDetalle>
             {
                 new MercaderiasDetalle { CodProducto = 2, CantidadProducto = 200 }
             }
@@ -72,7 +72,7 @@ internal class RetiroStockModelo
         new OrdenPreparacion
         {
             NroOrdenPrep = 39, CuitCliente = "30-22465788-7", Estado = "en seleccion",
-            Mercaderias = new List<MercaderiasDetalle>
+            mercaderiaDetalle = new List<MercaderiasDetalle>
             {
                 new MercaderiasDetalle { CodProducto = 3, CantidadProducto = 50 }
             }
@@ -80,7 +80,7 @@ internal class RetiroStockModelo
         new OrdenPreparacion
         {
             NroOrdenPrep = 40, CuitCliente = "30-22465788-7", Estado = "en seleccion",
-            Mercaderias = new List<MercaderiasDetalle>
+            mercaderiaDetalle = new List<MercaderiasDetalle>
             {
                 new MercaderiasDetalle { CodProducto = 4, CantidadProducto = 150 }
             }
@@ -88,7 +88,7 @@ internal class RetiroStockModelo
         new OrdenPreparacion
         {
             NroOrdenPrep = 41, CuitCliente = "34-56564433-5", Estado = "en seleccion",
-            Mercaderias = new List<MercaderiasDetalle>
+            mercaderiaDetalle = new List<MercaderiasDetalle>
             {
                 new MercaderiasDetalle { CodProducto = 5, CantidadProducto = 300 }
             }
@@ -96,7 +96,7 @@ internal class RetiroStockModelo
         new OrdenPreparacion
         {
             NroOrdenPrep = 42, CuitCliente = "30-23456789-1", Estado = "en seleccion",
-            Mercaderias = new List<MercaderiasDetalle>
+            mercaderiaDetalle = new List<MercaderiasDetalle>
             {
                 new MercaderiasDetalle { CodProducto = 6, CantidadProducto = 20 }
             }
@@ -104,7 +104,7 @@ internal class RetiroStockModelo
         new OrdenPreparacion
         {
             NroOrdenPrep = 43, CuitCliente = "30-23456789-1", Estado = "en seleccion",
-            Mercaderias = new List<MercaderiasDetalle>
+            mercaderiaDetalle = new List<MercaderiasDetalle>
             {
                 new MercaderiasDetalle { CodProducto = 7, CantidadProducto = 450 }
             }
@@ -112,7 +112,7 @@ internal class RetiroStockModelo
         new OrdenPreparacion
         {
             NroOrdenPrep = 44, CuitCliente = "30-23456789-1", Estado = "en seleccion",
-            Mercaderias = new List<MercaderiasDetalle>
+            mercaderiaDetalle = new List<MercaderiasDetalle>
             {
                 new MercaderiasDetalle { CodProducto = 8, CantidadProducto = 100 }
             }
@@ -181,7 +181,7 @@ internal class RetiroStockModelo
             .ToList();
 
         var mercaderiaAgrupada = ordenesPrepAsociadas
-            .SelectMany(o => o.Mercaderias, (o, m) => new { o.CuitCliente, m.CodProducto, m.CantidadProducto })
+            .SelectMany(o => o.mercaderiaDetalle, (o, m) => new { o.CuitCliente, m.CodProducto, m.CantidadProducto })
             .GroupBy(x => new { x.CuitCliente, x.CodProducto })
             .Select(g => new
             {

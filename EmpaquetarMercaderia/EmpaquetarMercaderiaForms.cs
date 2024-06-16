@@ -67,7 +67,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
             if (orden != null)
             {
                 empaquetarmercaderiaListview.Items.Clear();
-                foreach (var mercaderia in orden.Mercaderias)
+                foreach (var mercaderia in orden.mercaderiaDetalle)
                 {
                     var item = new ListViewItem(new[]
                     {
