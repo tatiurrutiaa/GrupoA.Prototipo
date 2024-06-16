@@ -36,30 +36,31 @@ namespace GrupoA.Prototipo
 
         private void textBoxCUITCliente_TextChanged(object sender, EventArgs e)
         {
-            string text = textBoxCUITCliente.Text;
-            int length = text.Length;
-
-            // Evitar recursión infinita
+            // Desactivar temporalmente el evento para evitar recursiones infinitas
             textBoxCUITCliente.TextChanged -= textBoxCUITCliente_TextChanged;
 
-            // Aplicar el formato 00-00000000-0
-            if (length == 2 && !text.Contains("-"))
+            string text = textBoxCUITCliente.Text.Replace("-", ""); // Eliminar guiones antes de procesar
+            string formattedText = "";
+
+            if (text.Length > 0)
             {
-                textBoxCUITCliente.Text = text.Insert(2, "-");
-                textBoxCUITCliente.SelectionStart = textBoxCUITCliente.Text.Length;
-            }
-            else if (length == 11 && text[10] != '-')
-            {
-                textBoxCUITCliente.Text = text.Insert(10, "-");
-                textBoxCUITCliente.SelectionStart = textBoxCUITCliente.Text.Length;
-            }
-            else if (length > 13)
-            {
-                textBoxCUITCliente.Text = text.Substring(0, 13);
-                textBoxCUITCliente.SelectionStart = textBoxCUITCliente.Text.Length;
+                formattedText += text.Substring(0, Math.Min(2, text.Length)); // Agregar los primeros 2 caracteres
             }
 
-            // Reasociar el evento
+            if (text.Length > 2)
+            {
+                formattedText += "-" + text.Substring(2, Math.Min(8, text.Length - 2)); // Agregar los siguientes 8 caracteres
+            }
+
+            if (text.Length > 10)
+            {
+                formattedText += "-" + text.Substring(10, Math.Min(1, text.Length - 10)); // Agregar el último caracter
+            }
+
+            textBoxCUITCliente.Text = formattedText;
+            textBoxCUITCliente.SelectionStart = textBoxCUITCliente.Text.Length; // Colocar el cursor al final del texto
+
+            // Reactivar el evento
             textBoxCUITCliente.TextChanged += textBoxCUITCliente_TextChanged;
         }
 
