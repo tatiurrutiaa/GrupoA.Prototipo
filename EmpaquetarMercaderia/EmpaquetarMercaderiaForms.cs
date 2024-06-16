@@ -67,8 +67,8 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                 {
                     var item = new ListViewItem(new[]
                     {
-                    mercaderia.IdProducto.ToString(),
-                    mercaderia.Mercaderia,
+                    mercaderia.CodProducto.ToString(),
+                    mercaderia.DescProducto,
                     mercaderia.CantidadProducto.ToString()
                 });
                     empaquetarmercaderiaListview.Items.Add(item);

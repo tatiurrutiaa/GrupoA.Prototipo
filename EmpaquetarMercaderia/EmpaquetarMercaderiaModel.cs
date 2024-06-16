@@ -22,15 +22,15 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     Estado = "Seleccionadas",
                     Mercaderias = new List<MercaderiasDetalle>
                     {
-                        new MercaderiasDetalle { IdProducto = 1 , Mercaderia = "bolsas de cemento", CantidadProducto = 700 },
-                        new MercaderiasDetalle { IdProducto = 2 , Mercaderia = "ladrillos", CantidadProducto = 500 },
-                        new MercaderiasDetalle { IdProducto = 3 , Mercaderia = "cemento cola", CantidadProducto = 300 },
-                        new MercaderiasDetalle { IdProducto = 4 , Mercaderia = "bolsas de arena", CantidadProducto = 1000 },
-                        new MercaderiasDetalle { IdProducto = 5 , Mercaderia = "bolsas de cal", CantidadProducto = 800 },
-                        new MercaderiasDetalle { IdProducto = 6 , Mercaderia = "vigas de madera", CantidadProducto = 200 },
-                        new MercaderiasDetalle { IdProducto = 7 , Mercaderia = "tejas", CantidadProducto = 400 },
-                        new MercaderiasDetalle { IdProducto = 8 , Mercaderia = "cable eléctrico", CantidadProducto = 600 },
-                        new MercaderiasDetalle { IdProducto = 9 , Mercaderia = "tubos de PVC", CantidadProducto = 300 }
+                        new MercaderiasDetalle { CodProducto = 1 , DescProducto = "bolsas de cemento", CantidadProducto = 700 },
+                        new MercaderiasDetalle { CodProducto = 2 , DescProducto = "ladrillos", CantidadProducto = 500 },
+                        new MercaderiasDetalle { CodProducto = 3 , DescProducto = "cemento cola", CantidadProducto = 300 },
+                        new MercaderiasDetalle { CodProducto = 4 , DescProducto = "bolsas de arena", CantidadProducto = 1000 },
+                        new MercaderiasDetalle { CodProducto = 5 , DescProducto = "bolsas de cal", CantidadProducto = 800 },
+                        new MercaderiasDetalle { CodProducto = 6 , DescProducto = "vigas de madera", CantidadProducto = 200 },
+                        new MercaderiasDetalle { CodProducto = 7 , DescProducto = "tejas", CantidadProducto = 400 },
+                        new MercaderiasDetalle { CodProducto = 8 , DescProducto = "cable eléctrico", CantidadProducto = 600 },
+                        new MercaderiasDetalle { CodProducto = 9 , DescProducto = "tubos de PVC", CantidadProducto = 300 }
 
                     }
                 },
@@ -41,7 +41,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     Estado = "Seleccionaas",
                     Mercaderias = new List<MercaderiasDetalle>
                     {
-                        new MercaderiasDetalle { IdProducto = 1 , Mercaderia = "láminas de metal", CantidadProducto = 500 }
+                        new MercaderiasDetalle { CodProducto = 1 , DescProducto = "láminas de metal", CantidadProducto = 500 }
                     }
                 },
                 new OrdenesPreparacion
@@ -51,7 +51,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     Estado = "Seleccionadas",
                     Mercaderias = new List<MercaderiasDetalle>
                     {
-                        new MercaderiasDetalle { IdProducto = 1 , Mercaderia = "pantalones", CantidadProducto = 300 }
+                        new MercaderiasDetalle { CodProducto = 1 , DescProducto = "pantalones", CantidadProducto = 300 }
                     }
                 },
                 new OrdenesPreparacion
@@ -61,9 +61,9 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     Estado = "Seleccionadas",
                     Mercaderias = new List<MercaderiasDetalle>
                     {
-                        new MercaderiasDetalle { IdProducto = 1, Mercaderia = "camisas", CantidadProducto = 200 },
-                        new MercaderiasDetalle { IdProducto = 2 , Mercaderia = "pantalones", CantidadProducto = 150 },
-                        new MercaderiasDetalle { IdProducto = 3 , Mercaderia = "chaquetas", CantidadProducto = 100 }
+                        new MercaderiasDetalle { CodProducto = 1, DescProducto = "camisas", CantidadProducto = 200 },
+                        new MercaderiasDetalle { CodProducto = 2 , DescProducto = "pantalones", CantidadProducto = 150 },
+                        new MercaderiasDetalle { CodProducto = 3 , DescProducto = "chaquetas", CantidadProducto = 100 }
                     }
                 },
                 new OrdenesPreparacion
@@ -73,9 +73,9 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     Estado = "Seleccionadas",
                     Mercaderias = new List<MercaderiasDetalle>
                     {
-                        new MercaderiasDetalle { IdProducto = 1 , Mercaderia = "sofás", CantidadProducto = 50 },
-                        new MercaderiasDetalle { IdProducto = 2 , Mercaderia = "mesas de comedor", CantidadProducto = 30 },
-                        new MercaderiasDetalle { IdProducto = 3 , Mercaderia = "sillas", CantidadProducto = 100 }
+                        new MercaderiasDetalle { CodProducto = 1 , DescProducto = "sofás", CantidadProducto = 50 },
+                        new MercaderiasDetalle { CodProducto = 2 , DescProducto = "mesas de comedor", CantidadProducto = 30 },
+                        new MercaderiasDetalle { CodProducto = 3 , DescProducto = "sillas", CantidadProducto = 100 }
                     }
                 },
                 new OrdenesPreparacion
@@ -85,9 +85,9 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     Estado = "Seleccionadas",
                     Mercaderias = new List<MercaderiasDetalle>
                     {
-                        new MercaderiasDetalle { IdProducto = 1 , Mercaderia = "televisores", CantidadProducto = 20 },
-                        new MercaderiasDetalle { IdProducto = 2 , Mercaderia = "refrigeradores", CantidadProducto = 10 },
-                        new MercaderiasDetalle { IdProducto = 3 , Mercaderia = "lavadoras", CantidadProducto = 15 }
+                        new MercaderiasDetalle { CodProducto = 1 , DescProducto = "televisores", CantidadProducto = 20 },
+                        new MercaderiasDetalle { CodProducto = 2 , DescProducto = "refrigeradores", CantidadProducto = 10 },
+                        new MercaderiasDetalle { CodProducto = 3 , DescProducto = "lavadoras", CantidadProducto = 15 }
                     }
                 },
                 new OrdenesPreparacion
@@ -97,9 +97,9 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     Estado = "Seleccionadas",
                     Mercaderias = new List<MercaderiasDetalle>
                     {
-                        new MercaderiasDetalle { IdProducto =  1 , Mercaderia = "muñecas", CantidadProducto = 200 },
-                        new MercaderiasDetalle { IdProducto =  2 , Mercaderia = "autos de juguete", CantidadProducto = 150 },
-                        new MercaderiasDetalle { IdProducto =  3 , Mercaderia = "legos", CantidadProducto = 300 }
+                        new MercaderiasDetalle { CodProducto =  1 , DescProducto = "muñecas", CantidadProducto = 200 },
+                        new MercaderiasDetalle { CodProducto =  2 , DescProducto = "autos de juguete", CantidadProducto = 150 },
+                        new MercaderiasDetalle { CodProducto =  3 , DescProducto = "legos", CantidadProducto = 300 }
                     }
                 },
                 new OrdenesPreparacion
@@ -109,9 +109,9 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     Estado = "Seleccionadas",
                     Mercaderias = new List<MercaderiasDetalle>
                     {
-                        new MercaderiasDetalle { IdProducto = 1 , Mercaderia = "novelas", CantidadProducto = 100 },
-                        new MercaderiasDetalle { IdProducto = 2 , Mercaderia = "libros de texto", CantidadProducto = 80 },
-                        new MercaderiasDetalle { IdProducto = 3 , Mercaderia = "diccionarios", CantidadProducto = 50 }
+                        new MercaderiasDetalle { CodProducto = 1 , DescProducto = "novelas", CantidadProducto = 100 },
+                        new MercaderiasDetalle { CodProducto = 2 , DescProducto = "libros de texto", CantidadProducto = 80 },
+                        new MercaderiasDetalle { CodProducto = 3 , DescProducto = "diccionarios", CantidadProducto = 50 }
                     }
                 }
 

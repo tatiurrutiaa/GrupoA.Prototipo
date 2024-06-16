@@ -90,7 +90,7 @@ namespace GrupoA.Prototipo
             {
                 var listViewItem = new ListViewItem(pos.Posicion);
                 listViewItem.SubItems.Add(pos.Cantidad.ToString());
-                listViewItem.SubItems.Add(pos.Mercaderia.ToString());
+                listViewItem.SubItems.Add(pos.CodProducto.ToString());
                 listViewItem.SubItems.Add(pos.DescProducto);
                 listViewRetiroStock.Items.Add(listViewItem);
             }
