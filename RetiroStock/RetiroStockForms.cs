@@ -21,13 +21,20 @@ namespace GrupoA.Prototipo
         {
             InitializeComponent();
         }
+
         private void RetiroStockForms_Load(object sender, EventArgs e)
         {
             modelo = new();
 
             CargarOrdenesSeleccion();
 
-            listBoxRetiroStock.DataSource = null;
+            listViewRetiroStock.Items.Clear();
+
+            listViewRetiroStock.View = View.Details;
+            listViewRetiroStock.Columns.Add("Posición", 60, HorizontalAlignment.Left);
+            listViewRetiroStock.Columns.Add("Cantidad", 60, HorizontalAlignment.Left);
+            listViewRetiroStock.Columns.Add("Cod. Producto", 90, HorizontalAlignment.Left);
+            listViewRetiroStock.Columns.Add("Descripción", 140, HorizontalAlignment.Left);
         }
 
         private void CargarOrdenesSeleccion()
@@ -77,9 +84,15 @@ namespace GrupoA.Prototipo
 
             var listaPosiciones = modelo.MercaderiaARetirar(orden.NroOrdenSelec);
 
+            listViewRetiroStock.Items.Clear(); // Limpiar el ListView antes de agregar nuevos elementos
+
             foreach (var pos in listaPosiciones)
             {
-                listBoxRetiroStock.Items.Add($"Posición: {pos.Posicion}, Cantidad: {pos.Cantidad}, Mercadería: {pos.Mercaderia}");
+                var listViewItem = new ListViewItem(pos.Posicion);
+                listViewItem.SubItems.Add(pos.Cantidad.ToString());
+                listViewItem.SubItems.Add(pos.Mercaderia.ToString());
+                listViewItem.SubItems.Add(pos.DescProducto);
+                listViewRetiroStock.Items.Add(listViewItem);
             }
         }
 
@@ -89,7 +102,7 @@ namespace GrupoA.Prototipo
             orden.NroOrdenSelec = (int)comboBoxOrdenSelec.SelectedItem;
             modelo.ActualizarStockYOrden(orden.NroOrdenSelec);
 
-            listBoxRetiroStock.Items.Clear();
+            listViewRetiroStock.Items.Clear();
             groupBoxRetirarMercaderia.Enabled = false;
 
             groupBoxOrdenSelec.Enabled = true;
@@ -100,7 +113,7 @@ namespace GrupoA.Prototipo
 
         private void botonAtras_Click(object sender, EventArgs e)
         {
-            listBoxRetiroStock.Items.Clear();
+            listViewRetiroStock.Items.Clear();
             groupBoxRetirarMercaderia.Enabled = false;
 
             groupBoxOrdenSelec.Enabled = true;

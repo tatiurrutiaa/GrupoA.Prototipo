@@ -30,9 +30,9 @@
         {
             botonRetirarStock = new Button();
             botonMenu = new Button();
-            listBoxRetiroStock = new ListBox();
             comboBoxOrdenSelec = new ComboBox();
             groupBoxRetirarMercaderia = new GroupBox();
+            listViewRetiroStock = new ListView();
             botonAtras = new Button();
             botonBuscar = new Button();
             groupBoxOrdenSelec = new GroupBox();
@@ -60,15 +60,6 @@
             botonMenu.UseVisualStyleBackColor = true;
             botonMenu.Click += botonMenu_Click;
             // 
-            // listBoxRetiroStock
-            // 
-            listBoxRetiroStock.FormattingEnabled = true;
-            listBoxRetiroStock.ItemHeight = 15;
-            listBoxRetiroStock.Location = new Point(6, 22);
-            listBoxRetiroStock.Name = "listBoxRetiroStock";
-            listBoxRetiroStock.Size = new Size(357, 244);
-            listBoxRetiroStock.TabIndex = 17;
-            // 
             // comboBoxOrdenSelec
             // 
             comboBoxOrdenSelec.FormattingEnabled = true;
@@ -79,8 +70,8 @@
             // 
             // groupBoxRetirarMercaderia
             // 
+            groupBoxRetirarMercaderia.Controls.Add(listViewRetiroStock);
             groupBoxRetirarMercaderia.Controls.Add(botonAtras);
-            groupBoxRetirarMercaderia.Controls.Add(listBoxRetiroStock);
             groupBoxRetirarMercaderia.Controls.Add(botonRetirarStock);
             groupBoxRetirarMercaderia.Enabled = false;
             groupBoxRetirarMercaderia.Location = new Point(12, 84);
@@ -89,6 +80,14 @@
             groupBoxRetirarMercaderia.TabIndex = 21;
             groupBoxRetirarMercaderia.TabStop = false;
             groupBoxRetirarMercaderia.Text = "Mercadería a Retirar";
+            // 
+            // listViewRetiroStock
+            // 
+            listViewRetiroStock.Location = new Point(6, 22);
+            listViewRetiroStock.Name = "listViewRetiroStock";
+            listViewRetiroStock.Size = new Size(357, 246);
+            listViewRetiroStock.TabIndex = 25;
+            listViewRetiroStock.UseCompatibleStateImageBehavior = false;
             // 
             // botonAtras
             // 
@@ -141,11 +140,11 @@
         #endregion
         private Button botonRetirarStock;
         private Button botonMenu;
-        private ListBox listBoxRetiroStock;
         private ComboBox comboBoxOrdenSelec;
         private GroupBox groupBoxRetirarMercaderia;
         private Button botonBuscar;
         private GroupBox groupBoxOrdenSelec;
         private Button botonAtras;
+        private ListView listViewRetiroStock;
     }
 }
