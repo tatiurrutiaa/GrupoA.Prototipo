@@ -25,9 +25,9 @@ internal class RetiroStockModelo
         new() {CuitCliente = "30-23456789-1", Posicion = "20-18-2", Cantidad = 100, CodProducto = 8, Estado = "comprometido"}
     };
 
-    public List<OrdenesPreparacion> ordenesPreparacion = new()
+    public List<OrdenPreparacion> ordenesPreparacion = new()
     {
-        new OrdenesPreparacion
+        new OrdenPreparacion
         {
             NroOrdenPrep = 34, CuitCliente = "27-41672496-8", Estado = "en seleccion",
             Mercaderias = new List<MercaderiasDetalle>
@@ -35,7 +35,7 @@ internal class RetiroStockModelo
                 new MercaderiasDetalle { CodProducto = 1, CantidadProducto = 700 }
             }
         },
-        new OrdenesPreparacion
+        new OrdenPreparacion
         {
             NroOrdenPrep = 35, CuitCliente = "27-41672496-8", Estado = "en seleccion",
             Mercaderias = new List<MercaderiasDetalle>
@@ -44,7 +44,7 @@ internal class RetiroStockModelo
                 new MercaderiasDetalle { CodProducto = 2, CantidadProducto = 50 }
             }
         },
-        new OrdenesPreparacion
+        new OrdenPreparacion
         {
             NroOrdenPrep = 36, CuitCliente = "27-41672496-8", Estado = "en seleccion",
             Mercaderias = new List<MercaderiasDetalle>
@@ -53,7 +53,7 @@ internal class RetiroStockModelo
                 new MercaderiasDetalle { CodProducto = 2, CantidadProducto = 50 }
             }
         },
-        new OrdenesPreparacion
+        new OrdenPreparacion
         {
             NroOrdenPrep = 37, CuitCliente = "27-41672496-8", Estado = "en seleccion",
             Mercaderias = new List<MercaderiasDetalle>
@@ -61,7 +61,7 @@ internal class RetiroStockModelo
                 new MercaderiasDetalle { CodProducto = 2, CantidadProducto = 200 }
             }
         },
-        new OrdenesPreparacion
+        new OrdenPreparacion
         {
             NroOrdenPrep = 38, CuitCliente = "27-41672496-8", Estado = "en seleccion",
             Mercaderias = new List<MercaderiasDetalle>
@@ -69,7 +69,7 @@ internal class RetiroStockModelo
                 new MercaderiasDetalle { CodProducto = 2, CantidadProducto = 200 }
             }
         },
-        new OrdenesPreparacion
+        new OrdenPreparacion
         {
             NroOrdenPrep = 39, CuitCliente = "30-22465788-7", Estado = "en seleccion",
             Mercaderias = new List<MercaderiasDetalle>
@@ -77,7 +77,7 @@ internal class RetiroStockModelo
                 new MercaderiasDetalle { CodProducto = 3, CantidadProducto = 50 }
             }
         },
-        new OrdenesPreparacion
+        new OrdenPreparacion
         {
             NroOrdenPrep = 40, CuitCliente = "30-22465788-7", Estado = "en seleccion",
             Mercaderias = new List<MercaderiasDetalle>
@@ -85,7 +85,7 @@ internal class RetiroStockModelo
                 new MercaderiasDetalle { CodProducto = 4, CantidadProducto = 150 }
             }
         },
-        new OrdenesPreparacion
+        new OrdenPreparacion
         {
             NroOrdenPrep = 41, CuitCliente = "34-56564433-5", Estado = "en seleccion",
             Mercaderias = new List<MercaderiasDetalle>
@@ -93,7 +93,7 @@ internal class RetiroStockModelo
                 new MercaderiasDetalle { CodProducto = 5, CantidadProducto = 300 }
             }
         },
-        new OrdenesPreparacion
+        new OrdenPreparacion
         {
             NroOrdenPrep = 42, CuitCliente = "30-23456789-1", Estado = "en seleccion",
             Mercaderias = new List<MercaderiasDetalle>
@@ -101,7 +101,7 @@ internal class RetiroStockModelo
                 new MercaderiasDetalle { CodProducto = 6, CantidadProducto = 20 }
             }
         },
-        new OrdenesPreparacion
+        new OrdenPreparacion
         {
             NroOrdenPrep = 43, CuitCliente = "30-23456789-1", Estado = "en seleccion",
             Mercaderias = new List<MercaderiasDetalle>
@@ -109,7 +109,7 @@ internal class RetiroStockModelo
                 new MercaderiasDetalle { CodProducto = 7, CantidadProducto = 450 }
             }
         },
-        new OrdenesPreparacion
+        new OrdenPreparacion
         {
             NroOrdenPrep = 44, CuitCliente = "30-23456789-1", Estado = "en seleccion",
             Mercaderias = new List<MercaderiasDetalle>
@@ -119,7 +119,7 @@ internal class RetiroStockModelo
         }
     };
 
-    List<OrdenesSeleccion> ordenesSeleccion = new()
+    List<OrdenSeleccion> ordenesSeleccion = new()
     {
             new()
             {

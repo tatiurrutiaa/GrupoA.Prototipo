@@ -9,11 +9,11 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
 {
     public class EmpaquetarMercaderiaModel
     {
-        public List<OrdenesPreparacion> OrdenesPreparacion { get; set; }
+        public List<RetiroStock.OrdenPreparacion> OrdenesPreparacion { get; set; }
 
         public EmpaquetarMercaderiaModel()
         {
-            OrdenesPreparacion = new List<OrdenesPreparacion>
+            OrdenesPreparacion = new List<RetiroStock.OrdenPreparacion>
             {
                 /*new OrdenesPreparacion
                 {
@@ -118,7 +118,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
             };
         }
 
-        public List<OrdenesPreparacion> ObtenerOrdenesSeleccionadas()
+        public List<RetiroStock.OrdenPreparacion> ObtenerOrdenesSeleccionadas()
         {
             return OrdenesPreparacion.Where(o => o.Estado == "Seleccionadas").ToList();
         }

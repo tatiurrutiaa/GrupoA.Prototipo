@@ -1,6 +1,6 @@
 ﻿namespace GrupoA.Prototipo.RetiroStock
 {
-    public class OrdenesSeleccion
+    public class OrdenSeleccion
     {
         public int NroOrdenSelec { get; internal set; }
         public List<int> NroOrdenesPreparacion { get; set; }

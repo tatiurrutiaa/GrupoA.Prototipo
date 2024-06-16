@@ -9,19 +9,19 @@ namespace GrupoA.Prototipo.OrdenSeleccion
 {
     internal class OrdenSeleccionModel
     {
-        public List<OrdenesPreparacion> ordenesPreparacion = new()
+        public List<RetiroStock.OrdenPreparacion> ordenesPreparacion = new()
         {
-            new OrdenesPreparacion { NroOrdenPrep = 15, CuitCliente = "27-41672496-8", Estado = "pendiente" },
-            new OrdenesPreparacion { NroOrdenPrep = 16, CuitCliente = "27-41672496-8", Estado = "pendiente" },
-            new OrdenesPreparacion { NroOrdenPrep = 17, CuitCliente = "27-41672496-8", Estado = "pendiente" },
-            new OrdenesPreparacion { NroOrdenPrep = 18, CuitCliente = "27-41672496-8", Estado = "pendiente" },
-            new OrdenesPreparacion { NroOrdenPrep = 19, CuitCliente = "30-22465788-7", Estado = "pendiente" },
-            new OrdenesPreparacion { NroOrdenPrep = 20, CuitCliente = "30-22465788-7", Estado = "pendiente" },
-            new OrdenesPreparacion { NroOrdenPrep = 21, CuitCliente = "34-56564433-5", Estado = "pendiente" },
-            new OrdenesPreparacion { NroOrdenPrep = 22, CuitCliente = "34-56564433-5", Estado = "pendiente" },
-            new OrdenesPreparacion { NroOrdenPrep = 23, CuitCliente = "30-23456789-1", Estado = "pendiente" },
-            new OrdenesPreparacion { NroOrdenPrep = 24, CuitCliente = "30-23456789-1", Estado = "pendiente" },
-            new OrdenesPreparacion { NroOrdenPrep = 25, CuitCliente = "30-23456789-1", Estado = "en despacho" }
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 15, CuitCliente = "27-41672496-8", Estado = "pendiente" },
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 16, CuitCliente = "27-41672496-8", Estado = "pendiente" },
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 17, CuitCliente = "27-41672496-8", Estado = "pendiente" },
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 18, CuitCliente = "27-41672496-8", Estado = "pendiente" },
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 19, CuitCliente = "30-22465788-7", Estado = "pendiente" },
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 20, CuitCliente = "30-22465788-7", Estado = "pendiente" },
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 21, CuitCliente = "34-56564433-5", Estado = "pendiente" },
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 22, CuitCliente = "34-56564433-5", Estado = "pendiente" },
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 23, CuitCliente = "30-23456789-1", Estado = "pendiente" },
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 24, CuitCliente = "30-23456789-1", Estado = "pendiente" },
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 25, CuitCliente = "30-23456789-1", Estado = "en despacho" }
         };
 
         public List<Contrato> CriticidadPorCliente = new()
@@ -32,9 +32,9 @@ namespace GrupoA.Prototipo.OrdenSeleccion
             new Contrato { CuitCliente = "30-23456789-1", Criticidad = "alta"},
         };
 
-        private List<OrdenesSeleccion> ordenesSeleccion = new();
+        private List<RetiroStock.OrdenSeleccion> ordenesSeleccion = new();
 
-        public List<OrdenesPreparacion> OrdenesPendientes()
+        public List<RetiroStock.OrdenPreparacion> OrdenesPendientes()
         {
             var criticidadPrioridad = new Dictionary<string, int>
             {
@@ -108,7 +108,7 @@ namespace GrupoA.Prototipo.OrdenSeleccion
                     .Max(o => o.NroOrdenSelec) : 0) + 1;
 
                 // Crear una nueva orden de seleccion
-                OrdenesSeleccion nuevaOrdenEntrega = new()
+                RetiroStock.OrdenSeleccion nuevaOrdenEntrega = new()
                 {
                     NroOrdenSelec = nuevoNroOrdenEntrega,
                     NroOrdenesPreparacion = detalleOrden,

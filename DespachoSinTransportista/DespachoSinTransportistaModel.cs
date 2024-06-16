@@ -10,7 +10,7 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
 {
     internal class DespachoSinTransportistaModel
     {
-        public List<OrdenesPreparacion> ordenesPreparacion = new()
+        public List<RetiroStock.OrdenPreparacion> ordenesPreparacion = new()
         {
         new() {NroOrdenPrep = 15, CuitCliente = "27-41672496-8", DNITransportista = 41672496,  Estado = "preparada"},
         new() {NroOrdenPrep = 16, CuitCliente = "27-41672496-8", DNITransportista = null, Estado = "preparada"},
@@ -25,7 +25,7 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
         new() {NroOrdenPrep = 25, CuitCliente = "30-23456789-1", DNITransportista = null, Estado = "preparada"}
         };
 
-        public List<OrdenesPreparacion> MercaderiaARetirar()
+        public List<RetiroStock.OrdenPreparacion> MercaderiaARetirar()
         {
             var ordenes = ordenesPreparacion.Where(o => o.Estado == "preparada"
             && o.DNITransportista == null).ToList();

@@ -9,23 +9,23 @@ namespace GrupoA.Prototipo.OrdenesdeEntrega
 {
     internal class OrdenEntregaModel
     {
-        public List<OrdenesPreparacion> ordenesPreparación = new()
+        public List<RetiroStock.OrdenPreparacion> ordenesPreparación = new()
         {
-            new OrdenesPreparacion { NroOrdenPrep = 15, Estado = "preparada" },
-            new OrdenesPreparacion { NroOrdenPrep = 16, Estado = "preparada" },
-            new OrdenesPreparacion { NroOrdenPrep = 17, Estado = "preparada" },
-            new OrdenesPreparacion { NroOrdenPrep = 18, Estado = "preparada" },
-            new OrdenesPreparacion { NroOrdenPrep = 20, Estado = "preparada" },
-            new OrdenesPreparacion { NroOrdenPrep = 21, Estado = "preparada" },
-            new OrdenesPreparacion { NroOrdenPrep = 22, Estado = "preparada" },
-            new OrdenesPreparacion { NroOrdenPrep = 23, Estado = "preparada" },
-            new OrdenesPreparacion { NroOrdenPrep = 24, Estado = "preparada" },
-            new OrdenesPreparacion { NroOrdenPrep = 25, Estado = "en despacho" }
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 15, Estado = "preparada" },
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 16, Estado = "preparada" },
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 17, Estado = "preparada" },
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 18, Estado = "preparada" },
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 20, Estado = "preparada" },
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 21, Estado = "preparada" },
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 22, Estado = "preparada" },
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 23, Estado = "preparada" },
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 24, Estado = "preparada" },
+            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 25, Estado = "en despacho" }
         };
 
         private List<GrupoA.Prototipo.OrdenEntrega.OrdenEntrega> ordenesEntrega = new();
 
-        public List<OrdenesPreparacion> OrdenesPreparadas()
+        public List<RetiroStock.OrdenPreparacion> OrdenesPreparadas()
         {
             return ordenesPreparación
                 .Where(o => o.Estado == "preparada")
@@ -67,7 +67,7 @@ namespace GrupoA.Prototipo.OrdenesdeEntrega
             if (listBox.CheckedItems.Count > 0)
             {
                 var selectedOrders = listBox.CheckedItems.Cast<string>();
-                List<OrdenesPreparacion> detalleOrden = new List<OrdenesPreparacion>();
+                List<int> detalleOrden = new List<int>();
 
                 foreach (var item in selectedOrders)
                 {
@@ -76,7 +76,7 @@ namespace GrupoA.Prototipo.OrdenesdeEntrega
                     if (orden != null)
                     {
                         orden.Estado = "En despacho";
-                        detalleOrden.Add(orden);
+                        detalleOrden.Add(ordenNum);
                     }
                 }
 
@@ -87,12 +87,13 @@ namespace GrupoA.Prototipo.OrdenesdeEntrega
                 GrupoA.Prototipo.OrdenEntrega.OrdenEntrega nuevaOrdenEntrega = new()
                 {
                     NroOrdenEntrega = nuevoNroOrdenEntrega,
-                    DetalleOrdenEntrega = detalleOrden
+                    NroOrdenPreparacion = detalleOrden
                 };
                 ordenesEntrega.Add(nuevaOrdenEntrega);
 
                 // Mostrar el mensaje con las órdenes en líneas separadas
-                string selectedOrdersString = string.Join(Environment.NewLine, selectedOrders);
+                string selectedOrdersString = string.Join(Environment.NewLine,
+                    detalleOrden.Select(num => $"Orden {num}"));
                 MessageBox.Show($"Orden de Entrega {nuevoNroOrdenEntrega} creada. \n" +
                     $"Detalle de la orden:" +
                     $"\n{selectedOrdersString}");

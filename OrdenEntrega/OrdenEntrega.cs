@@ -10,6 +10,6 @@ namespace GrupoA.Prototipo.OrdenEntrega
     internal class OrdenEntrega
     {
         public int NroOrdenEntrega { get; set; }
-        public List<OrdenesPreparacion> DetalleOrdenEntrega { get; set; }
+        public List<int> NroOrdenPreparacion { get; set; }
     }
 }

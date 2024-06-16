@@ -28,7 +28,7 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             CargarListbox();
             UpdateButtonState();
         }
-        private void ActualizarListbox(List<OrdenesPreparacion> ordenes)
+        private void ActualizarListbox(List<RetiroStock.OrdenPreparacion> ordenes)
         {
             ListBoxOrdenesPrep.Items.Clear();
             foreach (var orden in ordenes)

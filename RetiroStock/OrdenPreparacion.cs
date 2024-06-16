@@ -3,7 +3,7 @@ using GrupoA.Prototipo.EmpaquetarMercaderia;
 
 namespace GrupoA.Prototipo.RetiroStock
 {
-    public class OrdenesPreparacion
+    public class OrdenPreparacion
     {
         public int NroOrdenPrep { get; internal set; }
         public string CuitCliente { get; internal set; }

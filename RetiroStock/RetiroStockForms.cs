@@ -78,7 +78,7 @@ namespace GrupoA.Prototipo
 
             groupBoxOrdenSelec.Enabled = false;
             groupBoxRetirarMercaderia.Enabled = true;
-            var orden = new OrdenesSeleccion();
+            var orden = new RetiroStock.OrdenSeleccion();
 
             orden.NroOrdenSelec = (int)comboBoxOrdenSelec.SelectedItem;
 
@@ -98,7 +98,7 @@ namespace GrupoA.Prototipo
 
         private void botonRetirarStock_Click(object sender, EventArgs e)
         {
-            var orden = new OrdenesSeleccion();
+            var orden = new RetiroStock.OrdenSeleccion();
             orden.NroOrdenSelec = (int)comboBoxOrdenSelec.SelectedItem;
             modelo.ActualizarStockYOrden(orden.NroOrdenSelec);
 

@@ -9,11 +9,11 @@ namespace GrupoA.Prototipo.DespachoConTransportista
 {
     internal class DespachoConTransportistaModel
     {
-        public List<OrdenesPreparacion> ordenesPreparacion { get; set;}
+        public List<RetiroStock.OrdenPreparacion> ordenesPreparacion { get; set;}
 
         public DespachoConTransportistaModel()
         {
-            ordenesPreparacion = new List<OrdenesPreparacion>
+            ordenesPreparacion = new List<RetiroStock.OrdenPreparacion>
             {
                 new() { NroOrdenPrep = 15, CuitCliente = "27-41672496-8", DNITransportista = 41672496, Estado = "preparada" },
                 new() { NroOrdenPrep = 16, CuitCliente = "27-41672496-8", DNITransportista = 46546462, Estado = "preparada" },
@@ -29,12 +29,12 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             };
         }
 
-        public List<OrdenesPreparacion> MercaderiaARetirar()
+        public List<RetiroStock.OrdenPreparacion> MercaderiaARetirar()
         {
             return ordenesPreparacion.Where(orden => orden.Estado == "preparada" && orden.DNITransportista.HasValue).ToList();
         }
 
-        public List<OrdenesPreparacion> ObtenerOrdenesPorDNI(int dniTransportista)
+        public List<RetiroStock.OrdenPreparacion> ObtenerOrdenesPorDNI(int dniTransportista)
         {
             return ordenesPreparacion.Where(orden => orden.Estado == "preparada" && orden.DNITransportista == dniTransportista).ToList();
         
