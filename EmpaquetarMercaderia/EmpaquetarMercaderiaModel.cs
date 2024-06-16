@@ -14,8 +14,8 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
         public EmpaquetarMercaderiaModel()
         {
             OrdenesPreparacion = new List<OrdenesPreparacion>
-            {   
-                new OrdenesPreparacion
+            {
+                /*new OrdenesPreparacion
                 {
                     NroOrdenPrep = 34,
                     CuitCliente = "27-41672496-8",
@@ -113,7 +113,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                         new MercaderiasDetalle { CodProducto = 2 , DescProducto = "libros de texto", CantidadProducto = 80 },
                         new MercaderiasDetalle { CodProducto = 3 , DescProducto = "diccionarios", CantidadProducto = 50 }
                     }
-                }
+                }*/
 
             };
         }

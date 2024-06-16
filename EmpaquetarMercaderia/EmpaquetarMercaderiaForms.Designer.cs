@@ -52,18 +52,17 @@
             // 
             // idproductoColumn
             // 
-            idproductoColumn.Text = "Id Producto";
-            idproductoColumn.Width = 105;
+            idproductoColumn.Text = "Cod Producto";
+            idproductoColumn.Width = 90;
             // 
             // nombreproductoColumn
             // 
-            nombreproductoColumn.Text = "Nombre Producto";
-            nombreproductoColumn.Width = 110;
+            nombreproductoColumn.Text = "Desc Producto";
+            nombreproductoColumn.Width = 160;
             // 
             // CantidadColumn
             // 
             CantidadColumn.Text = "Cantidad";
-            CantidadColumn.Width = 100;
             // 
             // nroordenLabel
             // 
@@ -107,7 +106,6 @@
             Name = "EmpaquetarMercaderiaForms";
             Text = "Empaquetar mercadería";
             FormClosed += EmpaquetarMercaderiaForms_FormClosed_1;
-            //Load += EmpaquetarMercaderiaForms_Load;
             ResumeLayout(false);
             PerformLayout();
         }

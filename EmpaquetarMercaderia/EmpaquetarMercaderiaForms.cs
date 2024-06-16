@@ -52,7 +52,11 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                 else
                 {
                     // No hay más órdenes disponibles, deshabilitar el botón de empaquetado
+                    empaquetarmercaderiaListview.Items.Clear();
                     empaquetarButton.Enabled = false;
+                    MessageBox.Show("No hay ordenes pendientes para empaquetar. \n" +
+                        "Por favor, intente nuevamente en unos minutos.");
+                    return;
                 }
             }
         }
@@ -70,7 +74,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     mercaderia.CodProducto.ToString(),
                     mercaderia.DescProducto,
                     mercaderia.CantidadProducto.ToString()
-                });
+                    });
                     empaquetarmercaderiaListview.Items.Add(item);
                 }
                 nroordenLabel.Text = "Nro de orden: " + orden.NroOrdenPrep.ToString();
@@ -78,6 +82,13 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
 
                 // Verificar si hay una orden seleccionada y habilitar/deshabilitar el botón "Empaquetar" en consecuencia
                 VerificarOrdenSeleccionada();
+            }
+            else
+            {
+                empaquetarmercaderiaListview.Items.Clear();
+                empaquetarButton.Enabled = false;
+                MessageBox.Show("No hay ordenes pendientes para empaquetar. \n" +
+                    "Por favor, intente nuevamente en unos minutos.");
             }
         }
 
