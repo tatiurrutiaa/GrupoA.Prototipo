@@ -56,7 +56,7 @@
             textBoxDNI.Size = new Size(197, 23);
             textBoxDNI.TabIndex = 1;
             textBoxDNI.TextChanged += textBoxDNI_TextChanged;
-            textBoxDNI.KeyPress += textBoxDNI_KeyPress;
+            //textBoxDNI.KeyPress += textBoxDNI_KeyPress;
             // 
             // labelDNI
             // 
@@ -78,7 +78,6 @@
             groupBoxOrdenEntrega.TabIndex = 3;
             groupBoxOrdenEntrega.TabStop = false;
             groupBoxOrdenEntrega.Text = "Seleccionar las ordenes de preparación a despachar:";
-            groupBoxOrdenEntrega.Enter += groupBoxOrdenEntrega_Enter;
             // 
             // refreshButton
             // 

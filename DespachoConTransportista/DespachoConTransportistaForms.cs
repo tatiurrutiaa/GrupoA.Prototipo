@@ -15,6 +15,7 @@ namespace GrupoA.Prototipo.DespachoConTransportista
     public partial class DespachoConTransportistaForms : Form
     {
         private DespachoConTransportistaModel modelo;
+
         public DespachoConTransportistaForms()
         {
             InitializeComponent();
@@ -22,12 +23,16 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             textBoxDNI.EnabledChanged += new EventHandler(ControlStateChanged);
             ListBoxOrdenesPrep.ItemCheck += new ItemCheckEventHandler(ListBoxOrdenesPrep_ItemCheck);
         }
+
+        // Carga el formulario
         private void DespachoConTransportistaForms_Load(object sender, EventArgs e)
         {
             modelo = new();
             CargarListbox();
             UpdateButtonState();
         }
+
+        // Actualiza la lista de órdenes de preparación
         private void ActualizarListbox(List<RetiroStock.OrdenPreparacion> ordenes)
         {
             ListBoxOrdenesPrep.Items.Clear();
@@ -37,9 +42,20 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             }
         }
 
+        // Carga la lista de órdenes de preparación
         private void CargarListbox()
         {
-            var lista = modelo.MercaderiaARetirar();
+            List<RetiroStock.OrdenPreparacion> lista;
+
+            if (!textBoxDNI.Enabled && int.TryParse(textBoxDNI.Text.Trim(), out int dni))
+            {
+                lista = modelo.ObtenerOrdenesPorDNI(dni);
+            }
+            else
+            {
+                lista = modelo.MercaderiaARetirar();
+            }
+
             if (lista == null || !lista.Any())
             {
                 MessageBox.Show("No hay órdenes de preparación para despachar. Por favor, intente nuevamente en unos minutos.");
@@ -49,6 +65,8 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             ActualizarListbox(lista);
         }
 
+
+        // Vuelve al menú principal
         private void buttonAtras_Click(object sender, EventArgs e)
         {
             GrupoA.Prototipo.MenuForms menu = new();
@@ -58,28 +76,25 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             menu.Show();
         }
 
+        // Verificaciones del DNI ingresado
         private void buttonDNI_Click(object sender, EventArgs e)
         {
-            // Si textBoxDNI está habilitado, lo bloquea y actualiza el texto del botón a "Editar DNI"
             if (textBoxDNI.Enabled)
             {
                 string dniText = textBoxDNI.Text.Trim();
 
-                // Validar que el DNI no esté vacío
                 if (string.IsNullOrWhiteSpace(dniText))
                 {
                     MessageBox.Show("El DNI no puede estar vacío.");
                     return;
                 }
 
-                // Validar que el DNI tenga entre 7 y 9 caracteres
                 if (dniText.Length < 7 || dniText.Length > 9)
                 {
                     MessageBox.Show("El DNI debe contener entre 7 y 9 caracteres.");
                     return;
                 }
 
-                // Validar que el DNI contenga solo números
                 if (!int.TryParse(dniText, out int dni))
                 {
                     MessageBox.Show("El DNI debe contener solo números.");
@@ -89,9 +104,8 @@ namespace GrupoA.Prototipo.DespachoConTransportista
                 textBoxDNI.Enabled = false;
                 ListBoxOrdenesPrep.Enabled = true;
 
-                buttonDNI.Text = "Editar DNI"; // Cambiar el texto del botón
+                buttonDNI.Text = "Editar DNI";
 
-                // Filtrar las órdenes de preparación por el DNI ingresado y actualizar la ListBox
                 var ordenesFiltradas = modelo.ObtenerOrdenesPorDNI(dni);
                 ActualizarListbox(ordenesFiltradas);
             }
@@ -99,17 +113,17 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             {
                 textBoxDNI.Enabled = true;
                 ListBoxOrdenesPrep.Enabled = false;
-                buttonDNI.Text = "Aplicar DNI"; // Cambiar el texto del botón
+                buttonDNI.Text = "Aplicar DNI";
 
-
-                // Restaurar la lista completa de órdenes de preparación si se está editando el DNI
-                CargarListbox();
+                CargarListbox(); // Esto se puede ajustar para que limpie la lista
             }
 
-            // Actualizar el estado del botón
             UpdateButtonState();
         }
 
+
+        // Comportamientos del DNI ingresado en el TextBox por Seba
+        /*
         private void textBoxDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
@@ -123,13 +137,15 @@ namespace GrupoA.Prototipo.DespachoConTransportista
                 textBoxDNI.SelectionStart = textBoxDNI.Text.Length;
             }
         }
+        */
 
+        // imposibilidad de pegar texto no numerico en el textbox
         private void textBoxDNI_TextChanged(object sender, EventArgs e)
         {
-            // Remove any non-digit characters from the text (This will make impossible to paste non numeric characters)
             textBoxDNI.Text = new string(textBoxDNI.Text.Where(char.IsDigit).ToArray());
         }
 
+        // Crear remito
         private void ButtonCrearRemito_Click(object sender, EventArgs e)
         {
             /*GrupoA.Prototipo.RemitoForms remito = new();
@@ -138,34 +154,61 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             DisplayCheckedValues();
         }
 
+        // Método para mostrar las ordenes seleccionadas
+        // Actualiza el estado de las ordenes a "despachada"
         private void DisplayCheckedValues()
         {
             StringBuilder sb = new StringBuilder();
+            List<int> ordenesProcesadas = new List<int>();
 
-            // Iterate through each item in the ListBoxOrdenesPrep
             for (int i = 0; i < ListBoxOrdenesPrep.Items.Count; i++)
             {
-                // Check if the item is checked
                 if (ListBoxOrdenesPrep.GetItemChecked(i))
                 {
-                    // Append the checked item to the StringBuilder
                     sb.AppendLine(ListBoxOrdenesPrep.Items[i].ToString());
+
+                    string? itemText = ListBoxOrdenesPrep.Items[i].ToString();
+                    if (itemText != null)
+                    {
+                        int orderNumber = int.Parse(itemText.Replace("Orden ", ""));
+                        UpdateOrderEstado(orderNumber, "despachada");
+                        ordenesProcesadas.Add(orderNumber);
+                    }
                 }
             }
 
-            // Display the checked values
             MessageBox.Show("Se generará el remito, para las siguientes ordenes, con el DNI del transportista n°" + textBoxDNI.Text + "\n\n" + sb.ToString());
+
+            // Eliminar las órdenes procesadas de la ListBox
+            foreach (int orderNumber in ordenesProcesadas)
+            {
+                ListBoxOrdenesPrep.Items.Remove($"Orden {orderNumber}");
+            }
+
+            // Actualizar el estado de los botones
+            UpdateButtonState();
         }
 
+
+
+        // Method to update the Estado of an order
+        private void UpdateOrderEstado(int nroOrdenPrep, string newEstado)
+        {
+            var order = modelo.ordenesPreparacion.FirstOrDefault(o => o.NroOrdenPrep == nroOrdenPrep);
+            if (order != null)
+            {
+                order.Estado = newEstado;
+            }
+        }
+
+        // Métodos para actualizar el estado de las ordenes
         private void ControlStateChanged(object? sender, EventArgs e)
         {
-            // Update the button state whenever relevant control states change
             UpdateButtonState();
         }
 
         private void ListBoxOrdenesPrep_ItemCheck(object? sender, ItemCheckEventArgs e)
         {
-            // Handle the item check state change before it's applied
             this.BeginInvoke((MethodInvoker)delegate
             {
                 UpdateButtonState();
@@ -174,23 +217,10 @@ namespace GrupoA.Prototipo.DespachoConTransportista
 
         private void UpdateButtonState()
         {
-            // Check if the dni TextBox is not enabled
             bool isDniDisabled = !textBoxDNI.Enabled;
-            // Check if at least one item is selected in the ListBoxOrdenesPrep
             bool isItemSelected = ListBoxOrdenesPrep.CheckedItems.Count > 0;
 
-            // Enable or disable the button based on the conditions
             buttonCrearRemito.Enabled = isDniDisabled && isItemSelected;
-        }
-
-        private void groupBoxOrdenEntrega_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ListBoxOrdenesPrep_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         // Cierra el proceso al cerrar la aplicación
@@ -199,19 +229,27 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             System.Windows.Forms.Application.Exit();
         }
 
+        // Actualiza la lista de órdenes de preparación
         private void refreshButton_Click(object sender, EventArgs e)
         {
             if (textBoxDNI.Enabled)
             {
+                // Si el TextBox de DNI está habilitado, cargar todas las órdenes
                 CargarListbox();
             }
             else
             {
-                // Filter and update the list by the DNI in textBoxDNI
+                // Si el TextBox de DNI está deshabilitado, intentar filtrar por el DNI actualmente ingresado
                 if (int.TryParse(textBoxDNI.Text.Trim(), out int dni))
                 {
                     var ordenesFiltradas = modelo.ObtenerOrdenesPorDNI(dni);
                     ActualizarListbox(ordenesFiltradas);
+
+                    // Mostrar mensaje si no quedan órdenes
+                    if (ordenesFiltradas == null || !ordenesFiltradas.Any())
+                    {
+                        MessageBox.Show("No hay órdenes de preparación para despachar. Por favor, intente nuevamente en unos minutos.");
+                    }
                 }
                 else
                 {
@@ -219,5 +257,6 @@ namespace GrupoA.Prototipo.DespachoConTransportista
                 }
             }
         }
+
     }
 }
