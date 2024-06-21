@@ -1,0 +1,1058 @@
+[
+  /*{
+    "NroOrdenPrep": 1,
+    "CuitCliente": "27-12345678-5",
+    "Estado": "despachada",
+    "Fecha": "2024-06-01T00:00:00",
+    "DNITransportista": 40567890,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 1,
+        "CantidadProducto": 100
+      },
+      {
+        "CodProducto": 2,
+        "CantidadProducto": 120
+      },
+      {
+        "CodProducto": 3,
+        "CantidadProducto": 150
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 2,
+    "CuitCliente": "22-12345678-9",
+    "Estado": "despachada",
+    "Fecha": "2024-06-02T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 4,
+        "CantidadProducto": 200
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 3,
+    "CuitCliente": "27-12345678-5",
+    "Estado": "despachada",
+    "Fecha": "2024-06-03T00:00:00",
+    "DNITransportista": 40678901,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 5,
+        "CantidadProducto": 220
+      },
+      {
+        "CodProducto": 6,
+        "CantidadProducto": 240
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 4,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "despachada",
+    "Fecha": "2024-06-04T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 7,
+        "CantidadProducto": 260
+      },
+      {
+        "CodProducto": 8,
+        "CantidadProducto": 280
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 5,
+    "CuitCliente": "22-12345678-9",
+    "Estado": "despachada",
+    "Fecha": "2024-06-05T00:00:00",
+    "DNITransportista": 40789012,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 9,
+        "CantidadProducto": 300
+      },
+      {
+        "CodProducto": 10,
+        "CantidadProducto": 320
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 6,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "despachada",
+    "Fecha": "2024-06-06T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 11,
+        "CantidadProducto": 340
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 7,
+    "CuitCliente": "27-12345678-5",
+    "Estado": "despachada",
+    "Fecha": "2024-06-07T00:00:00",
+    "DNITransportista": 40890123,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 12,
+        "CantidadProducto": 360
+      },
+      {
+        "CodProducto": 13,
+        "CantidadProducto": 380
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 8,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "despachada",
+    "Fecha": "2024-06-08T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 14,
+        "CantidadProducto": 400
+      },
+      {
+        "CodProducto": 15,
+        "CantidadProducto": 420
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 9,
+    "CuitCliente": "22-12345678-9",
+    "Estado": "despachada",
+    "Fecha": "2024-06-09T00:00:00",
+    "DNITransportista": 40901234,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 16,
+        "CantidadProducto": 440
+      },
+      {
+        "CodProducto": 17,
+        "CantidadProducto": 460
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 10,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "despachada",
+    "Fecha": "2024-06-10T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 18,
+        "CantidadProducto": 480
+      },
+      {
+        "CodProducto": 19,
+        "CantidadProducto": 500
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 11,
+    "CuitCliente": "27-12345678-5",
+    "Estado": "en despacho",
+    "Fecha": "2024-06-11T00:00:00",
+    "DNITransportista": 40567890,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 1,
+        "CantidadProducto": 100
+      },
+      {
+        "CodProducto": 2,
+        "CantidadProducto": 120
+      },
+      {
+        "CodProducto": 3,
+        "CantidadProducto": 150
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 12,
+    "CuitCliente": "22-12345678-9",
+    "Estado": "en despacho",
+    "Fecha": "2024-06-12T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 4,
+        "CantidadProducto": 200
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 13,
+    "CuitCliente": "27-12345678-5",
+    "Estado": "en despacho",
+    "Fecha": "2024-06-13T00:00:00",
+    "DNITransportista": 40678901,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 5,
+        "CantidadProducto": 220
+      },
+      {
+        "CodProducto": 6,
+        "CantidadProducto": 240
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 14,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "en despacho",
+    "Fecha": "2024-06-14T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 7,
+        "CantidadProducto": 260
+      },
+      {
+        "CodProducto": 8,
+        "CantidadProducto": 280
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 15,
+    "CuitCliente": "22-12345678-9",
+    "Estado": "en despacho",
+    "Fecha": "2024-06-15T00:00:00",
+    "DNITransportista": 40789012,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 9,
+        "CantidadProducto": 300
+      },
+      {
+        "CodProducto": 10,
+        "CantidadProducto": 320
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 16,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "en despacho",
+    "Fecha": "2024-06-16T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 11,
+        "CantidadProducto": 340
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 17,
+    "CuitCliente": "27-12345678-5",
+    "Estado": "en despacho",
+    "Fecha": "2024-06-17T00:00:00",
+    "DNITransportista": 40890123,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 12,
+        "CantidadProducto": 360
+      },
+      {
+        "CodProducto": 13,
+        "CantidadProducto": 380
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 18,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "en despacho",
+    "Fecha": "2024-06-18T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 14,
+        "CantidadProducto": 400
+      },
+      {
+        "CodProducto": 15,
+        "CantidadProducto": 420
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 19,
+    "CuitCliente": "22-12345678-9",
+    "Estado": "en despacho",
+    "Fecha": "2024-06-19T00:00:00",
+    "DNITransportista": 40901234,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 16,
+        "CantidadProducto": 440
+      },
+      {
+        "CodProducto": 17,
+        "CantidadProducto": 460
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 20,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "en despacho",
+    "Fecha": "2024-06-20T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 18,
+        "CantidadProducto": 480
+      },
+      {
+        "CodProducto": 19,
+        "CantidadProducto": 500
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 21,
+    "CuitCliente": "27-12345678-5",
+    "Estado": "preparada",
+    "Fecha": "2024-06-21T00:00:00",
+    "DNITransportista": 40567890,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 1,
+        "CantidadProducto": 100
+      },
+      {
+        "CodProducto": 2,
+        "CantidadProducto": 120
+      },
+      {
+        "CodProducto": 3,
+        "CantidadProducto": 150
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 22,
+    "CuitCliente": "22-12345678-9",
+    "Estado": "preparada",
+    "Fecha": "2024-06-22T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 4,
+        "CantidadProducto": 200
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 23,
+    "CuitCliente": "27-12345678-5",
+    "Estado": "preparada",
+    "Fecha": "2024-06-23T00:00:00",
+    "DNITransportista": 40678901,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 5,
+        "CantidadProducto": 220
+      },
+      {
+        "CodProducto": 6,
+        "CantidadProducto": 240
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 24,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "preparada",
+    "Fecha": "2024-06-24T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 7,
+        "CantidadProducto": 260
+      },
+      {
+        "CodProducto": 8,
+        "CantidadProducto": 280
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 25,
+    "CuitCliente": "22-12345678-9",
+    "Estado": "preparada",
+    "Fecha": "2024-06-25T00:00:00",
+    "DNITransportista": 40789012,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 9,
+        "CantidadProducto": 300
+      },
+      {
+        "CodProducto": 10,
+        "CantidadProducto": 320
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 26,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "preparada",
+    "Fecha": "2024-06-26T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 11,
+        "CantidadProducto": 340
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 27,
+    "CuitCliente": "27-12345678-5",
+    "Estado": "preparada",
+    "Fecha": "2024-06-27T00:00:00",
+    "DNITransportista": 40890123,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 12,
+        "CantidadProducto": 360
+      },
+      {
+        "CodProducto": 13,
+        "CantidadProducto": 380
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 28,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "preparada",
+    "Fecha": "2024-06-28T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 14,
+        "CantidadProducto": 400
+      },
+      {
+        "CodProducto": 15,
+        "CantidadProducto": 420
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 29,
+    "CuitCliente": "22-12345678-9",
+    "Estado": "preparada",
+    "Fecha": "2024-06-29T00:00:00",
+    "DNITransportista": 40901234,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 16,
+        "CantidadProducto": 440
+      },
+      {
+        "CodProducto": 17,
+        "CantidadProducto": 460
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 30,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "preparada",
+    "Fecha": "2024-06-30T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 18,
+        "CantidadProducto": 480
+      },
+      {
+        "CodProducto": 19,
+        "CantidadProducto": 500
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 31,
+    "CuitCliente": "27-12345678-5",
+    "Estado": "seleccionada",
+    "Fecha": "2024-06-01T00:00:00",
+    "DNITransportista": 40567890,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 1,
+        "CantidadProducto": 100
+      },
+      {
+        "CodProducto": 2,
+        "CantidadProducto": 120
+      },
+      {
+        "CodProducto": 3,
+        "CantidadProducto": 150
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 32,
+    "CuitCliente": "22-12345678-9",
+    "Estado": "seleccionada",
+    "Fecha": "2024-06-02T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 4,
+        "CantidadProducto": 200
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 33,
+    "CuitCliente": "27-12345678-5",
+    "Estado": "seleccionada",
+    "Fecha": "2024-06-03T00:00:00",
+    "DNITransportista": 40678901,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 5,
+        "CantidadProducto": 220
+      },
+      {
+        "CodProducto": 6,
+        "CantidadProducto": 240
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 34,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "seleccionada",
+    "Fecha": "2024-06-04T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 7,
+        "CantidadProducto": 260
+      },
+      {
+        "CodProducto": 8,
+        "CantidadProducto": 280
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 35,
+    "CuitCliente": "22-12345678-9",
+    "Estado": "seleccionada",
+    "Fecha": "2024-06-05T00:00:00",
+    "DNITransportista": 40789012,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 9,
+        "CantidadProducto": 300
+      },
+      {
+        "CodProducto": 10,
+        "CantidadProducto": 320
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 36,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "seleccionada",
+    "Fecha": "2024-06-06T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 11,
+        "CantidadProducto": 340
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 37,
+    "CuitCliente": "27-12345678-5",
+    "Estado": "seleccionada",
+    "Fecha": "2024-06-07T00:00:00",
+    "DNITransportista": 40890123,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 12,
+        "CantidadProducto": 360
+      },
+      {
+        "CodProducto": 13,
+        "CantidadProducto": 380
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 38,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "seleccionada",
+    "Fecha": "2024-06-08T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 14,
+        "CantidadProducto": 400
+      },
+      {
+        "CodProducto": 15,
+        "CantidadProducto": 420
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 39,
+    "CuitCliente": "22-12345678-9",
+    "Estado": "seleccionada",
+    "Fecha": "2024-06-09T00:00:00",
+    "DNITransportista": 40901234,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 16,
+        "CantidadProducto": 440
+      },
+      {
+        "CodProducto": 17,
+        "CantidadProducto": 460
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 40,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "seleccionada",
+    "Fecha": "2024-06-10T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 18,
+        "CantidadProducto": 480
+      },
+      {
+        "CodProducto": 19,
+        "CantidadProducto": 500
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 41,
+    "CuitCliente": "27-12345678-5",
+    "Estado": "en seleccion",
+    "Fecha": "2024-06-11T00:00:00",
+    "DNITransportista": 40567890,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 1,
+        "CantidadProducto": 100
+      },
+      {
+        "CodProducto": 2,
+        "CantidadProducto": 120
+      },
+      {
+        "CodProducto": 3,
+        "CantidadProducto": 150
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 42,
+    "CuitCliente": "22-12345678-9",
+    "Estado": "en seleccion",
+    "Fecha": "2024-06-12T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 4,
+        "CantidadProducto": 200
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 43,
+    "CuitCliente": "27-12345678-5",
+    "Estado": "en seleccion",
+    "Fecha": "2024-06-13T00:00:00",
+    "DNITransportista": 40678901,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 5,
+        "CantidadProducto": 220
+      },
+      {
+        "CodProducto": 6,
+        "CantidadProducto": 240
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 44,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "en seleccion",
+    "Fecha": "2024-06-14T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 7,
+        "CantidadProducto": 260
+      },
+      {
+        "CodProducto": 8,
+        "CantidadProducto": 280
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 45,
+    "CuitCliente": "22-12345678-9",
+    "Estado": "en seleccion",
+    "Fecha": "2024-06-15T00:00:00",
+    "DNITransportista": 40789012,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 9,
+        "CantidadProducto": 300
+      },
+      {
+        "CodProducto": 10,
+        "CantidadProducto": 320
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 46,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "en seleccion",
+    "Fecha": "2024-06-16T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 11,
+        "CantidadProducto": 340
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 47,
+    "CuitCliente": "27-12345678-5",
+    "Estado": "en seleccion",
+    "Fecha": "2024-06-17T00:00:00",
+    "DNITransportista": 40890123,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 12,
+        "CantidadProducto": 360
+      },
+      {
+        "CodProducto": 13,
+        "CantidadProducto": 380
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 48,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "en seleccion",
+    "Fecha": "2024-06-18T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 14,
+        "CantidadProducto": 400
+      },
+      {
+        "CodProducto": 15,
+        "CantidadProducto": 420
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 49,
+    "CuitCliente": "22-12345678-9",
+    "Estado": "en seleccion",
+    "Fecha": "2024-06-19T00:00:00",
+    "DNITransportista": 40901234,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 16,
+        "CantidadProducto": 440
+      },
+      {
+        "CodProducto": 17,
+        "CantidadProducto": 460
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 50,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "en seleccion",
+    "Fecha": "2024-06-20T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 18,
+        "CantidadProducto": 480
+      },
+      {
+        "CodProducto": 19,
+        "CantidadProducto": 500
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 51,
+    "CuitCliente": "27-12345678-5",
+    "Estado": "pendiente",
+    "Fecha": "2024-06-21T00:00:00",
+    "DNITransportista": 40567890,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 1,
+        "CantidadProducto": 100
+      },
+      {
+        "CodProducto": 2,
+        "CantidadProducto": 120
+      },
+      {
+        "CodProducto": 3,
+        "CantidadProducto": 150
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 52,
+    "CuitCliente": "22-12345678-9",
+    "Estado": "pendiente",
+    "Fecha": "2024-06-22T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 4,
+        "CantidadProducto": 200
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 53,
+    "CuitCliente": "27-12345678-5",
+    "Estado": "pendiente",
+    "Fecha": "2024-06-23T00:00:00",
+    "DNITransportista": 40678901,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 5,
+        "CantidadProducto": 220
+      },
+      {
+        "CodProducto": 6,
+        "CantidadProducto": 240
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 54,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "pendiente",
+    "Fecha": "2024-06-24T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 7,
+        "CantidadProducto": 260
+      },
+      {
+        "CodProducto": 8,
+        "CantidadProducto": 280
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 55,
+    "CuitCliente": "22-12345678-9",
+    "Estado": "pendiente",
+    "Fecha": "2024-06-25T00:00:00",
+    "DNITransportista": 40789012,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 9,
+        "CantidadProducto": 300
+      },
+      {
+        "CodProducto": 10,
+        "CantidadProducto": 320
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 56,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "pendiente",
+    "Fecha": "2024-06-26T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 11,
+        "CantidadProducto": 340
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 57,
+    "CuitCliente": "27-12345678-5",
+    "Estado": "pendiente",
+    "Fecha": "2024-06-27T00:00:00",
+    "DNITransportista": 40890123,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 12,
+        "CantidadProducto": 360
+      },
+      {
+        "CodProducto": 13,
+        "CantidadProducto": 380
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 58,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "pendiente",
+    "Fecha": "2024-06-28T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 14,
+        "CantidadProducto": 400
+      },
+      {
+        "CodProducto": 15,
+        "CantidadProducto": 420
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 59,
+    "CuitCliente": "22-12345678-9",
+    "Estado": "pendiente",
+    "Fecha": "2024-06-29T00:00:00",
+    "DNITransportista": 40901234,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 16,
+        "CantidadProducto": 440
+      },
+      {
+        "CodProducto": 17,
+        "CantidadProducto": 460
+      }
+    ]
+  },
+  {
+    "NroOrdenPrep": 60,
+    "CuitCliente": "30-87654321-0",
+    "Estado": "pendiente",
+    "Fecha": "2024-06-30T00:00:00",
+    "DNITransportista": null,
+    "NroDeposito": 1,
+    "mercaderiaDetalle": [
+      {
+        "CodProducto": 18,
+        "CantidadProducto": 480
+      },
+      {
+        "CodProducto": 19,
+        "CantidadProducto": 500
+      }
+    ]
+  }*/
+]

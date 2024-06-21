@@ -10,6 +10,7 @@ namespace GrupoA.Prototipo.RetiroStock
         public string Estado { get; internal set; }
         public DateTime Fecha { get; internal set; }
         public int? DNITransportista { get; internal set; }
+        public int NroDeposito { get; internal set; }
         public List<MercaderiasDetalle> mercaderiaDetalle { get; set; } = new List<MercaderiasDetalle>();
 
         internal static IEnumerable<object> Where(Func<object, bool> value)

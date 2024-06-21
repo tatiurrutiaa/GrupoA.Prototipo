@@ -159,11 +159,40 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
                 }
             }
 
+            int dnitransportista;
+            int.TryParse(textBoxDNI.Text, out dnitransportista);
+
+            modelo.GenerarRemito(dnitransportista, ObtenerOrdenesSeleccionadas());
+
             // Display the checked values
-            MessageBox.Show("Se generará el remito, para las siguientes ordenes, con el DNI del transportista n°" + textBoxDNI.Text + "\n\n" + sb.ToString());
+            MessageBox.Show("Se generará el remito, para las siguientes ordenes," +
+                "con el DNI del transportista n°" + textBoxDNI.Text 
+                + "\n\n" + sb.ToString());
 
             // Refresh the ListBox to show updated states
             CargarListbox();
+        }
+
+        private List<int> ObtenerOrdenesSeleccionadas()
+        {
+            // Crear una lista para almacenar los números de orden seleccionados
+            List<int> ordenesSeleccionadas = new List<int>();
+
+            // Iterar sobre los elementos seleccionados del ListBox
+            foreach (var item in ListBoxOrdenesPrep.SelectedItems)
+            {
+                // Extraer el número de orden de la cadena del ListBox
+                string itemString = item.ToString();
+                string numeroOrdenString = itemString.Split(' ')[1];
+
+                // Convertir el número de orden a int y añadirlo a la lista
+                if (int.TryParse(numeroOrdenString, out int numeroOrden))
+                {
+                    ordenesSeleccionadas.Add(numeroOrden);
+                }
+            }
+
+            return ordenesSeleccionadas;
         }
 
         // Method to update the Estado of an order

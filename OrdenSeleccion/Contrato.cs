@@ -1,6 +1,6 @@
 ﻿namespace GrupoA.Prototipo.OrdenSeleccion
 {
-    internal class Contrato
+    public class Contrato
     {
         public string CuitCliente { get; set; }
         public string Criticidad { get; set; }

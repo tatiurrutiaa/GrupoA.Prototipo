@@ -1,0 +1,38 @@
+[
+  {
+    "Cuit": "27-12345678-5",
+    "Criticidad": "Alta"
+  },
+  {
+    "Cuit": "22-12345678-9",
+    "Criticidad": "Media"
+  },
+  {
+    "Cuit": "30-87654321-0",
+    "Criticidad": "Baja"
+  },
+  {
+    "Cuit": "33-87654321-0",
+    "Criticidad": "Alta"
+  }
+  /*{
+    "Cuit": "22-12345678-9",
+    "Criticidad": "Media"
+  },
+  {
+    "Cuit": "27-12345678-5",
+    "Criticidad": "Baja"
+  },
+  {
+    "Cuit": "32-87654321-5",
+    "Criticidad": "Alta"
+  },
+  {
+    "Cuit": "24-12345678-9",
+    "Criticidad": "Media"
+  },
+  {
+    "Cuit": "27-12345678-0",
+    "Criticidad": "Baja"
+  }*/
+]

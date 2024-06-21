@@ -24,9 +24,9 @@ internal class OrdenPreparacionModel
 
     public List<Deposito> Depositos = new()
     {
-        new Deposito { NumDeposito = 1 , NombreDeposito = "Almacén Central"},
-        new Deposito { NumDeposito = 2 , NombreDeposito = "Depósito Norte"},
-        new Deposito { NumDeposito = 3 , NombreDeposito = "Centro de Distribución Sur"},
+        new Deposito { NroDeposito = 1 , NombreDeposito = "Almacén Central"},
+        new Deposito { NroDeposito = 2 , NombreDeposito = "Depósito Norte"},
+        new Deposito { NroDeposito = 3 , NombreDeposito = "Centro de Distribución Sur"},
 
     };
 
@@ -53,12 +53,6 @@ internal class OrdenPreparacionModel
         }
         return null;
     }
-}
-
-public class Deposito
-{
-    public int NumDeposito { get; set; }
-    public string NombreDeposito { get; set; }
 }
 
 /*private void CargarDepositosEnComboBox()

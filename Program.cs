@@ -1,3 +1,5 @@
+using GrupoA.Prototipo.Archivos;
+
 namespace GrupoA.Prototipo
 {
     internal static class Program
@@ -12,6 +14,15 @@ namespace GrupoA.Prototipo
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new IniciarSesionForms());
+            ArchivoOrdenPreparacion.GrabarDatos();
+            ArchivoOrdenSeleccion.GrabarDatos();
+            ArchivoStock.GrabarDatos();
+            ArchivoOrdenEntrega.GrabarDatos();
+            ArchivoCliente.GrabarDatos();
+            ArchivoContrato.GrabarDatos();
+            ArchivoMercaderia.GrabarDatos();
+            ArchivoRemito.GrabarDatos();
+
         }
     }
 }

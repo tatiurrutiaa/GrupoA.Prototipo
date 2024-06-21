@@ -104,9 +104,9 @@ namespace GrupoA.Prototipo
         };
         public List<Deposito> Depositos = new()
         {
-            new Deposito { NumDeposito = 1 , NombreDeposito = "Almacén Central"},
-            new Deposito { NumDeposito = 2 , NombreDeposito = "Depósito Norte"},
-            new Deposito { NumDeposito = 3 , NombreDeposito = "Centro de Distribución Sur"},
+            new Deposito { NroDeposito = 1 , NombreDeposito = "Almacén Central"},
+            new Deposito { NroDeposito = 2 , NombreDeposito = "Depósito Norte"},
+            new Deposito { NroDeposito = 3 , NombreDeposito = "Centro de Distribución Sur"},
 
         };
 

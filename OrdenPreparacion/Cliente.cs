@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrupoA.Prototipo.OrdenPreparacion
 {
-    internal class Cliente
+    public class Cliente
     {
         public string Cuit { get; set; }
         public string RazonSocial { get; set; }

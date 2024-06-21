@@ -1,0 +1,82 @@
+[
+  {
+    "CodProducto": 1,
+    "DescProducto": "bolsas de cemento"
+  },
+  {
+    "CodProducto": 2,
+    "DescProducto": "termos 1lt"
+  },
+  {
+    "CodProducto": 3,
+    "DescProducto": "bandejas de madera"
+  },
+  {
+    "CodProducto": 4,
+    "DescProducto": "tubos PVC"
+  },
+  {
+    "CodProducto": 5,
+    "DescProducto": "sacos de arena"
+  },
+  {
+    "CodProducto": 6,
+    "DescProducto": "latas de pintura"
+  },
+  {
+    "CodProducto": 7,
+    "DescProducto": "ladrillos"
+  },
+  {
+    "CodProducto": 8,
+    "DescProducto": "heladeras"
+  },
+  {
+    "CodProducto": 9,
+    "DescProducto": "caja de clavos"
+  },
+  {
+    "CodProducto": 10,
+    "DescProducto": "microondas"
+  }
+ /* {
+    "CodProducto": 11,
+    "DescProducto": "caja de herramientas"
+  },
+  {
+    "CodProducto": 12,
+    "DescProducto": "bidon de agua destilada"
+  },
+  {
+    "CodProducto": 13,
+    "DescProducto": "generadores electricos"
+  },
+  {
+    "CodProducto": 14,
+    "DescProducto": "tambores de aceite"
+  },
+  {
+    "CodProducto": 15,
+    "DescProducto": "barriles"
+  },
+  {
+    "CodProducto": 16,
+    "DescProducto": "televisores"
+  },
+  {
+    "CodProducto": 17,
+    "DescProducto": "escritorio"
+  },
+  {
+    "CodProducto": 18,
+    "DescProducto": "sillas"
+  },
+  {
+    "CodProducto": 19,
+    "DescProducto": "tejas"
+  },
+  {
+    "CodProducto": 20,
+    "DescProducto": "bolques de concreto"
+  }*/
+]
