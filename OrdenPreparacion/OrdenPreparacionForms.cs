@@ -36,31 +36,30 @@ namespace GrupoA.Prototipo
 
         private void textBoxCUITCliente_TextChanged(object sender, EventArgs e)
         {
-            // Desactivar temporalmente el evento para evitar recursiones infinitas
+            string text = textBoxCUITCliente.Text;
+            int length = text.Length;
+
+            // Evitar recursión infinita
             textBoxCUITCliente.TextChanged -= textBoxCUITCliente_TextChanged;
 
-            string text = textBoxCUITCliente.Text.Replace("-", ""); // Eliminar guiones antes de procesar
-            string formattedText = "";
-
-            if (text.Length > 0)
+            // Aplicar el formato 00-00000000-0
+            if (length == 2 && !text.Contains("-"))
             {
-                formattedText += text.Substring(0, Math.Min(2, text.Length)); // Agregar los primeros 2 caracteres
+                textBoxCUITCliente.Text = text.Insert(2, "-");
+                textBoxCUITCliente.SelectionStart = textBoxCUITCliente.Text.Length;
+            }
+            else if (length == 11 && text[10] != '-')
+            {
+                textBoxCUITCliente.Text = text.Insert(10, "-");
+                textBoxCUITCliente.SelectionStart = textBoxCUITCliente.Text.Length;
+            }
+            else if (length > 13)
+            {
+                textBoxCUITCliente.Text = text.Substring(0, 13);
+                textBoxCUITCliente.SelectionStart = textBoxCUITCliente.Text.Length;
             }
 
-            if (text.Length > 2)
-            {
-                formattedText += "-" + text.Substring(2, Math.Min(8, text.Length - 2)); // Agregar los siguientes 8 caracteres
-            }
-
-            if (text.Length > 10)
-            {
-                formattedText += "-" + text.Substring(10, Math.Min(1, text.Length - 10)); // Agregar el último caracter
-            }
-
-            textBoxCUITCliente.Text = formattedText;
-            textBoxCUITCliente.SelectionStart = textBoxCUITCliente.Text.Length; // Colocar el cursor al final del texto
-
-            // Reactivar el evento
+            // Reasociar el evento
             textBoxCUITCliente.TextChanged += textBoxCUITCliente_TextChanged;
         }
 
@@ -71,7 +70,7 @@ namespace GrupoA.Prototipo
 
             if (cliente == null)
             {
-                MessageBox.Show("Cliente no encontrado");
+                MessageBox.Show("Cliente no existente.");
                 return;
             }
 
@@ -83,32 +82,30 @@ namespace GrupoA.Prototipo
 
             textBoxFechaOrden.Text = DateTime.Now.ToString("dd-MM-yyyy");
 
-            //cargar depositos y mercadería
         }
 
         #endregion
 
         #region Listas  
 
-        public List<MercaderiasDetalle> Mercaderias = new()
-        {
-            new MercaderiasDetalle { CodProducto = 1 , DescProducto = "bolsas de cemento", CantidadProducto = 700,   NombreDeposito = "Almacén Central"},
-            new MercaderiasDetalle { CodProducto = 2 , DescProducto = "ladrillos",         CantidadProducto = 500,   NombreDeposito = "Almacén Central"},
-            new MercaderiasDetalle { CodProducto = 3 , DescProducto = "cemento cola",      CantidadProducto = 300,   NombreDeposito = "Almacén Central"},
-            new MercaderiasDetalle { CodProducto = 5 , DescProducto = "bolsas de arena",   CantidadProducto = 1000,  NombreDeposito = "Depósito Norte"},
-            new MercaderiasDetalle { CodProducto = 6 , DescProducto = "bolsas de cal",     CantidadProducto = 800,   NombreDeposito = "Depósito Norte"},
-            new MercaderiasDetalle { CodProducto = 7 , DescProducto = "vigas de madera",   CantidadProducto = 200,   NombreDeposito = "Depósito Norte"},
-            new MercaderiasDetalle { CodProducto = 8 , DescProducto = "tejas",             CantidadProducto = 400,   NombreDeposito = "Centro de Distribución Sur"},
-            new MercaderiasDetalle { CodProducto = 9 , DescProducto = "cable eléctrico",   CantidadProducto = 600,   NombreDeposito = "Centro de Distribución Sur"},
-            new MercaderiasDetalle { CodProducto = 10 , DescProducto = "tubos de PVC",      CantidadProducto = 300,   NombreDeposito = "Centro de Distribución Sur"}
-        };
+        public List<MercaderiasDetalle> Mercaderias = new(){
+         new MercaderiasDetalle { IdProducto = "A001", Mercaderia = "bolsas de cemento", CantidadProducto = 700,   NombreDeposito = "Almacén Central"},
+         new MercaderiasDetalle { IdProducto = "A002", Mercaderia = "ladrillos",         CantidadProducto = 500,   NombreDeposito = "Almacén Central"},
+         new MercaderiasDetalle { IdProducto = "A003", Mercaderia = "cemento cola",      CantidadProducto = 300,   NombreDeposito = "Almacén Central"},
+         new MercaderiasDetalle { IdProducto = "A004", Mercaderia = "bolsas de arena",   CantidadProducto = 1000,  NombreDeposito = "Depósito Norte"},
+         new MercaderiasDetalle { IdProducto = "A005", Mercaderia = "bolsas de cal",     CantidadProducto = 800,   NombreDeposito = "Depósito Norte"},
+         new MercaderiasDetalle { IdProducto = "A006", Mercaderia = "vigas de madera",   CantidadProducto = 200,   NombreDeposito = "Depósito Norte"},
+         new MercaderiasDetalle { IdProducto = "A007", Mercaderia = "tejas",             CantidadProducto = 400,   NombreDeposito = "Centro de Distribución Sur"},
+         new MercaderiasDetalle { IdProducto = "A008", Mercaderia = "cable eléctrico",   CantidadProducto = 600,   NombreDeposito = "Centro de Distribución Sur"},
+         new MercaderiasDetalle { IdProducto = "A009", Mercaderia = "tubos de PVC",      CantidadProducto = 300,   NombreDeposito = "Centro de Distribución Sur"}
+    };
         public List<Deposito> Depositos = new()
-        {
-            new Deposito { NroDeposito = 1 , NombreDeposito = "Almacén Central"},
-            new Deposito { NroDeposito = 2 , NombreDeposito = "Depósito Norte"},
-            new Deposito { NroDeposito = 3 , NombreDeposito = "Centro de Distribución Sur"},
+    {
+        new Deposito { NumDeposito = 1 , NombreDeposito = "Almacén Central"},
+        new Deposito { NumDeposito = 2 , NombreDeposito = "Depósito Norte"},
+        new Deposito { NumDeposito = 3 , NombreDeposito = "Centro de Distribución Sur"},
 
-        };
+    };
 
         #endregion
 
@@ -165,11 +162,7 @@ namespace GrupoA.Prototipo
             menu.Show();
         }
 
-        // Cierra el proceso al cerrar la aplicación
-        private void OrdenPreparacionForms_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            System.Windows.Forms.Application.Exit();
-        }
+
 
         private void BotonElegirDeposito_Click(object sender, EventArgs e)
         {
@@ -190,7 +183,7 @@ namespace GrupoA.Prototipo
                 foreach (var mercaderia in mercaderiasDelDeposito)
                 {
                     //comboBoxMercaderiaSeleccionada.Items.Add(mercaderia.Mercaderia);
-                    ListaMercaderiaDeposito.Items.Add("Unidades: " + mercaderia.CantidadProducto + " - Descripción: " + mercaderia.DescProducto);
+                    ListaMercaderiaDeposito.Items.Add("Unidades: " + mercaderia.CantidadProducto + " - Descripción: " + mercaderia.Mercaderia);
                 }
 
             }
@@ -208,7 +201,9 @@ namespace GrupoA.Prototipo
             else
             {
                 mercaderiaSeleccionada = ListaMercaderiaDeposito.SelectedItem.ToString();
-                if (int.Parse(cantidadPreparacion) >= 200)
+                string cantidadStock = mercaderiaSeleccionada.Substring(10, 4);
+
+                if (int.Parse(cantidadPreparacion) > int.Parse(cantidadStock))
                 {
                     MessageBox.Show("Cantidad Insuficiente.");
                 }
@@ -227,5 +222,25 @@ namespace GrupoA.Prototipo
             ListaMercaderiaEnOrdenPreparacion.Refresh();
             textBoxCantidad.Clear();
         }
+
+        // Cierra el proceso al cerrar la aplicación
+        private void OrdenPreparacionForms_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void botonEditarCliente_Click(object sender, EventArgs e)
+        {
+            ListaMercaderiaEnOrdenPreparacion.Items.Clear();
+            comboBoxDeposito.Items.Clear();
+            comboBoxDeposito.Refresh();
+            textBoxCantidad.Clear();
+            textBoxRazonSocialCliente.Clear();
+            ListaMercaderiaDeposito.Items.Clear();
+            groupBoxCliente.Enabled = true;
+            groupBoxOrdenPreparación.Enabled = false;
+        }
     }
+
 }
+
