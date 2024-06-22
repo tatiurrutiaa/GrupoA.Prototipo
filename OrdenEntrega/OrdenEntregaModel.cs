@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using GrupoA.Prototipo.Archivos;
 using GrupoA.Prototipo.OrdenEntrega;
 using GrupoA.Prototipo.RetiroStock;
 
@@ -9,25 +10,11 @@ namespace GrupoA.Prototipo.OrdenesdeEntrega
 {
     internal class OrdenEntregaModel
     {
-        public List<RetiroStock.OrdenPreparacion> ordenesPreparación = new()
-        {
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 15, Estado = "preparada" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 16, Estado = "preparada" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 17, Estado = "preparada" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 18, Estado = "preparada" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 20, Estado = "preparada" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 21, Estado = "preparada" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 22, Estado = "preparada" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 23, Estado = "preparada" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 24, Estado = "preparada" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 25, Estado = "en despacho" }
-        };
-
-        private List<GrupoA.Prototipo.OrdenEntrega.OrdenEntrega> ordenesEntrega = new();
-
+        public List<RetiroStock.OrdenPreparacion> ordenesPreparación = ArchivoOrdenPreparacion.OrdenesPreparacion.ToList();
+        public List<OrdenEntrega.OrdenEntrega> ordenesEntrega = ArchivoOrdenEntrega.OrdenesEntrega.ToList();
         public List<RetiroStock.OrdenPreparacion> OrdenesPreparadas()
         {
-            return ordenesPreparación
+            return ArchivoOrdenPreparacion.OrdenesPreparacion
                 .Where(o => o.Estado == "preparada")
                 .ToList();
         }
@@ -72,11 +59,12 @@ namespace GrupoA.Prototipo.OrdenesdeEntrega
                 foreach (var item in selectedOrders)
                 {
                     var ordenNum = int.Parse(item.Split(' ')[1]);
-                    var orden = OrdenesPreparadas().FirstOrDefault(o => o.NroOrdenPrep == ordenNum);
+                    var orden = ArchivoOrdenPreparacion.OrdenesPreparacion.FirstOrDefault(o => o.NroOrdenPrep == ordenNum);
                     if (orden != null)
                     {
                         orden.Estado = "en despacho";
                         detalleOrden.Add(ordenNum);
+                        ArchivoOrdenPreparacion.ModificarEstado(orden, "en despacho");
                     }
                 }
 
@@ -89,7 +77,11 @@ namespace GrupoA.Prototipo.OrdenesdeEntrega
                     NroOrdenEntrega = nuevoNroOrdenEntrega,
                     NroOrdenPreparacion = detalleOrden
                 };
-                ordenesEntrega.Add(nuevaOrdenEntrega);
+                if (nuevaOrdenEntrega == null)
+                {
+                    throw new ArgumentNullException(nameof(nuevaOrdenEntrega), "El objeto orden no puede ser null");
+                }
+                ArchivoOrdenEntrega.AgregarOrdenEntrega(nuevaOrdenEntrega);
 
                 // Mostrar el mensaje con las órdenes en líneas separadas
                 string selectedOrdersString = string.Join(Environment.NewLine,

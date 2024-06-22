@@ -16,9 +16,9 @@ namespace GrupoA.Prototipo.Archivos
 
         static ArchivoOrdenEntrega()
         {
-            if (File.Exists(@"OrdenEntrega.json"))
+            if (File.Exists(@"Datos\OrdenEntrega.json"))
             {
-                var contenido = File.ReadAllText(@"OrdenEntrega.json");
+                var contenido = File.ReadAllText(@"Datos\OrdenEntrega.json");
                 ordenesentrega = JsonConvert.DeserializeObject<List<OrdenEntrega.OrdenEntrega>>(contenido);
             }
             else
@@ -30,14 +30,14 @@ namespace GrupoA.Prototipo.Archivos
         public static void GrabarDatos()
         {
             var contenido = JsonConvert.SerializeObject(ordenesentrega);
-            File.WriteAllText(@"OrdenEntrega.json", contenido);
+            File.WriteAllText(@"Datos\OrdenEntrega.json", contenido);
         }
 
         //TODAS LAS MODIFICACIONES LAS HACEMOS A TRAVES DE METODOS EN ESTA CLASE
 
-        public static void AgregarOrdenEntrega(OrdenEntrega.OrdenEntrega ordenpreparacion)
+        public static void AgregarOrdenEntrega(OrdenEntrega.OrdenEntrega orden)
         {
-            ordenesentrega.Add(ordenpreparacion);
+            ordenesentrega.Add(orden);
         }
     }
 }

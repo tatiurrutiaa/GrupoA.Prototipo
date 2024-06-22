@@ -39,5 +39,9 @@ namespace GrupoA.Prototipo.Archivos
         {
             ordenesseleccion.Add(ordenseleccion);
         }
+        public static void ModificarEstado(RetiroStock.OrdenSeleccion orden, string estado)
+        {
+            orden.Estado = estado;
+        }
     }
 }

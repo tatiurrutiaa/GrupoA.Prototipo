@@ -17,9 +17,9 @@ public static class ArchivoOrdenPreparacion
 
     static ArchivoOrdenPreparacion()
     {
-        if (File.Exists(@"OrdenPreparacion.json"))
+        if (File.Exists(@"Datos\OrdenPreparacion.json"))
         {
-            var contenido = File.ReadAllText(@"OrdenPreparacion.json");
+            var contenido = File.ReadAllText(@"Datos\OrdenPreparacion.json");
             ordenespreparacion = JsonConvert.DeserializeObject<List<RetiroStock.OrdenPreparacion>>(contenido);
         }
         else
@@ -31,7 +31,7 @@ public static class ArchivoOrdenPreparacion
     public static void GrabarDatos()
     {
         var contenido = JsonConvert.SerializeObject(ordenespreparacion);
-        File.WriteAllText(@"OrdenPreparacion.json", contenido);
+        File.WriteAllText(@"Datos\OrdenPreparacion.json", contenido);
     }
 
     //TODAS LAS MODIFICACIONES LAS HACEMOS A TRAVES DE METODOS EN ESTA CLASE
@@ -39,5 +39,9 @@ public static class ArchivoOrdenPreparacion
     public static void AgregarOrdenPreparacion(RetiroStock.OrdenPreparacion ordenpreparacion)
     {
         ordenespreparacion.Add(ordenpreparacion);
+    }
+    public static void ModificarEstado(RetiroStock.OrdenPreparacion orden, string estado)
+    {
+        orden.Estado = estado;
     }
 }

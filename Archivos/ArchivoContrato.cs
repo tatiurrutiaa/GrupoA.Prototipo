@@ -32,5 +32,11 @@ namespace GrupoA.Prototipo.Archivos
             var contenido = JsonConvert.SerializeObject(contratos);
             File.WriteAllText(@"Datos\Contrato.json", contenido);
         }
+
+        public static string BuscarCriticidad(string cuitCliente)
+        {
+            var contrato = Contratos.FirstOrDefault(c => c.CuitCliente == cuitCliente);
+            return contrato.Criticidad;
+        }
     }
 }

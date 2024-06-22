@@ -1,5 +1,5 @@
 [
-  /*{
+  {
     "NroOrdenPrep": 1,
     "CuitCliente": "27-12345678-5",
     "Estado": "despachada",
@@ -1054,5 +1054,5 @@
         "CantidadProducto": 500
       }
     ]
-  }*/
+  }
 ]

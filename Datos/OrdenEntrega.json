@@ -1,5 +1,5 @@
 [
-  /*{
+  {
     "NroOrdenEntrega": 1,
     "NroOrdenPreparacion": [ 1, 2, 3, 4, 5 ]
   },
@@ -18,5 +18,5 @@
   {
     "NroOrdenEntrega": 5,
     "NroOrdenPreparacion": [ 18, 19, 20 ]
-  }*/
+  }
 ]
