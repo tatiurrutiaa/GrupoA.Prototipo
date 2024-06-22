@@ -10,12 +10,17 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
 {
     public class EmpaquetarMercaderiaModel
     {
-        public EmpaquetarMercaderiaModel()
-        {
-        }
-
         public List<RetiroStock.OrdenPreparacion> ordenesPreparacion = ArchivoOrdenPreparacion.OrdenesPreparacion.ToList();
         public List<RetiroStock.Mercaderia> mercaderia = ArchivoMercaderia.Mercaderias.ToList();
+
+        public int OrdenEnPantalla()
+        {
+            return ordenesPreparacion
+                .Where(o => o.Estado == "seleccionada")
+                .OrderBy(o => o.NroOrdenPrep)
+                .Select(o => o.NroOrdenPrep)
+                .FirstOrDefault();
+        }
 
         public List<RetiroStock.OrdenPreparacion> ObtenerOrdenesSeleccionadas()
         {

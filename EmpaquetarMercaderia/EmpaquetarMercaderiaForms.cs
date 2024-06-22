@@ -15,13 +15,18 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
 {
     public partial class EmpaquetarMercaderiaForms : Form
     {
-        private EmpaquetarMercaderiaModel modelo;
-        private int numeroOrdenActual = 34; // Inicializar con el número de la primera orden
+        EmpaquetarMercaderiaModel modelo = new();
 
         public EmpaquetarMercaderiaForms()
         {
             InitializeComponent();
+        }
+
+        private void EmpaquetarMercaderiaForms_Load(object sender, EventArgs e)
+        {
             modelo = new EmpaquetarMercaderiaModel();
+
+            int numeroOrdenActual = modelo.OrdenEnPantalla();
 
             // Mostrar la primera orden al abrir el formulario
             MostrarMercaderias(numeroOrdenActual);
@@ -32,6 +37,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
 
         private void empaquetarButton_Click(object sender, EventArgs e)
         {
+            int numeroOrdenActual = modelo.OrdenEnPantalla();
             if (numeroOrdenActual > 0)
             {
                 // Empaquetar la orden actual
@@ -63,6 +69,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
 
         private void MostrarMercaderias(int nroOrden)
         {
+            int numeroOrdenActual = modelo.OrdenEnPantalla();
             var orden = modelo.ObtenerOrdenesSeleccionadas().FirstOrDefault(o => o.NroOrdenPrep == nroOrden);
             if (orden != null)
             {
@@ -94,6 +101,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
 
         private void VerificarOrdenSeleccionada()
         {
+            int numeroOrdenActual = modelo.OrdenEnPantalla();
             var ordenesDisponibles = modelo.ObtenerOrdenesSeleccionadas();
             var ordenSeleccionada = ordenesDisponibles.FirstOrDefault(o => o.NroOrdenPrep == numeroOrdenActual);
             empaquetarButton.Enabled = ordenSeleccionada != null;
@@ -117,6 +125,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
         {
             System.Windows.Forms.Application.Exit();
         }
+
     }
 
 }
