@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using GrupoA.Prototipo.OrdenSeleccion;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -31,6 +32,12 @@ namespace GrupoA.Prototipo.Archivos
         {
             var contenido = JsonConvert.SerializeObject(mercaderias);
             File.WriteAllText(@"Datos\Mercaderia.json", contenido);
+        }
+
+        public static string BuscarDescripcion(int CodProducto)
+        {
+            var producto = Mercaderias.FirstOrDefault(m => m.CodProducto == CodProducto);
+            return producto.DescProducto;
         }
     }
 }

@@ -1,7 +1,9 @@
-﻿using GrupoA.Prototipo.EmpaquetarMercaderia;
+﻿using GrupoA.Prototipo.Archivos;
+using GrupoA.Prototipo.EmpaquetarMercaderia;
 using GrupoA.Prototipo.RetiroStock;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,158 +12,14 @@ namespace GrupoA.Prototipo.RetiroStock;
 
 internal class RetiroStockModelo
 {
-    public List<Stock> stock = new()
-    {
-        new() {CuitCliente = "27-41672496-8", Posicion = "12-43-2", Cantidad = 800, CodProducto = 1, Estado = "comprometido" },
-        new() {CuitCliente = "27-41672496-8", Posicion = "12-43-3", Cantidad = 500, CodProducto = 1, Estado = "comprometido" },
-        new() {CuitCliente = "27-41672496-8", Posicion = "12-43-4", Cantidad = 500, CodProducto = 1, Estado = "comprometido" },
-        new() {CuitCliente = "27-41672496-8", Posicion = "03-28-7", Cantidad = 400, CodProducto = 2, Estado = "comprometido" },
-        new() {CuitCliente = "27-41672496-8", Posicion = "03-28-8", Cantidad = 200, CodProducto = 2, Estado = "comprometido"},
-        new() {CuitCliente = "30-22465788-7", Posicion = "23-12-1", Cantidad = 50, CodProducto = 3, Estado = "comprometido"},
-        new() {CuitCliente = "30-22465788-7", Posicion = "07-19-3", Cantidad = 150, CodProducto = 4, Estado = "comprometido"},
-        new() {CuitCliente = "34-56564433-5", Posicion = "15-22-6", Cantidad = 300, CodProducto = 5, Estado = "comprometido"},
-        new() {CuitCliente = "30-23456789-1", Posicion = "09-07-4", Cantidad = 20, CodProducto = 6, Estado = "comprometido"},
-        new() {CuitCliente = "30-23456789-1", Posicion = "11-34-9", Cantidad = 450, CodProducto = 7, Estado = "comprometido"},
-        new() {CuitCliente = "30-23456789-1", Posicion = "20-18-2", Cantidad = 100, CodProducto = 8, Estado = "comprometido"}
-    };
-
-    public List<OrdenPreparacion> ordenesPreparacion = new()
-    {
-        new OrdenPreparacion
-        {
-            NroOrdenPrep = 34, CuitCliente = "27-41672496-8", Estado = "en seleccion",
-            mercaderiaDetalle = new List<MercaderiasDetalle>
-            {
-                new MercaderiasDetalle { CodProducto = 1, CantidadProducto = 700 }
-            }
-        },
-        new OrdenPreparacion
-        {
-            NroOrdenPrep = 35, CuitCliente = "27-41672496-8", Estado = "en seleccion",
-            mercaderiaDetalle = new List<MercaderiasDetalle>
-            {
-                new MercaderiasDetalle { CodProducto = 1, CantidadProducto = 300 },
-                new MercaderiasDetalle { CodProducto = 2, CantidadProducto = 50 }
-            }
-        },
-        new OrdenPreparacion
-        {
-            NroOrdenPrep = 36, CuitCliente = "27-41672496-8", Estado = "en seleccion",
-            mercaderiaDetalle = new List<MercaderiasDetalle>
-            {
-                new MercaderiasDetalle { CodProducto = 1, CantidadProducto = 300 },
-                new MercaderiasDetalle { CodProducto = 2, CantidadProducto = 50 }
-            }
-        },
-        new OrdenPreparacion
-        {
-            NroOrdenPrep = 37, CuitCliente = "27-41672496-8", Estado = "en seleccion",
-            mercaderiaDetalle = new List<MercaderiasDetalle>
-            {
-                new MercaderiasDetalle { CodProducto = 2, CantidadProducto = 200 }
-            }
-        },
-        new OrdenPreparacion
-        {
-            NroOrdenPrep = 38, CuitCliente = "27-41672496-8", Estado = "en seleccion",
-            mercaderiaDetalle = new List<MercaderiasDetalle>
-            {
-                new MercaderiasDetalle { CodProducto = 2, CantidadProducto = 200 }
-            }
-        },
-        new OrdenPreparacion
-        {
-            NroOrdenPrep = 39, CuitCliente = "30-22465788-7", Estado = "en seleccion",
-            mercaderiaDetalle = new List<MercaderiasDetalle>
-            {
-                new MercaderiasDetalle { CodProducto = 3, CantidadProducto = 50 }
-            }
-        },
-        new OrdenPreparacion
-        {
-            NroOrdenPrep = 40, CuitCliente = "30-22465788-7", Estado = "en seleccion",
-            mercaderiaDetalle = new List<MercaderiasDetalle>
-            {
-                new MercaderiasDetalle { CodProducto = 4, CantidadProducto = 150 }
-            }
-        },
-        new OrdenPreparacion
-        {
-            NroOrdenPrep = 41, CuitCliente = "34-56564433-5", Estado = "en seleccion",
-            mercaderiaDetalle = new List<MercaderiasDetalle>
-            {
-                new MercaderiasDetalle { CodProducto = 5, CantidadProducto = 300 }
-            }
-        },
-        new OrdenPreparacion
-        {
-            NroOrdenPrep = 42, CuitCliente = "30-23456789-1", Estado = "en seleccion",
-            mercaderiaDetalle = new List<MercaderiasDetalle>
-            {
-                new MercaderiasDetalle { CodProducto = 6, CantidadProducto = 20 }
-            }
-        },
-        new OrdenPreparacion
-        {
-            NroOrdenPrep = 43, CuitCliente = "30-23456789-1", Estado = "en seleccion",
-            mercaderiaDetalle = new List<MercaderiasDetalle>
-            {
-                new MercaderiasDetalle { CodProducto = 7, CantidadProducto = 450 }
-            }
-        },
-        new OrdenPreparacion
-        {
-            NroOrdenPrep = 44, CuitCliente = "30-23456789-1", Estado = "en seleccion",
-            mercaderiaDetalle = new List<MercaderiasDetalle>
-            {
-                new MercaderiasDetalle { CodProducto = 8, CantidadProducto = 100 }
-            }
-        }
-    };
-
-    List<OrdenSeleccion> ordenesSeleccion = new()
-    {
-            new()
-            {
-                NroOrdenSelec = 200,
-                NroOrdenesPreparacion = new List<int> { 34, 35, 36 },
-                Estado = "en seleccion"
-            },
-            new()
-            {
-                NroOrdenSelec = 201,
-                NroOrdenesPreparacion = new List<int> { 37, 38, 39 },
-                Estado = "en seleccion"
-            },
-            new()
-            {
-                NroOrdenSelec = 202,
-                NroOrdenesPreparacion = new List<int> { 40, 41, 42 },
-                Estado = "en seleccion"
-            },
-            new()
-            {
-                NroOrdenSelec = 203,
-                NroOrdenesPreparacion = new List<int> { 43, 44 },
-                Estado = "en seleccion"
-            }
-    };
-
-    public List<Mercaderia> mercaderia = new()
-    {
-        new() {CodProducto = 1, DescProducto = "bolsas de cemento"},
-        new() {CodProducto = 2, DescProducto = "termos 1lt"},
-        new() {CodProducto = 3, DescProducto = "bandejas de madera"},
-        new() {CodProducto = 4, DescProducto = "tubos PVC"},
-        new() {CodProducto = 5, DescProducto = "sacos de arena"},
-        new() {CodProducto = 6, DescProducto = "latas de pintura"},
-        new() {CodProducto = 7, DescProducto = "ladrillos"},
-        new() {CodProducto = 8, DescProducto = "heladeras"},
-    };
+    public List<Stock> stock = ArchivoStock.Stocks.ToList();
+    public List<OrdenPreparacion> ordenesPreparacion = ArchivoOrdenPreparacion.OrdenesPreparacion.ToList();
+    public List<OrdenSeleccion> ordenesSeleccion = ArchivoOrdenSeleccion.OrdenesSeleccion.ToList();
+    public List<Mercaderia> mercaderia = ArchivoMercaderia.Mercaderias.ToList();
 
     public List<int> OrdenesSelecPendientes()
     {
-        return ordenesSeleccion
+        return ArchivoOrdenSeleccion.OrdenesSeleccion
             .Where(o => o.Estado == "en seleccion")
             .Select(o => o.NroOrdenSelec)
             .Distinct()
@@ -170,7 +28,7 @@ internal class RetiroStockModelo
 
     public List<(string Posicion, int Cantidad, int CodProducto, string DescProducto)> MercaderiaARetirar(int nroOrden)
     {
-        var ordenesPrepAsociadas = ordenesSeleccion
+        var ordenesPrepAsociadas = ArchivoOrdenSeleccion.OrdenesSeleccion
             .Where(os => os.NroOrdenSelec == nroOrden)
             .SelectMany(os => os.NroOrdenesPreparacion)
             .Join(
@@ -179,6 +37,8 @@ internal class RetiroStockModelo
                 op => op.NroOrdenPrep,
                 (nroOrdenPrep, op) => op)
             .ToList();
+
+        //MessageBox.Show(($"Ordenes de preparación asociadas: {ordenesPrepAsociadas.Count}"));
 
         var mercaderiaAgrupada = ordenesPrepAsociadas
             .SelectMany(o => o.mercaderiaDetalle, (o, m) => new { o.CuitCliente, m.CodProducto, m.CantidadProducto })
@@ -191,19 +51,25 @@ internal class RetiroStockModelo
             })
             .ToList();
 
+        //MessageBox.Show($"Mercaderia agrupada: {mercaderiaAgrupada.Count}");
+
         var resultado = new List<(string Posicion, int Cantidad, int CodProducto, string DescProducto)>();
 
         foreach (var item in mercaderiaAgrupada)
         {
             var cantidadRequerida = item.CantidadTotal;
-            var posiciones = stock
+            var posiciones = ArchivoStock.Stocks
                 .Where(s => s.CuitCliente == item.CuitCliente
                             && s.CodProducto == item.CodProducto
                             && s.Estado == "comprometido")
                 .OrderBy(s => s.Posicion)
                 .ToList();
 
-            var descProducto = mercaderia.First(m => m.CodProducto == item.CodProducto).DescProducto;
+            //var descProducto = mercaderia.First(m => m.CodProducto == item.CodProducto).DescProducto;
+            var descProducto = ArchivoMercaderia.BuscarDescripcion(item.CodProducto);
+
+            //MessageBox.Show($"Posiciones encontradas para {item.CodProducto}: {posiciones.Count}");
+            //MessageBox.Show($"Descripción del producto {item.CodProducto}: {descProducto}");
 
             foreach (var pos in posiciones)
             {
@@ -217,6 +83,9 @@ internal class RetiroStockModelo
                 cantidadRequerida -= cantidadARetirar;
             }
         }
+
+        //MessageBox.Show($"Resultado final: {resultado.Count} elementos");
+
         return resultado;
     }
 
@@ -229,13 +98,14 @@ internal class RetiroStockModelo
             var stockItem = stock.First(s => s.Posicion == item.Posicion && s.CodProducto == item.CodProducto);
             if (stockItem.Cantidad == item.Cantidad)
             {
-                stockItem.Estado = "retirado";
-                stockItem.Posicion = string.Empty;
+                ArchivoStock.CambiarEstado(stockItem, "retirado");
+                ArchivoStock.EliminarPosicion(stockItem);
             }
             else
             {
                 int cantidadRetirada = item.Cantidad;
-                stockItem.Cantidad -= cantidadRetirada;
+                //stockItem.Cantidad -= cantidadRetirada;
+                ArchivoStock.CambiarCantidad(stockItem, cantidadRetirada);
 
                 var stockRetirado = new Stock
                 {
@@ -243,10 +113,12 @@ internal class RetiroStockModelo
                     Posicion = string.Empty,
                     Cantidad = cantidadRetirada,
                     CodProducto = stockItem.CodProducto,
-                    Estado = "retirado"
+                    Estado = "retirado",
+                    NroDeposito = stockItem.NroDeposito
                 };
 
-                stock.Add(stockRetirado);
+                //stock.Add(stockRetirado);
+                ArchivoStock.AgregarStock(stockRetirado);
             }
 
             var ordenesSeleccionadas = ordenesSeleccion
@@ -255,7 +127,8 @@ internal class RetiroStockModelo
 
             foreach (var orden in ordenesSeleccionadas)
             {
-                orden.Estado = "seleccionada";
+                //orden.Estado = "seleccionada";
+                ArchivoOrdenSeleccion.ModificarEstado(orden, "seleccionada");
             }
 
             var ordenesPrepAsociadas = ordenesSeleccion
@@ -270,7 +143,8 @@ internal class RetiroStockModelo
 
             foreach (var orden in ordenesPrepAsociadas)
             {
-                orden.Estado = "seleccionada";
+                //orden.Estado = "seleccionada";
+                ArchivoOrdenPreparacion.ModificarEstado(orden, "seleccionada");
             }
 
             MessageBox.Show("La mercadería se descontó del almacén con éxito." +

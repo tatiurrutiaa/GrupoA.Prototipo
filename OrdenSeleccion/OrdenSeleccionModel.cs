@@ -10,7 +10,7 @@ namespace GrupoA.Prototipo.OrdenSeleccion
 {
     internal class OrdenSeleccionModel
     {
-        private List<RetiroStock.OrdenSeleccion> ordenesSeleccion = new();
+        //private List<RetiroStock.OrdenSeleccion> ordenesSeleccion = new();
 
         public List<RetiroStock.OrdenPreparacion> OrdenesPendientes()
         {

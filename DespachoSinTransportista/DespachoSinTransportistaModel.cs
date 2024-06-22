@@ -1,4 +1,5 @@
-﻿using GrupoA.Prototipo.RetiroStock;
+﻿using GrupoA.Prototipo.Archivos;
+using GrupoA.Prototipo.RetiroStock;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,22 +11,9 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
 {
     internal class DespachoSinTransportistaModel
     {
-        public List<RetiroStock.OrdenPreparacion> ordenesPreparacion = new()
-        {
-            new() {NroOrdenPrep = 15, CuitCliente = "27-41672496-8", DNITransportista = 41672496,  Estado = "en despacho"},
-            new() {NroOrdenPrep = 16, CuitCliente = "27-41672496-8", DNITransportista = null, Estado = "en despacho"},
-            new() {NroOrdenPrep = 17, CuitCliente = "27-41672496-8", DNITransportista = null, Estado = "en despacho"},
-            new() {NroOrdenPrep = 18, CuitCliente = "27-41672496-8", DNITransportista = null, Estado = "en despacho"},
-            new() {NroOrdenPrep = 19, CuitCliente = "27-41672496-8", DNITransportista = null, Estado = "en despacho"},
-            new() {NroOrdenPrep = 20, CuitCliente = "30-22465788-7", DNITransportista = null, Estado = "en despacho"},
-            new() {NroOrdenPrep = 21, CuitCliente = "30-22465788-7", DNITransportista = null, Estado = "en despacho"},
-            new() {NroOrdenPrep = 22, CuitCliente = "34-56564433-5", DNITransportista = null, Estado = "en despacho"},
-            new() {NroOrdenPrep = 23, CuitCliente = "30-23456789-1", DNITransportista = null, Estado = "en despacho"},
-            new() {NroOrdenPrep = 24, CuitCliente = "30-23456789-1", DNITransportista = null, Estado = "en despacho"},
-            new() {NroOrdenPrep = 25, CuitCliente = "30-23456789-1", DNITransportista = null, Estado = "en despacho"}
-        };
-
-        public List<Remito> remitos = new();
+        public List<RetiroStock.OrdenPreparacion> ordenesPreparacion = ArchivoOrdenPreparacion.OrdenesPreparacion.ToList();
+        public List<Remito> remitos = ArchivoRemito.Remitos.ToList();
+        public List<Stock> stock = ArchivoStock.Stocks.ToList();
 
         public List<RetiroStock.OrdenPreparacion> MercaderiaARetirar()
         {
@@ -66,8 +54,45 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
                 NroDeposito = deposito
             };
 
-            // Agregar el remito a la lista de remitos
-            remitos.Add(nuevoRemito);
+            //remitos.Add(nuevoRemito);
+            ArchivoRemito.AgregarRemito(nuevoRemito);
+        }
+        public void ActualizarStock(List<int> ordenesSeleccionadas)
+        {
+            var lista = ArchivoOrdenPreparacion.ObtenerOrdenesPreparacionPorNumero(ordenesSeleccionadas);
+
+            foreach (var orden in lista)
+            {
+                foreach (var item in orden.mercaderiaDetalle)
+                {
+                    var stockItem = stock.First(s => s.Posicion == "" && s.CodProducto == item.CodProducto
+                    && s.Estado != "retirado" && s.CuitCliente == orden.CuitCliente);
+                    if (stockItem.Cantidad == item.CantidadProducto)
+                    {
+                        ArchivoStock.CambiarEstado(stockItem, "despachado");
+                    }
+                    else
+                    {
+                        int cantidadRetirada = item.CantidadProducto;
+                        // stockItem.Cantidad -= cantidadRetirada;
+                        ArchivoStock.CambiarCantidad(stockItem, cantidadRetirada);
+
+                        var stockRetirado = new Stock
+                        {
+                            CuitCliente = stockItem.CuitCliente,
+                            Posicion = string.Empty,
+                            Cantidad = cantidadRetirada,
+                            CodProducto = stockItem.CodProducto,
+                            Estado = "despachado",
+                            NroDeposito = stockItem.NroDeposito
+                        };
+
+                        // stock.Add(stockRetirado);
+                        ArchivoStock.AgregarStock(stockRetirado);
+                    }
+                    ArchivoOrdenPreparacion.ModificarEstado(orden, "despachada");
+                }
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     public class Mercaderia
     {
-        public int CodProducto { get; internal set; }
-        public string DescProducto { get; internal set; }
+        public int CodProducto { get; set; }
+        public string DescProducto { get; set; }
     }
 }

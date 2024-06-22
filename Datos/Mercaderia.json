@@ -38,8 +38,8 @@
   {
     "CodProducto": 10,
     "DescProducto": "microondas"
-  }
- /* {
+  },
+  {
     "CodProducto": 11,
     "DescProducto": "caja de herramientas"
   },
@@ -78,5 +78,5 @@
   {
     "CodProducto": 20,
     "DescProducto": "bolques de concreto"
-  }*/
+  }
 ]

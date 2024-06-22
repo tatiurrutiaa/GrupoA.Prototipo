@@ -1,8 +1,10 @@
-﻿using GrupoA.Prototipo.DespachoSinTransportista;
+﻿using GrupoA.Prototipo.Archivos;
+using GrupoA.Prototipo.DespachoSinTransportista;
 using GrupoA.Prototipo.RetiroStock;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,27 +12,12 @@ namespace GrupoA.Prototipo.DespachoConTransportista
 {
     internal class DespachoConTransportistaModel
     {
-        public List<RetiroStock.OrdenPreparacion> ordenesPreparacion { get; set;}
-
         public DespachoConTransportistaModel()
-        {
-            ordenesPreparacion = new List<RetiroStock.OrdenPreparacion>
-            {
-                new() { NroOrdenPrep = 30, CuitCliente = "27-41672496-8", DNITransportista = 30000100, Estado = "en despacho" },
-                new() { NroOrdenPrep = 31, CuitCliente = "27-41672496-8", DNITransportista = 30100200, Estado = "en despacho" },
-                new() { NroOrdenPrep = 32, CuitCliente = "27-41672496-8", DNITransportista = 30200300, Estado = "en despacho" },
-                new() { NroOrdenPrep = 33, CuitCliente = "27-41672496-8", DNITransportista = 30200300, Estado = "en despacho" },
-                new() { NroOrdenPrep = 34, CuitCliente = "27-41672496-8", DNITransportista = 30400500, Estado = "en despacho" },
-                new() { NroOrdenPrep = 35, CuitCliente = "30-22465788-7", DNITransportista = 30400500, Estado = "en despacho" },
-                new() { NroOrdenPrep = 36, CuitCliente = "30-22465788-7", DNITransportista = 30400500, Estado = "en despacho" },
-                new() { NroOrdenPrep = 37, CuitCliente = "34-56564433-5", DNITransportista = 35101021, Estado = "en despacho" },
-                new() { NroOrdenPrep = 38, CuitCliente = "30-23456789-1", DNITransportista = 40900745, Estado = "en despacho" },
-                new() { NroOrdenPrep = 39, CuitCliente = "30-23456789-1", DNITransportista = 40504002, Estado = "en despacho" },
-                new() { NroOrdenPrep = 40, CuitCliente = "30-23456789-1", DNITransportista = 37568798, Estado = "en despacho" }
-            };
-        }
+        { }
+        public List<RetiroStock.OrdenPreparacion> ordenesPreparacion = ArchivoOrdenPreparacion.OrdenesPreparacion.ToList();
+        public List<Remito> remitos = ArchivoRemito.Remitos.ToList();
 
-        public List<Remito> remitos = new();
+        public List<Stock> stock = ArchivoStock.Stocks.ToList();
 
         public List<RetiroStock.OrdenPreparacion> MercaderiaARetirar()
         {
@@ -47,7 +34,8 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             int nuevoNroRemito = remitos.Any() ? remitos.Max(r => r.NroRemito) + 1 : 1;
 
             // Obtener el CUIT del cliente de la primera orden seleccionada
-            var primeraOrden = ordenesPreparacion.FirstOrDefault(o => o.NroOrdenPrep == ordenesSeleccionadas.First());
+            var primeraOrden = ordenesPreparacion
+                .FirstOrDefault(o => o.NroOrdenPrep == ordenesSeleccionadas.First());
             var deposito = primeraOrden.NroDeposito;
             string cuitCliente = primeraOrden.CuitCliente;
 
@@ -62,8 +50,47 @@ namespace GrupoA.Prototipo.DespachoConTransportista
                 NroDeposito = deposito
             };
 
-            // Agregar el remito a la lista de remitos
-            remitos.Add(nuevoRemito);
+            //remitos.Add(nuevoRemito);
+            ArchivoRemito.AgregarRemito(nuevoRemito);
+        }
+
+        public void ActualizarStock(List<int> ordenesSeleccionadas)
+        {
+            var lista = ArchivoOrdenPreparacion.ObtenerOrdenesPreparacionPorNumero(ordenesSeleccionadas);
+
+            foreach (var orden in lista)
+            {
+                foreach (var item in orden.mercaderiaDetalle)
+                {
+                    var stockItem = stock.First(s => s.Posicion == "" && s.CodProducto == item.CodProducto
+                    && s.Estado == "retirado" && s.CuitCliente == orden.CuitCliente);
+                    if (stockItem.Cantidad == item.CantidadProducto)
+                    {
+                        ArchivoStock.CambiarEstado(stockItem, "despachado");
+                    }
+                    else
+                    {
+                        int cantidadRetirada = item.CantidadProducto;
+                        // stockItem.Cantidad -= cantidadRetirada;
+                        ArchivoStock.CambiarCantidad(stockItem, cantidadRetirada);
+
+                        var stockRetirado = new Stock
+                        {
+                            CuitCliente = stockItem.CuitCliente,
+                            Posicion = string.Empty,
+                            Cantidad = cantidadRetirada,
+                            CodProducto = stockItem.CodProducto,
+                            Estado = "despachado",
+                            NroDeposito = stockItem.NroDeposito
+                        };
+
+                        // stock.Add(stockRetirado);
+                        ArchivoStock.AgregarStock(stockRetirado);
+                    }
+                    ArchivoOrdenPreparacion.ModificarEstado(orden, "despachada");
+                }
+            }
         }
     }
 }
+

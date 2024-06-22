@@ -16,9 +16,9 @@ namespace GrupoA.Prototipo.Archivos
 
         static ArchivoOrdenSeleccion()
         {
-            if (File.Exists(@"OrdenSeleccion.json"))
+            if (File.Exists(@"Datos\OrdenSeleccion.json"))
             {
-                var contenido = File.ReadAllText(@"OrdenSeleccion.json");
+                var contenido = File.ReadAllText(@"Datos\OrdenSeleccion.json");
                 ordenesseleccion = JsonConvert.DeserializeObject<List<RetiroStock.OrdenSeleccion>>(contenido);
             }
             else
@@ -30,7 +30,7 @@ namespace GrupoA.Prototipo.Archivos
         public static void GrabarDatos()
         {
             var contenido = JsonConvert.SerializeObject(ordenesseleccion);
-            File.WriteAllText(@"OrdenSeleccion.json", contenido);
+            File.WriteAllText(@"Datos\OrdenSeleccion.json", contenido);
         }
 
         //TODAS LAS MODIFICACIONES LAS HACEMOS A TRAVES DE METODOS EN ESTA CLASE

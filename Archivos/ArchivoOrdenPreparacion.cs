@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,5 +44,12 @@ public static class ArchivoOrdenPreparacion
     public static void ModificarEstado(RetiroStock.OrdenPreparacion orden, string estado)
     {
         orden.Estado = estado;
+    }
+
+    public static List<RetiroStock.OrdenPreparacion> ObtenerOrdenesPreparacionPorNumero(List<int> nroOrdenesPrepList)
+    {
+        return ordenespreparacion
+            .Where(op => nroOrdenesPrepList.Contains(op.NroOrdenPrep))
+            .ToList();
     }
 }

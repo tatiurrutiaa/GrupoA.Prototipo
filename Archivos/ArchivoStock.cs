@@ -39,5 +39,20 @@ namespace GrupoA.Prototipo.Archivos
         {
             stocks.Add(stock);
         }
+
+        public static void CambiarEstado(RetiroStock.Stock stock, string estado)
+        {
+            stock.Estado = estado;
+        }
+
+        public static void EliminarPosicion(RetiroStock.Stock stock)
+        {
+            stock.Posicion = null;
+        }
+
+        public static void CambiarCantidad(RetiroStock.Stock stock, int mercaderiaretirada)
+        {
+            stock.Cantidad -= mercaderiaretirada; 
+        }
     }
 }

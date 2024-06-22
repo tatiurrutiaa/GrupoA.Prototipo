@@ -55,14 +55,13 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             {
                 lista = modelo.MercaderiaARetirar();
             }
+            ActualizarListbox(lista);
 
             if (lista == null || !lista.Any())
             {
                 MessageBox.Show("No hay órdenes de preparación para despachar. Por favor, intente nuevamente en unos minutos.");
                 return;
             }
-
-            ActualizarListbox(lista);
         }
 
 
@@ -181,6 +180,7 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             int.TryParse(textBoxDNI.Text, out dnitransportista);
 
             modelo.GenerarRemito(dnitransportista, ObtenerOrdenesSeleccionadas());
+            modelo.ActualizarStock(ObtenerOrdenesSeleccionadas());
 
             // Display the checked values
             MessageBox.Show("Se generará el remito, para las siguientes ordenes," +
