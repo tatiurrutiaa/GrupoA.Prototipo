@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using GrupoA.Prototipo.Archivos;
 using GrupoA.Prototipo.OrdenEntrega;
 using GrupoA.Prototipo.RetiroStock;
 
@@ -9,33 +10,10 @@ namespace GrupoA.Prototipo.OrdenesdeEntrega
 {
     internal class OrdenEntregaModel
     {
-        public List<RetiroStock.OrdenPreparacion> ordenesPreparación = new()
-        {
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 15, Estado = "preparada" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 16, Estado = "preparada" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 17, Estado = "preparada" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 18, Estado = "preparada" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 20, Estado = "preparada" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 21, Estado = "preparada" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 22, Estado = "preparada" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 23, Estado = "preparada" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 24, Estado = "preparada" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 25, Estado = "en despacho" }
-        };
-
-        private List<GrupoA.Prototipo.OrdenEntrega.OrdenEntrega> ordenesEntrega = new();
-
-        public List<RetiroStock.OrdenPreparacion> OrdenesPreparadas()
-        {
-            return ordenesPreparación
-                .Where(o => o.Estado == "preparada")
-                .ToList();
-        }
-
         public void AgregarOrdenesAlListBox(CheckedListBox listBox)
         {
             listBox.Items.Clear();
-            foreach (var orden in OrdenesPreparadas())
+            foreach (var orden in OrdenesPreparacionArchivo.Ordenes.Where(o => o.Estado == EstadoOrdenPreparacion.Preparada))
             {
                 listBox.Items.Add($"Orden {orden.NroOrdenPrep}");
             }
@@ -72,7 +50,7 @@ namespace GrupoA.Prototipo.OrdenesdeEntrega
                 foreach (var item in selectedOrders)
                 {
                     var ordenNum = int.Parse(item.Split(' ')[1]);
-                    var orden = OrdenesPreparadas().FirstOrDefault(o => o.NroOrdenPrep == ordenNum);
+                    var orden = OrdenesPreparacionArchivo.Ordenes OrdenesPreparadas().FirstOrDefault(o => o.NroOrdenPrep == ordenNum);
                     if (orden != null)
                     {
                         orden.Estado = "en despacho";

@@ -90,25 +90,7 @@ namespace GrupoA.Prototipo
 
         #region Listas  
 
-        public List<MercaderiasDetalle> Mercaderias = new()
-        {
-            new MercaderiasDetalle { CodProducto = 1 , DescProducto = "bolsas de cemento", CantidadProducto = 700,   NombreDeposito = "Almacén Central"},
-            new MercaderiasDetalle { CodProducto = 2 , DescProducto = "ladrillos",         CantidadProducto = 500,   NombreDeposito = "Almacén Central"},
-            new MercaderiasDetalle { CodProducto = 3 , DescProducto = "cemento cola",      CantidadProducto = 300,   NombreDeposito = "Almacén Central"},
-            new MercaderiasDetalle { CodProducto = 5 , DescProducto = "bolsas de arena",   CantidadProducto = 1000,  NombreDeposito = "Depósito Norte"},
-            new MercaderiasDetalle { CodProducto = 6 , DescProducto = "bolsas de cal",     CantidadProducto = 800,   NombreDeposito = "Depósito Norte"},
-            new MercaderiasDetalle { CodProducto = 7 , DescProducto = "vigas de madera",   CantidadProducto = 200,   NombreDeposito = "Depósito Norte"},
-            new MercaderiasDetalle { CodProducto = 8 , DescProducto = "tejas",             CantidadProducto = 400,   NombreDeposito = "Centro de Distribución Sur"},
-            new MercaderiasDetalle { CodProducto = 9 , DescProducto = "cable eléctrico",   CantidadProducto = 600,   NombreDeposito = "Centro de Distribución Sur"},
-            new MercaderiasDetalle { CodProducto = 10 , DescProducto = "tubos de PVC",      CantidadProducto = 300,   NombreDeposito = "Centro de Distribución Sur"}
-        };
-        public List<Deposito> Depositos = new()
-        {
-            new Deposito { NumDeposito = 1 , NombreDeposito = "Almacén Central"},
-            new Deposito { NumDeposito = 2 , NombreDeposito = "Depósito Norte"},
-            new Deposito { NumDeposito = 3 , NombreDeposito = "Centro de Distribución Sur"},
 
-        };
 
         #endregion
 
@@ -116,7 +98,7 @@ namespace GrupoA.Prototipo
         private void CargarDepositosComboBox()
         {
             comboBoxDeposito.Items.Clear();
-            foreach (var deposito in Depositos)
+            foreach (var deposito in modelo.Depositos)
             {
                 comboBoxDeposito.Items.Add(deposito.NombreDeposito);// + "-" + deposito.NombreDeposito);
             }
@@ -174,7 +156,7 @@ namespace GrupoA.Prototipo
         private void BotonElegirDeposito_Click(object sender, EventArgs e)
         {
             string depositoSeleccionado = comboBoxDeposito.Text;
-            var deposito = Depositos.FirstOrDefault(d => d.NombreDeposito.Equals(depositoSeleccionado, StringComparison.OrdinalIgnoreCase));
+            var deposito = modelo.Depositos.FirstOrDefault(d => d.NombreDeposito.Equals(depositoSeleccionado, StringComparison.OrdinalIgnoreCase));
 
             if (depositoSeleccionado == null)
             {
@@ -185,7 +167,7 @@ namespace GrupoA.Prototipo
             {
                 //comboBoxMercaderiaSeleccionada.Items.Clear();
                 ListaMercaderiaDeposito.Items.Clear();
-                var mercaderiasDelDeposito = Mercaderias.Where(m => m.NombreDeposito == depositoSeleccionado).ToList();
+                var mercaderiasDelDeposito = modelo.Mercaderias.Where(m => m.NombreDeposito == depositoSeleccionado).ToList();
 
                 foreach (var mercaderia in mercaderiasDelDeposito)
                 {

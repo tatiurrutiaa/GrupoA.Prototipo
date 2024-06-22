@@ -1,4 +1,5 @@
-﻿using GrupoA.Prototipo.RetiroStock;
+﻿using GrupoA.Prototipo.Archivos;
+using GrupoA.Prototipo.RetiroStock;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,54 +10,12 @@ namespace GrupoA.Prototipo.OrdenSeleccion
 {
     internal class OrdenSeleccionModel
     {
-        public List<RetiroStock.OrdenPreparacion> ordenesPreparacion = new()
-        {
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 15, CuitCliente = "27-41672496-8", Estado = "pendiente" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 16, CuitCliente = "27-41672496-8", Estado = "pendiente" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 17, CuitCliente = "27-41672496-8", Estado = "pendiente" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 18, CuitCliente = "27-41672496-8", Estado = "pendiente" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 19, CuitCliente = "30-22465788-7", Estado = "pendiente" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 20, CuitCliente = "30-22465788-7", Estado = "pendiente" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 21, CuitCliente = "34-56564433-5", Estado = "pendiente" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 22, CuitCliente = "34-56564433-5", Estado = "pendiente" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 23, CuitCliente = "30-23456789-1", Estado = "pendiente" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 24, CuitCliente = "30-23456789-1", Estado = "pendiente" },
-            new RetiroStock.OrdenPreparacion { NroOrdenPrep = 25, CuitCliente = "30-23456789-1", Estado = "en despacho" }
-        };
-
-        public List<Contrato> CriticidadPorCliente = new()
-        {
-            new Contrato { CuitCliente = "27-41672496-8", Criticidad = "alta"},
-            new Contrato { CuitCliente = "30-22465788-7", Criticidad = "baja"},
-            new Contrato { CuitCliente = "34-56564433-5", Criticidad = "media"},
-            new Contrato { CuitCliente = "30-23456789-1", Criticidad = "alta"},
-        };
-
-        private List<RetiroStock.OrdenSeleccion> ordenesSeleccion = new();
-
-        public List<RetiroStock.OrdenPreparacion> OrdenesPendientes()
-        {
-            var criticidadPrioridad = new Dictionary<string, int>
-            {
-                { "alta", 1 },
-                { "media", 2 },
-                { "baja", 3 }
-            };
-
-            var criticidadDict = CriticidadPorCliente.ToDictionary(c => c.CuitCliente, c => c.Criticidad);
-
-            return ordenesPreparacion
-                .Where(o => o.Estado == "pendiente")
-                .OrderBy(o => criticidadPrioridad[criticidadDict[o.CuitCliente]])
-                .ToList();
-        }
-
         public void AgregarOrdenesAlListBox(CheckedListBox listBox)
         {
             listBox.Items.Clear();
-            var criticidadDict = CriticidadPorCliente.ToDictionary(c => c.CuitCliente, c => c.Criticidad);
+            var criticidadDict = ContratoArchivo.Contratos.ToDictionary(c => c.CuitCliente, c => c.Criticidad);
 
-            foreach (var orden in OrdenesPendientes())
+            foreach (var orden in OrdenesPreparacionArchivo.Ordenes.Where(o => o.Estado == EstadoOrdenPreparacion.Pendiente))
             {
                 var criticidad = criticidadDict[orden.CuitCliente];
                 listBox.Items.Add($"Orden {orden.NroOrdenPrep} - Prioridad: {criticidad}");
@@ -94,27 +53,27 @@ namespace GrupoA.Prototipo.OrdenSeleccion
                 foreach (var item in selectedOrders)
                 {
                     var ordenNum = int.Parse(item.Split(' ')[1]);
-                    var orden = OrdenesPendientes()
+                    var orden = OrdenesPreparacionArchivo.Ordenes.Where(o => o.Estado == EstadoOrdenPreparacion.Pendiente)
                         .FirstOrDefault(o => o.NroOrdenPrep == ordenNum);
                     if (orden != null)
                     {
-                        orden.Estado = "en seleccion";
+                        orden.Estado =  EstadoOrdenPreparacion.EnSeleccion;
                         detalleOrden.Add(ordenNum);
                     }
                 }
 
                 // Obtener el número de orden de entrega más alto existente y sumar 1
-                int nuevoNroOrdenEntrega = (ordenesSeleccion.Any() ? ordenesSeleccion
+                int nuevoNroOrdenEntrega = (OrdenesSeleccionArchivo.Ordenes.Any() ? OrdenesSeleccionArchivo.Ordenes
                     .Max(o => o.NroOrdenSelec) : 0) + 1;
 
                 // Crear una nueva orden de seleccion
-                RetiroStock.OrdenSeleccion nuevaOrdenEntrega = new()
+                OrdenSeleccionEntidad nuevaOrdenEntrega = new()
                 {
                     NroOrdenSelec = nuevoNroOrdenEntrega,
                     NroOrdenesPreparacion = detalleOrden,
-                    Estado = "en seleccion"
+                    Estado = EstadosOrdenSeleccion.EnSeleccion
                 };
-                ordenesSeleccion.Add(nuevaOrdenEntrega);
+                OrdenesSeleccionArchivo.AgregarOrden(nuevaOrdenEntrega);
 
                 // Mostrar el mensaje con las órdenes en líneas separadas
                 string selectedOrdersString = string.Join(Environment.NewLine, selectedOrders);
