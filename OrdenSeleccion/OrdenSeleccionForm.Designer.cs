@@ -90,6 +90,7 @@
             Name = "OrdenSeleccionForm";
             Text = "Orden de Selección";
             FormClosed += OrdenSeleccionForm_FormClosed;
+            Load += OrdenSeleccionForm_Load;
             groupBoxOrdendeEntrega.ResumeLayout(false);
             ResumeLayout(false);
         }
