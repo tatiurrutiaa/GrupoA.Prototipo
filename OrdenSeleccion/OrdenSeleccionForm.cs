@@ -66,5 +66,10 @@ namespace GrupoA.Prototipo.OrdenSeleccion
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void OrdenSeleccionForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
