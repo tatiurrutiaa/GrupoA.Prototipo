@@ -1,5 +1,4 @@
 ﻿using GrupoA.Prototipo.Archivos;
-using GrupoA.Prototipo.EmpaquetarMercaderia;
 using GrupoA.Prototipo.RetiroStock;
 using System;
 using System.Collections.Generic;
