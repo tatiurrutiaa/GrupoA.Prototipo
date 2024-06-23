@@ -31,4 +31,15 @@ internal class DepositoArchivo
         var contenido = JsonConvert.SerializeObject(depositos);
         File.WriteAllText(@"Datos\Deposito.json", contenido);
     }
+    public static string BuscarNombreDeposito(int nroDeposito)
+    {
+        var deposito = Depositos.FirstOrDefault(d => d.NroDeposito == nroDeposito);
+        return deposito.NombreDeposito;
+    }
+    public static int BuscarNroDeposito(string nombredeposito)
+    {
+        var deposito = Depositos.FirstOrDefault(d => d.NombreDeposito == nombredeposito);
+        return deposito.NroDeposito;
+    }
+
 }

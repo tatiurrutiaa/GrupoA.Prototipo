@@ -1,6 +1,7 @@
 ﻿using GrupoA.Prototipo.EmpaquetarMercaderia;
 using GrupoA.Prototipo.OrdenPreparacion;
 using GrupoA.Prototipo.RetiroStock;
+using System.Net;
 using System.Windows.Forms;
 
 namespace GrupoA.Prototipo
@@ -81,9 +82,9 @@ namespace GrupoA.Prototipo
             groupBoxCliente.Enabled = false;
             groupBoxOrdenPreparación.Enabled = true;
 
+            textBoxCódigoOrden.Text = modelo.NuevoNroOrden().ToString();
             textBoxFechaOrden.Text = DateTime.Now.ToString("dd-MM-yyyy");
-
-            //cargar depositos y mercadería
+            CargarDepositosComboBox();
         }
 
         #endregion
@@ -97,11 +98,14 @@ namespace GrupoA.Prototipo
         #region Muestra Depositos
         private void CargarDepositosComboBox()
         {
-            comboBoxDeposito.Items.Clear();
+            string cuit = this.textBoxCUITCliente.Text;
+            modelo.ObtenerDepositosPorCliente(cuit);
+
+            /*comboBoxDeposito.Items.Clear();
             foreach (var deposito in modelo.Depositos)
             {
                 comboBoxDeposito.Items.Add(deposito.NombreDeposito);// + "-" + deposito.NombreDeposito);
-            }
+            }*/
         }
 
         #endregion
@@ -167,14 +171,20 @@ namespace GrupoA.Prototipo
             {
                 //comboBoxMercaderiaSeleccionada.Items.Clear();
                 ListaMercaderiaDeposito.Items.Clear();
-                var mercaderiasDelDeposito = modelo.Mercaderias.Where(m => m.NombreDeposito == depositoSeleccionado).ToList();
+                //var mercaderiasDelDeposito = Mercaderias.Where(m => m.NombreDeposito == depositoSeleccionado).ToList();
+                var mercaderiasDelDeposito = modelo.ObtenerMercaderiaDelDeposito(textBoxCUITCliente.Text, depositoSeleccionado);
 
                 foreach (var mercaderia in mercaderiasDelDeposito)
                 {
-                    //comboBoxMercaderiaSeleccionada.Items.Add(mercaderia.Mercaderia);
-                    ListaMercaderiaDeposito.Items.Add("Unidades: " + mercaderia.CantidadProducto + " - Descripción: " + mercaderia.DescProducto);
+                    string itemTexto = $"Unidades: {mercaderia.CantidadTotal} - Descripción: {mercaderia.Descripcion}";
+                    ListaMercaderiaDeposito.Items.Add(itemTexto);
                 }
 
+                /* foreach (var mercaderia in mercaderiasDelDeposito)
+                {
+                    //comboBoxMercaderiaSeleccionada.Items.Add(mercaderia.Mercaderia);
+                    ListaMercaderiaDeposito.Items.Add("Unidades: " + mercaderia.CantidadProducto + " - Descripción: " + mercaderia.DescProducto);
+                }*/
             }
         }
 
@@ -182,6 +192,8 @@ namespace GrupoA.Prototipo
         {
             string mercaderiaSeleccionada = ListaMercaderiaDeposito.ToString();
             string cantidadPreparacion = textBoxCantidad.Text;
+            string depositoSeleccionado = comboBoxDeposito.Text;
+            var mercaderiasDelDeposito = modelo.ObtenerMercaderiaDelDeposito(textBoxCUITCliente.Text, depositoSeleccionado);
 
             if ((string.IsNullOrEmpty(cantidadPreparacion)) || string.IsNullOrEmpty(mercaderiaSeleccionada))
             {
@@ -189,14 +201,13 @@ namespace GrupoA.Prototipo
             }
             else
             {
-                mercaderiaSeleccionada = ListaMercaderiaDeposito.SelectedItem.ToString();
-                if (int.Parse(cantidadPreparacion) >= 200)
+                int cantidadtotal = modelo.ObtenerCantidadPorDescripcion(mercaderiasDelDeposito, mercaderiaSeleccionada);
+                if (int.Parse(cantidadPreparacion) >= cantidadtotal)
                 {
                     MessageBox.Show("Cantidad Insuficiente.");
                 }
                 else
                 {
-                    //actualizar mercaderia a estado Comprometido
                     ListaMercaderiaEnOrdenPreparacion.Items.Add(mercaderiaSeleccionada + " - " + cantidadPreparacion);
                     textBoxCantidad.Clear();
                 }
@@ -208,6 +219,30 @@ namespace GrupoA.Prototipo
             ListaMercaderiaEnOrdenPreparacion.Items.Remove(ListaMercaderiaEnOrdenPreparacion.SelectedItem);
             ListaMercaderiaEnOrdenPreparacion.Refresh();
             textBoxCantidad.Clear();
+        }
+
+        private void botonCrearOrden_Click(object sender, EventArgs e)
+        {
+            if (comboBoxDeposito.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor, seleccione un deposito.");
+                return;
+            }
+            if (ListaMercaderiaEnOrdenPreparacion.Items.Count == 0)
+            {
+                MessageBox.Show("Por favor, ingrese al menos un producto y cantidad a la orden.");
+                return;
+            }
+            if (!int.TryParse(textBoxDNI.Text, out int dni))
+            {
+                MessageBox.Show("Ingrese un valor válido para DNI.");
+                return;
+            }
+            string depositoSeleccionado = comboBoxDeposito.Text;
+
+            modelo.CrearOrden(textBoxCUITCliente.Text, dni, depositoSeleccionado, ListaMercaderiaEnOrdenPreparacion);
+            modelo.ActualizarStock();
+
         }
     }
 }

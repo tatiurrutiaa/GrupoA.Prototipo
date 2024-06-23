@@ -306,6 +306,7 @@
             botonCrearOrden.TabIndex = 4;
             botonCrearOrden.Text = "Crear Orden";
             botonCrearOrden.UseVisualStyleBackColor = true;
+            botonCrearOrden.Click += botonCrearOrden_Click;
             // 
             // textBoxFechaOrden
             // 

@@ -47,4 +47,9 @@ internal class OrdenPreparacionArchivo
             .Where(op => nroOrdenesPrepList.Contains(op.NroOrdenPrep))
             .ToList();
     }
+    public static OrdenPreparacionEntidad ObtenerOrdenPreparacionPorNumero(int nroOrdenPrep)
+    {
+        return ordenespreparacion
+            .FirstOrDefault(op => op.NroOrdenPrep == nroOrdenPrep);
+    }
 }

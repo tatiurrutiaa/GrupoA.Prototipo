@@ -50,7 +50,7 @@ namespace GrupoA.Prototipo.OrdenesdeEntrega
                 foreach (var item in selectedOrders)
                 {
                     var ordenNum = int.Parse(item.Split(' ')[1]);
-                    var orden = OrdenPreparacionArchivo.OrdenesPreparacion OrdenesPreparadas().FirstOrDefault(o => o.NroOrdenPrep == ordenNum);
+                    var orden = OrdenPreparacionArchivo.OrdenesPreparacion.FirstOrDefault(o => o.NroOrdenPrep == ordenNum);
                     if (orden != null)
                     {
                         orden.Estado = "en despacho";

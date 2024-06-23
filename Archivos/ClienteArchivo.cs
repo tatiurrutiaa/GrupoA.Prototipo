@@ -31,5 +31,10 @@ internal class ClienteArchivo
         var contenido = JsonConvert.SerializeObject(clientes);
         File.WriteAllText(@"Datos\Cliente.json", contenido);
     }
+    public static string BuscarRazonSocial(string cuit)
+    {
+        var razonsocial = Clientes.FirstOrDefault(c => c.CuitCliente == cuit);
+        return razonsocial.RazonSocial;
+    }
 
 }
