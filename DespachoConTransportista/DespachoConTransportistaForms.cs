@@ -33,7 +33,7 @@ namespace GrupoA.Prototipo.DespachoConTransportista
         }
 
         // Actualiza la lista de órdenes de preparación
-        private void ActualizarListbox(List<RetiroStock.OrdenPreparacion> ordenes)
+        private void ActualizarListbox(List<OrdenPreparacion> ordenes)
         {
             ListBoxOrdenesPrep.Items.Clear();
             foreach (var orden in ordenes)
@@ -45,7 +45,7 @@ namespace GrupoA.Prototipo.DespachoConTransportista
         // Carga la lista de órdenes de preparación
         private void CargarListbox()
         {
-            List<RetiroStock.OrdenPreparacion> lista;
+            List<OrdenPreparacion> lista;
 
             if (!textBoxDNI.Enabled && int.TryParse(textBoxDNI.Text.Trim(), out int dni))
             {
@@ -178,7 +178,8 @@ namespace GrupoA.Prototipo.DespachoConTransportista
                     if (itemText != null)
                     {
                         int orderNumber = int.Parse(itemText.Replace("Orden ", ""));
-                        UpdateOrderEstado(orderNumber, "despachada");
+                        //UpdateOrderEstado(orderNumber, "despachada");
+                        modelo.ActualizarEstadoOrdenes(orderNumber);
                         ordenesProcesadas.Add(orderNumber);
                     }
                 }
@@ -216,16 +217,6 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             }
 
             return ordenesSeleccionadas;
-        }
-
-        // Method to update the Estado of an order
-        private void UpdateOrderEstado(int nroOrdenPrep, string newEstado)
-        {
-            var order = modelo.ordenesPreparacion.FirstOrDefault(o => o.NroOrdenPrep == nroOrdenPrep);
-            if (order != null)
-            {
-                order.Estado = newEstado;
-            }
         }
 
         // Métodos para actualizar el estado de las ordenes

@@ -10,34 +10,46 @@ namespace GrupoA.Prototipo.DespachoConTransportista
 {
     internal class DespachoConTransportistaModel
     {
-        public List<RetiroStock.OrdenPreparacion> ordenesPreparacion { get; set;}
-
-        public DespachoConTransportistaModel()
+        public List<OrdenPreparacion> MercaderiaARetirar()
         {
-            ordenesPreparacion = new List<RetiroStock.OrdenPreparacion>
+            var ordenes = new List<OrdenPreparacion>();
+            foreach (var OrdenPreparacionEntidad in OrdenPreparacionArchivo.OrdenesPreparacion
+                      .Where(o => o.Estado == EstadoOrdenPreparacion.EnDespacho
+                      && o.DNITransportista != null).ToList())
             {
-                new() { NroOrdenPrep = 30, CuitCliente = "27-41672496-8", DNITransportista = 30000100, Estado = "preparada" },
-                new() { NroOrdenPrep = 31, CuitCliente = "27-41672496-8", DNITransportista = 30100200, Estado = "preparada" },
-                new() { NroOrdenPrep = 32, CuitCliente = "27-41672496-8", DNITransportista = 30200300, Estado = "preparada" },
-                new() { NroOrdenPrep = 33, CuitCliente = "27-41672496-8", DNITransportista = 30200300, Estado = "preparada" },
-                new() { NroOrdenPrep = 34, CuitCliente = "27-41672496-8", DNITransportista = 30400500, Estado = "preparada" },
-                new() { NroOrdenPrep = 35, CuitCliente = "30-22465788-7", DNITransportista = 30400500, Estado = "preparada" },
-                new() { NroOrdenPrep = 36, CuitCliente = "30-22465788-7", DNITransportista = 30400500, Estado = "preparada" },
-                new() { NroOrdenPrep = 37, CuitCliente = "34-56564433-5", DNITransportista = 35101021, Estado = "preparada" },
-                new() { NroOrdenPrep = 38, CuitCliente = "30-23456789-1", DNITransportista = 40900745, Estado = "preparada" },
-                new() { NroOrdenPrep = 39, CuitCliente = "30-23456789-1", DNITransportista = 40504002, Estado = "preparada" },
-                new() { NroOrdenPrep = 40, CuitCliente = "30-23456789-1", DNITransportista = 37568798, Estado = "preparada" }
-            };
+                var orden = new OrdenPreparacion();
+                orden.NroOrdenPrep = OrdenPreparacionEntidad.NroOrdenPrep;
+                orden.CuitCliente = OrdenPreparacionEntidad.CuitCliente;
+                orden.Estado = OrdenPreparacionEntidad.Estado;
+                orden.Fecha = OrdenPreparacionEntidad.Fecha;
+                orden.DNITransportista = OrdenPreparacionEntidad.DNITransportista;
+                orden.NroDeposito = OrdenPreparacionEntidad.NroDeposito;
+                orden.mercaderiaDetalle = OrdenPreparacionEntidad.mercaderiaDetalle;
+
+                ordenes.Add(orden);
+            }
+            return ordenes;
         }
 
-        public List<Archi> MercaderiaARetirar()
+        public List<OrdenPreparacion> ObtenerOrdenesPorDNI(int dniTransportista)
         {
-            return ordenesPreparacion.Where(orden => orden.Estado == "preparada" && orden.DNITransportista.HasValue).ToList();
-        }
+            var ordenes = new List<OrdenPreparacion>();
+            foreach (var OrdenPreparacionEntidad in OrdenPreparacionArchivo.OrdenesPreparacion
+                      .Where(o => o.Estado == EstadoOrdenPreparacion.EnDespacho
+                      && o.DNITransportista == dniTransportista).ToList())
+            {
+                var orden = new OrdenPreparacion();
+                orden.NroOrdenPrep = OrdenPreparacionEntidad.NroOrdenPrep;
+                orden.CuitCliente = OrdenPreparacionEntidad.CuitCliente;
+                orden.Estado = OrdenPreparacionEntidad.Estado;
+                orden.Fecha = OrdenPreparacionEntidad.Fecha;
+                orden.DNITransportista = OrdenPreparacionEntidad.DNITransportista;
+                orden.NroDeposito = OrdenPreparacionEntidad.NroDeposito;
+                orden.mercaderiaDetalle = OrdenPreparacionEntidad.mercaderiaDetalle;
 
-        public List<RetiroStock.OrdenPreparacion> ObtenerOrdenesPorDNI(int dniTransportista)
-        {
-            return ordenesPreparacion.Where(orden => orden.Estado == "preparada" && orden.DNITransportista == dniTransportista).ToList();
+                ordenes.Add(orden);
+            }
+            return ordenes;
         }
 
         public void GenerarRemito(int dniTransportista, List<int> ordenesSeleccionadas)
@@ -45,7 +57,7 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             // Obtener el último número de remito y sumarle uno
             int nuevoNroRemito = RemitoArchivo.Remitos.Any() ? RemitoArchivo.Remitos.Max(r => r.NroRemito) + 1 : 1;
             // Obtener el CUIT del cliente de la primera orden seleccionada
-            var primeraOrden = ordenesPreparacion.FirstOrDefault(o => o.NroOrdenPrep == ordenesSeleccionadas.First());
+            var primeraOrden = OrdenPreparacionArchivo.OrdenesPreparacion.FirstOrDefault(o => o.NroOrdenPrep == ordenesSeleccionadas.First());
             string cuitCliente = primeraOrden.CuitCliente;
             var deposito = primeraOrden.NroDeposito;
             // Crear un nuevo remito
@@ -94,8 +106,16 @@ namespace GrupoA.Prototipo.DespachoConTransportista
                         // stock.Add(stockRetirado);
                         StockArchivo.AgregarStock(stockRetirado);
                     }
-                    OrdenPreparacionArchivo.ModificarEstado(orden, EstadoOrdenPreparacion.Despachada);
                 }
+            }
+        }
+        public void ActualizarEstadoOrdenes(int nroorden)
+        {
+            var orden = OrdenPreparacionArchivo.OrdenesPreparacion
+                    .FirstOrDefault(o => o.NroOrdenPrep == nroorden);
+            if (orden != null)
+            {
+                OrdenPreparacionArchivo.ModificarEstado(orden, EstadoOrdenPreparacion.Despachada);
             }
         }
     }
