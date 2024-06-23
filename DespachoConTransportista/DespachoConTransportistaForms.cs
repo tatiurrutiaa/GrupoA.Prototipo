@@ -151,6 +151,13 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             /*GrupoA.Prototipo.RemitoForms remito = new();
             this.Hide();
             remito.Show();*/
+
+            int dnitransportista;
+            int.TryParse(textBoxDNI.Text, out dnitransportista);
+
+            modelo.GenerarRemito(dnitransportista, ObtenerOrdenesSeleccionadas());
+            modelo.ActualizarStock(ObtenerOrdenesSeleccionadas());
+
             DisplayCheckedValues();
         }
 
@@ -189,7 +196,27 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             UpdateButtonState();
         }
 
+        private List<int> ObtenerOrdenesSeleccionadas()
+        {
+            // Crear una lista para almacenar los números de orden seleccionados
+            List<int> ordenesSeleccionadas = new List<int>();
 
+            // Iterar sobre los elementos seleccionados del ListBox
+            foreach (var item in ListBoxOrdenesPrep.SelectedItems)
+            {
+                // Extraer el número de orden de la cadena del ListBox
+                string itemString = item.ToString();
+                string numeroOrdenString = itemString.Split(' ')[1];
+
+                // Convertir el número de orden a int y añadirlo a la lista
+                if (int.TryParse(numeroOrdenString, out int numeroOrden))
+                {
+                    ordenesSeleccionadas.Add(numeroOrden);
+                }
+            }
+
+            return ordenesSeleccionadas;
+        }
 
         // Method to update the Estado of an order
         private void UpdateOrderEstado(int nroOrdenPrep, string newEstado)

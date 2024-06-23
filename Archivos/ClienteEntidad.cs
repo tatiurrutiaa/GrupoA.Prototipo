@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 namespace GrupoA.Prototipo.Archivos;
 internal class ClienteEntidad
 {
-    public string Cuit { get; internal set; }
+    public string CuitCliente { get; internal set; }
     public string RazonSocial { get; internal set; }
 }

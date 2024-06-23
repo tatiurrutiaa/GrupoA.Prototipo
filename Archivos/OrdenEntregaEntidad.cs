@@ -7,4 +7,6 @@ using System.Threading.Tasks;
 namespace GrupoA.Prototipo.Archivos;
 internal class OrdenEntregaEntidad
 {
+    public int NroOrdenEntrega { get; set; }
+    public List<int> NroOrdenPreparacion { get; set; }
 }

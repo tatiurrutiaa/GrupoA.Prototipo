@@ -15,7 +15,7 @@ namespace GrupoA.Prototipo.OrdenSeleccion
             listBox.Items.Clear();
             var criticidadDict = ContratoArchivo.Contratos.ToDictionary(c => c.CuitCliente, c => c.Criticidad);
 
-            foreach (var orden in OrdenesPreparacionArchivo.Ordenes.Where(o => o.Estado == EstadoOrdenPreparacion.Pendiente))
+            foreach (var orden in OrdenPreparacionArchivo.OrdenesPreparacion.Where(o => o.Estado == EstadoOrdenPreparacion.Pendiente))
             {
                 var criticidad = criticidadDict[orden.CuitCliente];
                 listBox.Items.Add($"Orden {orden.NroOrdenPrep} - Prioridad: {criticidad}");
@@ -53,7 +53,7 @@ namespace GrupoA.Prototipo.OrdenSeleccion
                 foreach (var item in selectedOrders)
                 {
                     var ordenNum = int.Parse(item.Split(' ')[1]);
-                    var orden = OrdenesPreparacionArchivo.Ordenes.Where(o => o.Estado == EstadoOrdenPreparacion.Pendiente)
+                    var orden = OrdenPreparacionArchivo.OrdenesPreparacion.Where(o => o.Estado == EstadoOrdenPreparacion.Pendiente)
                         .FirstOrDefault(o => o.NroOrdenPrep == ordenNum);
                     if (orden != null)
                     {
@@ -63,7 +63,7 @@ namespace GrupoA.Prototipo.OrdenSeleccion
                 }
 
                 // Obtener el número de orden de entrega más alto existente y sumar 1
-                int nuevoNroOrdenEntrega = (OrdenesSeleccionArchivo.Ordenes.Any() ? OrdenesSeleccionArchivo.Ordenes
+                int nuevoNroOrdenEntrega = (OrdenSeleccionArchivo.OrdenesSeleccion.Any() ? OrdenSeleccionArchivo.OrdenesSeleccion
                     .Max(o => o.NroOrdenSelec) : 0) + 1;
 
                 // Crear una nueva orden de seleccion
@@ -73,7 +73,7 @@ namespace GrupoA.Prototipo.OrdenSeleccion
                     NroOrdenesPreparacion = detalleOrden,
                     Estado = EstadosOrdenSeleccion.EnSeleccion
                 };
-                OrdenesSeleccionArchivo.AgregarOrden(nuevaOrdenEntrega);
+                OrdenSeleccionArchivo.AgregarOrdenSeleccion(nuevaOrdenEntrega);
 
                 // Mostrar el mensaje con las órdenes en líneas separadas
                 string selectedOrdersString = string.Join(Environment.NewLine, selectedOrders);

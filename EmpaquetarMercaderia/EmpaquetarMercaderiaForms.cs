@@ -16,12 +16,17 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
     public partial class EmpaquetarMercaderiaForms : Form
     {
         private EmpaquetarMercaderiaModel modelo;
-        private int numeroOrdenActual = 34; // Inicializar con el número de la primera orden
 
         public EmpaquetarMercaderiaForms()
         {
             InitializeComponent();
+        }
+
+        private void EmpaquetarMercaderiaForms_Load(object sender, EventArgs e)
+        {
             modelo = new EmpaquetarMercaderiaModel();
+
+            int numeroOrdenActual = modelo.OrdenEnPantalla();
 
             // Mostrar la primera orden al abrir el formulario
             MostrarMercaderias(numeroOrdenActual);
@@ -32,6 +37,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
 
         private void empaquetarButton_Click(object sender, EventArgs e)
         {
+            int numeroOrdenActual = modelo.OrdenEnPantalla();
             if (numeroOrdenActual > 0)
             {
                 // Empaquetar la orden actual
@@ -78,6 +84,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     empaquetarmercaderiaListview.Items.Add(item);
                 }
                 nroordenLabel.Text = "Nro de orden: " + orden.NroOrdenPrep.ToString();
+                int numeroOrdenActual = modelo.OrdenEnPantalla();
                 numeroOrdenActual = orden.NroOrdenPrep;
 
                 // Verificar si hay una orden seleccionada y habilitar/deshabilitar el botón "Empaquetar" en consecuencia
@@ -95,6 +102,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
         private void VerificarOrdenSeleccionada()
         {
             var ordenesDisponibles = modelo.ObtenerOrdenesSeleccionadas();
+            int numeroOrdenActual = modelo.OrdenEnPantalla();
             var ordenSeleccionada = ordenesDisponibles.FirstOrDefault(o => o.NroOrdenPrep == numeroOrdenActual);
             empaquetarButton.Enabled = ordenSeleccionada != null;
         }
@@ -117,6 +125,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
         {
             System.Windows.Forms.Application.Exit();
         }
+
     }
 
 }

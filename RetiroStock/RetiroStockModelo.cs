@@ -13,7 +13,7 @@ internal class RetiroStockModelo
 {
     public List<int> OrdenesSelecPendientes()
     {
-        return OrdenesSeleccionArchivo.Ordenes
+        return OrdenSeleccionArchivo.OrdenesSeleccion
             .Where(o => o.Estado == EstadosOrdenSeleccion.EnSeleccion )
             .Select(o => o.NroOrdenSelec)
             .Distinct()
@@ -22,11 +22,11 @@ internal class RetiroStockModelo
 
     public List<(string Posicion, int Cantidad, int CodProducto, string DescProducto)> MercaderiaARetirar(int nroOrden)
     {
-        var ordenesPrepAsociadas = OrdenesSeleccionArchivo.Ordenes
+        var ordenesPrepAsociadas = OrdenSeleccionArchivo.OrdenesSeleccion
             .Where(os => os.NroOrdenSelec == nroOrden)
             .SelectMany(os => os.NroOrdenesPreparacion)
             .Join(
-                OrdenesPreparacionArchivo.Ordenes,
+                OrdenPreparacionArchivo.OrdenesPreparacion,
                 nroOrdenPrep => nroOrdenPrep,
                 op => op.NroOrdenPrep,
                 (nroOrdenPrep, op) => op)
@@ -55,7 +55,7 @@ internal class RetiroStockModelo
                 .OrderBy(s => s.Posicion)
                 .ToList();
 
-            var descProducto = MercaderiaArchivo.Mercaderias.First(m => m.Codigo == item.CodProducto).Descripcion;
+            var descProducto = MercaderiaArchivo.Mercaderias.First(m => m.CodProducto == item.CodProducto).Descripcion;
 
             foreach (var pos in posiciones)
             {
@@ -78,43 +78,46 @@ internal class RetiroStockModelo
 
         foreach (var item in listaParaOrden)
         {
-            var stockItem = stock.First(s => s.Posicion == item.Posicion && s.CodProducto == item.CodProducto);
+            var stockItem = StockArchivo.Stocks.First(s => s.Posicion == item.Posicion && s.CodProducto == item.CodProducto);
             if (stockItem.Cantidad == item.Cantidad)
             {
-                stockItem.Estado = "retirado";
-                stockItem.Posicion = string.Empty;
+                StockArchivo.CambiarEstado(stockItem, EstadosStock.Retirado);
+                StockArchivo.EliminarPosicion(stockItem);
+                //stockItem.Estado = EstadosStock.Retirado;
+                //stockItem.Posicion = string.Empty;
             }
             else
             {
                 int cantidadRetirada = item.Cantidad;
-                stockItem.Cantidad -= cantidadRetirada;
+                StockArchivo.CambiarCantidad(stockItem, cantidadRetirada);
+                //stockItem.Cantidad -= cantidadRetirada;
 
-                var stockRetirado = new Stock
+                var stockRetirado = new StockEntidad
                 {
                     CuitCliente = stockItem.CuitCliente,
                     Posicion = string.Empty,
                     Cantidad = cantidadRetirada,
                     CodProducto = stockItem.CodProducto,
-                    Estado = "retirado"
+                    Estado = EstadosStock.Retirado
                 };
 
-                stock.Add(stockRetirado);
+                StockArchivo.AgregarStock(stockRetirado);
             }
 
-            var ordenesSeleccionadas = ordenesSeleccion
+            var ordenesSeleccionadas = OrdenSeleccionArchivo.OrdenesSeleccion
                 .Where(o => o.NroOrdenSelec == nroOrden)
                 .ToList();
 
             foreach (var orden in ordenesSeleccionadas)
             {
-                orden.Estado = "seleccionada";
+                OrdenSeleccionArchivo.ModificarEstado(orden, EstadosOrdenSeleccion.Seleccionada);
             }
 
-            var ordenesPrepAsociadas = ordenesSeleccion
+            var ordenesPrepAsociadas = OrdenSeleccionArchivo.OrdenesSeleccion
                 .Where(os => os.NroOrdenSelec == nroOrden)
                 .SelectMany(os => os.NroOrdenesPreparacion)
                 .Join(
-                    ordenesPreparacion,
+                    OrdenPreparacionArchivo.OrdenesPreparacion,
                     nroOrdenPrep => nroOrdenPrep,
                     op => op.NroOrdenPrep,
                     (nroOrdenPrep, op) => op)
@@ -122,7 +125,7 @@ internal class RetiroStockModelo
 
             foreach (var orden in ordenesPrepAsociadas)
             {
-                orden.Estado = "seleccionada";
+                OrdenPreparacionArchivo.ModificarEstado(orden, EstadoOrdenPreparacion.Seleccionada);
             }
 
             MessageBox.Show("La mercadería se descontó del almacén con éxito." +

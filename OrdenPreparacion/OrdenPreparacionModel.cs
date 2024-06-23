@@ -12,11 +12,11 @@ internal class OrdenPreparacionModel
 {
     public Cliente BuscarCliente(string cuit)
     {
-        foreach (ClienteEntidad clienteEntidad in ClientesArchivo.Clientes)
+        foreach (ClienteEntidad clienteEntidad in ClienteArchivo.Clientes)
         {
-            if (clienteEntidad.Cuit == cuit)
+            if (clienteEntidad.CuitCliente == cuit)
             {
-                return new Cliente { Cuit = clienteEntidad.Cuit, RazonSocial = clienteEntidad.RazonSocial };
+                return new Cliente { Cuit = clienteEntidad.CuitCliente, RazonSocial = clienteEntidad.RazonSocial };
             }
         }
 
@@ -25,7 +25,7 @@ internal class OrdenPreparacionModel
 
     public List<Mercaderia> Mercaderias => MercaderiaArchivo.Mercaderias.Select(m => new Mercaderia
     {
-        CodProducto = m.Codigo,
+        CodProducto = m.CodProducto,
         DescProducto = m.Descripcion
     }).ToList();
 
@@ -34,11 +34,11 @@ internal class OrdenPreparacionModel
         get
         {
             var depositos = new List<Deposito>();
-            foreach (var depositoEntidad in DepositosArchivo.Depositos)
+            foreach (var depositoEntidad in DepositoArchivo.Depositos)
             {
                 var depo = new Deposito();
-                depo.NumDeposito = depositoEntidad.Numero;
-                depo.NombreDeposito = depositoEntidad.Nombre;
+                depo.NumDeposito = depositoEntidad.NroDeposito;
+                depo.NombreDeposito = depositoEntidad.NombreDeposito;
 
                 depositos.Add(depo);
             }

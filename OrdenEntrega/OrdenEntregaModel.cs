@@ -13,7 +13,7 @@ namespace GrupoA.Prototipo.OrdenesdeEntrega
         public void AgregarOrdenesAlListBox(CheckedListBox listBox)
         {
             listBox.Items.Clear();
-            foreach (var orden in OrdenesPreparacionArchivo.Ordenes.Where(o => o.Estado == EstadoOrdenPreparacion.Preparada))
+            foreach (var orden in OrdenPreparacionArchivo.OrdenesPreparacion.Where(o => o.Estado == EstadoOrdenPreparacion.Preparada))
             {
                 listBox.Items.Add($"Orden {orden.NroOrdenPrep}");
             }
@@ -50,7 +50,7 @@ namespace GrupoA.Prototipo.OrdenesdeEntrega
                 foreach (var item in selectedOrders)
                 {
                     var ordenNum = int.Parse(item.Split(' ')[1]);
-                    var orden = OrdenesPreparacionArchivo.Ordenes OrdenesPreparadas().FirstOrDefault(o => o.NroOrdenPrep == ordenNum);
+                    var orden = OrdenPreparacionArchivo.OrdenesPreparacion OrdenesPreparadas().FirstOrDefault(o => o.NroOrdenPrep == ordenNum);
                     if (orden != null)
                     {
                         orden.Estado = "en despacho";

@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 namespace GrupoA.Prototipo.Archivos;
 public class MercaderiaEntidad
 {
-    public int Codigo { get; set; }
+    public int CodProducto { get; set; }
     public string Descripcion { get; set; }
 }

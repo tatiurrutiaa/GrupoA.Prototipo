@@ -1,4 +1,5 @@
-﻿using GrupoA.Prototipo.RetiroStock;
+﻿using GrupoA.Prototipo.Archivos;
+using GrupoA.Prototipo.RetiroStock;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -113,6 +114,15 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     }
                 }
             };
+        }
+
+        public int OrdenEnPantalla()
+        {
+            return OrdenPreparacionArchivo.OrdenesPreparacion
+                .Where(o => o.Estado == EstadoOrdenPreparacion.Seleccionada)
+                .OrderBy(o => o.NroOrdenPrep)
+                .Select(o => o.NroOrdenPrep)
+                .FirstOrDefault();
         }
 
         public List<Mercaderia> mercaderia = new()

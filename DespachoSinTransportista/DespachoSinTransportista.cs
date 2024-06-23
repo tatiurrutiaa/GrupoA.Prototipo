@@ -133,6 +133,13 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
                 return;
             }
             */
+
+            int dnitransportista;
+            int.TryParse(textBoxDNI.Text, out dnitransportista);
+
+            modelo.GenerarRemito(dnitransportista, ObtenerOrdenesSeleccionadas());
+            modelo.ActualizarStock(ObtenerOrdenesSeleccionadas());
+
             // Display the checked values
             DisplayCheckedValues();
         }
@@ -156,6 +163,7 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
 
                     // Update the Estado of the corresponding order
                     UpdateOrderEstado(orderNumber, "despachada");
+
                 }
             }
 
@@ -164,6 +172,28 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
 
             // Refresh the ListBox to show updated states
             CargarListbox();
+        }
+
+        private List<int> ObtenerOrdenesSeleccionadas()
+        {
+            // Crear una lista para almacenar los números de orden seleccionados
+            List<int> ordenesSeleccionadas = new List<int>();
+
+            // Iterar sobre los elementos seleccionados del ListBox
+            foreach (var item in ListBoxOrdenesPrep.SelectedItems)
+            {
+                // Extraer el número de orden de la cadena del ListBox
+                string itemString = item.ToString();
+                string numeroOrdenString = itemString.Split(' ')[1];
+
+                // Convertir el número de orden a int y añadirlo a la lista
+                if (int.TryParse(numeroOrdenString, out int numeroOrden))
+                {
+                    ordenesSeleccionadas.Add(numeroOrden);
+                }
+            }
+
+            return ordenesSeleccionadas;
         }
 
         // Method to update the Estado of an order

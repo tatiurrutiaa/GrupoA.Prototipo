@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 namespace GrupoA.Prototipo.Archivos;
 internal class DepositoEntidad
 {
-    public int Numero { get; internal set; }
-    public string    Nombre { get; internal set; }
+    public int NroDeposito { get; internal set; }
+    public string NombreDeposito { get; internal set; }
 }

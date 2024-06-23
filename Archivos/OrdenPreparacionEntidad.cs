@@ -1,5 +1,4 @@
-﻿using GrupoA.Prototipo.EmpaquetarMercaderia;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +12,6 @@ internal class OrdenPreparacionEntidad
     public EstadoOrdenPreparacion Estado { get; internal set; }
     public DateTime Fecha { get; internal set; }
     public int? DNITransportista { get; internal set; }
+    public int NroDeposito { get; internal set; }
     public List<MercaderiasDetalle> mercaderiaDetalle { get; set; } = new List<MercaderiasDetalle>();
-    public int NroOrdenSelec { get; internal set; }
 }
