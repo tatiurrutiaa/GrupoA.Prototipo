@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using GrupoA.Prototipo.OrdenPreparacion;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -30,5 +31,10 @@ internal static class ContratoArchivo
     {
         var contenido = JsonConvert.SerializeObject(contratos);
         File.WriteAllText(@"Datos\Contrato.json", contenido);
+    }
+    public static ValorCriticidad BuscarCriticidad(string cuit)
+    {
+        var contrato = Contratos.FirstOrDefault(c => c.CuitCliente == cuit);
+        return contrato.Criticidad;
     }
 }

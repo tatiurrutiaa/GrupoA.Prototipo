@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GrupoA.Prototipo.DespachoSinTransportista
+namespace GrupoA.Prototipo.EmpaquetarMercaderia
 {
     public class OrdenPreparacion
     {

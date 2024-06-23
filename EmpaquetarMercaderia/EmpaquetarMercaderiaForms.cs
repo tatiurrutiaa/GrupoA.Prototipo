@@ -41,13 +41,13 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
             if (numeroOrdenActual > 0)
             {
                 // Empaquetar la orden actual
-                modelo.CambiarEstadoOrden(numeroOrdenActual, "preparada");
+                modelo.CambiarEstadoOrden(numeroOrdenActual);
                 //string cuitCliente = modelo.ObtenerCuitCliente(numeroOrdenActual);
                 string mensaje = $"El número de orden {numeroOrdenActual} fue empaquetado correctamente."; //\nCUIT del cliente: {cuitCliente}";
                 MessageBox.Show(mensaje, "Empaquetar Mercaderías", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Encontrar la siguiente orden disponible y mostrarla
-                var ordenesDisponibles = modelo.ObtenerOrdenesSeleccionadas();
+                var ordenesDisponibles = EmpaquetarMercaderiaModel.ObtenerOrdenesSeleccionadas();
                 var siguienteOrden = ordenesDisponibles.FirstOrDefault(o => o.NroOrdenPrep > numeroOrdenActual);
                 if (siguienteOrden != null)
                 {
@@ -69,7 +69,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
 
         private void MostrarMercaderias(int nroOrden)
         {
-            var orden = modelo.ObtenerOrdenesSeleccionadas().FirstOrDefault(o => o.NroOrdenPrep == nroOrden);
+            var orden = EmpaquetarMercaderiaModel.ObtenerOrdenesSeleccionadas().FirstOrDefault(o => o.NroOrdenPrep == nroOrden);
             if (orden != null)
             {
                 empaquetarmercaderiaListview.Items.Clear();
@@ -78,7 +78,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                     var item = new ListViewItem(new[]
                     {
                     mercaderia.CodProducto.ToString(),
-                    mercaderia.DescProducto,
+                    //mercaderia.,
                     mercaderia.CantidadProducto.ToString()
                     });
                     empaquetarmercaderiaListview.Items.Add(item);
@@ -101,7 +101,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
 
         private void VerificarOrdenSeleccionada()
         {
-            var ordenesDisponibles = modelo.ObtenerOrdenesSeleccionadas();
+            var ordenesDisponibles = EmpaquetarMercaderiaModel.ObtenerOrdenesSeleccionadas();
             int numeroOrdenActual = modelo.OrdenEnPantalla();
             var ordenSeleccionada = ordenesDisponibles.FirstOrDefault(o => o.NroOrdenPrep == numeroOrdenActual);
             empaquetarButton.Enabled = ordenSeleccionada != null;

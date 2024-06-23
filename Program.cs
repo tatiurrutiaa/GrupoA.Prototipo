@@ -14,9 +14,6 @@ namespace GrupoA.Prototipo
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new IniciarSesionForms());
-            ClienteArchivo.GrabarDatos();
-            ContratoArchivo.GrabarDatos();
-            DepositoArchivo.GrabarDatos();
             MercaderiaArchivo.GrabarDatos();
             OrdenEntregaArchivo.GrabarDatos();
             OrdenPreparacionArchivo.GrabarDatos();
