@@ -63,30 +63,40 @@ namespace GrupoA.Prototipo.Forms.DespachoSinTransportista.Model
             {
                 foreach (var item in orden.mercaderiaDetalle)
                 {
-                    var stockItem = StockArchivo.Stocks.First(s => s.Posicion == "" && s.CodProducto == item.CodProducto
-                    && s.Estado == EstadosStock.Retirado && s.CuitCliente == orden.CuitCliente);
-                    if (stockItem.Cantidad == item.CantidadProducto)
+                    var stockItem = StockArchivo.Stocks.FirstOrDefault(s => s.Posicion == "" && s.CodProducto == item.CodProducto && s.Estado == EstadosStock.Retirado && s.CuitCliente == orden.CuitCliente);
+                    if (stockItem != null)
                     {
-                        StockArchivo.CambiarEstado(stockItem, EstadosStock.Despachado);
+                        StockArchivo.Stocks.FirstOrDefault(s => s.Posicion == "" && s.CodProducto == item.CodProducto && s.Estado == EstadosStock.Retirado && s.CuitCliente == orden.CuitCliente);
                     }
                     else
                     {
-                        int cantidadRetirada = item.CantidadProducto;
-                        // stockItem.Cantidad -= cantidadRetirada;
-                        StockArchivo.CambiarCantidad(stockItem, cantidadRetirada);
-
-                        var stockRetirado = new StockEntidad
+                        Console.WriteLine("No se encontró el stock");
+                    }
+                    if (stockItem != null)
+                    {
+                        if (stockItem.Cantidad == item.CantidadProducto)
                         {
-                            CuitCliente = stockItem.CuitCliente,
-                            Posicion = string.Empty,
-                            Cantidad = cantidadRetirada,
-                            CodProducto = stockItem.CodProducto,
-                            Estado = EstadosStock.Despachado,
-                            NroDeposito = stockItem.NroDeposito
-                        };
+                            StockArchivo.CambiarEstado(stockItem, EstadosStock.Despachado);
+                        }
+                        else
+                        {
+                            int cantidadRetirada = item.CantidadProducto;
+                            // stockItem.Cantidad -= cantidadRetirada;
+                            StockArchivo.CambiarCantidad(stockItem, cantidadRetirada);
 
-                        // stock.Add(stockRetirado);
-                        StockArchivo.AgregarStock(stockRetirado);
+                            var stockRetirado = new StockEntidad
+                            {
+                                CuitCliente = stockItem.CuitCliente,
+                                Posicion = string.Empty,
+                                Cantidad = cantidadRetirada,
+                                CodProducto = stockItem.CodProducto,
+                                Estado = EstadosStock.Despachado,
+                                NroDeposito = stockItem.NroDeposito
+                            };
+
+                            // stock.Add(stockRetirado);
+                            StockArchivo.AgregarStock(stockRetirado);
+                        }
                     }
                 }
             }
