@@ -1,0 +1,14 @@
+[
+  {
+    "NroDeposito": 1,
+    "NombreDeposito": "Almacén Central"
+  },
+  {
+    "NroDeposito": 2,
+    "NombreDeposito": "Lanús Oeste"
+  },
+  {
+    "NroDeposito": 3,
+    "NombreDeposito": "Mar del Plata"
+  }
+]

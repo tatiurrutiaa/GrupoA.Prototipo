@@ -1,5 +1,5 @@
 [
-  /*{
+  {
     "NroRemito": 1,
     "CuitCliente": "27-12345678-5",
     "Fecha": "2024-06-18T00:00:00",
@@ -22,5 +22,5 @@
     "DNITransportista": 39273384,
     "NroDeposito": 1,
     "NroOrdenPreparacion": [ 4, 6, 8, 10 ]
-  }*/
+  }
 ]

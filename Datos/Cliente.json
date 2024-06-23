@@ -1,18 +1,18 @@
 [
   {
-    "Cuit": "27-12345678-5",
+    "CuitCliente": "27-12345678-5",
     "RazonSocial": "Endre SRL"
   },
   {
-    "Cuit": "22-12345678-9",
+    "CuitCliente": "22-12345678-9",
     "RazonSocial": "Constructora ABC SA"
   },
   {
-    "Cuit": "30-87654321-0",
+    "CuitCliente": "30-87654321-0",
     "RazonSocial": "CRL SA"
   },
   {
-    "Cuit": "33-87654321-0",
+    "CuitCliente": "33-87654321-0",
     "RazonSocial": "Obras Patagonicas SRL"
   }
 ]
