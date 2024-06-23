@@ -2,7 +2,7 @@
   {
     "NroOrdenPrep": 1,
     "CuitCliente": "27-12345678-5",
-    "Estado": "Despachada",
+    "Estado": "5",
     "Fecha": "2024-06-01T00:00:00",
     "DNITransportista": 40567890,
     "NroDeposito": 1,
@@ -24,7 +24,7 @@
   {
     "NroOrdenPrep": 2,
     "CuitCliente": "22-12345678-9",
-    "Estado": "Despachada",
+    "Estado": "5",
     "Fecha": "2024-06-02T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -38,7 +38,7 @@
   {
     "NroOrdenPrep": 3,
     "CuitCliente": "27-12345678-5",
-    "Estado": "Despachada",
+    "Estado": "5",
     "Fecha": "2024-06-03T00:00:00",
     "DNITransportista": 40678901,
     "NroDeposito": 1,
@@ -56,7 +56,7 @@
   {
     "NroOrdenPrep": 4,
     "CuitCliente": "30-87654321-0",
-    "Estado": "Despachada",
+    "Estado": "5",
     "Fecha": "2024-06-04T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -74,7 +74,7 @@
   {
     "NroOrdenPrep": 5,
     "CuitCliente": "22-12345678-9",
-    "Estado": "Despachada",
+    "Estado": "5",
     "Fecha": "2024-06-05T00:00:00",
     "DNITransportista": 40789012,
     "NroDeposito": 1,
@@ -92,7 +92,7 @@
   {
     "NroOrdenPrep": 6,
     "CuitCliente": "30-87654321-0",
-    "Estado": "Despachada",
+    "Estado": "5",
     "Fecha": "2024-06-06T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -106,7 +106,7 @@
   {
     "NroOrdenPrep": 7,
     "CuitCliente": "27-12345678-5",
-    "Estado": "Despachada",
+    "Estado": "5",
     "Fecha": "2024-06-07T00:00:00",
     "DNITransportista": 40890123,
     "NroDeposito": 1,
@@ -124,7 +124,7 @@
   {
     "NroOrdenPrep": 8,
     "CuitCliente": "30-87654321-0",
-    "Estado": "Despachada",
+    "Estado": "5",
     "Fecha": "2024-06-08T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -142,7 +142,7 @@
   {
     "NroOrdenPrep": 9,
     "CuitCliente": "22-12345678-9",
-    "Estado": "Despachada",
+    "Estado": "5",
     "Fecha": "2024-06-09T00:00:00",
     "DNITransportista": 40901234,
     "NroDeposito": 1,
@@ -160,7 +160,7 @@
   {
     "NroOrdenPrep": 10,
     "CuitCliente": "30-87654321-0",
-    "Estado": "Despachada",
+    "Estado": "5",
     "Fecha": "2024-06-10T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -178,7 +178,7 @@
   {
     "NroOrdenPrep": 11,
     "CuitCliente": "27-12345678-5",
-    "Estado": "EnDespacho",
+    "Estado": "4",
     "Fecha": "2024-06-11T00:00:00",
     "DNITransportista": 40567890,
     "NroDeposito": 1,
@@ -200,7 +200,7 @@
   {
     "NroOrdenPrep": 12,
     "CuitCliente": "22-12345678-9",
-    "Estado": "EnDespacho",
+    "Estado": "4",
     "Fecha": "2024-06-12T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -214,7 +214,7 @@
   {
     "NroOrdenPrep": 13,
     "CuitCliente": "27-12345678-5",
-    "Estado": "EnDespacho",
+    "Estado": "4",
     "Fecha": "2024-06-13T00:00:00",
     "DNITransportista": 40678901,
     "NroDeposito": 1,
@@ -232,7 +232,7 @@
   {
     "NroOrdenPrep": 14,
     "CuitCliente": "30-87654321-0",
-    "Estado": "EnDespacho",
+    "Estado": "4",
     "Fecha": "2024-06-14T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -250,7 +250,7 @@
   {
     "NroOrdenPrep": 15,
     "CuitCliente": "22-12345678-9",
-    "Estado": "EnDespacho",
+    "Estado": "4",
     "Fecha": "2024-06-15T00:00:00",
     "DNITransportista": 40789012,
     "NroDeposito": 1,
@@ -268,7 +268,7 @@
   {
     "NroOrdenPrep": 16,
     "CuitCliente": "30-87654321-0",
-    "Estado": "EnDespacho",
+    "Estado": "4",
     "Fecha": "2024-06-16T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -282,7 +282,7 @@
   {
     "NroOrdenPrep": 17,
     "CuitCliente": "27-12345678-5",
-    "Estado": "EnDespacho",
+    "Estado": "4",
     "Fecha": "2024-06-17T00:00:00",
     "DNITransportista": 40890123,
     "NroDeposito": 1,
@@ -300,7 +300,7 @@
   {
     "NroOrdenPrep": 18,
     "CuitCliente": "30-87654321-0",
-    "Estado": "EnDespacho",
+    "Estado": "4",
     "Fecha": "2024-06-18T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -318,7 +318,7 @@
   {
     "NroOrdenPrep": 19,
     "CuitCliente": "22-12345678-9",
-    "Estado": "EnDespacho",
+    "Estado": "4",
     "Fecha": "2024-06-19T00:00:00",
     "DNITransportista": 40901234,
     "NroDeposito": 1,
@@ -336,7 +336,7 @@
   {
     "NroOrdenPrep": 20,
     "CuitCliente": "30-87654321-0",
-    "Estado": "EnDespacho",
+    "Estado": "4",
     "Fecha": "2024-06-20T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -354,7 +354,7 @@
   {
     "NroOrdenPrep": 21,
     "CuitCliente": "27-12345678-5",
-    "Estado": "Preparada",
+    "Estado": "3",
     "Fecha": "2024-06-21T00:00:00",
     "DNITransportista": 40567890,
     "NroDeposito": 1,
@@ -376,7 +376,7 @@
   {
     "NroOrdenPrep": 22,
     "CuitCliente": "22-12345678-9",
-    "Estado": "Preparada",
+    "Estado": "3",
     "Fecha": "2024-06-22T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -390,7 +390,7 @@
   {
     "NroOrdenPrep": 23,
     "CuitCliente": "27-12345678-5",
-    "Estado": "Preparada",
+    "Estado": "3",
     "Fecha": "2024-06-23T00:00:00",
     "DNITransportista": 40678901,
     "NroDeposito": 1,
@@ -408,7 +408,7 @@
   {
     "NroOrdenPrep": 24,
     "CuitCliente": "30-87654321-0",
-    "Estado": "Preparada",
+    "Estado": "3",
     "Fecha": "2024-06-24T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -426,7 +426,7 @@
   {
     "NroOrdenPrep": 25,
     "CuitCliente": "22-12345678-9",
-    "Estado": "Preparada",
+    "Estado": "3",
     "Fecha": "2024-06-25T00:00:00",
     "DNITransportista": 40789012,
     "NroDeposito": 1,
@@ -444,7 +444,7 @@
   {
     "NroOrdenPrep": 26,
     "CuitCliente": "30-87654321-0",
-    "Estado": "Preparada",
+    "Estado": "3",
     "Fecha": "2024-06-26T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -458,7 +458,7 @@
   {
     "NroOrdenPrep": 27,
     "CuitCliente": "27-12345678-5",
-    "Estado": "Preparada",
+    "Estado": "3",
     "Fecha": "2024-06-27T00:00:00",
     "DNITransportista": 40890123,
     "NroDeposito": 1,
@@ -476,7 +476,7 @@
   {
     "NroOrdenPrep": 28,
     "CuitCliente": "30-87654321-0",
-    "Estado": "Preparada",
+    "Estado": "3",
     "Fecha": "2024-06-28T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -494,7 +494,7 @@
   {
     "NroOrdenPrep": 29,
     "CuitCliente": "22-12345678-9",
-    "Estado": "Preparada",
+    "Estado": "3",
     "Fecha": "2024-06-29T00:00:00",
     "DNITransportista": 40901234,
     "NroDeposito": 1,
@@ -512,7 +512,7 @@
   {
     "NroOrdenPrep": 30,
     "CuitCliente": "30-87654321-0",
-    "Estado": "Preparada",
+    "Estado": "3",
     "Fecha": "2024-06-30T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -530,7 +530,7 @@
   {
     "NroOrdenPrep": 31,
     "CuitCliente": "27-12345678-5",
-    "Estado": "Seleccionada",
+    "Estado": "2",
     "Fecha": "2024-06-01T00:00:00",
     "DNITransportista": 40567890,
     "NroDeposito": 1,
@@ -552,7 +552,7 @@
   {
     "NroOrdenPrep": 32,
     "CuitCliente": "22-12345678-9",
-    "Estado": "Seleccionada",
+    "Estado": "2",
     "Fecha": "2024-06-02T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -566,7 +566,7 @@
   {
     "NroOrdenPrep": 33,
     "CuitCliente": "27-12345678-5",
-    "Estado": "Seleccionada",
+    "Estado": "2",
     "Fecha": "2024-06-03T00:00:00",
     "DNITransportista": 40678901,
     "NroDeposito": 1,
@@ -584,7 +584,7 @@
   {
     "NroOrdenPrep": 34,
     "CuitCliente": "30-87654321-0",
-    "Estado": "Seleccionada",
+    "Estado": "2",
     "Fecha": "2024-06-04T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -602,7 +602,7 @@
   {
     "NroOrdenPrep": 35,
     "CuitCliente": "22-12345678-9",
-    "Estado": "Seleccionada",
+    "Estado": "2",
     "Fecha": "2024-06-05T00:00:00",
     "DNITransportista": 40789012,
     "NroDeposito": 1,
@@ -620,7 +620,7 @@
   {
     "NroOrdenPrep": 36,
     "CuitCliente": "30-87654321-0",
-    "Estado": "Seleccionada",
+    "Estado": "2",
     "Fecha": "2024-06-06T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -634,7 +634,7 @@
   {
     "NroOrdenPrep": 37,
     "CuitCliente": "27-12345678-5",
-    "Estado": "Seleccionada",
+    "Estado": "2",
     "Fecha": "2024-06-07T00:00:00",
     "DNITransportista": 40890123,
     "NroDeposito": 1,
@@ -652,7 +652,7 @@
   {
     "NroOrdenPrep": 38,
     "CuitCliente": "30-87654321-0",
-    "Estado": "Seleccionada",
+    "Estado": "2",
     "Fecha": "2024-06-08T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -670,7 +670,7 @@
   {
     "NroOrdenPrep": 39,
     "CuitCliente": "22-12345678-9",
-    "Estado": "Seleccionada",
+    "Estado": "2",
     "Fecha": "2024-06-09T00:00:00",
     "DNITransportista": 40901234,
     "NroDeposito": 1,
@@ -688,7 +688,7 @@
   {
     "NroOrdenPrep": 40,
     "CuitCliente": "30-87654321-0",
-    "Estado": "Seleccionada",
+    "Estado": "2",
     "Fecha": "2024-06-10T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -706,7 +706,7 @@
   {
     "NroOrdenPrep": 41,
     "CuitCliente": "27-12345678-5",
-    "Estado": "EnSeleccion",
+    "Estado": "1",
     "Fecha": "2024-06-11T00:00:00",
     "DNITransportista": 40567890,
     "NroDeposito": 1,
@@ -728,7 +728,7 @@
   {
     "NroOrdenPrep": 42,
     "CuitCliente": "22-12345678-9",
-    "Estado": "EnSeleccion",
+    "Estado": "1",
     "Fecha": "2024-06-12T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -742,7 +742,7 @@
   {
     "NroOrdenPrep": 43,
     "CuitCliente": "27-12345678-5",
-    "Estado": "EnSeleccion",
+    "Estado": "1",
     "Fecha": "2024-06-13T00:00:00",
     "DNITransportista": 40678901,
     "NroDeposito": 1,
@@ -760,7 +760,7 @@
   {
     "NroOrdenPrep": 44,
     "CuitCliente": "30-87654321-0",
-    "Estado": "EnSeleccion",
+    "Estado": "1",
     "Fecha": "2024-06-14T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -778,7 +778,7 @@
   {
     "NroOrdenPrep": 45,
     "CuitCliente": "22-12345678-9",
-    "Estado": "EnSeleccion",
+    "Estado": "1",
     "Fecha": "2024-06-15T00:00:00",
     "DNITransportista": 40789012,
     "NroDeposito": 1,
@@ -796,7 +796,7 @@
   {
     "NroOrdenPrep": 46,
     "CuitCliente": "30-87654321-0",
-    "Estado": "EnSeleccion",
+    "Estado": "1",
     "Fecha": "2024-06-16T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -810,7 +810,7 @@
   {
     "NroOrdenPrep": 47,
     "CuitCliente": "27-12345678-5",
-    "Estado": "EnSeleccion",
+    "Estado": "1",
     "Fecha": "2024-06-17T00:00:00",
     "DNITransportista": 40890123,
     "NroDeposito": 1,
@@ -828,7 +828,7 @@
   {
     "NroOrdenPrep": 48,
     "CuitCliente": "30-87654321-0",
-    "Estado": "EnSeleccion",
+    "Estado": "1",
     "Fecha": "2024-06-18T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -846,7 +846,7 @@
   {
     "NroOrdenPrep": 49,
     "CuitCliente": "22-12345678-9",
-    "Estado": "EnSeleccion",
+    "Estado": "1",
     "Fecha": "2024-06-19T00:00:00",
     "DNITransportista": 40901234,
     "NroDeposito": 1,
@@ -864,7 +864,7 @@
   {
     "NroOrdenPrep": 50,
     "CuitCliente": "30-87654321-0",
-    "Estado": "EnSeleccion",
+    "Estado": "1",
     "Fecha": "2024-06-20T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -882,7 +882,7 @@
   {
     "NroOrdenPrep": 51,
     "CuitCliente": "27-12345678-5",
-    "Estado": "Pendiente",
+    "Estado": "0",
     "Fecha": "2024-06-21T00:00:00",
     "DNITransportista": 40567890,
     "NroDeposito": 1,
@@ -904,7 +904,7 @@
   {
     "NroOrdenPrep": 52,
     "CuitCliente": "22-12345678-9",
-    "Estado": "Pendiente",
+    "Estado": "0",
     "Fecha": "2024-06-22T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -918,7 +918,7 @@
   {
     "NroOrdenPrep": 53,
     "CuitCliente": "27-12345678-5",
-    "Estado": "Pendiente",
+    "Estado": "0",
     "Fecha": "2024-06-23T00:00:00",
     "DNITransportista": 40678901,
     "NroDeposito": 1,
@@ -936,7 +936,7 @@
   {
     "NroOrdenPrep": 54,
     "CuitCliente": "30-87654321-0",
-    "Estado": "Pendiente",
+    "Estado": "0",
     "Fecha": "2024-06-24T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -954,7 +954,7 @@
   {
     "NroOrdenPrep": 55,
     "CuitCliente": "22-12345678-9",
-    "Estado": "Pendiente",
+    "Estado": "0",
     "Fecha": "2024-06-25T00:00:00",
     "DNITransportista": 40789012,
     "NroDeposito": 1,
@@ -972,7 +972,7 @@
   {
     "NroOrdenPrep": 56,
     "CuitCliente": "30-87654321-0",
-    "Estado": "Pendiente",
+    "Estado": "0",
     "Fecha": "2024-06-26T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -986,7 +986,7 @@
   {
     "NroOrdenPrep": 57,
     "CuitCliente": "27-12345678-5",
-    "Estado": "Pendiente",
+    "Estado": "0",
     "Fecha": "2024-06-27T00:00:00",
     "DNITransportista": 40890123,
     "NroDeposito": 1,
@@ -1004,7 +1004,7 @@
   {
     "NroOrdenPrep": 58,
     "CuitCliente": "30-87654321-0",
-    "Estado": "Pendiente",
+    "Estado": "0",
     "Fecha": "2024-06-28T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
@@ -1022,7 +1022,7 @@
   {
     "NroOrdenPrep": 59,
     "CuitCliente": "22-12345678-9",
-    "Estado": "Pendiente",
+    "Estado": "0",
     "Fecha": "2024-06-29T00:00:00",
     "DNITransportista": 40901234,
     "NroDeposito": 1,
@@ -1040,7 +1040,7 @@
   {
     "NroOrdenPrep": 60,
     "CuitCliente": "30-87654321-0",
-    "Estado": "Pendiente",
+    "Estado": "0",
     "Fecha": "2024-06-30T00:00:00",
     "DNITransportista": null,
     "NroDeposito": 1,
