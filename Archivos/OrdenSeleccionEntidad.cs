@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace GrupoA.Prototipo.Archivos;
 internal class OrdenSeleccionEntidad
 {
-    public int NroOrdenSelec { get; internal set; }
+    public int NroOrdenSelec { get; set; }
     public List<int> NroOrdenesPreparacion { get; set; }
-    public EstadosOrdenSeleccion Estado { get; internal set; }
+    public EstadosOrdenSeleccion Estado { get; set; }
 }

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace GrupoA.Prototipo.Archivos;
 internal class StockEntidad
 {
-    public string CuitCliente { get; internal set; }
-    public string Posicion { get; internal set; }
-    public int Cantidad { get; internal set; }
-    public int CodProducto { get; internal set; }
-    public EstadosStock Estado { get; internal set; }
-    public int NroDeposito { get; internal set; }
+    public string CuitCliente { get; set; }
+    public string Posicion { get; set; }
+    public int Cantidad { get; set; }
+    public int CodProducto { get; set; }
+    public EstadosStock Estado { get; set; }
+    public int NroDeposito { get; set; }
 }
 
