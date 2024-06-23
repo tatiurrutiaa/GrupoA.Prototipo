@@ -162,8 +162,8 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
                     int orderNumber = int.Parse(itemText.Replace("Orden ", ""));
 
                     // Update the Estado of the corresponding order
-                    UpdateOrderEstado(orderNumber, "despachada");
-
+                    //UpdateOrderEstado(orderNumber, "despachada");
+                    modelo.ActualizarEstadoOrdenes(orderNumber);
                 }
             }
 
@@ -194,16 +194,6 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
             }
 
             return ordenesSeleccionadas;
-        }
-
-        // Method to update the Estado of an order
-        private void UpdateOrderEstado(int nroOrdenPrep, string newEstado)
-        {
-            var order = modelo.ordenesPreparacion.FirstOrDefault(o => o.NroOrdenPrep == nroOrdenPrep);
-            if (order != null)
-            {
-                order.Estado = newEstado;
-            }
         }
 
         private void ControlStateChanged(object sender, EventArgs e)

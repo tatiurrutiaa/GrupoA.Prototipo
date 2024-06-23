@@ -1,4 +1,5 @@
 ﻿using GrupoA.Prototipo.Archivos;
+using GrupoA.Prototipo.OrdenPreparacion;
 using GrupoA.Prototipo.RetiroStock;
 using System;
 using System.Collections.Generic;
@@ -11,36 +12,24 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
 {
     internal class DespachoSinTransportistaModel
     {
-        public List<RetiroStock.OrdenPreparacion> ordenesPreparacion = new()
+        public List<OrdenPreparacion> MercaderiaARetirar()
         {
-        new() {NroOrdenPrep = 15, CuitCliente = "27-41672496-8", DNITransportista = 41672496,  Estado = "preparada"},
-        new() {NroOrdenPrep = 16, CuitCliente = "27-41672496-8", DNITransportista = null, Estado = "preparada"},
-        new() {NroOrdenPrep = 17, CuitCliente = "27-41672496-8", DNITransportista = null, Estado = "preparada"},
-        new() {NroOrdenPrep = 18, CuitCliente = "27-41672496-8", DNITransportista = null, Estado = "preparada"},
-        new() {NroOrdenPrep = 19, CuitCliente = "27-41672496-8", DNITransportista = null, Estado = "ingresada"},
-        new() {NroOrdenPrep = 20, CuitCliente = "30-22465788-7", DNITransportista = null, Estado = "preparada"},
-        new() {NroOrdenPrep = 21, CuitCliente = "30-22465788-7", DNITransportista = null, Estado = "preparada"},
-        new() {NroOrdenPrep = 22, CuitCliente = "34-56564433-5", DNITransportista = null, Estado = "preparada"},
-        new() {NroOrdenPrep = 23, CuitCliente = "30-23456789-1", DNITransportista = null, Estado = "preparada"},
-        new() {NroOrdenPrep = 24, CuitCliente = "30-23456789-1", DNITransportista = null, Estado = "preparada"},
-        new() {NroOrdenPrep = 25, CuitCliente = "30-23456789-1", DNITransportista = null, Estado = "preparada"}
-        };
-
-        public List<RetiroStock.OrdenPreparacion> MercaderiaARetirar()
-        {
-            var ordenes = ordenesPreparacion.Where(o => o.Estado == "preparada"
-            && o.DNITransportista == null).ToList();
-
-            /*if (ordenes == null)
+            var ordenes = new List<OrdenPreparacion>();
+            foreach (var OrdenPreparacionEntidad in OrdenPreparacionArchivo.OrdenesPreparacion
+                      .Where(o => o.Estado == EstadoOrdenPreparacion.EnDespacho
+                      && o.DNITransportista == null).ToList())
             {
-                MessageBox.Show("No hay ordenes de preparación para despachar." +
-                    "Por favor, intente nuevamente en unos minutos.");
-                return null;
+                var orden = new OrdenPreparacion();
+                orden.NroOrdenPrep = OrdenPreparacionEntidad.NroOrdenPrep;
+                orden.CuitCliente = OrdenPreparacionEntidad.CuitCliente;
+                orden.Estado = OrdenPreparacionEntidad.Estado;
+                orden.Fecha = OrdenPreparacionEntidad.Fecha;
+                orden.DNITransportista = OrdenPreparacionEntidad.DNITransportista;
+                orden.NroDeposito = OrdenPreparacionEntidad.NroDeposito;
+                orden.mercaderiaDetalle = OrdenPreparacionEntidad.mercaderiaDetalle;
+
+                ordenes.Add(orden);
             }
-            else
-            {
-                return ordenes;
-            }*/
             return ordenes;
         }
         public void GenerarRemito(int dniTransportista, List<int> ordenesSeleccionadas)
@@ -48,7 +37,7 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
             // Obtener el último número de remito y sumarle uno
             int nuevoNroRemito = RemitoArchivo.Remitos.Any() ? RemitoArchivo.Remitos.Max(r => r.NroRemito) + 1 : 1;
             // Obtener el CUIT del cliente de la primera orden seleccionada
-            var primeraOrden = ordenesPreparacion.FirstOrDefault(o => o.NroOrdenPrep == ordenesSeleccionadas.First());
+            var primeraOrden = OrdenPreparacionArchivo.OrdenesPreparacion.FirstOrDefault(o => o.NroOrdenPrep == ordenesSeleccionadas.First());
             string cuitCliente = primeraOrden.CuitCliente;
             var deposito = primeraOrden.NroDeposito;
             // Crear un nuevo remito
@@ -97,8 +86,16 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
                         // stock.Add(stockRetirado);
                         StockArchivo.AgregarStock(stockRetirado);
                     }
-                    OrdenPreparacionArchivo.ModificarEstado(orden, EstadoOrdenPreparacion.Despachada);
                 }
+            }
+        }
+        public void ActualizarEstadoOrdenes(int nroorden)
+        {
+            var orden = OrdenPreparacionArchivo.OrdenesPreparacion
+                    .FirstOrDefault(o => o.NroOrdenPrep == nroorden);
+            if (orden != null)
+            {
+                OrdenPreparacionArchivo.ModificarEstado(orden, EstadoOrdenPreparacion.Despachada);
             }
         }
     }
