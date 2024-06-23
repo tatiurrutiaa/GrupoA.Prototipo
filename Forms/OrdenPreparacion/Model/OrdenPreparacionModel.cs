@@ -30,12 +30,6 @@ internal class OrdenPreparacionModel
         return null;
     }
 
-    public List<Mercaderia> Mercaderias => MercaderiaArchivo.Mercaderias.Select(m => new Mercaderia
-    {
-        CodProducto = m.CodProducto,
-        DescProducto = m.DescProducto
-    }).ToList();
-
     public List<Deposito> Depositos
     {
         get
@@ -84,7 +78,8 @@ internal class OrdenPreparacionModel
     {
         int nroDeposito = DepositoArchivo.BuscarNroDeposito(nombredeposito);
         var productosPorClienteYDeposito = StockArchivo.Stocks
-            .Where(s => s.CuitCliente == cuitCliente && s.NroDeposito == nroDeposito)
+            .Where(s => s.CuitCliente == cuitCliente && s.NroDeposito == nroDeposito
+            && (s.Estado == EstadosStock.Ingresado || s.Estado == EstadosStock.Almacenado))
             .GroupBy(s => s.CodProducto)
             .Select(g => (
                 CantidadTotal: g.Sum(s => s.Cantidad),
@@ -95,54 +90,49 @@ internal class OrdenPreparacionModel
 
         return productosPorClienteYDeposito;
     }
-    public int ObtenerCantidadPorDescripcion(List<(int CantidadTotal, int CodProducto, string Descripcion)> mercaderiasDelDeposito, string descripcion)
-    {
-        // Buscar la mercadería que coincida con la descripción proporcionada
-        var mercaderia = mercaderiasDelDeposito.FirstOrDefault(m => m.Descripcion == descripcion);
 
-        // Devolver la cantidad total si se encuentra la mercadería, de lo contrario, devolver 0
-        return mercaderia.CantidadTotal;
-    }
-    public void CrearOrden(string cuit, int dni, string nombredeposito, ListBox ListaMercaderiaEnOrdenPreparacion)
+    public void CrearOrdenYActualizarStock(string cuit, int dni, string nombredeposito, ListBox ListaMercaderiaEnOrdenPreparacion)
     {
         int nroorden = NuevoNroOrden();
+        var estado = EstadosOrdenPreparacion.Pendiente;
+        var mercaderiaDetalleList = new List<MercaderiasDetalle>();
+
+        foreach (var item in ListaMercaderiaEnOrdenPreparacion.Items)
+        {
+            string[] partes = item.ToString().Split(new string[] { " - " }, StringSplitOptions.None);
+            string descripcion = partes[0];
+            int cantidad = int.Parse(partes[1]);
+
+            int codProducto = MercaderiaArchivo.BuscarCodProducto(descripcion);
+
+            // Creamos un nuevo detalle de mercadería y lo agregamos a la lista
+            var detalle = new MercaderiasDetalle
+            {
+                CodProducto = codProducto,
+                CantidadProducto = cantidad
+            };
+
+            mercaderiaDetalleList.Add(detalle);
+        }
 
         var nuevaorden = new OrdenPreparacionEntidad
         {
             NroOrdenPrep = nroorden,
             CuitCliente = cuit,
-            Estado = EstadosOrdenPreparacion.Pendiente,
+            Estado = estado,
             Fecha = DateTime.Now,
             DNITransportista = dni,
             NroDeposito = DepositoArchivo.BuscarNroDeposito(nombredeposito),
-            mercaderiaDetalle = new List<MercaderiasDetalle>()
+            mercaderiaDetalle = mercaderiaDetalleList
         };
 
-        foreach (var item in ListaMercaderiaEnOrdenPreparacion.Items)
-        {
-            string[] partes = item.ToString().Split(new string[] { " - " }, StringSplitOptions.None);
-            int mercaderia = MercaderiaArchivo.BuscarCodProducto(partes[0]);
-            int cantidad = int.Parse(partes[1]);
+        OrdenPreparacionArchivo.AgregarOrdenPreparacion(nuevaorden);
 
-            // Creamos un nuevo detalle de mercadería y lo agregamos a la lista
-            var detalle = new MercaderiasDetalle
-            {
-                CodProducto = mercaderia,
-                CantidadProducto = cantidad
-            };
-
-            OrdenPreparacionArchivo.AgregarOrdenPreparacion(nuevaorden);
-        }
-    }
-    public void ActualizarStock()
-    {
-        int nroorden = NuevoNroOrden();
-        OrdenPreparacionEntidad orden = OrdenPreparacionArchivo.ObtenerOrdenPreparacionPorNumero(nroorden);
-        foreach (var item in orden.mercaderiaDetalle)
+        foreach (var item in nuevaorden.mercaderiaDetalle)
         {
-            var stockItem = StockArchivo.Stocks.First(s => s.Posicion == "" && s.CodProducto == item.CodProducto
+            var stockItem = StockArchivo.Stocks.First(s => s.CodProducto == item.CodProducto
             && (s.Estado == EstadosStock.Ingresado || s.Estado == EstadosStock.Almacenado)
-            && s.CuitCliente == orden.CuitCliente);
+            && s.CuitCliente == nuevaorden.CuitCliente);
             if (stockItem.Cantidad == item.CantidadProducto)
             {
                 StockArchivo.CambiarEstado(stockItem, EstadosStock.Comprometido);
@@ -167,5 +157,6 @@ internal class OrdenPreparacionModel
                 StockArchivo.AgregarStock(stockRetirado);
             }
         }
+        MessageBox.Show("La orden fue generada con éxito.");
     }
 }

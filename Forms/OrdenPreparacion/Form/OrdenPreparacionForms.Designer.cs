@@ -205,6 +205,7 @@
             botonEditarCliente.TabIndex = 26;
             botonEditarCliente.Text = "Editar Cliente";
             botonEditarCliente.UseVisualStyleBackColor = true;
+            botonEditarCliente.Click += botonEditarCliente_Click;
             // 
             // botonEliminar
             // 
