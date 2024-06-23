@@ -1,6 +1,4 @@
-﻿using GrupoA.Prototipo.Archivos.Criticidad;
-
-namespace GrupoA.Prototipo.Archivos.Contrato
+﻿namespace GrupoA.Prototipo.Archivos.Contrato
 {
     internal class ContratoEntidad
     {

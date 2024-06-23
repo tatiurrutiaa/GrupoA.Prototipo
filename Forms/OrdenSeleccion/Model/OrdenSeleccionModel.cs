@@ -16,14 +16,24 @@ namespace GrupoA.Prototipo.Forms.OrdenSeleccion.Model
         public void AgregarOrdenesAlListBox(CheckedListBox listBox)
         {
             listBox.Items.Clear();
+
+            // Crear un diccionario que asocie cada CuitCliente con su criticidad
             var criticidadDict = ContratoArchivo.Contratos.ToDictionary(c => c.CuitCliente, c => c.Criticidad);
 
-            foreach (var orden in OrdenPreparacionArchivo.OrdenesPreparacion.Where(o => o.Estado == EstadosOrdenPreparacion.Pendiente))
+            // Ordenar las órdenes por criticidad
+            var ordenesOrdenadas = OrdenPreparacionArchivo.OrdenesPreparacion
+                .Where(o => o.Estado == EstadosOrdenPreparacion.Pendiente)
+                .OrderByDescending(o => criticidadDict[o.CuitCliente])
+                .ToList();
+
+            // Agregar las órdenes al listBox
+            foreach (var orden in ordenesOrdenadas)
             {
                 var criticidad = criticidadDict[orden.CuitCliente];
                 listBox.Items.Add($"Orden {orden.NroOrdenPrep} - Prioridad: {criticidad}");
             }
 
+            // Mostrar mensaje si no hay órdenes pendientes
             if (listBox.Items.Count == 0)
             {
                 MessageBox.Show("No hay órdenes de preparación pendientes para seleccionar." +

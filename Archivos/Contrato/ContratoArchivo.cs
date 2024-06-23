@@ -1,5 +1,4 @@
-﻿using GrupoA.Prototipo.Archivos.Criticidad;
-using GrupoA.Prototipo.Forms.OrdenPreparacion;
+﻿using GrupoA.Prototipo.Forms.OrdenPreparacion;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,4 @@
-﻿namespace GrupoA.Prototipo.Archivos.Criticidad
+﻿namespace GrupoA.Prototipo.Archivos.Contrato
 {
     public enum ValorCriticidad
     {
