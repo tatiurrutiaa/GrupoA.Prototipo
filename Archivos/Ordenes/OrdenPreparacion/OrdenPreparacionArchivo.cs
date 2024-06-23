@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using GrupoA.Prototipo.Archivos.Estados;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

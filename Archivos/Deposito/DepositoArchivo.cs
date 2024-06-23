@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GrupoA.Prototipo.Archivos;
+namespace GrupoA.Prototipo.Archivos.Deposito;
 internal class DepositoArchivo
 {
     public static ReadOnlyCollection<DepositoEntidad> Depositos => depositos.AsReadOnly();

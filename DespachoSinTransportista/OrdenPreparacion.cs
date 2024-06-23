@@ -1,4 +1,5 @@
-﻿using GrupoA.Prototipo.Archivos;
+﻿using GrupoA.Prototipo.Archivos.Estados;
+using GrupoA.Prototipo.Archivos.Mercaderias;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GrupoA.Prototipo.DespachoSinTransportista
 {
-    public class OrdenPreparacion
+    internal class OrdenPreparacion
     {
         public int NroOrdenPrep { get; internal set; }
         public string CuitCliente { get; internal set; }

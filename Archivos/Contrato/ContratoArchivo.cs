@@ -1,4 +1,5 @@
-﻿using GrupoA.Prototipo.OrdenPreparacion;
+﻿using GrupoA.Prototipo.Archivos.Criticidad;
+using GrupoA.Prototipo.OrdenPreparacion;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GrupoA.Prototipo.Archivos;
+namespace GrupoA.Prototipo.Archivos.Contrato;
 internal static class ContratoArchivo
 {
     public static ReadOnlyCollection<ContratoEntidad> Contratos => contratos.AsReadOnly();

@@ -1,4 +1,6 @@
 ﻿using GrupoA.Prototipo.Archivos;
+using GrupoA.Prototipo.Archivos.Estados;
+using GrupoA.Prototipo.Archivos.Mercaderias;
 using GrupoA.Prototipo.RetiroStock;
 using System;
 using System.Collections.Generic;
@@ -10,7 +12,7 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
 {
     public class EmpaquetarMercaderiaModel
     {
-        /*public List<RetiroStock.OrdenPreparacion> OrdenesPreparacion { get; set; }
+        public List<RetiroStock.OrdenPreparacion> OrdenesPreparacion { get; set; }
 
         public EmpaquetarMercaderiaModel()
         {
@@ -115,17 +117,6 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                 }
             };
         }
-        public List<Mercaderia> mercaderia = new()
-        {
-            new() {CodProducto = 1, DescProducto = "bolsas de cemento"},
-            new() {CodProducto = 2, DescProducto = "termos 1lt"},
-            new() {CodProducto = 3, DescProducto = "bandejas de madera"},
-            new() {CodProducto = 4, DescProducto = "tubos PVC"},
-            new() {CodProducto = 5, DescProducto = "sacos de arena"},
-            new() {CodProducto = 6, DescProducto = "latas de pintura"},
-            new() {CodProducto = 7, DescProducto = "ladrillos"},
-            new() {CodProducto = 8, DescProducto = "heladeras"},
-        };*/
 
         public int OrdenEnPantalla()
         {
@@ -136,31 +127,40 @@ namespace GrupoA.Prototipo.EmpaquetarMercaderia
                 .FirstOrDefault();
         }
 
-        public static List<OrdenPreparacion> ObtenerOrdenesSeleccionadas()
+        public List<Mercaderia> mercaderia = new()
         {
-            var ordenes = new List<OrdenPreparacion>();
-            foreach (var OrdenPreparacionEntidad in OrdenPreparacionArchivo.OrdenesPreparacion
-                    .Where(o => o.Estado == EstadoOrdenPreparacion.Seleccionada).ToList())
+            new() {CodProducto = 1, DescProducto = "bolsas de cemento"},
+            new() {CodProducto = 2, DescProducto = "termos 1lt"},
+            new() {CodProducto = 3, DescProducto = "bandejas de madera"},
+            new() {CodProducto = 4, DescProducto = "tubos PVC"},
+            new() {CodProducto = 5, DescProducto = "sacos de arena"},
+            new() {CodProducto = 6, DescProducto = "latas de pintura"},
+            new() {CodProducto = 7, DescProducto = "ladrillos"},
+            new() {CodProducto = 8, DescProducto = "heladeras"},
+        };
+
+        public List<RetiroStock.OrdenPreparacion> ObtenerOrdenesSeleccionadas()
+        {
+            var ordenesSeleccionadas = OrdenesPreparacion.Where(o => o.Estado == "Seleccionadas").ToList();
+
+            foreach (var orden in ordenesSeleccionadas)
             {
-                var orden = new OrdenPreparacion();
-                orden.NroOrdenPrep = OrdenPreparacionEntidad.NroOrdenPrep;
-                orden.CuitCliente = OrdenPreparacionEntidad.CuitCliente;
-                orden.Estado = OrdenPreparacionEntidad.Estado;
-                orden.Fecha = OrdenPreparacionEntidad.Fecha;
-                orden.DNITransportista = OrdenPreparacionEntidad.DNITransportista;
-                orden.NroDeposito = OrdenPreparacionEntidad.NroDeposito;
-                orden.mercaderiaDetalle = OrdenPreparacionEntidad.mercaderiaDetalle;
-                ordenes.Add(orden);
+                foreach (var mercaderiaDetalle in orden.mercaderiaDetalle)
+                {
+                    var descProducto = mercaderia.FirstOrDefault(m => m.CodProducto
+                    == mercaderiaDetalle.CodProducto)?.DescProducto;
+                    mercaderiaDetalle.DescProducto = descProducto ?? "Descripción no encontrada";
+                }
             }
-            return ordenes;
+            return ordenesSeleccionadas;
         }
 
-        public void CambiarEstadoOrden(int nroOrdenPrep)
+        public void CambiarEstadoOrden(int nroOrdenPrep, string nuevoEstado)
         {
-            var orden = OrdenPreparacionArchivo.OrdenesPreparacion.FirstOrDefault(o => o.NroOrdenPrep == nroOrdenPrep);
+            var orden = OrdenesPreparacion.FirstOrDefault(o => o.NroOrdenPrep == nroOrdenPrep);
             if (orden != null)
             {
-                OrdenPreparacionArchivo.ModificarEstado(orden, EstadoOrdenPreparacion.Preparada);
+                orden.Estado = nuevoEstado;
             }
         }
 

@@ -1,4 +1,7 @@
 ﻿using GrupoA.Prototipo.Archivos;
+using GrupoA.Prototipo.Archivos.Contrato;
+using GrupoA.Prototipo.Archivos.Estados;
+using GrupoA.Prototipo.Archivos.Ordenes.OrdenSeleccion;
 using GrupoA.Prototipo.RetiroStock;
 using System;
 using System.Collections.Generic;

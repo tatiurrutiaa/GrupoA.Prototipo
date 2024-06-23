@@ -1,5 +1,11 @@
 ﻿using GrupoA.Prototipo.Archivos;
+using GrupoA.Prototipo.Archivos.Cliente;
+using GrupoA.Prototipo.Archivos.Deposito;
+using GrupoA.Prototipo.Archivos.Estados;
+using GrupoA.Prototipo.Archivos.Mercaderias;
+using GrupoA.Prototipo.Archivos.Stock;
 using GrupoA.Prototipo.EmpaquetarMercaderia;
+using GrupoA.Prototipo.OrdenPreparacion.Clases;
 using GrupoA.Prototipo.RetiroStock;
 using System;
 using System.Collections.Generic;

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GrupoA.Prototipo.Archivos;
+namespace GrupoA.Prototipo.Archivos.Ordenes.OrdenEntrega;
 internal class OrdenEntregaArchivo
 {
     public static ReadOnlyCollection<OrdenEntregaEntidad> OrdenesEntrega => ordenesentrega.AsReadOnly();

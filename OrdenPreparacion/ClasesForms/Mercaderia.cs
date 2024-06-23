@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GrupoA.Prototipo.OrdenPreparacion;
+namespace GrupoA.Prototipo.OrdenPreparacion.Clases;
 internal class Mercaderia
 {
     public int CodProducto { get; internal set; }

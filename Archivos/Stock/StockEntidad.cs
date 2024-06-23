@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GrupoA.Prototipo.Archivos.Estados;
 
-namespace GrupoA.Prototipo.Archivos;
+namespace GrupoA.Prototipo.Archivos.Stock;
 internal class StockEntidad
 {
     public string CuitCliente { get; set; }

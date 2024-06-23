@@ -1,4 +1,5 @@
-﻿using GrupoA.Prototipo.Archivos;
+﻿using GrupoA.Prototipo.Archivos.Estados;
+using GrupoA.Prototipo.Archivos.Mercaderias;
 using System;
 using System.Collections.Generic;
 using System.Linq;

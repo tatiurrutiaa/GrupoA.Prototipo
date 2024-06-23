@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GrupoA.Prototipo.Archivos;
-internal class DepositoEntidad
+namespace GrupoA.Prototipo.OrdenPreparacion.Clases;
+internal class Deposito
 {
-    public int NroDeposito { get; set; }
+    public int NumDeposito { get; set; }
     public string NombreDeposito { get; set; }
 }

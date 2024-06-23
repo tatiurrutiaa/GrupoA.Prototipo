@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using GrupoA.Prototipo.Archivos;
+using GrupoA.Prototipo.Archivos.Estados;
+using GrupoA.Prototipo.Archivos.Ordenes.OrdenEntrega;
 using GrupoA.Prototipo.RetiroStock;
 
 namespace GrupoA.Prototipo.OrdenesdeEntrega

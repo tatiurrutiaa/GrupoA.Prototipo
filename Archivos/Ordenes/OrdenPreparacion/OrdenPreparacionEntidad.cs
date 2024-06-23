@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GrupoA.Prototipo.Archivos.Estados;
+using GrupoA.Prototipo.Archivos.Mercaderias;
 
 namespace GrupoA.Prototipo.Archivos;
 internal class OrdenPreparacionEntidad

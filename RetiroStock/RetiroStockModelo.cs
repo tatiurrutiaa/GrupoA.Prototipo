@@ -1,4 +1,8 @@
 ﻿using GrupoA.Prototipo.Archivos;
+using GrupoA.Prototipo.Archivos.Estados;
+using GrupoA.Prototipo.Archivos.Mercaderias;
+using GrupoA.Prototipo.Archivos.Ordenes.OrdenSeleccion;
+using GrupoA.Prototipo.Archivos.Stock;
 using GrupoA.Prototipo.EmpaquetarMercaderia;
 using GrupoA.Prototipo.RetiroStock;
 using System;
