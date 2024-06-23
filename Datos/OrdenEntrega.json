@@ -1,0 +1,22 @@
+[
+  {
+    "NroOrdenEntrega": 1,
+    "NroOrdenPreparacion": [ 1, 2, 3, 4, 5 ]
+  },
+  {
+    "NroOrdenEntrega": 2,
+    "NroOrdenPreparacion": [ 6, 7, 8, 9, 10, 13, 14 ]
+  },
+  {
+    "NroOrdenEntrega": 3,
+    "NroOrdenPreparacion": [ 11, 12 ]
+  },
+  {
+    "NroOrdenEntrega": 4,
+    "NroOrdenPreparacion": [ 15, 16, 17 ]
+  },
+  {
+    "NroOrdenEntrega": 5,
+    "NroOrdenPreparacion": [ 18, 19, 20 ]
+  }
+]

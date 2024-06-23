@@ -3,6 +3,6 @@
     internal class ContratoEntidad
     {
         public string CuitCliente { get; set; }
-        public string Criticidad { get; set; }
+        public ValorCriticidad Criticidad { get; set; }
     }
 }

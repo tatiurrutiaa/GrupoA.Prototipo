@@ -1,0 +1,18 @@
+[
+  {
+    "CuitCliente": "27-12345678-5",
+    "RazonSocial": "Endre SRL"
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "RazonSocial": "Constructora ABC SA"
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "RazonSocial": "CRL SA"
+  },
+  {
+    "CuitCliente": "33-87654321-0",
+    "RazonSocial": "Obras Patagonicas SRL"
+  }
+]

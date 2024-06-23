@@ -8,5 +8,5 @@ namespace GrupoA.Prototipo.Archivos;
 public class MercaderiaEntidad
 {
     public int CodProducto { get; set; }
-    public string Descripcion { get; set; }
+    public string DescProducto { get; set; }
 }

@@ -26,7 +26,7 @@ internal class OrdenPreparacionModel
     public List<Mercaderia> Mercaderias => MercaderiaArchivo.Mercaderias.Select(m => new Mercaderia
     {
         CodProducto = m.CodProducto,
-        DescProducto = m.Descripcion
+        DescProducto = m.DescProducto
     }).ToList();
 
     public List<Deposito> Depositos 

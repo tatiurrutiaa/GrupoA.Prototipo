@@ -55,7 +55,7 @@ internal class RetiroStockModelo
                 .OrderBy(s => s.Posicion)
                 .ToList();
 
-            var descProducto = MercaderiaArchivo.Mercaderias.First(m => m.CodProducto == item.CodProducto).Descripcion;
+            var descProducto = MercaderiaArchivo.Mercaderias.First(m => m.CodProducto == item.CodProducto).DescProducto;
 
             foreach (var pos in posiciones)
             {

@@ -10,10 +10,5 @@ namespace GrupoA.Prototipo.Archivos
     {
         public int CodProducto { get; set; }
         public int CantidadProducto { get; set; }
-
-        internal string? FirstOrDefault(Func<object, bool> value)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

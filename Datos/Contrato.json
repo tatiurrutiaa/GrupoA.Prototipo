@@ -1,0 +1,18 @@
+[
+  {
+    "CuitCliente": "27-12345678-5",
+    "Criticidad": "Alta"
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Criticidad": "Media"
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Criticidad": "Baja"
+  },
+  {
+    "CuitCliente": "33-87654321-0",
+    "Criticidad": "Alta"
+  }
+]

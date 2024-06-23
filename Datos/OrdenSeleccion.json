@@ -1,0 +1,67 @@
+[
+  {
+    "NroOrdenSelec": 1,
+    "NroOrdenesPreparacion": [ 1, 2, 3, 4, 5 ],
+    "Estado": "Seleccionada"
+  },
+  {
+    "NroOrdenSelec": 2,
+    "NroOrdenesPreparacion": [ 6, 7, 8, 9, 10, 13, 14 ],
+    "Estado": "Seleccionada"
+  },
+  {
+    "NroOrdenSelec": 3,
+    "NroOrdenesPreparacion": [ 11, 12 ],
+    "Estado": "Seleccionada"
+  },
+  {
+    "NroOrdenSelec": 4,
+    "NroOrdenesPreparacion": [ 15, 16, 17 ],
+    "Estado": "Seleccionada"
+  },
+  {
+    "NroOrdenSelec": 5,
+    "NroOrdenesPreparacion": [ 18, 19, 20 ],
+    "Estado": "Seleccionada"
+  },
+  {
+    "NroOrdenSelec": 6,
+    "NroOrdenesPreparacion": [ 21, 22, 23, 24, 25 ],
+    "Estado": "Seleccionada"
+  },
+  {
+    "NroOrdenSelec": 7,
+    "NroOrdenesPreparacion": [ 26, 27, 28, 29, 30, 33, 34 ],
+    "Estado": "Seleccionada"
+  },
+  {
+    "NroOrdenSelec": 8,
+    "NroOrdenesPreparacion": [ 31, 32 ],
+    "Estado": "Seleccionada"
+  },
+  {
+    "NroOrdenSelec": 9,
+    "NroOrdenesPreparacion": [ 35, 36, 37 ],
+    "Estado": "Seleccionada"
+  },
+  {
+    "NroOrdenSelec": 10,
+    "NroOrdenesPreparacion": [ 38, 39, 40 ],
+    "Estado": "Seleccionada"
+  },
+  {
+    "NroOrdenSelec": 11,
+    "NroOrdenesPreparacion": [ 41, 42, 43 ],
+    "Estado": "EnSeleccion"
+  },
+  {
+    "NroOrdenSelec": 12,
+    "NroOrdenesPreparacion": [ 44, 45, 46, 47 ],
+    "Estado": "EnSeleccion"
+  },
+  {
+    "NroOrdenSelec": 13,
+    "NroOrdenesPreparacion": [ 48, 49, 50 ],
+    "Estado": "EnSeleccion"
+  }
+]
