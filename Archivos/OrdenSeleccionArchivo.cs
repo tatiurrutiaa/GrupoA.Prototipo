@@ -15,9 +15,9 @@ internal static class OrdenSeleccionArchivo
 
     static OrdenSeleccionArchivo()
     {
-        if (File.Exists(@"OrdenSeleccion.json"))
+        if (File.Exists(@"Datos\OrdenSeleccion.json"))
         {
-            var contenido = File.ReadAllText(@"OrdenSeleccion.json");
+            var contenido = File.ReadAllText(@"Datos\OrdenSeleccion.json");
             ordenesseleccion = JsonConvert.DeserializeObject<List<OrdenSeleccionEntidad>>(contenido);
         }
         else
@@ -29,7 +29,7 @@ internal static class OrdenSeleccionArchivo
     public static void GrabarDatos()
     {
         var contenido = JsonConvert.SerializeObject(ordenesseleccion);
-        File.WriteAllText(@"OrdenSeleccion.json", contenido);
+        File.WriteAllText(@"Datos\OrdenSeleccion.json", contenido);
     }
 
     public static void AgregarOrdenSeleccion(OrdenSeleccionEntidad ordenseleccion)

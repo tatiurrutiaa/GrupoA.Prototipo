@@ -15,9 +15,9 @@ internal class OrdenPreparacionArchivo
 
     static OrdenPreparacionArchivo()
     {
-        if (File.Exists(@"OrdenPreparacion.json"))
+        if (File.Exists(@"Datos\OrdenPreparacion.json"))
         {
-            var contenido = File.ReadAllText(@"OrdenPreparacion.json");
+            var contenido = File.ReadAllText(@"Datos\OrdenPreparacion.json");
             ordenespreparacion = JsonConvert.DeserializeObject<List<OrdenPreparacionEntidad>>(contenido);
         }
         else
@@ -29,7 +29,7 @@ internal class OrdenPreparacionArchivo
     public static void GrabarDatos()
     {
         var contenido = JsonConvert.SerializeObject(ordenespreparacion);
-        File.WriteAllText(@"OrdenPreparacion.json", contenido);
+        File.WriteAllText(@"Datos\OrdenPreparacion.json", contenido);
     }
 
     public static void AgregarOrdenPreparacion(OrdenPreparacionEntidad ordenpreparacion)

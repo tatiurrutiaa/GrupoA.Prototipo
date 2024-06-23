@@ -15,9 +15,9 @@ internal class DepositoArchivo
 
     static DepositoArchivo()
     {
-        if (File.Exists(@"Deposito.json"))
+        if (File.Exists(@"Datos\Deposito.json"))
         {
-            var contenido = File.ReadAllText(@"Deposito.json");
+            var contenido = File.ReadAllText(@"Datos\Deposito.json");
             depositos = JsonConvert.DeserializeObject<List<DepositoEntidad>>(contenido);
         }
         else
@@ -29,6 +29,6 @@ internal class DepositoArchivo
     public static void GrabarDatos()
     {
         var contenido = JsonConvert.SerializeObject(depositos);
-        File.WriteAllText(@"Deposito.json", contenido);
+        File.WriteAllText(@"Datos\Deposito.json", contenido);
     }
 }

@@ -16,9 +16,9 @@ namespace GrupoA.Prototipo.Archivos
 
         static RemitoArchivo()
         {
-            if (File.Exists(@"Remito.json"))
+            if (File.Exists(@"Datos\Remito.json"))
             {
-                var contenido = File.ReadAllText(@"Remito.json");
+                var contenido = File.ReadAllText(@"Datos\Remito.json");
                 remitos = JsonConvert.DeserializeObject<List<RemitoEntidad>>(contenido);
             }
             else
@@ -30,7 +30,7 @@ namespace GrupoA.Prototipo.Archivos
         public static void GrabarDatos()
         {
             var contenido = JsonConvert.SerializeObject(remitos);
-            File.WriteAllText("@Remito.json", contenido);
+            File.WriteAllText(@"Datos\Remito.json", contenido);
         }
 
         //TODAS LAS MODIFICACIONES LAS HACEMOS A TRAVES DE METODOS EN ESTA CLASE
