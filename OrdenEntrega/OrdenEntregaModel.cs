@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using GrupoA.Prototipo.Archivos;
-using GrupoA.Prototipo.OrdenEntrega;
 using GrupoA.Prototipo.RetiroStock;
 
 namespace GrupoA.Prototipo.OrdenesdeEntrega
@@ -53,21 +52,23 @@ namespace GrupoA.Prototipo.OrdenesdeEntrega
                     var orden = OrdenPreparacionArchivo.OrdenesPreparacion.FirstOrDefault(o => o.NroOrdenPrep == ordenNum);
                     if (orden != null)
                     {
-                        orden.Estado = "en despacho";
+                        //orden.Estado = "en despacho";
+                        OrdenPreparacionArchivo.ModificarEstado(orden, EstadoOrdenPreparacion.EnDespacho);
                         detalleOrden.Add(ordenNum);
                     }
                 }
 
                 // Obtener el número de orden de entrega más alto existente y sumar 1
-                int nuevoNroOrdenEntrega = (ordenesEntrega.Any() ? ordenesEntrega.Max(o => o.NroOrdenEntrega) : 0) + 1;
+                int nuevoNroOrdenEntrega = (OrdenEntregaArchivo.OrdenesEntrega.Any() ? OrdenEntregaArchivo.OrdenesEntrega.Max(o => o.NroOrdenEntrega) : 0) + 1;
 
                 // Crear una nueva orden de entrega
-                GrupoA.Prototipo.OrdenEntrega.OrdenEntrega nuevaOrdenEntrega = new()
+                OrdenEntregaEntidad nuevaOrdenEntrega = new()
                 {
                     NroOrdenEntrega = nuevoNroOrdenEntrega,
                     NroOrdenPreparacion = detalleOrden
                 };
-                ordenesEntrega.Add(nuevaOrdenEntrega);
+                //ordenesEntrega.Add(nuevaOrdenEntrega);
+                OrdenEntregaArchivo.AgregarOrdenEntrega(nuevaOrdenEntrega);
 
                 // Mostrar el mensaje con las órdenes en líneas separadas
                 string selectedOrdersString = string.Join(Environment.NewLine,

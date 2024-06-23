@@ -89,12 +89,6 @@ namespace GrupoA.Prototipo
 
         #endregion
 
-        #region Listas  
-
-
-
-        #endregion
-
         #region Muestra Depositos
         private void CargarDepositosComboBox()
         {
