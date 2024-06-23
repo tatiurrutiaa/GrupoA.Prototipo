@@ -11,7 +11,7 @@ internal class OrdenPreparacionEntidad
 {
     public int NroOrdenPrep { get; set; }
     public string CuitCliente { get; set; }
-    public EstadoOrdenPreparacion Estado { get; set; }
+    public EstadosOrdenPreparacion Estado { get; set; }
     public DateTime Fecha { get; set; }
     public int? DNITransportista { get; set; }
     public int NroDeposito { get; set; }

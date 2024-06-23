@@ -37,7 +37,7 @@ internal class OrdenPreparacionArchivo
     {
         ordenespreparacion.Add(ordenpreparacion);
     }
-    public static void ModificarEstado(OrdenPreparacionEntidad orden, EstadoOrdenPreparacion estado)
+    public static void ModificarEstado(OrdenPreparacionEntidad orden, EstadosOrdenPreparacion estado)
     {
         orden.Estado = estado;
     }
