@@ -1,4 +1,11 @@
 using GrupoA.Prototipo.Archivos;
+using GrupoA.Prototipo.Archivos.Cliente;
+using GrupoA.Prototipo.Archivos.Contrato;
+using GrupoA.Prototipo.Archivos.Deposito;
+using GrupoA.Prototipo.Archivos.Mercaderias;
+using GrupoA.Prototipo.Archivos.Ordenes.OrdenEntrega;
+using GrupoA.Prototipo.Archivos.Ordenes.OrdenSeleccion;
+using GrupoA.Prototipo.Archivos.Stock;
 
 namespace GrupoA.Prototipo
 {
@@ -14,6 +21,9 @@ namespace GrupoA.Prototipo
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new IniciarSesionForms());
+            ClienteArchivo.GrabarDatos();
+            ContratoArchivo.GrabarDatos();
+            DepositoArchivo.GrabarDatos();
             MercaderiaArchivo.GrabarDatos();
             OrdenEntregaArchivo.GrabarDatos();
             OrdenPreparacionArchivo.GrabarDatos();
