@@ -13,7 +13,7 @@
     "Cantidad": 400,
     "CodProducto": 1,
     "Estado": 0,
-    "NroDeposito": 1
+    "NroDeposito": 2
   },
   {
     "CuitCliente": "30-87654321-0",
@@ -29,7 +29,7 @@
     "Cantidad": 150,
     "CodProducto": 1,
     "Estado": 1,
-    "NroDeposito": 1
+    "NroDeposito": 2
   },
   {
     "CuitCliente": "27-12345678-5",
@@ -45,7 +45,7 @@
     "Cantidad": 300,
     "CodProducto": 2,
     "Estado": 1,
-    "NroDeposito": 1
+    "NroDeposito": 3
   },
   {
     "CuitCliente": "27-12345678-5",
@@ -61,7 +61,7 @@
     "Cantidad": 900,
     "CodProducto": 3,
     "Estado": 1,
-    "NroDeposito": 1
+    "NroDeposito": 2
   },
   {
     "CuitCliente": "22-12345678-9",
@@ -77,7 +77,7 @@
     "Cantidad": 400,
     "CodProducto": 3,
     "Estado": 1,
-    "NroDeposito": 1
+    "NroDeposito": 2
   },
   {
     "CuitCliente": "22-12345678-9",
@@ -93,7 +93,7 @@
     "Cantidad": 400,
     "CodProducto": 4,
     "Estado": 1,
-    "NroDeposito": 1
+    "NroDeposito": 3
   },
   {
     "CuitCliente": "22-12345678-9",
@@ -101,7 +101,7 @@
     "Cantidad": 400,
     "CodProducto": 4,
     "Estado": 1,
-    "NroDeposito": 1
+    "NroDeposito": 2
   },
   {
     "CuitCliente": "22-12345678-9",
@@ -109,7 +109,7 @@
     "Cantidad": 400,
     "CodProducto": 4,
     "Estado": 1,
-    "NroDeposito": 1
+    "NroDeposito": 2
   },
   {
     "CuitCliente": "27-12345678-5",
@@ -117,7 +117,7 @@
     "Cantidad": 400,
     "CodProducto": 4,
     "Estado": 1,
-    "NroDeposito": 1
+    "NroDeposito": 3
   },
   {
     "CuitCliente": "27-12345678-5",
@@ -141,7 +141,7 @@
     "Cantidad": 500,
     "CodProducto": 5,
     "Estado": 1,
-    "NroDeposito": 1
+    "NroDeposito": 2
   },
   {
     "CuitCliente": "27-12345678-5",
@@ -181,7 +181,7 @@
     "Cantidad": 300,
     "CodProducto": 7,
     "Estado": 0,
-    "NroDeposito": 1
+    "NroDeposito": 2
   },
   {
     "CuitCliente": "30-87654321-0",
@@ -189,7 +189,7 @@
     "Cantidad": 300,
     "CodProducto": 7,
     "Estado": 1,
-    "NroDeposito": 1
+    "NroDeposito": 2
   },
   {
     "CuitCliente": "30-87654321-0",
@@ -197,7 +197,7 @@
     "Cantidad": 500,
     "CodProducto": 8,
     "Estado": 0,
-    "NroDeposito": 1
+    "NroDeposito": 3
   },
   {
     "CuitCliente": "30-87654321-0",
@@ -205,7 +205,7 @@
     "Cantidad": 500,
     "CodProducto": 8,
     "Estado": 1,
-    "NroDeposito": 1
+    "NroDeposito": 3
   },
   {
     "CuitCliente": "30-87654321-0",
@@ -245,7 +245,7 @@
     "Cantidad": 500,
     "CodProducto": 9,
     "Estado": 1,
-    "NroDeposito": 1
+    "NroDeposito": 2
   },
   {
     "CuitCliente": "22-12345678-9",
@@ -253,7 +253,7 @@
     "Cantidad": 500,
     "CodProducto": 9,
     "Estado": 1,
-    "NroDeposito": 1
+    "NroDeposito": 3
   },
   {
     "CuitCliente": "30-87654321-0",
@@ -301,7 +301,7 @@
     "Cantidad": 700,
     "CodProducto": 10,
     "Estado": 1,
-    "NroDeposito": 1
+    "NroDeposito": 3
   },
   {
     "CuitCliente": "27-12345678-5",
@@ -309,7 +309,7 @@
     "Cantidad": 400,
     "CodProducto": 1,
     "Estado": 2,
-    "NroDeposito": 1
+    "NroDeposito": 2
   },
   {
     "CuitCliente": "27-12345678-5",
@@ -317,7 +317,7 @@
     "Cantidad": 120,
     "CodProducto": 2,
     "Estado": 2,
-    "NroDeposito": 1
+    "NroDeposito": 3
   },
   {
     "CuitCliente": "27-12345678-5",
@@ -325,7 +325,7 @@
     "Cantidad": 200,
     "CodProducto": 3,
     "Estado": 2,
-    "NroDeposito": 1
+    "NroDeposito": 2
   },
   {
     "CuitCliente": "22-12345678-9",
@@ -333,7 +333,7 @@
     "Cantidad": 200,
     "CodProducto": 4,
     "Estado": 2,
-    "NroDeposito": 1
+    "NroDeposito": 2
   },
   {
     "CuitCliente": "27-12345678-5",
@@ -366,5 +366,125 @@
     "CodProducto": 3,
     "Estado": 3,
     "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "33-87654321-0",
+    "Posicion": "01-12-1",
+    "Cantidad": 400,
+    "CodProducto": 1,
+    "Estado": 1,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "33-87654321-0",
+    "Posicion": "01-12-2",
+    "Cantidad": 400,
+    "CodProducto": 1,
+    "Estado": 0,
+    "NroDeposito": 2
+  },
+  {
+    "CuitCliente": "33-87654321-0",
+    "Posicion": "01-12-3",
+    "Cantidad": 400,
+    "CodProducto": 1,
+    "Estado": 1,
+    "NroDeposito": 3
+  },
+  {
+    "CuitCliente": "33-87654321-0",
+    "Posicion": "01-12-4",
+    "Cantidad": 150,
+    "CodProducto": 1,
+    "Estado": 1,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "33-87654321-0",
+    "Posicion": "02-03-1",
+    "Cantidad": 300,
+    "CodProducto": 2,
+    "Estado": 1,
+    "NroDeposito": 2
+  },
+  {
+    "CuitCliente": "33-87654321-0",
+    "Posicion": "02-03-2",
+    "Cantidad": 300,
+    "CodProducto": 2,
+    "Estado": 1,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "33-87654321-0",
+    "Posicion": "02-03-3",
+    "Cantidad": 300,
+    "CodProducto": 2,
+    "Estado": 1,
+    "NroDeposito": 3
+  },
+  {
+    "CuitCliente": "33-87654321-0",
+    "Posicion": "05-20-3",
+    "Cantidad": 900,
+    "CodProducto": 3,
+    "Estado": 1,
+    "NroDeposito": 2
+  },
+  {
+    "CuitCliente": "33-87654321-0",
+    "Posicion": "05-20-4",
+    "Cantidad": 400,
+    "CodProducto": 3,
+    "Estado": 1,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "33-87654321-0",
+    "Posicion": "05-20-5",
+    "Cantidad": 400,
+    "CodProducto": 3,
+    "Estado": 1,
+    "NroDeposito": 3
+  },
+  {
+    "CuitCliente": "33-87654321-0",
+    "Posicion": "07-23-1",
+    "Cantidad": 400,
+    "CodProducto": 4,
+    "Estado": 1,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "33-87654321-0",
+    "Posicion": "07-23-2",
+    "Cantidad": 400,
+    "CodProducto": 4,
+    "Estado": 1,
+    "NroDeposito": 2
+  },
+  {
+    "CuitCliente": "33-87654321-0",
+    "Posicion": "07-23-3",
+    "Cantidad": 400,
+    "CodProducto": 4,
+    "Estado": 1,
+    "NroDeposito": 3
+  },
+  {
+    "CuitCliente": "33-87654321-0",
+    "Posicion": "07-23-4",
+    "Cantidad": 400,
+    "CodProducto": 4,
+    "Estado": 1,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "33-87654321-0",
+    "Posicion": "11-02-1",
+    "Cantidad": 500,
+    "CodProducto": 5,
+    "Estado": 1,
+    "NroDeposito": 2
   }
 ]

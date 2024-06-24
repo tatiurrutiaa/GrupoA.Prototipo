@@ -94,6 +94,16 @@ namespace GrupoA.Prototipo
             string cuit = this.textBoxCUITCliente.Text;
             var listadepositos = modelo.ObtenerDepositosPorCliente(cuit);
 
+            // Depuración: Verificar lista de depósitos
+            if (listadepositos.Count == 0)
+            {
+                MessageBox.Show("No se encontraron depósitos para el cliente con CUIT: " + cuit);
+            }
+            //else
+            //{
+            //    MessageBox.Show("Se encontraron " + listadepositos.Count + " depósitos para el cliente con CUIT: " + cuit);
+            //}
+
             comboBoxDeposito.Items.Clear();
             foreach (var deposito in listadepositos)
             {
