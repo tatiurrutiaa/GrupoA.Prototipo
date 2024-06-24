@@ -4,7 +4,7 @@
     "Posicion": "01-12-1",
     "Cantidad": 400,
     "CodProducto": 1,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -12,7 +12,7 @@
     "Posicion": "01-12-2",
     "Cantidad": 400,
     "CodProducto": 1,
-    "Estado": "0",
+    "Estado": 0,
     "NroDeposito": 1
   },
   {
@@ -20,7 +20,7 @@
     "Posicion": "01-12-3",
     "Cantidad": 400,
     "CodProducto": 1,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -28,7 +28,7 @@
     "Posicion": "01-12-4",
     "Cantidad": 150,
     "CodProducto": 1,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -36,7 +36,7 @@
     "Posicion": "02-03-1",
     "Cantidad": 300,
     "CodProducto": 2,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -44,7 +44,7 @@
     "Posicion": "02-03-2",
     "Cantidad": 300,
     "CodProducto": 2,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -52,7 +52,7 @@
     "Posicion": "02-03-3",
     "Cantidad": 300,
     "CodProducto": 2,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -60,7 +60,7 @@
     "Posicion": "05-20-3",
     "Cantidad": 900,
     "CodProducto": 3,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -68,7 +68,7 @@
     "Posicion": "05-20-4",
     "Cantidad": 400,
     "CodProducto": 3,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -76,7 +76,7 @@
     "Posicion": "05-20-5",
     "Cantidad": 400,
     "CodProducto": 3,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -84,7 +84,7 @@
     "Posicion": "07-23-1",
     "Cantidad": 400,
     "CodProducto": 4,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -92,7 +92,7 @@
     "Posicion": "07-23-2",
     "Cantidad": 400,
     "CodProducto": 4,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -100,7 +100,7 @@
     "Posicion": "07-23-3",
     "Cantidad": 400,
     "CodProducto": 4,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -108,7 +108,7 @@
     "Posicion": "07-23-4",
     "Cantidad": 400,
     "CodProducto": 4,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -116,7 +116,7 @@
     "Posicion": "07-23-5",
     "Cantidad": 400,
     "CodProducto": 4,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -124,7 +124,7 @@
     "Posicion": "07-23-6",
     "Cantidad": 400,
     "CodProducto": 4,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -132,7 +132,7 @@
     "Posicion": "11-02-1",
     "Cantidad": 500,
     "CodProducto": 5,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -140,7 +140,7 @@
     "Posicion": "11-02-2",
     "Cantidad": 500,
     "CodProducto": 5,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -148,7 +148,7 @@
     "Posicion": "11-02-3",
     "Cantidad": 500,
     "CodProducto": 5,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -156,7 +156,7 @@
     "Posicion": "15-14-3",
     "Cantidad": 600,
     "CodProducto": 6,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -164,7 +164,7 @@
     "Posicion": "15-14-4",
     "Cantidad": 600,
     "CodProducto": 6,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -172,7 +172,7 @@
     "Posicion": "15-14-5",
     "Cantidad": 600,
     "CodProducto": 6,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -180,7 +180,7 @@
     "Posicion": "17-24-2",
     "Cantidad": 300,
     "CodProducto": 7,
-    "Estado": "0",
+    "Estado": 0,
     "NroDeposito": 1
   },
   {
@@ -188,7 +188,7 @@
     "Posicion": "17-24-3",
     "Cantidad": 300,
     "CodProducto": 7,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -196,7 +196,7 @@
     "Posicion": "18-02-1",
     "Cantidad": 500,
     "CodProducto": 8,
-    "Estado": "0",
+    "Estado": 0,
     "NroDeposito": 1
   },
   {
@@ -204,7 +204,7 @@
     "Posicion": "18-02-2",
     "Cantidad": 500,
     "CodProducto": 8,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -212,7 +212,7 @@
     "Posicion": "18-02-3",
     "Cantidad": 500,
     "CodProducto": 8,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -220,7 +220,7 @@
     "Posicion": "18-02-4",
     "Cantidad": 500,
     "CodProducto": 8,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -228,7 +228,7 @@
     "Posicion": "18-02-5",
     "Cantidad": 500,
     "CodProducto": 8,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -236,7 +236,7 @@
     "Posicion": "19-05-1",
     "Cantidad": 500,
     "CodProducto": 9,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -244,7 +244,7 @@
     "Posicion": "19-05-2",
     "Cantidad": 500,
     "CodProducto": 9,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -252,7 +252,7 @@
     "Posicion": "19-05-3",
     "Cantidad": 500,
     "CodProducto": 9,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -260,7 +260,7 @@
     "Posicion": "19-05-4",
     "Cantidad": 500,
     "CodProducto": 9,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -268,7 +268,7 @@
     "Posicion": "19-05-5",
     "Cantidad": 500,
     "CodProducto": 9,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -276,7 +276,7 @@
     "Posicion": "21-43-1",
     "Cantidad": 700,
     "CodProducto": 10,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -284,7 +284,7 @@
     "Posicion": "21-43-2",
     "Cantidad": 700,
     "CodProducto": 10,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -292,7 +292,7 @@
     "Posicion": "21-43-3",
     "Cantidad": 700,
     "CodProducto": 10,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -300,7 +300,7 @@
     "Posicion": "21-43-4",
     "Cantidad": 700,
     "CodProducto": 10,
-    "Estado": "1",
+    "Estado": 1,
     "NroDeposito": 1
   },
   {
@@ -308,7 +308,7 @@
     "Posicion": "01-12-1",
     "Cantidad": 400,
     "CodProducto": 1,
-    "Estado": "2",
+    "Estado": 2,
     "NroDeposito": 1
   },
   {
@@ -316,7 +316,7 @@
     "Posicion": "01-12-2",
     "Cantidad": 120,
     "CodProducto": 2,
-    "Estado": "2",
+    "Estado": 2,
     "NroDeposito": 1
   },
   {
@@ -324,7 +324,7 @@
     "Posicion": "01-12-1",
     "Cantidad": 200,
     "CodProducto": 3,
-    "Estado": "2",
+    "Estado": 2,
     "NroDeposito": 1
   },
   {
@@ -332,7 +332,7 @@
     "Posicion": "01-12-2",
     "Cantidad": 200,
     "CodProducto": 4,
-    "Estado": "2",
+    "Estado": 2,
     "NroDeposito": 1
   },
   {
@@ -340,7 +340,7 @@
     "Posicion": "01-12-1",
     "Cantidad": 300,
     "CodProducto": 5,
-    "Estado": "2",
+    "Estado": 2,
     "NroDeposito": 1
   },
   {
@@ -348,7 +348,7 @@
     "Posicion": "",
     "Cantidad": 500,
     "CodProducto": 1,
-    "Estado": "3",
+    "Estado": 3,
     "NroDeposito": 1
   },
   {
@@ -356,7 +356,7 @@
     "Posicion": "",
     "Cantidad": 400,
     "CodProducto": 2,
-    "Estado": "3",
+    "Estado": 3,
     "NroDeposito": 1
   },
   {
@@ -364,7 +364,7 @@
     "Posicion": "",
     "Cantidad": 400,
     "CodProducto": 3,
-    "Estado": "3",
+    "Estado": 3,
     "NroDeposito": 1
   }
 ]

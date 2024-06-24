@@ -273,7 +273,7 @@ namespace GrupoA.Prototipo
             textBoxCUITCliente.Clear();
             ListaMercaderiaEnOrdenPreparacion.Items.Clear();
             comboBoxDeposito.Items.Clear();
-            comboBoxDeposito.Items.Clear();
+            comboBoxDeposito.ResetText();
             textBoxCantidad.Clear();
             textBoxRazonSocialCliente.Clear();
             textBoxFechaOrden.Clear();
@@ -288,6 +288,7 @@ namespace GrupoA.Prototipo
             textBoxCUITCliente.Clear();
             ListaMercaderiaEnOrdenPreparacion.Items.Clear();
             comboBoxDeposito.Items.Clear();
+            comboBoxDeposito.ResetText();
             comboBoxDeposito.Items.Clear();
             textBoxCantidad.Clear();
             textBoxRazonSocialCliente.Clear();
