@@ -51,8 +51,10 @@ internal class RetiroStockModelo
         foreach (var item in mercaderiaAgrupada)
         {
             var cantidadRequerida = item.CantidadTotal;
+            int deposito = ordenesPrepAsociadas.First().NroDeposito;
             var posiciones = StockArchivo.Stocks
                 .Where(s => s.CuitCliente == item.CuitCliente
+                            && s.NroDeposito == deposito
                             && s.CodProducto == item.CodProducto
                             && s.Estado == EstadosStock.Comprometido)
                 .OrderBy(s => s.Posicion)
