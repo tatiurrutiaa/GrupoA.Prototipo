@@ -24,7 +24,7 @@ internal class RetiroStockModelo
     }
 
     public List<(string Posicion, int Cantidad, int CodProducto, string DescProducto)> MercaderiaARetirar(int nroOrden)
-    {
+    {        
         var ordenesPrepAsociadas = OrdenSeleccionArchivo.OrdenesSeleccion
             .Where(os => os.NroOrdenSelec == nroOrden)
             .SelectMany(os => os.NroOrdenesPreparacion)
@@ -51,8 +51,12 @@ internal class RetiroStockModelo
         foreach (var item in mercaderiaAgrupada)
         {
             var cantidadRequerida = item.CantidadTotal;
+
+            int deposito = ordenesPrepAsociadas.First().NroDeposito;
+
             var posiciones = StockArchivo.Stocks
                 .Where(s => s.CuitCliente == item.CuitCliente
+                            && s.NroDeposito == deposito
                             && s.CodProducto == item.CodProducto
                             && s.Estado == EstadosStock.Comprometido)
                 .OrderBy(s => s.Posicion)
