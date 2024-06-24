@@ -138,11 +138,13 @@ namespace GrupoA.Prototipo.DespachoSinTransportista
             int dnitransportista;
             int.TryParse(textBoxDNI.Text, out dnitransportista);
 
-            modelo.GenerarRemito(dnitransportista, ObtenerOrdenesSeleccionadas());
-            modelo.ActualizarStock(ObtenerOrdenesSeleccionadas());
+            if (modelo.GenerarRemito(dnitransportista, ObtenerOrdenesSeleccionadas()))
+            {
+                modelo.ActualizarStock(ObtenerOrdenesSeleccionadas());
 
-            // Display the checked values
-            DisplayCheckedValues();
+                // Display the checked values
+                DisplayCheckedValues();
+            }
         }
 
         private void DisplayCheckedValues()

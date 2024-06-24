@@ -54,8 +54,16 @@ namespace GrupoA.Prototipo.Forms.DespachoConTransportista.Model
             return ordenes;
         }
 
-        public void GenerarRemito(int dniTransportista, List<int> ordenesSeleccionadas)
+        public bool GenerarRemito(int dniTransportista, List<int> ordenesSeleccionadas)
         {
+            if (OrdenPreparacionArchivo.OrdenesPreparacion
+                          .Where(o => ordenesSeleccionadas.Contains(o.NroOrdenPrep))
+                          .GroupBy(o => o.NroDeposito)
+                          .Count() > 1)
+            {
+                MessageBox.Show("Seleccione órdenes del mismo depósito.");
+                return false;
+            }
             // Obtener el último número de remito y sumarle uno
             int nuevoNroRemito = RemitoArchivo.Remitos.Any() ? RemitoArchivo.Remitos.Max(r => r.NroRemito) + 1 : 1;
             // Obtener el CUIT del cliente de la primera orden seleccionada
@@ -74,6 +82,7 @@ namespace GrupoA.Prototipo.Forms.DespachoConTransportista.Model
             };
 
             RemitoArchivo.AgregarRemito(nuevoRemito);
+            return true;
         }
         public void ActualizarStock(List<int> ordenesSeleccionadas)
         {

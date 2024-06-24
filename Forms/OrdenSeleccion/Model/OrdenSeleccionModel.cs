@@ -16,19 +16,31 @@ namespace GrupoA.Prototipo.Forms.OrdenSeleccion.Model
         public void AgregarOrdenesAlListBox(CheckedListBox listBox)
         {
             listBox.Items.Clear();
-
             // Crear un diccionario que asocie cada CuitCliente con su criticidad
             var criticidadDict = ContratoArchivo.Contratos.ToDictionary(c => c.CuitCliente, c => c.Criticidad);
 
-            // Ordenar las órdenes por criticidad
-            var ordenesOrdenadas = OrdenPreparacionArchivo.OrdenesPreparacion
-                .Where(o => o.Estado == EstadosOrdenPreparacion.Pendiente)
-                .OrderByDescending(o => criticidadDict[o.CuitCliente])
-                .ToList();
+            int? deposito = null;
+
+            //// Ordenar las órdenes por criticidad
+            //var ordenesOrdenadas = OrdenPreparacionArchivo.OrdenesPreparacion
+            //    .Where(o => o.Estado == EstadosOrdenPreparacion.Pendiente)
+            //    .OrderByDescending(o => criticidadDict[o.CuitCliente])
+            //    .ToList();
 
             // Agregar las órdenes al listBox
-            foreach (var orden in ordenesOrdenadas)
+            foreach (var orden in OrdenPreparacionArchivo.OrdenesPreparacion
+                            .Where(o => o.Estado == EstadosOrdenPreparacion.Pendiente))
             {
+                if (deposito == null)
+                {
+                    deposito = orden.NroDeposito;
+                }
+                else if (orden.NroDeposito != deposito)
+                {
+                    MessageBox.Show("Seleccione órdenes del mismo depósito.");
+                    return;
+                }
+
                 var criticidad = criticidadDict[orden.CuitCliente];
                 listBox.Items.Add($"Orden {orden.NroOrdenPrep} - Prioridad: {criticidad}");
             }
