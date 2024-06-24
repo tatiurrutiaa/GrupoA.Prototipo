@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GrupoA.Prototipo.Archivos.Mercaderias
+namespace GrupoA.Prototipo.Archivos.Ordenes.OrdenPreparacion
 {
     public class MercaderiasDetalle
     {

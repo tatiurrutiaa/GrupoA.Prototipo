@@ -48,12 +48,23 @@ namespace GrupoA.Prototipo.Forms.OrdenEntrega.Model
                 var selectedOrders = listBox.CheckedItems.Cast<string>();
                 List<int> detalleOrden = new List<int>();
 
+                int? deposito = null;
                 foreach (var item in selectedOrders)
                 {
                     var ordenNum = int.Parse(item.Split(' ')[1]);
                     var orden = OrdenPreparacionArchivo.OrdenesPreparacion.FirstOrDefault(o => o.NroOrdenPrep == ordenNum);
                     if (orden != null)
                     {
+                        if (deposito == null)
+                        {
+                            deposito = orden.NroDeposito;
+                        }
+                        else if (deposito != orden.NroDeposito)
+                        {
+                            MessageBox.Show("Seleccione órdenes del mismo depósito.");
+                            return;
+                        }
+
                         //orden.Estado = "en despacho";
                         OrdenPreparacionArchivo.ModificarEstado(orden, EstadosOrdenPreparacion.EnDespacho);
                         detalleOrden.Add(ordenNum);

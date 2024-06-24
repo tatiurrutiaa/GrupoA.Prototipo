@@ -1,5 +1,5 @@
 ﻿using GrupoA.Prototipo.Archivos.Estados;
-using GrupoA.Prototipo.Archivos.Mercaderias;
+using GrupoA.Prototipo.Archivos.Ordenes.OrdenPreparacion;
 using System;
 using System.Collections.Generic;
 using System.Linq;

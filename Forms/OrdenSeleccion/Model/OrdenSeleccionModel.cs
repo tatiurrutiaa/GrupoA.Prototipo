@@ -18,8 +18,19 @@ namespace GrupoA.Prototipo.Forms.OrdenSeleccion.Model
             listBox.Items.Clear();
             var criticidadDict = ContratoArchivo.Contratos.ToDictionary(c => c.CuitCliente, c => c.Criticidad);
 
+            int? deposito = null;
             foreach (var orden in OrdenPreparacionArchivo.OrdenesPreparacion.Where(o => o.Estado == EstadosOrdenPreparacion.Pendiente))
             {
+                if (deposito == null)
+                {
+                    deposito = orden.NroDeposito;
+                }
+                else if (orden.NroDeposito != deposito)
+                {
+                    MessageBox.Show("Seleccione órdenes del mismo depósito.");
+                    return;
+                }
+
                 var criticidad = criticidadDict[orden.CuitCliente];
                 listBox.Items.Add($"Orden {orden.NroOrdenPrep} - Prioridad: {criticidad}");
             }
@@ -30,6 +41,8 @@ namespace GrupoA.Prototipo.Forms.OrdenSeleccion.Model
                     Environment.NewLine +
                     "Por favor, intente nuevamente en unos minutos.");
             }
+
+
         }
 
         public void GenerarOrdenDeSeleccion(CheckedListBox listBox)

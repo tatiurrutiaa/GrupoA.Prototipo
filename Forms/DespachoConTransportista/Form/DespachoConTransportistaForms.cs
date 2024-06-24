@@ -156,10 +156,11 @@ namespace GrupoA.Prototipo.DespachoConTransportista
             int dnitransportista;
             int.TryParse(textBoxDNI.Text, out dnitransportista);
 
-            modelo.GenerarRemito(dnitransportista, ObtenerOrdenesSeleccionadas());
-            modelo.ActualizarStock(ObtenerOrdenesSeleccionadas());
-
-            DisplayCheckedValues();
+            if (modelo.GenerarRemito(dnitransportista, ObtenerOrdenesSeleccionadas()))
+            {
+                modelo.ActualizarStock(ObtenerOrdenesSeleccionadas());
+                DisplayCheckedValues();
+            }
         }
 
         // Método para mostrar las ordenes seleccionadas

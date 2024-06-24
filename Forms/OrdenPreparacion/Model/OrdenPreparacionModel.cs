@@ -3,6 +3,7 @@ using GrupoA.Prototipo.Archivos.Cliente;
 using GrupoA.Prototipo.Archivos.Deposito;
 using GrupoA.Prototipo.Archivos.Estados;
 using GrupoA.Prototipo.Archivos.Mercaderias;
+using GrupoA.Prototipo.Archivos.Ordenes.OrdenPreparacion;
 using GrupoA.Prototipo.Archivos.Stock;
 using GrupoA.Prototipo.EmpaquetarMercaderia;
 using GrupoA.Prototipo.Forms.OrdenPreparacion.ModelClases;
