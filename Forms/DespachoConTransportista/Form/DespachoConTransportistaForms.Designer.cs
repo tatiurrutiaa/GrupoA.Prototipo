@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DespachoConTransportistaForms));
             buttonDNI = new Button();
             textBoxDNI = new TextBox();
             labelDNI = new Label();
             groupBoxOrdenEntrega = new GroupBox();
             refreshButton = new Button();
-            buttonAtras = new Button();
             buttonCrearRemito = new Button();
             ListBoxOrdenesPrep = new CheckedListBox();
+            buttonAtras = new Button();
             groupBoxOrdenEntrega.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,7 +57,6 @@
             textBoxDNI.Size = new Size(197, 23);
             textBoxDNI.TabIndex = 1;
             textBoxDNI.TextChanged += textBoxDNI_TextChanged;
-            //textBoxDNI.KeyPress += textBoxDNI_KeyPress;
             // 
             // labelDNI
             // 
@@ -89,16 +89,6 @@
             refreshButton.UseVisualStyleBackColor = true;
             refreshButton.Click += refreshButton_Click;
             // 
-            // buttonAtras
-            // 
-            buttonAtras.Location = new Point(18, 385);
-            buttonAtras.Name = "buttonAtras";
-            buttonAtras.Size = new Size(112, 23);
-            buttonAtras.TabIndex = 2;
-            buttonAtras.Text = "Volver al Menu";
-            buttonAtras.UseVisualStyleBackColor = true;
-            buttonAtras.Click += buttonAtras_Click;
-            // 
             // buttonCrearRemito
             // 
             buttonCrearRemito.Location = new Point(124, 284);
@@ -118,6 +108,16 @@
             ListBoxOrdenesPrep.Size = new Size(289, 256);
             ListBoxOrdenesPrep.TabIndex = 0;
             // 
+            // buttonAtras
+            // 
+            buttonAtras.Location = new Point(18, 385);
+            buttonAtras.Name = "buttonAtras";
+            buttonAtras.Size = new Size(112, 23);
+            buttonAtras.TabIndex = 2;
+            buttonAtras.Text = "Volver al Menu";
+            buttonAtras.UseVisualStyleBackColor = true;
+            buttonAtras.Click += buttonAtras_Click;
+            // 
             // DespachoConTransportistaForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -128,6 +128,7 @@
             Controls.Add(labelDNI);
             Controls.Add(textBoxDNI);
             Controls.Add(buttonDNI);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "DespachoConTransportistaForms";
             Text = "Despacho Con Transportista";
             FormClosed += DespachoConTransportistaForms_FormClosed;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RetiroStockForms));
             botonRetirarStock = new Button();
             botonMenu = new Button();
             comboBoxOrdenSelec = new ComboBox();
@@ -128,6 +129,7 @@
             Controls.Add(groupBoxOrdenSelec);
             Controls.Add(groupBoxRetirarMercaderia);
             Controls.Add(botonMenu);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "RetiroStockForms";
             Text = "Retiro de stock";
             FormClosed += RetiroStockForms_FormClosed;

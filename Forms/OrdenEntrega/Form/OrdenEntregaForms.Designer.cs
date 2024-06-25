@@ -19,6 +19,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrdenEntregaForms));
             groupBoxOrdendeEntrega = new GroupBox();
             ListBoxOrdenesPrep = new CheckedListBox();
             botonGenerarOrdenDeEntrega = new Button();
@@ -78,6 +79,7 @@
             ClientSize = new Size(265, 357);
             Controls.Add(groupBoxOrdendeEntrega);
             Controls.Add(botonMenu);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             Name = "OrdenEntregaForms";
             Text = "Orden de Entrega";

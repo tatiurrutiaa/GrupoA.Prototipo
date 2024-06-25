@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrdenSeleccionForm));
             groupBoxOrdendeEntrega = new GroupBox();
             ListBoxOrdenesPrep = new CheckedListBox();
             botonGenerarOrdenSeleccion = new Button();
@@ -87,6 +88,7 @@
             ClientSize = new Size(265, 358);
             Controls.Add(groupBoxOrdendeEntrega);
             Controls.Add(botonMenu);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "OrdenSeleccionForm";
             Text = "Orden de Selección";
             FormClosed += OrdenSeleccionForm_FormClosed;
