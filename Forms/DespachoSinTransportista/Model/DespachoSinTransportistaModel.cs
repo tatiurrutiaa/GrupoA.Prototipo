@@ -73,39 +73,29 @@ namespace GrupoA.Prototipo.Forms.DespachoSinTransportista.Model
                 foreach (var item in orden.mercaderiaDetalle)
                 {
                     var stockItem = StockArchivo.Stocks.FirstOrDefault(s => s.Posicion == "" && s.CodProducto == item.CodProducto && s.Estado == EstadosStock.Retirado && s.CuitCliente == orden.CuitCliente);
-                    if (stockItem != null)
+
+                    if (stockItem.Cantidad == item.CantidadProducto)
                     {
-                        StockArchivo.Stocks.FirstOrDefault(s => s.Posicion == "" && s.CodProducto == item.CodProducto && s.Estado == EstadosStock.Retirado && s.CuitCliente == orden.CuitCliente);
+                        StockArchivo.CambiarEstado(stockItem, EstadosStock.Despachado);
                     }
                     else
                     {
-                        Console.WriteLine("No se encontró el stock");
-                    }
-                    if (stockItem != null)
-                    {
-                        if (stockItem.Cantidad == item.CantidadProducto)
-                        {
-                            StockArchivo.CambiarEstado(stockItem, EstadosStock.Despachado);
-                        }
-                        else
-                        {
-                            int cantidadRetirada = item.CantidadProducto;
-                            // stockItem.Cantidad -= cantidadRetirada;
-                            StockArchivo.CambiarCantidad(stockItem, cantidadRetirada);
+                        int cantidadRetirada = item.CantidadProducto;
+                        // stockItem.Cantidad -= cantidadRetirada;
+                        StockArchivo.CambiarCantidad(stockItem, cantidadRetirada);
 
-                            var stockRetirado = new StockEntidad
-                            {
-                                CuitCliente = stockItem.CuitCliente,
-                                Posicion = string.Empty,
-                                Cantidad = cantidadRetirada,
-                                CodProducto = stockItem.CodProducto,
-                                Estado = EstadosStock.Despachado,
-                                NroDeposito = stockItem.NroDeposito
-                            };
+                        var stockRetirado = new StockEntidad
+                        {
+                            CuitCliente = stockItem.CuitCliente,
+                            Posicion = string.Empty,
+                            Cantidad = cantidadRetirada,
+                            CodProducto = stockItem.CodProducto,
+                            Estado = EstadosStock.Despachado,
+                            NroDeposito = stockItem.NroDeposito
+                        };
 
-                            // stock.Add(stockRetirado);
-                            StockArchivo.AgregarStock(stockRetirado);
-                        }
+                        // stock.Add(stockRetirado);
+                        StockArchivo.AgregarStock(stockRetirado);
                     }
                 }
             }

@@ -84,7 +84,8 @@ internal class RetiroStockModelo
         foreach (var item in listaParaOrden)
         {
             var stockItem = StockArchivo.Stocks.First(s => s.Posicion == item.Posicion
-                                                        && s.CodProducto == item.CodProducto);
+                                                        && s.CodProducto == item.CodProducto
+                                                        && s.Estado == EstadosStock.Comprometido);
             if (stockItem.Cantidad == item.Cantidad)
             {
                 StockArchivo.CambiarEstado(stockItem, EstadosStock.Retirado);
@@ -95,8 +96,7 @@ internal class RetiroStockModelo
             else
             {
                 int cantidadRetirada = item.Cantidad;
-                StockArchivo.CambiarCantidad(stockItem, cantidadRetirada);
-                stockItem.Cantidad -= cantidadRetirada;
+                StockArchivo.CambiarCantidad(stockItem, (stockItem.Cantidad - cantidadRetirada) );
 
                 var stockRetirado = new StockEntidad
                 {
@@ -134,12 +134,11 @@ internal class RetiroStockModelo
             {
                 OrdenPreparacionArchivo.ModificarEstado(orden, EstadosOrdenPreparacion.Seleccionada);
             }
-
-            MessageBox.Show("La mercadería se descontó del almacén con éxito." +
+        }
+        MessageBox.Show("La mercadería se descontó del almacén con éxito." +
             Environment.NewLine +
             "Por favor, entregar la mercadería al area de preparación.");
-            return;
-        }
+        return;
     }
 }
 
