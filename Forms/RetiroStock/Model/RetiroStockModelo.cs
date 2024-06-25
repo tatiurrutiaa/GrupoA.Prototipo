@@ -83,7 +83,8 @@ internal class RetiroStockModelo
 
         foreach (var item in listaParaOrden)
         {
-            var stockItem = StockArchivo.Stocks.First(s => s.Posicion == item.Posicion && s.CodProducto == item.CodProducto);
+            var stockItem = StockArchivo.Stocks.First(s => s.Posicion == item.Posicion
+                                                        && s.CodProducto == item.CodProducto);
             if (stockItem.Cantidad == item.Cantidad)
             {
                 StockArchivo.CambiarEstado(stockItem, EstadosStock.Retirado);
@@ -95,7 +96,7 @@ internal class RetiroStockModelo
             {
                 int cantidadRetirada = item.Cantidad;
                 StockArchivo.CambiarCantidad(stockItem, cantidadRetirada);
-                //stockItem.Cantidad -= cantidadRetirada;
+                stockItem.Cantidad -= cantidadRetirada;
 
                 var stockRetirado = new StockEntidad
                 {
@@ -103,7 +104,8 @@ internal class RetiroStockModelo
                     Posicion = string.Empty,
                     Cantidad = cantidadRetirada,
                     CodProducto = stockItem.CodProducto,
-                    Estado = EstadosStock.Retirado
+                    Estado = EstadosStock.Retirado,
+                    NroDeposito = stockItem.NroDeposito
                 };
 
                 StockArchivo.AgregarStock(stockRetirado);

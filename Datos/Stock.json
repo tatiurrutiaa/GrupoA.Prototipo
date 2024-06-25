@@ -4,7 +4,7 @@
     "Posicion": "26-52-7",
     "Cantidad": 740,
     "CodProducto": 19,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -12,7 +12,7 @@
     "Posicion": "33-31-6",
     "Cantidad": 703,
     "CodProducto": 3,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -20,7 +20,7 @@
     "Posicion": "37-82-8",
     "Cantidad": 703,
     "CodProducto": 10,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -28,7 +28,7 @@
     "Posicion": "42-29-7",
     "Cantidad": 428,
     "CodProducto": 1,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -36,7 +36,7 @@
     "Posicion": "14-13-6",
     "Cantidad": 559,
     "CodProducto": 10,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -44,7 +44,7 @@
     "Posicion": "10-81-4",
     "Cantidad": 408,
     "CodProducto": 4,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -52,7 +52,7 @@
     "Posicion": "17-55-6",
     "Cantidad": 885,
     "CodProducto": 19,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -60,7 +60,7 @@
     "Posicion": "79-81-7",
     "Cantidad": 819,
     "CodProducto": 2,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -68,7 +68,7 @@
     "Posicion": "77-11-4",
     "Cantidad": 841,
     "CodProducto": 18,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -76,7 +76,7 @@
     "Posicion": "56-18-6",
     "Cantidad": 676,
     "CodProducto": 12,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -84,7 +84,7 @@
     "Posicion": "34-45-3",
     "Cantidad": 792,
     "CodProducto": 19,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -92,7 +92,7 @@
     "Posicion": "38-23-8",
     "Cantidad": 885,
     "CodProducto": 1,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -100,7 +100,7 @@
     "Posicion": "48-34-1",
     "Cantidad": 413,
     "CodProducto": 5,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -108,7 +108,7 @@
     "Posicion": "53-74-6",
     "Cantidad": 753,
     "CodProducto": 11,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -116,7 +116,7 @@
     "Posicion": "74-34-2",
     "Cantidad": 444,
     "CodProducto": 4,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -124,7 +124,7 @@
     "Posicion": "23-19-7",
     "Cantidad": 867,
     "CodProducto": 8,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -132,7 +132,7 @@
     "Posicion": "65-88-4",
     "Cantidad": 424,
     "CodProducto": 10,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -140,7 +140,7 @@
     "Posicion": "87-36-9",
     "Cantidad": 564,
     "CodProducto": 2,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -148,7 +148,7 @@
     "Posicion": "12-54-3",
     "Cantidad": 877,
     "CodProducto": 12,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -156,7 +156,7 @@
     "Posicion": "91-64-2",
     "Cantidad": 673,
     "CodProducto": 7,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -164,7 +164,7 @@
     "Posicion": "88-39-4",
     "Cantidad": 465,
     "CodProducto": 11,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -172,7 +172,7 @@
     "Posicion": "94-83-3",
     "Cantidad": 417,
     "CodProducto": 4,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -180,7 +180,7 @@
     "Posicion": "95-13-9",
     "Cantidad": 596,
     "CodProducto": 8,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -188,7 +188,7 @@
     "Posicion": "58-86-7",
     "Cantidad": 599,
     "CodProducto": 11,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -196,7 +196,7 @@
     "Posicion": "63-25-4",
     "Cantidad": 675,
     "CodProducto": 17,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -204,7 +204,7 @@
     "Posicion": "74-47-9",
     "Cantidad": 792,
     "CodProducto": 20,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -212,7 +212,7 @@
     "Posicion": "67-18-1",
     "Cantidad": 651,
     "CodProducto": 8,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -220,7 +220,7 @@
     "Posicion": "84-55-2",
     "Cantidad": 797,
     "CodProducto": 1,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -228,7 +228,7 @@
     "Posicion": "20-11-7",
     "Cantidad": 747,
     "CodProducto": 16,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -236,7 +236,7 @@
     "Posicion": "57-89-6",
     "Cantidad": 639,
     "CodProducto": 10,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -244,7 +244,7 @@
     "Posicion": "32-82-3",
     "Cantidad": 603,
     "CodProducto": 15,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -252,7 +252,7 @@
     "Posicion": "89-34-3",
     "Cantidad": 685,
     "CodProducto": 4,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -260,7 +260,7 @@
     "Posicion": "59-23-6",
     "Cantidad": 619,
     "CodProducto": 5,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -268,7 +268,7 @@
     "Posicion": "39-82-5",
     "Cantidad": 479,
     "CodProducto": 14,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -276,7 +276,7 @@
     "Posicion": "79-12-4",
     "Cantidad": 500,
     "CodProducto": 13,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -284,7 +284,7 @@
     "Posicion": "92-15-6",
     "Cantidad": 550,
     "CodProducto": 9,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -292,7 +292,7 @@
     "Posicion": "70-54-7",
     "Cantidad": 442,
     "CodProducto": 18,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -300,7 +300,7 @@
     "Posicion": "93-17-3",
     "Cantidad": 673,
     "CodProducto": 2,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -308,7 +308,7 @@
     "Posicion": "05-20-4",
     "Cantidad": 400,
     "CodProducto": 3,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -316,7 +316,7 @@
     "Posicion": "05-20-5",
     "Cantidad": 400,
     "CodProducto": 3,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -324,7 +324,7 @@
     "Posicion": "07-23-1",
     "Cantidad": 400,
     "CodProducto": 4,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -332,7 +332,7 @@
     "Posicion": "07-23-2",
     "Cantidad": 400,
     "CodProducto": 4,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -340,7 +340,7 @@
     "Posicion": "07-23-3",
     "Cantidad": 400,
     "CodProducto": 4,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -348,7 +348,7 @@
     "Posicion": "07-23-4",
     "Cantidad": 400,
     "CodProducto": 4,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -356,7 +356,7 @@
     "Posicion": "11-02-2",
     "Cantidad": 500,
     "CodProducto": 5,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -364,7 +364,7 @@
     "Posicion": "11-02-3",
     "Cantidad": 500,
     "CodProducto": 5,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -372,7 +372,7 @@
     "Posicion": "15-14-3",
     "Cantidad": 600,
     "CodProducto": 6,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -380,7 +380,7 @@
     "Posicion": "15-14-4",
     "Cantidad": 600,
     "CodProducto": 6,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -388,7 +388,7 @@
     "Posicion": "15-14-5",
     "Cantidad": 600,
     "CodProducto": 6,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -396,7 +396,7 @@
     "Posicion": "17-24-2",
     "Cantidad": 300,
     "CodProducto": 7,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -404,7 +404,7 @@
     "Posicion": "17-24-3",
     "Cantidad": 300,
     "CodProducto": 7,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -412,7 +412,7 @@
     "Posicion": "18-02-1",
     "Cantidad": 500,
     "CodProducto": 8,
-    "Estado": 0,
+    "Estado": "Ingresado",
     "NroDeposito": 1
   },
   {
@@ -420,7 +420,7 @@
     "Posicion": "18-02-2",
     "Cantidad": 500,
     "CodProducto": 8,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -428,7 +428,7 @@
     "Posicion": "18-02-3",
     "Cantidad": 500,
     "CodProducto": 8,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -436,7 +436,7 @@
     "Posicion": "18-02-4",
     "Cantidad": 500,
     "CodProducto": 8,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -444,7 +444,7 @@
     "Posicion": "18-02-5",
     "Cantidad": 500,
     "CodProducto": 8,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -452,7 +452,7 @@
     "Posicion": "19-05-1",
     "Cantidad": 500,
     "CodProducto": 9,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -460,7 +460,7 @@
     "Posicion": "19-05-2",
     "Cantidad": 500,
     "CodProducto": 9,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -468,7 +468,7 @@
     "Posicion": "19-05-3",
     "Cantidad": 500,
     "CodProducto": 9,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -476,7 +476,7 @@
     "Posicion": "19-05-4",
     "Cantidad": 500,
     "CodProducto": 9,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -484,7 +484,7 @@
     "Posicion": "19-05-5",
     "Cantidad": 500,
     "CodProducto": 9,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -492,7 +492,7 @@
     "Posicion": "21-43-1",
     "Cantidad": 700,
     "CodProducto": 10,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -500,7 +500,7 @@
     "Posicion": "21-43-2",
     "Cantidad": 700,
     "CodProducto": 10,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -508,7 +508,7 @@
     "Posicion": "21-43-3",
     "Cantidad": 700,
     "CodProducto": 10,
-    "Estado": 1,
+    "Estado": "Almacenado",
     "NroDeposito": 1
   },
   {
@@ -516,15 +516,487 @@
     "Posicion": "21-43-4",
     "Cantidad": 700,
     "CodProducto": 10,
-    "Estado": 1,
+    "Estado": "Almacenado",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "12-34-1",
+    "Cantidad": 1000,
+    "CodProducto": 1,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "23-45-2",
+    "Cantidad": 1000,
+    "CodProducto": 2,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "34-56-3",
+    "Cantidad": 1000,
+    "CodProducto": 3,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "45-67-4",
+    "Cantidad": 1000,
+    "CodProducto": 4,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "56-78-5",
+    "Cantidad": 1000,
+    "CodProducto": 5,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "67-89-6",
+    "Cantidad": 1000,
+    "CodProducto": 6,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "78-90-7",
+    "Cantidad": 1000,
+    "CodProducto": 7,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "89-01-8",
+    "Cantidad": 1000,
+    "CodProducto": 8,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "90-12-9",
+    "Cantidad": 1000,
+    "CodProducto": 9,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "01-23-0",
+    "Cantidad": 1000,
+    "CodProducto": 10,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "12-34-1",
+    "Cantidad": 1000,
+    "CodProducto": 11,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "23-45-2",
+    "Cantidad": 1000,
+    "CodProducto": 12,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "34-56-3",
+    "Cantidad": 1000,
+    "CodProducto": 13,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "45-67-4",
+    "Cantidad": 1000,
+    "CodProducto": 14,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "56-78-5",
+    "Cantidad": 1000,
+    "CodProducto": 15,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "67-89-6",
+    "Cantidad": 1000,
+    "CodProducto": 16,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "78-90-7",
+    "Cantidad": 1000,
+    "CodProducto": 17,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "89-01-8",
+    "Cantidad": 1000,
+    "CodProducto": 18,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "90-12-9",
+    "Cantidad": 1000,
+    "CodProducto": 19,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "01-23-0",
+    "Cantidad": 1000,
+    "CodProducto": 20,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "12-34-5",
+    "Cantidad": 1000,
+    "CodProducto": 1,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "23-45-6",
+    "Cantidad": 1000,
+    "CodProducto": 2,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "34-56-7",
+    "Cantidad": 1000,
+    "CodProducto": 3,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "45-67-8",
+    "Cantidad": 1000,
+    "CodProducto": 4,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "56-78-9",
+    "Cantidad": 1000,
+    "CodProducto": 5,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "67-89-0",
+    "Cantidad": 1000,
+    "CodProducto": 6,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "78-90-1",
+    "Cantidad": 1000,
+    "CodProducto": 7,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "89-01-2",
+    "Cantidad": 1000,
+    "CodProducto": 8,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "90-12-3",
+    "Cantidad": 1000,
+    "CodProducto": 9,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "01-23-4",
+    "Cantidad": 1000,
+    "CodProducto": 10,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "12-34-5",
+    "Cantidad": 1000,
+    "CodProducto": 11,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "23-45-6",
+    "Cantidad": 1000,
+    "CodProducto": 12,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "34-56-7",
+    "Cantidad": 1000,
+    "CodProducto": 13,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "45-67-8",
+    "Cantidad": 1000,
+    "CodProducto": 14,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "56-78-9",
+    "Cantidad": 1000,
+    "CodProducto": 15,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "67-89-0",
+    "Cantidad": 1000,
+    "CodProducto": 16,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "78-90-1",
+    "Cantidad": 1000,
+    "CodProducto": 17,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "89-01-2",
+    "Cantidad": 1000,
+    "CodProducto": 18,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "90-12-3",
+    "Cantidad": 1000,
+    "CodProducto": 19,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "01-23-4",
+    "Cantidad": 1000,
+    "CodProducto": 20,
+    "Estado": "Comprometido",
     "NroDeposito": 1
   },
   {
     "CuitCliente": "27-12345678-5",
-    "Posicion": "01-12-1",
-    "Cantidad": 400,
+    "Posicion": "15-23-4",
+    "Cantidad": 1000,
     "CodProducto": 1,
-    "Estado": 2,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "27-12345678-5",
+    "Posicion": "26-34-5",
+    "Cantidad": 1000,
+    "CodProducto": 2,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "27-12345678-5",
+    "Posicion": "37-45-6",
+    "Cantidad": 1000,
+    "CodProducto": 3,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "27-12345678-5",
+    "Posicion": "48-56-7",
+    "Cantidad": 1000,
+    "CodProducto": 4,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "27-12345678-5",
+    "Posicion": "59-67-8",
+    "Cantidad": 1000,
+    "CodProducto": 5,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "27-12345678-5",
+    "Posicion": "61-78-9",
+    "Cantidad": 1000,
+    "CodProducto": 6,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "27-12345678-5",
+    "Posicion": "72-89-0",
+    "Cantidad": 1000,
+    "CodProducto": 7,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "27-12345678-5",
+    "Posicion": "83-90-1",
+    "Cantidad": 1000,
+    "CodProducto": 8,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "27-12345678-5",
+    "Posicion": "94-01-2",
+    "Cantidad": 1000,
+    "CodProducto": 9,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "27-12345678-5",
+    "Posicion": "05-12-3",
+    "Cantidad": 1000,
+    "CodProducto": 10,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "27-12345678-5",
+    "Posicion": "16-23-4",
+    "Cantidad": 1000,
+    "CodProducto": 11,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "27-12345678-5",
+    "Posicion": "27-34-5",
+    "Cantidad": 1000,
+    "CodProducto": 12,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "27-12345678-5",
+    "Posicion": "38-45-6",
+    "Cantidad": 1000,
+    "CodProducto": 13,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "27-12345678-5",
+    "Posicion": "49-56-7",
+    "Cantidad": 1000,
+    "CodProducto": 14,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "27-12345678-5",
+    "Posicion": "50-67-8",
+    "Cantidad": 1000,
+    "CodProducto": 15,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "27-12345678-5",
+    "Posicion": "61-78-9",
+    "Cantidad": 1000,
+    "CodProducto": 16,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "27-12345678-5",
+    "Posicion": "72-89-0",
+    "Cantidad": 1000,
+    "CodProducto": 17,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "27-12345678-5",
+    "Posicion": "83-90-1",
+    "Cantidad": 1000,
+    "CodProducto": 18,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "27-12345678-5",
+    "Posicion": "94-01-2",
+    "Cantidad": 1000,
+    "CodProducto": 19,
+    "Estado": "Comprometido",
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "27-12345678-5",
+    "Posicion": "05-12-3",
+    "Cantidad": 1000,
+    "CodProducto": 20,
+    "Estado": "Comprometido",
     "NroDeposito": 1
   },
   {
@@ -681,6 +1153,326 @@
   },
   {
     "CuitCliente": "27-12345678-5",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 20,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 1,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 2,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 3,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 4,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 5,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 6,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 7,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 8,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 9,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 10,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 11,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 12,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 13,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 14,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 15,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 16,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 17,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 18,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 19,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "30-87654321-0",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 20,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 1,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 2,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 3,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 4,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 5,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 6,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 7,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 8,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 9,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 10,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 11,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 12,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 13,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 14,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 15,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 16,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 17,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 18,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
+    "Posicion": "",
+    "Cantidad": 1000,
+    "CodProducto": 19,
+    "Estado": 3,
+    "NroDeposito": 1
+  },
+  {
+    "CuitCliente": "22-12345678-9",
     "Posicion": "",
     "Cantidad": 1000,
     "CodProducto": 20,
