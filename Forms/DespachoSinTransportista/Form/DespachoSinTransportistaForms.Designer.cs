@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DespachoSinTransportistaForms));
             ListBoxOrdenesPrep = new CheckedListBox();
             label1 = new Label();
             botonConfirmar = new Button();
@@ -128,6 +129,7 @@
             Controls.Add(botonConfirmar);
             Controls.Add(label1);
             Controls.Add(ListBoxOrdenesPrep);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "DespachoSinTransportistaForms";
             Text = "Despacho sin transportista";
             FormClosed += Salida_FormClosed;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuForms));
             groupBoxAreaPreparacion = new GroupBox();
             EmpaquetarMButton = new Button();
             botonOrdenEntrega = new Button();
@@ -190,6 +191,7 @@
             Controls.Add(groupBoxAlmacen);
             Controls.Add(label1);
             Controls.Add(groupBoxAreaPreparacion);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MenuForms";
             Text = "Menu";
             FormClosed += MenuForms_FormClosed;

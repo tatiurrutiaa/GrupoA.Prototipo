@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IniciarSesionForms));
             botonIngresar = new Button();
             textBoxUsuario = new TextBox();
             textBoxContraseña = new TextBox();
@@ -89,6 +90,7 @@
             Controls.Add(textBoxContraseña);
             Controls.Add(textBoxUsuario);
             Controls.Add(botonIngresar);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "IniciarSesionForms";
             Text = "Iniciar sesión";
             FormClosed += IniciarSesionForms_FormClosed;

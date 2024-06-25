@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrdenPreparacionForms));
             textBoxCUITCliente = new TextBox();
             labelCUITCliente = new Label();
             groupBoxCliente = new GroupBox();
@@ -351,6 +352,7 @@
             Controls.Add(botonMenu);
             Controls.Add(groupBoxOrdenPreparación);
             Controls.Add(groupBoxCliente);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "OrdenPreparacionForms";
             Text = "Orden de Preparación";
             FormClosed += OrdenPreparacionForms_FormClosed;
