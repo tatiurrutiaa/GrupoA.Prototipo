@@ -21,15 +21,14 @@ namespace GrupoA.Prototipo.Forms.OrdenSeleccion.Model
 
             int? deposito = null;
 
-            //// Ordenar las órdenes por criticidad
-            //var ordenesOrdenadas = OrdenPreparacionArchivo.OrdenesPreparacion
-            //    .Where(o => o.Estado == EstadosOrdenPreparacion.Pendiente)
-            //    .OrderByDescending(o => criticidadDict[o.CuitCliente])
-            //    .ToList();
+            //Ordenar las órdenes por criticidad
+            var ordenesOrdenadas = OrdenPreparacionArchivo.OrdenesPreparacion
+                .Where(o => o.Estado == EstadosOrdenPreparacion.Pendiente)
+                .OrderByDescending(o => criticidadDict[o.CuitCliente])
+                .ToList();
 
             // Agregar las órdenes al listBox
-            foreach (var orden in OrdenPreparacionArchivo.OrdenesPreparacion
-                            .Where(o => o.Estado == EstadosOrdenPreparacion.Pendiente))
+            foreach (var orden in ordenesOrdenadas)
             {
                 if (deposito == null)
                 {
